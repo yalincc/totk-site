@@ -1,0 +1,12827 @@
+{
+ "Armor_001_Head": [
+  {
+   "price": 10,
+   "items": [
+    {
+     "id": "Item_Enemy_77",
+     "num": 5
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_77",
+     "zh": "波克布林的犄角",
+     "num": 5
+    }
+   ]
+  }
+ ],
+ "Armor_001_Head_B": [
+  {
+   "price": 10,
+   "items": [
+    {
+     "id": "Item_Enemy_77",
+     "num": 5
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_77",
+     "zh": "波克布林的犄角",
+     "num": 5
+    }
+   ]
+  }
+ ],
+ "Armor_001_Lower": [
+  {
+   "price": 10,
+   "items": [
+    {
+     "id": "Item_Enemy_77",
+     "num": 5
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_77",
+     "zh": "波克布林的犄角",
+     "num": 5
+    }
+   ]
+  }
+ ],
+ "Armor_001_Upper": [
+  {
+   "price": 10,
+   "items": [
+    {
+     "id": "Item_Enemy_77",
+     "num": 5
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_77",
+     "zh": "波克布林的犄角",
+     "num": 5
+    }
+   ]
+  }
+ ],
+ "Armor_002_Head": [
+  {
+   "price": 50,
+   "items": [
+    {
+     "id": "Item_Enemy_78",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_01",
+     "num": 3
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_78",
+     "zh": "蓝色波克布林的犄角",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_01",
+     "zh": "波克布林的牙齿",
+     "num": 3
+    }
+   ]
+  }
+ ],
+ "Armor_002_Head_B": [
+  {
+   "price": 50,
+   "items": [
+    {
+     "id": "Item_Enemy_78",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_01",
+     "num": 3
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_78",
+     "zh": "蓝色波克布林的犄角",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_01",
+     "zh": "波克布林的牙齿",
+     "num": 3
+    }
+   ]
+  }
+ ],
+ "Armor_002_Lower": [
+  {
+   "price": 50,
+   "items": [
+    {
+     "id": "Item_Enemy_78",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_01",
+     "num": 3
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_78",
+     "zh": "蓝色波克布林的犄角",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_01",
+     "zh": "波克布林的牙齿",
+     "num": 3
+    }
+   ]
+  }
+ ],
+ "Armor_002_Upper": [
+  {
+   "price": 50,
+   "items": [
+    {
+     "id": "Item_Enemy_78",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_01",
+     "num": 3
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_78",
+     "zh": "蓝色波克布林的犄角",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_01",
+     "zh": "波克布林的牙齿",
+     "num": 3
+    }
+   ]
+  }
+ ],
+ "Armor_003_Head": [
+  {
+   "price": 200,
+   "items": [
+    {
+     "id": "Item_Enemy_79",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_02",
+     "num": 3
+    },
+    {
+     "id": "Item_Ore_F",
+     "num": 20
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_79",
+     "zh": "黑色波克布林的犄角",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_02",
+     "zh": "波克布林的肝脏",
+     "num": 3
+    },
+    {
+     "id": "Item_Ore_F",
+     "zh": "琥珀",
+     "num": 20
+    }
+   ]
+  }
+ ],
+ "Armor_003_Head_B": [
+  {
+   "price": 200,
+   "items": [
+    {
+     "id": "Item_Enemy_79",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_02",
+     "num": 3
+    },
+    {
+     "id": "Item_Ore_F",
+     "num": 20
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_79",
+     "zh": "黑色波克布林的犄角",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_02",
+     "zh": "波克布林的肝脏",
+     "num": 3
+    },
+    {
+     "id": "Item_Ore_F",
+     "zh": "琥珀",
+     "num": 20
+    }
+   ]
+  }
+ ],
+ "Armor_003_Lower": [
+  {
+   "price": 200,
+   "items": [
+    {
+     "id": "Item_Enemy_79",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_02",
+     "num": 3
+    },
+    {
+     "id": "Item_Ore_F",
+     "num": 20
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_79",
+     "zh": "黑色波克布林的犄角",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_02",
+     "zh": "波克布林的肝脏",
+     "num": 3
+    },
+    {
+     "id": "Item_Ore_F",
+     "zh": "琥珀",
+     "num": 20
+    }
+   ]
+  }
+ ],
+ "Armor_003_Upper": [
+  {
+   "price": 200,
+   "items": [
+    {
+     "id": "Item_Enemy_79",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_02",
+     "num": 3
+    },
+    {
+     "id": "Item_Ore_F",
+     "num": 20
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_79",
+     "zh": "黑色波克布林的犄角",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_02",
+     "zh": "波克布林的肝脏",
+     "num": 3
+    },
+    {
+     "id": "Item_Ore_F",
+     "zh": "琥珀",
+     "num": 20
+    }
+   ]
+  }
+ ],
+ "Armor_004_Head": [
+  {
+   "price": 500,
+   "items": [
+    {
+     "id": "Item_Enemy_80",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_02",
+     "num": 5
+    },
+    {
+     "id": "Item_Ore_F",
+     "num": 30
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_80",
+     "zh": "白银波克布林的犄角",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_02",
+     "zh": "波克布林的肝脏",
+     "num": 5
+    },
+    {
+     "id": "Item_Ore_F",
+     "zh": "琥珀",
+     "num": 30
+    }
+   ]
+  }
+ ],
+ "Armor_004_Head_B": [
+  {
+   "price": 500,
+   "items": [
+    {
+     "id": "Item_Enemy_80",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_02",
+     "num": 5
+    },
+    {
+     "id": "Item_Ore_F",
+     "num": 30
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_80",
+     "zh": "白银波克布林的犄角",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_02",
+     "zh": "波克布林的肝脏",
+     "num": 5
+    },
+    {
+     "id": "Item_Ore_F",
+     "zh": "琥珀",
+     "num": 30
+    }
+   ]
+  }
+ ],
+ "Armor_004_Lower": [
+  {
+   "price": 500,
+   "items": [
+    {
+     "id": "Item_Enemy_80",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_02",
+     "num": 5
+    },
+    {
+     "id": "Item_Ore_F",
+     "num": 30
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_80",
+     "zh": "白银波克布林的犄角",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_02",
+     "zh": "波克布林的肝脏",
+     "num": 5
+    },
+    {
+     "id": "Item_Ore_F",
+     "zh": "琥珀",
+     "num": 30
+    }
+   ]
+  }
+ ],
+ "Armor_004_Upper": [
+  {
+   "price": 500,
+   "items": [
+    {
+     "id": "Item_Enemy_80",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_02",
+     "num": 5
+    },
+    {
+     "id": "Item_Ore_F",
+     "num": 30
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_80",
+     "zh": "白银波克布林的犄角",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_02",
+     "zh": "波克布林的肝脏",
+     "num": 5
+    },
+    {
+     "id": "Item_Ore_F",
+     "zh": "琥珀",
+     "num": 30
+    }
+   ]
+  }
+ ],
+ "Armor_005_Head": [
+  {
+   "price": 10,
+   "items": [
+    {
+     "id": "Item_Fruit_K",
+     "num": 10
+    },
+    {
+     "id": "Item_Enemy_53",
+     "num": 2
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Fruit_K",
+     "zh": "橡子",
+     "num": 10
+    },
+    {
+     "id": "Item_Enemy_53",
+     "zh": "费罗龙的鳞片",
+     "num": 2
+    }
+   ]
+  }
+ ],
+ "Armor_005_Lower": [
+  {
+   "price": 10,
+   "items": [
+    {
+     "id": "Item_Fruit_K",
+     "num": 10
+    },
+    {
+     "id": "Item_Enemy_38",
+     "num": 2
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Fruit_K",
+     "zh": "橡子",
+     "num": 10
+    },
+    {
+     "id": "Item_Enemy_38",
+     "zh": "奥尔龙的鳞片",
+     "num": 2
+    }
+   ]
+  }
+ ],
+ "Armor_005_Upper": [
+  {
+   "price": 10,
+   "items": [
+    {
+     "id": "Item_Fruit_K",
+     "num": 10
+    },
+    {
+     "id": "Item_Enemy_49",
+     "num": 2
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Fruit_K",
+     "zh": "橡子",
+     "num": 10
+    },
+    {
+     "id": "Item_Enemy_49",
+     "zh": "聂尔龙的鳞片",
+     "num": 2
+    }
+   ]
+  }
+ ],
+ "Armor_006_Head": [
+  {
+   "price": 10,
+   "items": [
+    {
+     "id": "Item_Enemy_106",
+     "num": 3
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_106",
+     "zh": "蜥蜴战士的犄角",
+     "num": 3
+    }
+   ]
+  }
+ ],
+ "Armor_006_Lower": [
+  {
+   "price": 10,
+   "items": [
+    {
+     "id": "Item_Enemy_106",
+     "num": 3
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_106",
+     "zh": "蜥蜴战士的犄角",
+     "num": 3
+    }
+   ]
+  }
+ ],
+ "Armor_006_Upper": [
+  {
+   "price": 10,
+   "items": [
+    {
+     "id": "Item_Enemy_106",
+     "num": 3
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_106",
+     "zh": "蜥蜴战士的犄角",
+     "num": 3
+    }
+   ]
+  }
+ ],
+ "Armor_007_Head": [
+  {
+   "price": 50,
+   "items": [
+    {
+     "id": "Item_Enemy_04",
+     "num": 5
+    },
+    {
+     "id": "Item_FishGet_A",
+     "num": 5
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_04",
+     "zh": "蜥蜴战士的爪子",
+     "num": 5
+    },
+    {
+     "id": "Item_FishGet_A",
+     "zh": "海拉鲁鲈鱼",
+     "num": 5
+    }
+   ]
+  }
+ ],
+ "Armor_007_Lower": [
+  {
+   "price": 50,
+   "items": [
+    {
+     "id": "Item_Enemy_04",
+     "num": 5
+    },
+    {
+     "id": "Item_FishGet_A",
+     "num": 5
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_04",
+     "zh": "蜥蜴战士的爪子",
+     "num": 5
+    },
+    {
+     "id": "Item_FishGet_A",
+     "zh": "海拉鲁鲈鱼",
+     "num": 5
+    }
+   ]
+  }
+ ],
+ "Armor_007_Upper": [
+  {
+   "price": 50,
+   "items": [
+    {
+     "id": "Item_Enemy_04",
+     "num": 5
+    },
+    {
+     "id": "Item_FishGet_A",
+     "num": 5
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_04",
+     "zh": "蜥蜴战士的爪子",
+     "num": 5
+    },
+    {
+     "id": "Item_FishGet_A",
+     "zh": "海拉鲁鲈鱼",
+     "num": 5
+    }
+   ]
+  }
+ ],
+ "Armor_008_Head": [
+  {
+   "price": 10,
+   "items": [
+    {
+     "id": "Item_Enemy_17",
+     "num": 3
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_17",
+     "zh": "白色丘丘胶",
+     "num": 3
+    }
+   ]
+  }
+ ],
+ "Armor_008_Lower": [
+  {
+   "price": 10,
+   "items": [
+    {
+     "id": "Item_Enemy_17",
+     "num": 3
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_17",
+     "zh": "白色丘丘胶",
+     "num": 3
+    }
+   ]
+  }
+ ],
+ "Armor_008_Upper": [
+  {
+   "price": 10,
+   "items": [
+    {
+     "id": "Item_Enemy_17",
+     "num": 3
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_17",
+     "zh": "白色丘丘胶",
+     "num": 3
+    }
+   ]
+  }
+ ],
+ "Armor_009_Head": [
+  {
+   "price": 10,
+   "items": [
+    {
+     "id": "Item_Enemy_15",
+     "num": 3
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_15",
+     "zh": "红色丘丘胶",
+     "num": 3
+    }
+   ]
+  }
+ ],
+ "Armor_009_Lower": [
+  {
+   "price": 10,
+   "items": [
+    {
+     "id": "Item_Enemy_15",
+     "num": 3
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_15",
+     "zh": "红色丘丘胶",
+     "num": 3
+    }
+   ]
+  }
+ ],
+ "Armor_009_Upper": [
+  {
+   "price": 10,
+   "items": [
+    {
+     "id": "Item_Enemy_15",
+     "num": 3
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_15",
+     "zh": "红色丘丘胶",
+     "num": 3
+    }
+   ]
+  }
+ ],
+ "Armor_011_Head": [
+  {
+   "price": 10,
+   "items": [
+    {
+     "id": "Item_Enemy_89",
+     "num": 3
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_89",
+     "zh": "莫力布林的犄角",
+     "num": 3
+    }
+   ]
+  }
+ ],
+ "Armor_011_Lower": [
+  {
+   "price": 10,
+   "items": [
+    {
+     "id": "Item_Enemy_89",
+     "num": 3
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_89",
+     "zh": "莫力布林的犄角",
+     "num": 3
+    }
+   ]
+  }
+ ],
+ "Armor_011_Upper": [
+  {
+   "price": 10,
+   "items": [
+    {
+     "id": "Item_Enemy_89",
+     "num": 3
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_89",
+     "zh": "莫力布林的犄角",
+     "num": 3
+    }
+   ]
+  }
+ ],
+ "Armor_012_Head": [
+  {
+   "price": 10,
+   "items": [
+    {
+     "id": "Item_Plant_I",
+     "num": 3
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Plant_I",
+     "zh": null,
+     "num": 3
+    }
+   ]
+  }
+ ],
+ "Armor_012_Head_B": [
+  {
+   "price": 10,
+   "items": [
+    {
+     "id": "Item_Plant_I",
+     "num": 3
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Plant_I",
+     "zh": null,
+     "num": 3
+    }
+   ]
+  }
+ ],
+ "Armor_012_Lower": [
+  {
+   "price": 10,
+   "items": [
+    {
+     "id": "Item_Plant_I",
+     "num": 3
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Plant_I",
+     "zh": null,
+     "num": 3
+    }
+   ]
+  }
+ ],
+ "Armor_012_Upper": [
+  {
+   "price": 10,
+   "items": [
+    {
+     "id": "Item_Plant_I",
+     "num": 3
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Plant_I",
+     "zh": null,
+     "num": 3
+    }
+   ]
+  }
+ ],
+ "Armor_014_Head": [
+  {
+   "price": 10,
+   "items": [
+    {
+     "id": "Item_Enemy_18",
+     "num": 3
+    },
+    {
+     "id": "Item_MushroomGet_D",
+     "num": 3
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_18",
+     "zh": "蝙蝠的翅膀",
+     "num": 3
+    },
+    {
+     "id": "Item_MushroomGet_D",
+     "zh": "速速蘑菇",
+     "num": 3
+    }
+   ]
+  }
+ ],
+ "Armor_014_Lower": [
+  {
+   "price": 10,
+   "items": [
+    {
+     "id": "Item_Enemy_18",
+     "num": 3
+    },
+    {
+     "id": "Item_MushroomGet_D",
+     "num": 3
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_18",
+     "zh": "蝙蝠的翅膀",
+     "num": 3
+    },
+    {
+     "id": "Item_MushroomGet_D",
+     "zh": "速速蘑菇",
+     "num": 3
+    }
+   ]
+  }
+ ],
+ "Armor_014_Upper": [
+  {
+   "price": 10,
+   "items": [
+    {
+     "id": "Item_Enemy_18",
+     "num": 3
+    },
+    {
+     "id": "Item_MushroomGet_D",
+     "num": 3
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_18",
+     "zh": "蝙蝠的翅膀",
+     "num": 3
+    },
+    {
+     "id": "Item_MushroomGet_D",
+     "zh": "速速蘑菇",
+     "num": 3
+    }
+   ]
+  }
+ ],
+ "Armor_017_Head": [
+  {
+   "price": 10,
+   "items": [
+    {
+     "id": "Item_Ore_G",
+     "num": 10
+    },
+    {
+     "id": "Item_Enemy_02",
+     "num": 1
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_G",
+     "zh": "夜光石",
+     "num": 10
+    },
+    {
+     "id": "Item_Enemy_02",
+     "zh": "波克布林的肝脏",
+     "num": 1
+    }
+   ]
+  }
+ ],
+ "Armor_017_Lower": [
+  {
+   "price": 10,
+   "items": [
+    {
+     "id": "Item_Ore_G",
+     "num": 10
+    },
+    {
+     "id": "Item_Enemy_02",
+     "num": 1
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_G",
+     "zh": "夜光石",
+     "num": 10
+    },
+    {
+     "id": "Item_Enemy_02",
+     "zh": "波克布林的肝脏",
+     "num": 1
+    }
+   ]
+  }
+ ],
+ "Armor_017_Upper": [
+  {
+   "price": 10,
+   "items": [
+    {
+     "id": "Item_Ore_G",
+     "num": 10
+    },
+    {
+     "id": "Item_Enemy_02",
+     "num": 1
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_G",
+     "zh": "夜光石",
+     "num": 10
+    },
+    {
+     "id": "Item_Enemy_02",
+     "zh": "波克布林的肝脏",
+     "num": 1
+    }
+   ]
+  }
+ ],
+ "Armor_020_Head": [
+  {
+   "price": 10,
+   "items": [
+    {
+     "id": "Item_Enemy_40",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_02",
+     "num": 3
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_40",
+     "zh": "丘丘胶",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_02",
+     "zh": "波克布林的肝脏",
+     "num": 3
+    }
+   ]
+  }
+ ],
+ "Armor_020_Lower": [
+  {
+   "price": 10,
+   "items": [
+    {
+     "id": "Item_Enemy_40",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_02",
+     "num": 3
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_40",
+     "zh": "丘丘胶",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_02",
+     "zh": "波克布林的肝脏",
+     "num": 3
+    }
+   ]
+  }
+ ],
+ "Armor_020_Upper": [
+  {
+   "price": 10,
+   "items": [
+    {
+     "id": "Item_Enemy_40",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_02",
+     "num": 3
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_40",
+     "zh": "丘丘胶",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_02",
+     "zh": "波克布林的肝脏",
+     "num": 3
+    }
+   ]
+  }
+ ],
+ "Armor_024_Head": [
+  {
+   "price": 10,
+   "items": [
+    {
+     "id": "Item_Ore_A",
+     "num": 2
+    },
+    {
+     "id": "Item_Ore_I",
+     "num": 3
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_A",
+     "zh": "钻石",
+     "num": 2
+    },
+    {
+     "id": "Item_Ore_I",
+     "zh": "打火石",
+     "num": 3
+    }
+   ]
+  }
+ ],
+ "Armor_025_Head": [
+  {
+   "price": 10,
+   "items": [
+    {
+     "id": "Item_Ore_B",
+     "num": 2
+    },
+    {
+     "id": "Item_Ore_I",
+     "num": 3
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_B",
+     "zh": "红宝石",
+     "num": 2
+    },
+    {
+     "id": "Item_Ore_I",
+     "zh": "打火石",
+     "num": 3
+    }
+   ]
+  }
+ ],
+ "Armor_026_Head": [
+  {
+   "price": 10,
+   "items": [
+    {
+     "id": "Item_Ore_C",
+     "num": 2
+    },
+    {
+     "id": "Item_Ore_I",
+     "num": 3
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_C",
+     "zh": "蓝宝石",
+     "num": 2
+    },
+    {
+     "id": "Item_Ore_I",
+     "zh": "打火石",
+     "num": 3
+    }
+   ]
+  }
+ ],
+ "Armor_027_Head": [
+  {
+   "price": 10,
+   "items": [
+    {
+     "id": "Item_Ore_D",
+     "num": 2
+    },
+    {
+     "id": "Item_Ore_I",
+     "num": 3
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_D",
+     "zh": "黄玉",
+     "num": 2
+    },
+    {
+     "id": "Item_Ore_I",
+     "zh": "打火石",
+     "num": 3
+    }
+   ]
+  }
+ ],
+ "Armor_028_Head": [
+  {
+   "price": 10,
+   "items": [
+    {
+     "id": "Item_Ore_E",
+     "num": 6
+    },
+    {
+     "id": "Item_Ore_I",
+     "num": 5
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_E",
+     "zh": "蛋白石",
+     "num": 6
+    },
+    {
+     "id": "Item_Ore_I",
+     "zh": "打火石",
+     "num": 5
+    }
+   ]
+  }
+ ],
+ "Armor_029_Head": [
+  {
+   "price": 10,
+   "items": [
+    {
+     "id": "Item_Ore_F",
+     "num": 10
+    },
+    {
+     "id": "Item_Ore_I",
+     "num": 5
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_F",
+     "zh": "琥珀",
+     "num": 10
+    },
+    {
+     "id": "Item_Ore_I",
+     "zh": "打火石",
+     "num": 5
+    }
+   ]
+  }
+ ],
+ "Armor_035_Head": [
+  {
+   "price": 50,
+   "items": [
+    {
+     "id": "BeeHome",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_54",
+     "num": 2
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "BeeHome",
+     "zh": "精力蜂的蜂蜜",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_54",
+     "zh": "费罗龙的爪子",
+     "num": 2
+    }
+   ]
+  }
+ ],
+ "Armor_035_Lower": [
+  {
+   "price": 50,
+   "items": [
+    {
+     "id": "BeeHome",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_39",
+     "num": 2
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "BeeHome",
+     "zh": "精力蜂的蜂蜜",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_39",
+     "zh": "奥尔龙的爪子",
+     "num": 2
+    }
+   ]
+  }
+ ],
+ "Armor_035_Upper": [
+  {
+   "price": 50,
+   "items": [
+    {
+     "id": "BeeHome",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_50",
+     "num": 2
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "BeeHome",
+     "zh": "精力蜂的蜂蜜",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_50",
+     "zh": "聂尔龙的爪子",
+     "num": 2
+    }
+   ]
+  }
+ ],
+ "Armor_036_Head": [
+  {
+   "price": 50,
+   "items": [
+    {
+     "id": "Item_Enemy_15",
+     "num": 5
+    },
+    {
+     "id": "Item_Plant_F",
+     "num": 3
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_15",
+     "zh": "红色丘丘胶",
+     "num": 5
+    },
+    {
+     "id": "Item_Plant_F",
+     "zh": null,
+     "num": 3
+    }
+   ]
+  }
+ ],
+ "Armor_036_Lower": [
+  {
+   "price": 50,
+   "items": [
+    {
+     "id": "Item_Enemy_15",
+     "num": 5
+    },
+    {
+     "id": "Item_Plant_F",
+     "num": 3
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_15",
+     "zh": "红色丘丘胶",
+     "num": 5
+    },
+    {
+     "id": "Item_Plant_F",
+     "zh": null,
+     "num": 3
+    }
+   ]
+  }
+ ],
+ "Armor_036_Upper": [
+  {
+   "price": 50,
+   "items": [
+    {
+     "id": "Item_Enemy_15",
+     "num": 5
+    },
+    {
+     "id": "Item_Plant_F",
+     "num": 3
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_15",
+     "zh": "红色丘丘胶",
+     "num": 5
+    },
+    {
+     "id": "Item_Plant_F",
+     "zh": null,
+     "num": 3
+    }
+   ]
+  }
+ ],
+ "Armor_037_Head": [
+  {
+   "price": 50,
+   "items": [
+    {
+     "id": "Item_Enemy_07",
+     "num": 5
+    },
+    {
+     "id": "Animal_Insect_X",
+     "num": 5
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_07",
+     "zh": "莫力布林的牙齿",
+     "num": 5
+    },
+    {
+     "id": "Animal_Insect_X",
+     "zh": "耐火蜥蜴",
+     "num": 5
+    }
+   ]
+  }
+ ],
+ "Armor_037_Lower": [
+  {
+   "price": 50,
+   "items": [
+    {
+     "id": "Item_Enemy_07",
+     "num": 5
+    },
+    {
+     "id": "Animal_Insect_X",
+     "num": 5
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_07",
+     "zh": "莫力布林的牙齿",
+     "num": 5
+    },
+    {
+     "id": "Animal_Insect_X",
+     "zh": "耐火蜥蜴",
+     "num": 5
+    }
+   ]
+  }
+ ],
+ "Armor_037_Upper": [
+  {
+   "price": 50,
+   "items": [
+    {
+     "id": "Item_Enemy_07",
+     "num": 5
+    },
+    {
+     "id": "Animal_Insect_X",
+     "num": 5
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_07",
+     "zh": "莫力布林的牙齿",
+     "num": 5
+    },
+    {
+     "id": "Animal_Insect_X",
+     "zh": "耐火蜥蜴",
+     "num": 5
+    }
+   ]
+  }
+ ],
+ "Armor_039_Head": [
+  {
+   "price": 200,
+   "items": [
+    {
+     "id": "Animal_Insect_AA",
+     "num": 3
+    },
+    {
+     "id": "Item_Enemy_55",
+     "num": 2
+    },
+    {
+     "id": "Item_Enemy_230",
+     "num": 5
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Animal_Insect_AA",
+     "zh": "精力独角仙",
+     "num": 3
+    },
+    {
+     "id": "Item_Enemy_55",
+     "zh": "费罗龙的牙齿碎片",
+     "num": 2
+    },
+    {
+     "id": "Item_Enemy_230",
+     "zh": "费罗龙的龙岩石",
+     "num": 5
+    }
+   ]
+  }
+ ],
+ "Armor_039_Lower": [
+  {
+   "price": 200,
+   "items": [
+    {
+     "id": "Animal_Insect_AA",
+     "num": 3
+    },
+    {
+     "id": "Item_Enemy_47",
+     "num": 2
+    },
+    {
+     "id": "Item_Enemy_228",
+     "num": 5
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Animal_Insect_AA",
+     "zh": "精力独角仙",
+     "num": 3
+    },
+    {
+     "id": "Item_Enemy_47",
+     "zh": "奥尔龙的牙齿碎片",
+     "num": 2
+    },
+    {
+     "id": "Item_Enemy_228",
+     "zh": "奥尔龙的龙岩石",
+     "num": 5
+    }
+   ]
+  }
+ ],
+ "Armor_039_Upper": [
+  {
+   "price": 200,
+   "items": [
+    {
+     "id": "Animal_Insect_AA",
+     "num": 3
+    },
+    {
+     "id": "Item_Enemy_51",
+     "num": 2
+    },
+    {
+     "id": "Item_Enemy_229",
+     "num": 5
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Animal_Insect_AA",
+     "zh": "精力独角仙",
+     "num": 3
+    },
+    {
+     "id": "Item_Enemy_51",
+     "zh": "聂尔龙的牙齿碎片",
+     "num": 2
+    },
+    {
+     "id": "Item_Enemy_229",
+     "zh": "聂尔龙的龙岩石",
+     "num": 5
+    }
+   ]
+  }
+ ],
+ "Armor_040_Head": [
+  {
+   "price": 50,
+   "items": [
+    {
+     "id": "Item_Enemy_17",
+     "num": 5
+    },
+    {
+     "id": "Item_PlantGet_E",
+     "num": 3
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_17",
+     "zh": "白色丘丘胶",
+     "num": 5
+    },
+    {
+     "id": "Item_PlantGet_E",
+     "zh": "冰冷香草",
+     "num": 3
+    }
+   ]
+  }
+ ],
+ "Armor_040_Lower": [
+  {
+   "price": 50,
+   "items": [
+    {
+     "id": "Item_Enemy_17",
+     "num": 5
+    },
+    {
+     "id": "Item_PlantGet_E",
+     "num": 3
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_17",
+     "zh": "白色丘丘胶",
+     "num": 5
+    },
+    {
+     "id": "Item_PlantGet_E",
+     "zh": "冰冷香草",
+     "num": 3
+    }
+   ]
+  }
+ ],
+ "Armor_040_Upper": [
+  {
+   "price": 50,
+   "items": [
+    {
+     "id": "Item_Enemy_17",
+     "num": 5
+    },
+    {
+     "id": "Item_PlantGet_E",
+     "num": 3
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_17",
+     "zh": "白色丘丘胶",
+     "num": 5
+    },
+    {
+     "id": "Item_PlantGet_E",
+     "zh": "冰冷香草",
+     "num": 3
+    }
+   ]
+  }
+ ],
+ "Armor_042_Head": [
+  {
+   "price": 50,
+   "items": [
+    {
+     "id": "Item_Plant_I",
+     "num": 5
+    },
+    {
+     "id": "Animal_Insect_E",
+     "num": 5
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Plant_I",
+     "zh": null,
+     "num": 5
+    },
+    {
+     "id": "Animal_Insect_E",
+     "zh": "静静萤火虫",
+     "num": 5
+    }
+   ]
+  }
+ ],
+ "Armor_042_Head_B": [
+  {
+   "price": 50,
+   "items": [
+    {
+     "id": "Item_Plant_I",
+     "num": 5
+    },
+    {
+     "id": "Animal_Insect_E",
+     "num": 5
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Plant_I",
+     "zh": null,
+     "num": 5
+    },
+    {
+     "id": "Animal_Insect_E",
+     "zh": "静静萤火虫",
+     "num": 5
+    }
+   ]
+  }
+ ],
+ "Armor_042_Lower": [
+  {
+   "price": 50,
+   "items": [
+    {
+     "id": "Item_Plant_I",
+     "num": 5
+    },
+    {
+     "id": "Animal_Insect_E",
+     "num": 5
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Plant_I",
+     "zh": null,
+     "num": 5
+    },
+    {
+     "id": "Animal_Insect_E",
+     "zh": "静静萤火虫",
+     "num": 5
+    }
+   ]
+  }
+ ],
+ "Armor_042_Upper": [
+  {
+   "price": 50,
+   "items": [
+    {
+     "id": "Item_Plant_I",
+     "num": 5
+    },
+    {
+     "id": "Animal_Insect_E",
+     "num": 5
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Plant_I",
+     "zh": null,
+     "num": 5
+    },
+    {
+     "id": "Animal_Insect_E",
+     "zh": "静静萤火虫",
+     "num": 5
+    }
+   ]
+  }
+ ],
+ "Armor_046_Head": [
+  {
+   "price": 10,
+   "items": [
+    {
+     "id": "Item_Enemy_60",
+     "num": 1
+    },
+    {
+     "id": "Item_Enemy_16",
+     "num": 3
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_60",
+     "zh": "电麻蜥蜴战士的犄角",
+     "num": 1
+    },
+    {
+     "id": "Item_Enemy_16",
+     "zh": "黄色丘丘胶",
+     "num": 3
+    }
+   ]
+  }
+ ],
+ "Armor_046_Lower": [
+  {
+   "price": 10,
+   "items": [
+    {
+     "id": "Item_Enemy_60",
+     "num": 1
+    },
+    {
+     "id": "Item_Enemy_16",
+     "num": 3
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_60",
+     "zh": "电麻蜥蜴战士的犄角",
+     "num": 1
+    },
+    {
+     "id": "Item_Enemy_16",
+     "zh": "黄色丘丘胶",
+     "num": 3
+    }
+   ]
+  }
+ ],
+ "Armor_046_Upper": [
+  {
+   "price": 10,
+   "items": [
+    {
+     "id": "Item_Enemy_60",
+     "num": 1
+    },
+    {
+     "id": "Item_Enemy_16",
+     "num": 3
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_60",
+     "zh": "电麻蜥蜴战士的犄角",
+     "num": 1
+    },
+    {
+     "id": "Item_Enemy_16",
+     "zh": "黄色丘丘胶",
+     "num": 3
+    }
+   ]
+  }
+ ],
+ "Armor_048_Head": [
+  {
+   "price": 10,
+   "items": [
+    {
+     "id": "Item_PlantGet_G",
+     "num": 3
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_PlantGet_G",
+     "zh": "大剑草",
+     "num": 3
+    }
+   ]
+  }
+ ],
+ "Armor_048_Lower": [
+  {
+   "price": 10,
+   "items": [
+    {
+     "id": "Item_PlantGet_G",
+     "num": 3
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_PlantGet_G",
+     "zh": "大剑草",
+     "num": 3
+    }
+   ]
+  }
+ ],
+ "Armor_048_Upper": [
+  {
+   "price": 10,
+   "items": [
+    {
+     "id": "Item_PlantGet_G",
+     "num": 3
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_PlantGet_G",
+     "zh": "大剑草",
+     "num": 3
+    }
+   ]
+  }
+ ],
+ "Armor_049_Lower": [
+  {
+   "price": 10,
+   "items": [
+    {
+     "id": "Animal_Insect_S",
+     "num": 3
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Animal_Insect_S",
+     "zh": "速速蜥蜴",
+     "num": 3
+    }
+   ]
+  }
+ ],
+ "Armor_060_Head": [
+  {
+   "price": 500,
+   "items": [
+    {
+     "id": "Item_Ore_J",
+     "num": 3
+    },
+    {
+     "id": "Item_Enemy_213",
+     "num": 2
+    },
+    {
+     "id": "Item_Enemy_230",
+     "num": 10
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_J",
+     "zh": "星星碎片",
+     "num": 3
+    },
+    {
+     "id": "Item_Enemy_213",
+     "zh": "费罗龙的犄角",
+     "num": 2
+    },
+    {
+     "id": "Item_Enemy_230",
+     "zh": "费罗龙的龙岩石",
+     "num": 10
+    }
+   ]
+  }
+ ],
+ "Armor_060_Lower": [
+  {
+   "price": 500,
+   "items": [
+    {
+     "id": "Item_Ore_J",
+     "num": 3
+    },
+    {
+     "id": "Item_Enemy_211",
+     "num": 2
+    },
+    {
+     "id": "Item_Enemy_228",
+     "num": 10
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_J",
+     "zh": "星星碎片",
+     "num": 3
+    },
+    {
+     "id": "Item_Enemy_211",
+     "zh": "奥尔龙的犄角",
+     "num": 2
+    },
+    {
+     "id": "Item_Enemy_228",
+     "zh": "奥尔龙的龙岩石",
+     "num": 10
+    }
+   ]
+  }
+ ],
+ "Armor_060_Upper": [
+  {
+   "price": 500,
+   "items": [
+    {
+     "id": "Item_Ore_J",
+     "num": 3
+    },
+    {
+     "id": "Item_Enemy_212",
+     "num": 2
+    },
+    {
+     "id": "Item_Enemy_229",
+     "num": 10
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_J",
+     "zh": "星星碎片",
+     "num": 3
+    },
+    {
+     "id": "Item_Enemy_212",
+     "zh": "聂尔龙的犄角",
+     "num": 2
+    },
+    {
+     "id": "Item_Enemy_229",
+     "zh": "聂尔龙的龙岩石",
+     "num": 10
+    }
+   ]
+  }
+ ],
+ "Armor_062_Head": [
+  {
+   "price": 200,
+   "items": [
+    {
+     "id": "Item_Enemy_107",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_05",
+     "num": 3
+    },
+    {
+     "id": "Item_FishGet_B",
+     "num": 3
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_107",
+     "zh": "蓝色蜥蜴战士的犄角",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_05",
+     "zh": "蜥蜴战士的尾巴",
+     "num": 3
+    },
+    {
+     "id": "Item_FishGet_B",
+     "zh": "生命鲈鱼",
+     "num": 3
+    }
+   ]
+  }
+ ],
+ "Armor_062_Lower": [
+  {
+   "price": 200,
+   "items": [
+    {
+     "id": "Item_Enemy_107",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_05",
+     "num": 3
+    },
+    {
+     "id": "Item_FishGet_B",
+     "num": 3
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_107",
+     "zh": "蓝色蜥蜴战士的犄角",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_05",
+     "zh": "蜥蜴战士的尾巴",
+     "num": 3
+    },
+    {
+     "id": "Item_FishGet_B",
+     "zh": "生命鲈鱼",
+     "num": 3
+    }
+   ]
+  }
+ ],
+ "Armor_062_Upper": [
+  {
+   "price": 200,
+   "items": [
+    {
+     "id": "Item_Enemy_107",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_05",
+     "num": 3
+    },
+    {
+     "id": "Item_FishGet_B",
+     "num": 3
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_107",
+     "zh": "蓝色蜥蜴战士的犄角",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_05",
+     "zh": "蜥蜴战士的尾巴",
+     "num": 3
+    },
+    {
+     "id": "Item_FishGet_B",
+     "zh": "生命鲈鱼",
+     "num": 3
+    }
+   ]
+  }
+ ],
+ "Armor_063_Head": [
+  {
+   "price": 500,
+   "items": [
+    {
+     "id": "Item_Enemy_108",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_114",
+     "num": 5
+    },
+    {
+     "id": "Item_Ore_E",
+     "num": 20
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_108",
+     "zh": "黑色蜥蜴战士的犄角",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_114",
+     "zh": "蓝色蜥蜴战士的尾巴",
+     "num": 5
+    },
+    {
+     "id": "Item_Ore_E",
+     "zh": "蛋白石",
+     "num": 20
+    }
+   ]
+  }
+ ],
+ "Armor_063_Lower": [
+  {
+   "price": 500,
+   "items": [
+    {
+     "id": "Item_Enemy_108",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_114",
+     "num": 5
+    },
+    {
+     "id": "Item_Ore_E",
+     "num": 20
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_108",
+     "zh": "黑色蜥蜴战士的犄角",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_114",
+     "zh": "蓝色蜥蜴战士的尾巴",
+     "num": 5
+    },
+    {
+     "id": "Item_Ore_E",
+     "zh": "蛋白石",
+     "num": 20
+    }
+   ]
+  }
+ ],
+ "Armor_063_Upper": [
+  {
+   "price": 500,
+   "items": [
+    {
+     "id": "Item_Enemy_108",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_114",
+     "num": 5
+    },
+    {
+     "id": "Item_Ore_E",
+     "num": 20
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_108",
+     "zh": "黑色蜥蜴战士的犄角",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_114",
+     "zh": "蓝色蜥蜴战士的尾巴",
+     "num": 5
+    },
+    {
+     "id": "Item_Ore_E",
+     "zh": "蛋白石",
+     "num": 20
+    }
+   ]
+  }
+ ],
+ "Armor_065_Head": [
+  {
+   "price": 200,
+   "items": [
+    {
+     "id": "Item_Enemy_46",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_42",
+     "num": 3
+    },
+    {
+     "id": "Item_Mushroom_B",
+     "num": 5
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_46",
+     "zh": "冰蝙蝠的翅膀",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_42",
+     "zh": "吐雹蜥蜴战士的尾巴",
+     "num": 3
+    },
+    {
+     "id": "Item_Mushroom_B",
+     "zh": "冰冷蘑菇",
+     "num": 5
+    }
+   ]
+  }
+ ],
+ "Armor_065_Lower": [
+  {
+   "price": 200,
+   "items": [
+    {
+     "id": "Item_Enemy_46",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_42",
+     "num": 3
+    },
+    {
+     "id": "Item_Mushroom_B",
+     "num": 5
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_46",
+     "zh": "冰蝙蝠的翅膀",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_42",
+     "zh": "吐雹蜥蜴战士的尾巴",
+     "num": 3
+    },
+    {
+     "id": "Item_Mushroom_B",
+     "zh": "冰冷蘑菇",
+     "num": 5
+    }
+   ]
+  }
+ ],
+ "Armor_065_Upper": [
+  {
+   "price": 200,
+   "items": [
+    {
+     "id": "Item_Enemy_46",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_42",
+     "num": 3
+    },
+    {
+     "id": "Item_Mushroom_B",
+     "num": 5
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_46",
+     "zh": "冰蝙蝠的翅膀",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_42",
+     "zh": "吐雹蜥蜴战士的尾巴",
+     "num": 3
+    },
+    {
+     "id": "Item_Mushroom_B",
+     "zh": "冰冷蘑菇",
+     "num": 5
+    }
+   ]
+  }
+ ],
+ "Armor_066_Head": [
+  {
+   "price": 500,
+   "items": [
+    {
+     "id": "Item_Enemy_59",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_42",
+     "num": 10
+    },
+    {
+     "id": "Item_Ore_C",
+     "num": 5
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_59",
+     "zh": "吐雹蜥蜴战士的犄角",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_42",
+     "zh": "吐雹蜥蜴战士的尾巴",
+     "num": 10
+    },
+    {
+     "id": "Item_Ore_C",
+     "zh": "蓝宝石",
+     "num": 5
+    }
+   ]
+  }
+ ],
+ "Armor_066_Lower": [
+  {
+   "price": 500,
+   "items": [
+    {
+     "id": "Item_Enemy_59",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_42",
+     "num": 10
+    },
+    {
+     "id": "Item_Ore_C",
+     "num": 5
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_59",
+     "zh": "吐雹蜥蜴战士的犄角",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_42",
+     "zh": "吐雹蜥蜴战士的尾巴",
+     "num": 10
+    },
+    {
+     "id": "Item_Ore_C",
+     "zh": "蓝宝石",
+     "num": 5
+    }
+   ]
+  }
+ ],
+ "Armor_066_Upper": [
+  {
+   "price": 500,
+   "items": [
+    {
+     "id": "Item_Enemy_59",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_42",
+     "num": 10
+    },
+    {
+     "id": "Item_Ore_C",
+     "num": 5
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_59",
+     "zh": "吐雹蜥蜴战士的犄角",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_42",
+     "zh": "吐雹蜥蜴战士的尾巴",
+     "num": 10
+    },
+    {
+     "id": "Item_Ore_C",
+     "zh": "蓝宝石",
+     "num": 5
+    }
+   ]
+  }
+ ],
+ "Armor_071_Head": [
+  {
+   "price": 200,
+   "items": [
+    {
+     "id": "Item_Enemy_44",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_41",
+     "num": 3
+    },
+    {
+     "id": "Item_Mushroom_C",
+     "num": 5
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_44",
+     "zh": "火蝙蝠的翅膀",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_41",
+     "zh": "喷火蜥蜴战士的尾巴",
+     "num": 3
+    },
+    {
+     "id": "Item_Mushroom_C",
+     "zh": "暖暖蘑菇",
+     "num": 5
+    }
+   ]
+  }
+ ],
+ "Armor_071_Lower": [
+  {
+   "price": 200,
+   "items": [
+    {
+     "id": "Item_Enemy_44",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_41",
+     "num": 3
+    },
+    {
+     "id": "Item_Mushroom_C",
+     "num": 5
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_44",
+     "zh": "火蝙蝠的翅膀",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_41",
+     "zh": "喷火蜥蜴战士的尾巴",
+     "num": 3
+    },
+    {
+     "id": "Item_Mushroom_C",
+     "zh": "暖暖蘑菇",
+     "num": 5
+    }
+   ]
+  }
+ ],
+ "Armor_071_Upper": [
+  {
+   "price": 200,
+   "items": [
+    {
+     "id": "Item_Enemy_44",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_41",
+     "num": 3
+    },
+    {
+     "id": "Item_Mushroom_C",
+     "num": 5
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_44",
+     "zh": "火蝙蝠的翅膀",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_41",
+     "zh": "喷火蜥蜴战士的尾巴",
+     "num": 3
+    },
+    {
+     "id": "Item_Mushroom_C",
+     "zh": "暖暖蘑菇",
+     "num": 5
+    }
+   ]
+  }
+ ],
+ "Armor_072_Head": [
+  {
+   "price": 500,
+   "items": [
+    {
+     "id": "Item_Enemy_58",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_41",
+     "num": 10
+    },
+    {
+     "id": "Item_Ore_B",
+     "num": 5
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_58",
+     "zh": "喷火蜥蜴战士的犄角",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_41",
+     "zh": "喷火蜥蜴战士的尾巴",
+     "num": 10
+    },
+    {
+     "id": "Item_Ore_B",
+     "zh": "红宝石",
+     "num": 5
+    }
+   ]
+  }
+ ],
+ "Armor_072_Lower": [
+  {
+   "price": 500,
+   "items": [
+    {
+     "id": "Item_Enemy_58",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_41",
+     "num": 10
+    },
+    {
+     "id": "Item_Ore_B",
+     "num": 5
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_58",
+     "zh": "喷火蜥蜴战士的犄角",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_41",
+     "zh": "喷火蜥蜴战士的尾巴",
+     "num": 10
+    },
+    {
+     "id": "Item_Ore_B",
+     "zh": "红宝石",
+     "num": 5
+    }
+   ]
+  }
+ ],
+ "Armor_072_Upper": [
+  {
+   "price": 500,
+   "items": [
+    {
+     "id": "Item_Enemy_58",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_41",
+     "num": 10
+    },
+    {
+     "id": "Item_Ore_B",
+     "num": 5
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_58",
+     "zh": "喷火蜥蜴战士的犄角",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_41",
+     "zh": "喷火蜥蜴战士的尾巴",
+     "num": 10
+    },
+    {
+     "id": "Item_Ore_B",
+     "zh": "红宝石",
+     "num": 5
+    }
+   ]
+  }
+ ],
+ "Armor_074_Head": [
+  {
+   "price": 200,
+   "items": [
+    {
+     "id": "Item_Enemy_90",
+     "num": 5
+    },
+    {
+     "id": "Animal_Insect_AB",
+     "num": 3
+    },
+    {
+     "id": "Item_Ore_I",
+     "num": 15
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_90",
+     "zh": "蓝色莫力布林的犄角",
+     "num": 5
+    },
+    {
+     "id": "Animal_Insect_AB",
+     "zh": "耐火凤蝶",
+     "num": 3
+    },
+    {
+     "id": "Item_Ore_I",
+     "zh": "打火石",
+     "num": 15
+    }
+   ]
+  }
+ ],
+ "Armor_074_Lower": [
+  {
+   "price": 200,
+   "items": [
+    {
+     "id": "Item_Enemy_90",
+     "num": 5
+    },
+    {
+     "id": "Animal_Insect_AB",
+     "num": 3
+    },
+    {
+     "id": "Item_Ore_I",
+     "num": 15
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_90",
+     "zh": "蓝色莫力布林的犄角",
+     "num": 5
+    },
+    {
+     "id": "Animal_Insect_AB",
+     "zh": "耐火凤蝶",
+     "num": 3
+    },
+    {
+     "id": "Item_Ore_I",
+     "zh": "打火石",
+     "num": 15
+    }
+   ]
+  }
+ ],
+ "Armor_074_Upper": [
+  {
+   "price": 200,
+   "items": [
+    {
+     "id": "Item_Enemy_90",
+     "num": 5
+    },
+    {
+     "id": "Animal_Insect_AB",
+     "num": 3
+    },
+    {
+     "id": "Item_Ore_I",
+     "num": 15
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_90",
+     "zh": "蓝色莫力布林的犄角",
+     "num": 5
+    },
+    {
+     "id": "Animal_Insect_AB",
+     "zh": "耐火凤蝶",
+     "num": 3
+    },
+    {
+     "id": "Item_Ore_I",
+     "zh": "打火石",
+     "num": 15
+    }
+   ]
+  }
+ ],
+ "Armor_075_Head": [
+  {
+   "price": 500,
+   "items": [
+    {
+     "id": "Item_Enemy_91",
+     "num": 5
+    },
+    {
+     "id": "Animal_Insect_AB",
+     "num": 5
+    },
+    {
+     "id": "Item_Ore_I",
+     "num": 30
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_91",
+     "zh": "黑色莫力布林的犄角",
+     "num": 5
+    },
+    {
+     "id": "Animal_Insect_AB",
+     "zh": "耐火凤蝶",
+     "num": 5
+    },
+    {
+     "id": "Item_Ore_I",
+     "zh": "打火石",
+     "num": 30
+    }
+   ]
+  }
+ ],
+ "Armor_075_Lower": [
+  {
+   "price": 500,
+   "items": [
+    {
+     "id": "Item_Enemy_91",
+     "num": 5
+    },
+    {
+     "id": "Animal_Insect_AB",
+     "num": 5
+    },
+    {
+     "id": "Item_Ore_I",
+     "num": 30
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_91",
+     "zh": "黑色莫力布林的犄角",
+     "num": 5
+    },
+    {
+     "id": "Animal_Insect_AB",
+     "zh": "耐火凤蝶",
+     "num": 5
+    },
+    {
+     "id": "Item_Ore_I",
+     "zh": "打火石",
+     "num": 30
+    }
+   ]
+  }
+ ],
+ "Armor_075_Upper": [
+  {
+   "price": 500,
+   "items": [
+    {
+     "id": "Item_Enemy_91",
+     "num": 5
+    },
+    {
+     "id": "Animal_Insect_AB",
+     "num": 5
+    },
+    {
+     "id": "Item_Ore_I",
+     "num": 30
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_91",
+     "zh": "黑色莫力布林的犄角",
+     "num": 5
+    },
+    {
+     "id": "Animal_Insect_AB",
+     "zh": "耐火凤蝶",
+     "num": 5
+    },
+    {
+     "id": "Item_Ore_I",
+     "zh": "打火石",
+     "num": 30
+    }
+   ]
+  }
+ ],
+ "Armor_077_Head": [
+  {
+   "price": 200,
+   "items": [
+    {
+     "id": "Item_Mushroom_J",
+     "num": 8
+    },
+    {
+     "id": "Animal_Fish_M",
+     "num": 5
+    },
+    {
+     "id": "Animal_Insect_AG",
+     "num": 5
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Mushroom_J",
+     "zh": "潜行蘑菇",
+     "num": 8
+    },
+    {
+     "id": "Animal_Fish_M",
+     "zh": null,
+     "num": 5
+    },
+    {
+     "id": "Animal_Insect_AG",
+     "zh": "贴贴青蛙",
+     "num": 5
+    }
+   ]
+  }
+ ],
+ "Armor_077_Head_B": [
+  {
+   "price": 200,
+   "items": [
+    {
+     "id": "Item_Mushroom_J",
+     "num": 8
+    },
+    {
+     "id": "Animal_Fish_M",
+     "num": 5
+    },
+    {
+     "id": "Animal_Insect_AG",
+     "num": 5
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Mushroom_J",
+     "zh": "潜行蘑菇",
+     "num": 8
+    },
+    {
+     "id": "Animal_Fish_M",
+     "zh": null,
+     "num": 5
+    },
+    {
+     "id": "Animal_Insect_AG",
+     "zh": "贴贴青蛙",
+     "num": 5
+    }
+   ]
+  }
+ ],
+ "Armor_077_Lower": [
+  {
+   "price": 200,
+   "items": [
+    {
+     "id": "Item_Mushroom_J",
+     "num": 8
+    },
+    {
+     "id": "Animal_Fish_M",
+     "num": 5
+    },
+    {
+     "id": "Animal_Insect_AG",
+     "num": 5
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Mushroom_J",
+     "zh": "潜行蘑菇",
+     "num": 8
+    },
+    {
+     "id": "Animal_Fish_M",
+     "zh": null,
+     "num": 5
+    },
+    {
+     "id": "Animal_Insect_AG",
+     "zh": "贴贴青蛙",
+     "num": 5
+    }
+   ]
+  }
+ ],
+ "Armor_077_Upper": [
+  {
+   "price": 200,
+   "items": [
+    {
+     "id": "Item_Mushroom_J",
+     "num": 8
+    },
+    {
+     "id": "Animal_Fish_M",
+     "num": 5
+    },
+    {
+     "id": "Animal_Insect_AG",
+     "num": 5
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Mushroom_J",
+     "zh": "潜行蘑菇",
+     "num": 8
+    },
+    {
+     "id": "Animal_Fish_M",
+     "zh": null,
+     "num": 5
+    },
+    {
+     "id": "Animal_Insect_AG",
+     "zh": "贴贴青蛙",
+     "num": 5
+    }
+   ]
+  }
+ ],
+ "Armor_078_Head": [
+  {
+   "price": 500,
+   "items": [
+    {
+     "id": "Animal_Fish_X",
+     "num": 10
+    },
+    {
+     "id": "Item_Plant_J",
+     "num": 5
+    },
+    {
+     "id": "Item_PlantGet_R",
+     "num": 10
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Animal_Fish_X",
+     "zh": null,
+     "num": 10
+    },
+    {
+     "id": "Item_Plant_J",
+     "zh": null,
+     "num": 5
+    },
+    {
+     "id": "Item_PlantGet_R",
+     "zh": "向阳草",
+     "num": 10
+    }
+   ]
+  }
+ ],
+ "Armor_078_Head_B": [
+  {
+   "price": 500,
+   "items": [
+    {
+     "id": "Animal_Fish_X",
+     "num": 10
+    },
+    {
+     "id": "Item_Plant_J",
+     "num": 5
+    },
+    {
+     "id": "Item_PlantGet_R",
+     "num": 10
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Animal_Fish_X",
+     "zh": null,
+     "num": 10
+    },
+    {
+     "id": "Item_Plant_J",
+     "zh": null,
+     "num": 5
+    },
+    {
+     "id": "Item_PlantGet_R",
+     "zh": "向阳草",
+     "num": 10
+    }
+   ]
+  }
+ ],
+ "Armor_078_Lower": [
+  {
+   "price": 500,
+   "items": [
+    {
+     "id": "Animal_Fish_X",
+     "num": 10
+    },
+    {
+     "id": "Item_Plant_J",
+     "num": 5
+    },
+    {
+     "id": "Item_PlantGet_R",
+     "num": 10
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Animal_Fish_X",
+     "zh": null,
+     "num": 10
+    },
+    {
+     "id": "Item_Plant_J",
+     "zh": null,
+     "num": 5
+    },
+    {
+     "id": "Item_PlantGet_R",
+     "zh": "向阳草",
+     "num": 10
+    }
+   ]
+  }
+ ],
+ "Armor_078_Upper": [
+  {
+   "price": 500,
+   "items": [
+    {
+     "id": "Animal_Fish_X",
+     "num": 10
+    },
+    {
+     "id": "Item_Plant_J",
+     "num": 5
+    },
+    {
+     "id": "Item_PlantGet_R",
+     "num": 10
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Animal_Fish_X",
+     "zh": null,
+     "num": 10
+    },
+    {
+     "id": "Item_Plant_J",
+     "zh": null,
+     "num": 5
+    },
+    {
+     "id": "Item_PlantGet_R",
+     "zh": "向阳草",
+     "num": 10
+    }
+   ]
+  }
+ ],
+ "Armor_083_Head": [
+  {
+   "price": 50,
+   "items": [
+    {
+     "id": "Item_Enemy_45",
+     "num": 5
+    },
+    {
+     "id": "Animal_Insect_S",
+     "num": 5
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_45",
+     "zh": "电蝙蝠的翅膀",
+     "num": 5
+    },
+    {
+     "id": "Animal_Insect_S",
+     "zh": "速速蜥蜴",
+     "num": 5
+    }
+   ]
+  }
+ ],
+ "Armor_083_Lower": [
+  {
+   "price": 50,
+   "items": [
+    {
+     "id": "Item_Enemy_45",
+     "num": 5
+    },
+    {
+     "id": "Animal_Insect_S",
+     "num": 5
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_45",
+     "zh": "电蝙蝠的翅膀",
+     "num": 5
+    },
+    {
+     "id": "Animal_Insect_S",
+     "zh": "速速蜥蜴",
+     "num": 5
+    }
+   ]
+  }
+ ],
+ "Armor_083_Upper": [
+  {
+   "price": 50,
+   "items": [
+    {
+     "id": "Item_Enemy_45",
+     "num": 5
+    },
+    {
+     "id": "Animal_Insect_S",
+     "num": 5
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_45",
+     "zh": "电蝙蝠的翅膀",
+     "num": 5
+    },
+    {
+     "id": "Animal_Insect_S",
+     "zh": "速速蜥蜴",
+     "num": 5
+    }
+   ]
+  }
+ ],
+ "Armor_084_Head": [
+  {
+   "price": 200,
+   "items": [
+    {
+     "id": "Item_Enemy_46",
+     "num": 8
+    },
+    {
+     "id": "Animal_Insect_A",
+     "num": 10
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_46",
+     "zh": "冰蝙蝠的翅膀",
+     "num": 8
+    },
+    {
+     "id": "Animal_Insect_A",
+     "zh": "速速青蛙",
+     "num": 10
+    }
+   ]
+  }
+ ],
+ "Armor_084_Lower": [
+  {
+   "price": 200,
+   "items": [
+    {
+     "id": "Item_Enemy_46",
+     "num": 8
+    },
+    {
+     "id": "Animal_Insect_A",
+     "num": 10
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_46",
+     "zh": "冰蝙蝠的翅膀",
+     "num": 8
+    },
+    {
+     "id": "Animal_Insect_A",
+     "zh": "速速青蛙",
+     "num": 10
+    }
+   ]
+  }
+ ],
+ "Armor_084_Upper": [
+  {
+   "price": 200,
+   "items": [
+    {
+     "id": "Item_Enemy_46",
+     "num": 8
+    },
+    {
+     "id": "Animal_Insect_A",
+     "num": 10
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_46",
+     "zh": "冰蝙蝠的翅膀",
+     "num": 8
+    },
+    {
+     "id": "Animal_Insect_A",
+     "zh": "速速青蛙",
+     "num": 10
+    }
+   ]
+  }
+ ],
+ "Armor_085_Head": [
+  {
+   "price": 500,
+   "items": [
+    {
+     "id": "Item_Enemy_44",
+     "num": 10
+    },
+    {
+     "id": "Item_Plant_O",
+     "num": 20
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_44",
+     "zh": "火蝙蝠的翅膀",
+     "num": 10
+    },
+    {
+     "id": "Item_Plant_O",
+     "zh": null,
+     "num": 20
+    }
+   ]
+  }
+ ],
+ "Armor_085_Lower": [
+  {
+   "price": 500,
+   "items": [
+    {
+     "id": "Item_Enemy_44",
+     "num": 10
+    },
+    {
+     "id": "Item_Plant_O",
+     "num": 20
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_44",
+     "zh": "火蝙蝠的翅膀",
+     "num": 10
+    },
+    {
+     "id": "Item_Plant_O",
+     "zh": null,
+     "num": 20
+    }
+   ]
+  }
+ ],
+ "Armor_085_Upper": [
+  {
+   "price": 500,
+   "items": [
+    {
+     "id": "Item_Enemy_44",
+     "num": 10
+    },
+    {
+     "id": "Item_Plant_O",
+     "num": 20
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_44",
+     "zh": "火蝙蝠的翅膀",
+     "num": 10
+    },
+    {
+     "id": "Item_Plant_O",
+     "zh": null,
+     "num": 20
+    }
+   ]
+  }
+ ],
+ "Armor_087_Head": [
+  {
+   "price": 50,
+   "items": [
+    {
+     "id": "Item_Ore_G",
+     "num": 15
+    },
+    {
+     "id": "Item_Enemy_08",
+     "num": 2
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_G",
+     "zh": "夜光石",
+     "num": 15
+    },
+    {
+     "id": "Item_Enemy_08",
+     "zh": "莫力布林的肝脏",
+     "num": 2
+    }
+   ]
+  }
+ ],
+ "Armor_087_Lower": [
+  {
+   "price": 50,
+   "items": [
+    {
+     "id": "Item_Ore_G",
+     "num": 15
+    },
+    {
+     "id": "Item_Enemy_08",
+     "num": 2
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_G",
+     "zh": "夜光石",
+     "num": 15
+    },
+    {
+     "id": "Item_Enemy_08",
+     "zh": "莫力布林的肝脏",
+     "num": 2
+    }
+   ]
+  }
+ ],
+ "Armor_087_Upper": [
+  {
+   "price": 50,
+   "items": [
+    {
+     "id": "Item_Ore_G",
+     "num": 15
+    },
+    {
+     "id": "Item_Enemy_08",
+     "num": 2
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_G",
+     "zh": "夜光石",
+     "num": 15
+    },
+    {
+     "id": "Item_Enemy_08",
+     "zh": "莫力布林的肝脏",
+     "num": 2
+    }
+   ]
+  }
+ ],
+ "Armor_088_Head": [
+  {
+   "price": 200,
+   "items": [
+    {
+     "id": "Item_Ore_G",
+     "num": 20
+    },
+    {
+     "id": "Item_Enemy_105",
+     "num": 3
+    },
+    {
+     "id": "Item_Enemy_69",
+     "num": 10
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_G",
+     "zh": "夜光石",
+     "num": 20
+    },
+    {
+     "id": "Item_Enemy_105",
+     "zh": "霍拉布林的肝脏",
+     "num": 3
+    },
+    {
+     "id": "Item_Enemy_69",
+     "zh": "吉波得之骨",
+     "num": 10
+    }
+   ]
+  }
+ ],
+ "Armor_088_Lower": [
+  {
+   "price": 200,
+   "items": [
+    {
+     "id": "Item_Ore_G",
+     "num": 20
+    },
+    {
+     "id": "Item_Enemy_105",
+     "num": 3
+    },
+    {
+     "id": "Item_Enemy_69",
+     "num": 10
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_G",
+     "zh": "夜光石",
+     "num": 20
+    },
+    {
+     "id": "Item_Enemy_105",
+     "zh": "霍拉布林的肝脏",
+     "num": 3
+    },
+    {
+     "id": "Item_Enemy_69",
+     "zh": "吉波得之骨",
+     "num": 10
+    }
+   ]
+  }
+ ],
+ "Armor_088_Upper": [
+  {
+   "price": 200,
+   "items": [
+    {
+     "id": "Item_Ore_G",
+     "num": 20
+    },
+    {
+     "id": "Item_Enemy_105",
+     "num": 3
+    },
+    {
+     "id": "Item_Enemy_69",
+     "num": 10
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_G",
+     "zh": "夜光石",
+     "num": 20
+    },
+    {
+     "id": "Item_Enemy_105",
+     "zh": "霍拉布林的肝脏",
+     "num": 3
+    },
+    {
+     "id": "Item_Enemy_69",
+     "zh": "吉波得之骨",
+     "num": 10
+    }
+   ]
+  }
+ ],
+ "Armor_089_Head": [
+  {
+   "price": 500,
+   "items": [
+    {
+     "id": "Item_Ore_G",
+     "num": 30
+    },
+    {
+     "id": "Item_Enemy_14",
+     "num": 3
+    },
+    {
+     "id": "Item_Enemy_210",
+     "num": 3
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_G",
+     "zh": "夜光石",
+     "num": 30
+    },
+    {
+     "id": "Item_Enemy_14",
+     "zh": "莱尼尔的肝脏",
+     "num": 3
+    },
+    {
+     "id": "Item_Enemy_210",
+     "zh": "莫尔德拉吉克的颚骨",
+     "num": 3
+    }
+   ]
+  }
+ ],
+ "Armor_089_Lower": [
+  {
+   "price": 500,
+   "items": [
+    {
+     "id": "Item_Ore_G",
+     "num": 30
+    },
+    {
+     "id": "Item_Enemy_14",
+     "num": 3
+    },
+    {
+     "id": "Item_Enemy_210",
+     "num": 3
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_G",
+     "zh": "夜光石",
+     "num": 30
+    },
+    {
+     "id": "Item_Enemy_14",
+     "zh": "莱尼尔的肝脏",
+     "num": 3
+    },
+    {
+     "id": "Item_Enemy_210",
+     "zh": "莫尔德拉吉克的颚骨",
+     "num": 3
+    }
+   ]
+  }
+ ],
+ "Armor_089_Upper": [
+  {
+   "price": 500,
+   "items": [
+    {
+     "id": "Item_Ore_G",
+     "num": 30
+    },
+    {
+     "id": "Item_Enemy_14",
+     "num": 3
+    },
+    {
+     "id": "Item_Enemy_210",
+     "num": 3
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_G",
+     "zh": "夜光石",
+     "num": 30
+    },
+    {
+     "id": "Item_Enemy_14",
+     "zh": "莱尼尔的肝脏",
+     "num": 3
+    },
+    {
+     "id": "Item_Enemy_210",
+     "zh": "莫尔德拉吉克的颚骨",
+     "num": 3
+    }
+   ]
+  }
+ ],
+ "Armor_095_Head": [
+  {
+   "price": 50,
+   "items": [
+    {
+     "id": "Item_Enemy_19",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_08",
+     "num": 3
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_19",
+     "zh": "蝙蝠的眼珠",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_08",
+     "zh": "莫力布林的肝脏",
+     "num": 3
+    }
+   ]
+  }
+ ],
+ "Armor_095_Lower": [
+  {
+   "price": 50,
+   "items": [
+    {
+     "id": "Item_Enemy_19",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_08",
+     "num": 3
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_19",
+     "zh": "蝙蝠的眼珠",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_08",
+     "zh": "莫力布林的肝脏",
+     "num": 3
+    }
+   ]
+  }
+ ],
+ "Armor_095_Upper": [
+  {
+   "price": 50,
+   "items": [
+    {
+     "id": "Item_Enemy_19",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_08",
+     "num": 3
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_19",
+     "zh": "蝙蝠的眼珠",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_08",
+     "zh": "莫力布林的肝脏",
+     "num": 3
+    }
+   ]
+  }
+ ],
+ "Armor_096_Head": [
+  {
+   "price": 200,
+   "items": [
+    {
+     "id": "Item_Enemy_05",
+     "num": 3
+    },
+    {
+     "id": "Item_Enemy_34",
+     "num": 3
+    },
+    {
+     "id": "Item_Ore_I",
+     "num": 30
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_05",
+     "zh": "蜥蜴战士的尾巴",
+     "num": 3
+    },
+    {
+     "id": "Item_Enemy_34",
+     "zh": "西诺克斯的肝脏",
+     "num": 3
+    },
+    {
+     "id": "Item_Ore_I",
+     "zh": "打火石",
+     "num": 30
+    }
+   ]
+  }
+ ],
+ "Armor_096_Lower": [
+  {
+   "price": 200,
+   "items": [
+    {
+     "id": "Item_Enemy_05",
+     "num": 3
+    },
+    {
+     "id": "Item_Enemy_34",
+     "num": 3
+    },
+    {
+     "id": "Item_Ore_I",
+     "num": 30
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_05",
+     "zh": "蜥蜴战士的尾巴",
+     "num": 3
+    },
+    {
+     "id": "Item_Enemy_34",
+     "zh": "西诺克斯的肝脏",
+     "num": 3
+    },
+    {
+     "id": "Item_Ore_I",
+     "zh": "打火石",
+     "num": 30
+    }
+   ]
+  }
+ ],
+ "Armor_096_Upper": [
+  {
+   "price": 200,
+   "items": [
+    {
+     "id": "Item_Enemy_05",
+     "num": 3
+    },
+    {
+     "id": "Item_Enemy_34",
+     "num": 3
+    },
+    {
+     "id": "Item_Ore_I",
+     "num": 30
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_05",
+     "zh": "蜥蜴战士的尾巴",
+     "num": 3
+    },
+    {
+     "id": "Item_Enemy_34",
+     "zh": "西诺克斯的肝脏",
+     "num": 3
+    },
+    {
+     "id": "Item_Ore_I",
+     "zh": "打火石",
+     "num": 30
+    }
+   ]
+  }
+ ],
+ "Armor_097_Head": [
+  {
+   "price": 500,
+   "items": [
+    {
+     "id": "Item_Enemy_13",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_14",
+     "num": 5
+    },
+    {
+     "id": "Item_Ore_F",
+     "num": 30
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_13",
+     "zh": "莱尼尔的蹄子",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_14",
+     "zh": "莱尼尔的肝脏",
+     "num": 5
+    },
+    {
+     "id": "Item_Ore_F",
+     "zh": "琥珀",
+     "num": 30
+    }
+   ]
+  }
+ ],
+ "Armor_097_Lower": [
+  {
+   "price": 500,
+   "items": [
+    {
+     "id": "Item_Enemy_13",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_14",
+     "num": 5
+    },
+    {
+     "id": "Item_Ore_F",
+     "num": 30
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_13",
+     "zh": "莱尼尔的蹄子",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_14",
+     "zh": "莱尼尔的肝脏",
+     "num": 5
+    },
+    {
+     "id": "Item_Ore_F",
+     "zh": "琥珀",
+     "num": 30
+    }
+   ]
+  }
+ ],
+ "Armor_097_Upper": [
+  {
+   "price": 500,
+   "items": [
+    {
+     "id": "Item_Enemy_13",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_14",
+     "num": 5
+    },
+    {
+     "id": "Item_Ore_F",
+     "num": 30
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_13",
+     "zh": "莱尼尔的蹄子",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_14",
+     "zh": "莱尼尔的肝脏",
+     "num": 5
+    },
+    {
+     "id": "Item_Ore_F",
+     "zh": "琥珀",
+     "num": 30
+    }
+   ]
+  }
+ ],
+ "Armor_1006_Head": [
+  {
+   "price": 10,
+   "items": [
+    {
+     "id": "Item_Enemy_18",
+     "num": 3
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_18",
+     "zh": "蝙蝠的翅膀",
+     "num": 3
+    }
+   ]
+  }
+ ],
+ "Armor_1006_Lower": [
+  {
+   "price": 10,
+   "items": [
+    {
+     "id": "Item_Enemy_18",
+     "num": 3
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_18",
+     "zh": "蝙蝠的翅膀",
+     "num": 3
+    }
+   ]
+  }
+ ],
+ "Armor_1006_Upper": [
+  {
+   "price": 10,
+   "items": [
+    {
+     "id": "Item_Enemy_18",
+     "num": 3
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_18",
+     "zh": "蝙蝠的翅膀",
+     "num": 3
+    }
+   ]
+  }
+ ],
+ "Armor_1007_Head": [
+  {
+   "price": 50,
+   "items": [
+    {
+     "id": "Item_Enemy_66",
+     "num": 6
+    },
+    {
+     "id": "Item_Enemy_18",
+     "num": 5
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_66",
+     "zh": "卡库达的眼珠",
+     "num": 6
+    },
+    {
+     "id": "Item_Enemy_18",
+     "zh": "蝙蝠的翅膀",
+     "num": 5
+    }
+   ]
+  }
+ ],
+ "Armor_1007_Lower": [
+  {
+   "price": 50,
+   "items": [
+    {
+     "id": "Item_Enemy_66",
+     "num": 6
+    },
+    {
+     "id": "Item_Enemy_18",
+     "num": 5
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_66",
+     "zh": "卡库达的眼珠",
+     "num": 6
+    },
+    {
+     "id": "Item_Enemy_18",
+     "zh": "蝙蝠的翅膀",
+     "num": 5
+    }
+   ]
+  }
+ ],
+ "Armor_1007_Upper": [
+  {
+   "price": 50,
+   "items": [
+    {
+     "id": "Item_Enemy_66",
+     "num": 6
+    },
+    {
+     "id": "Item_Enemy_18",
+     "num": 5
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_66",
+     "zh": "卡库达的眼珠",
+     "num": 6
+    },
+    {
+     "id": "Item_Enemy_18",
+     "zh": "蝙蝠的翅膀",
+     "num": 5
+    }
+   ]
+  }
+ ],
+ "Armor_1008_Head": [
+  {
+   "price": 200,
+   "items": [
+    {
+     "id": "Item_Enemy_124",
+     "num": 6
+    },
+    {
+     "id": "Item_Enemy_66",
+     "num": 8
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_124",
+     "zh": "卡库达的翅膀",
+     "num": 6
+    },
+    {
+     "id": "Item_Enemy_66",
+     "zh": "卡库达的眼珠",
+     "num": 8
+    }
+   ]
+  }
+ ],
+ "Armor_1008_Lower": [
+  {
+   "price": 200,
+   "items": [
+    {
+     "id": "Item_Enemy_124",
+     "num": 6
+    },
+    {
+     "id": "Item_Enemy_66",
+     "num": 8
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_124",
+     "zh": "卡库达的翅膀",
+     "num": 6
+    },
+    {
+     "id": "Item_Enemy_66",
+     "zh": "卡库达的眼珠",
+     "num": 8
+    }
+   ]
+  }
+ ],
+ "Armor_1008_Upper": [
+  {
+   "price": 200,
+   "items": [
+    {
+     "id": "Item_Enemy_124",
+     "num": 6
+    },
+    {
+     "id": "Item_Enemy_66",
+     "num": 8
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_124",
+     "zh": "卡库达的翅膀",
+     "num": 6
+    },
+    {
+     "id": "Item_Enemy_66",
+     "zh": "卡库达的眼珠",
+     "num": 8
+    }
+   ]
+  }
+ ],
+ "Armor_1009_Head": [
+  {
+   "price": 500,
+   "items": [
+    {
+     "id": "Item_Enemy_156",
+     "num": 12
+    },
+    {
+     "id": "Item_Enemy_124",
+     "num": 10
+    },
+    {
+     "id": "Item_Enemy_123",
+     "num": 8
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_156",
+     "zh": "古栗欧克的翅膀",
+     "num": 12
+    },
+    {
+     "id": "Item_Enemy_124",
+     "zh": "卡库达的翅膀",
+     "num": 10
+    },
+    {
+     "id": "Item_Enemy_123",
+     "zh": "吉波得的翅膀",
+     "num": 8
+    }
+   ]
+  }
+ ],
+ "Armor_1009_Lower": [
+  {
+   "price": 500,
+   "items": [
+    {
+     "id": "Item_Enemy_156",
+     "num": 12
+    },
+    {
+     "id": "Item_Enemy_124",
+     "num": 10
+    },
+    {
+     "id": "Item_Enemy_123",
+     "num": 8
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_156",
+     "zh": "古栗欧克的翅膀",
+     "num": 12
+    },
+    {
+     "id": "Item_Enemy_124",
+     "zh": "卡库达的翅膀",
+     "num": 10
+    },
+    {
+     "id": "Item_Enemy_123",
+     "zh": "吉波得的翅膀",
+     "num": 8
+    }
+   ]
+  }
+ ],
+ "Armor_1009_Upper": [
+  {
+   "price": 500,
+   "items": [
+    {
+     "id": "Item_Enemy_156",
+     "num": 12
+    },
+    {
+     "id": "Item_Enemy_124",
+     "num": 10
+    },
+    {
+     "id": "Item_Enemy_123",
+     "num": 8
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_156",
+     "zh": "古栗欧克的翅膀",
+     "num": 12
+    },
+    {
+     "id": "Item_Enemy_124",
+     "zh": "卡库达的翅膀",
+     "num": 10
+    },
+    {
+     "id": "Item_Enemy_123",
+     "zh": "吉波得的翅膀",
+     "num": 8
+    }
+   ]
+  }
+ ],
+ "Armor_1036_Head": [
+  {
+   "price": 30,
+   "items": [
+    {
+     "id": "Item_Enemy_80",
+     "num": 9
+    },
+    {
+     "id": "Item_Enemy_34",
+     "num": 9
+    },
+    {
+     "id": "Item_Ore_L",
+     "num": 15
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_80",
+     "zh": "白银波克布林的犄角",
+     "num": 9
+    },
+    {
+     "id": "Item_Enemy_34",
+     "zh": "西诺克斯的肝脏",
+     "num": 9
+    },
+    {
+     "id": "Item_Ore_L",
+     "zh": "左纳尼乌姆",
+     "num": 15
+    }
+   ]
+  }
+ ],
+ "Armor_1036_Lower": [
+  {
+   "price": 30,
+   "items": [
+    {
+     "id": "Item_Enemy_80",
+     "num": 9
+    },
+    {
+     "id": "Item_Enemy_34",
+     "num": 9
+    },
+    {
+     "id": "Item_Ore_L",
+     "num": 15
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_80",
+     "zh": "白银波克布林的犄角",
+     "num": 9
+    },
+    {
+     "id": "Item_Enemy_34",
+     "zh": "西诺克斯的肝脏",
+     "num": 9
+    },
+    {
+     "id": "Item_Ore_L",
+     "zh": "左纳尼乌姆",
+     "num": 15
+    }
+   ]
+  }
+ ],
+ "Armor_1036_Upper": [
+  {
+   "price": 30,
+   "items": [
+    {
+     "id": "Item_Enemy_80",
+     "num": 9
+    },
+    {
+     "id": "Item_Enemy_34",
+     "num": 9
+    },
+    {
+     "id": "Item_Ore_L",
+     "num": 15
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_80",
+     "zh": "白银波克布林的犄角",
+     "num": 9
+    },
+    {
+     "id": "Item_Enemy_34",
+     "zh": "西诺克斯的肝脏",
+     "num": 9
+    },
+    {
+     "id": "Item_Ore_L",
+     "zh": "左纳尼乌姆",
+     "num": 15
+    }
+   ]
+  }
+ ],
+ "Armor_1037_Head": [
+  {
+   "price": 150,
+   "items": [
+    {
+     "id": "Item_Enemy_92",
+     "num": 9
+    },
+    {
+     "id": "Item_Enemy_190",
+     "num": 9
+    },
+    {
+     "id": "Item_Ore_M",
+     "num": 10
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_92",
+     "zh": "白银莫力布林的犄角",
+     "num": 9
+    },
+    {
+     "id": "Item_Enemy_190",
+     "zh": "巨霸迦马的肝脏",
+     "num": 9
+    },
+    {
+     "id": "Item_Ore_M",
+     "zh": "大的左纳尼乌姆",
+     "num": 10
+    }
+   ]
+  }
+ ],
+ "Armor_1037_Lower": [
+  {
+   "price": 150,
+   "items": [
+    {
+     "id": "Item_Enemy_92",
+     "num": 9
+    },
+    {
+     "id": "Item_Enemy_190",
+     "num": 9
+    },
+    {
+     "id": "Item_Ore_M",
+     "num": 10
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_92",
+     "zh": "白银莫力布林的犄角",
+     "num": 9
+    },
+    {
+     "id": "Item_Enemy_190",
+     "zh": "巨霸迦马的肝脏",
+     "num": 9
+    },
+    {
+     "id": "Item_Ore_M",
+     "zh": "大的左纳尼乌姆",
+     "num": 10
+    }
+   ]
+  }
+ ],
+ "Armor_1037_Upper": [
+  {
+   "price": 150,
+   "items": [
+    {
+     "id": "Item_Enemy_92",
+     "num": 9
+    },
+    {
+     "id": "Item_Enemy_190",
+     "num": 9
+    },
+    {
+     "id": "Item_Ore_M",
+     "num": 10
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_92",
+     "zh": "白银莫力布林的犄角",
+     "num": 9
+    },
+    {
+     "id": "Item_Enemy_190",
+     "zh": "巨霸迦马的肝脏",
+     "num": 9
+    },
+    {
+     "id": "Item_Ore_M",
+     "zh": "大的左纳尼乌姆",
+     "num": 10
+    }
+   ]
+  }
+ ],
+ "Armor_1038_Head": [
+  {
+   "price": 600,
+   "items": [
+    {
+     "id": "Item_Enemy_109",
+     "num": 9
+    },
+    {
+     "id": "Item_Enemy_25",
+     "num": 9
+    },
+    {
+     "id": "Item_Ore_M",
+     "num": 15
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_109",
+     "zh": "白银蜥蜴战士的犄角",
+     "num": 9
+    },
+    {
+     "id": "Item_Enemy_25",
+     "zh": "莫尔德拉吉克的肝脏",
+     "num": 9
+    },
+    {
+     "id": "Item_Ore_M",
+     "zh": "大的左纳尼乌姆",
+     "num": 15
+    }
+   ]
+  }
+ ],
+ "Armor_1038_Lower": [
+  {
+   "price": 600,
+   "items": [
+    {
+     "id": "Item_Enemy_109",
+     "num": 9
+    },
+    {
+     "id": "Item_Enemy_25",
+     "num": 9
+    },
+    {
+     "id": "Item_Ore_M",
+     "num": 15
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_109",
+     "zh": "白银蜥蜴战士的犄角",
+     "num": 9
+    },
+    {
+     "id": "Item_Enemy_25",
+     "zh": "莫尔德拉吉克的肝脏",
+     "num": 9
+    },
+    {
+     "id": "Item_Ore_M",
+     "zh": "大的左纳尼乌姆",
+     "num": 15
+    }
+   ]
+  }
+ ],
+ "Armor_1038_Upper": [
+  {
+   "price": 600,
+   "items": [
+    {
+     "id": "Item_Enemy_109",
+     "num": 9
+    },
+    {
+     "id": "Item_Enemy_25",
+     "num": 9
+    },
+    {
+     "id": "Item_Ore_M",
+     "num": 15
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_109",
+     "zh": "白银蜥蜴战士的犄角",
+     "num": 9
+    },
+    {
+     "id": "Item_Enemy_25",
+     "zh": "莫尔德拉吉克的肝脏",
+     "num": 9
+    },
+    {
+     "id": "Item_Ore_M",
+     "zh": "大的左纳尼乌姆",
+     "num": 15
+    }
+   ]
+  }
+ ],
+ "Armor_1039_Head": [
+  {
+   "price": 1500,
+   "items": [
+    {
+     "id": "Item_Enemy_151",
+     "num": 9
+    },
+    {
+     "id": "Item_Enemy_218",
+     "num": 9
+    },
+    {
+     "id": "Item_Enemy_157",
+     "num": 9
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_151",
+     "zh": "白银莱尼尔的刃角",
+     "num": 9
+    },
+    {
+     "id": "Item_Enemy_218",
+     "zh": "白银莱尼尔的碎角",
+     "num": 9
+    },
+    {
+     "id": "Item_Enemy_157",
+     "zh": "古栗欧克的肝脏",
+     "num": 9
+    }
+   ]
+  }
+ ],
+ "Armor_1039_Lower": [
+  {
+   "price": 1500,
+   "items": [
+    {
+     "id": "Item_Enemy_151",
+     "num": 9
+    },
+    {
+     "id": "Item_Enemy_218",
+     "num": 9
+    },
+    {
+     "id": "Item_Enemy_157",
+     "num": 9
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_151",
+     "zh": "白银莱尼尔的刃角",
+     "num": 9
+    },
+    {
+     "id": "Item_Enemy_218",
+     "zh": "白银莱尼尔的碎角",
+     "num": 9
+    },
+    {
+     "id": "Item_Enemy_157",
+     "zh": "古栗欧克的肝脏",
+     "num": 9
+    }
+   ]
+  }
+ ],
+ "Armor_1039_Upper": [
+  {
+   "price": 1500,
+   "items": [
+    {
+     "id": "Item_Enemy_151",
+     "num": 9
+    },
+    {
+     "id": "Item_Enemy_218",
+     "num": 9
+    },
+    {
+     "id": "Item_Enemy_157",
+     "num": 9
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_151",
+     "zh": "白银莱尼尔的刃角",
+     "num": 9
+    },
+    {
+     "id": "Item_Enemy_218",
+     "zh": "白银莱尼尔的碎角",
+     "num": 9
+    },
+    {
+     "id": "Item_Enemy_157",
+     "zh": "古栗欧克的肝脏",
+     "num": 9
+    }
+   ]
+  }
+ ],
+ "Armor_103_Head": [
+  {
+   "price": 50,
+   "items": [
+    {
+     "id": "Item_Enemy_16",
+     "num": 8
+    },
+    {
+     "id": "Item_Fruit_C",
+     "num": 5
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_16",
+     "zh": "黄色丘丘胶",
+     "num": 8
+    },
+    {
+     "id": "Item_Fruit_C",
+     "zh": "酥麻水果",
+     "num": 5
+    }
+   ]
+  }
+ ],
+ "Armor_103_Lower": [
+  {
+   "price": 50,
+   "items": [
+    {
+     "id": "Item_Enemy_16",
+     "num": 8
+    },
+    {
+     "id": "Item_Fruit_C",
+     "num": 5
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_16",
+     "zh": "黄色丘丘胶",
+     "num": 8
+    },
+    {
+     "id": "Item_Fruit_C",
+     "zh": "酥麻水果",
+     "num": 5
+    }
+   ]
+  }
+ ],
+ "Armor_103_Upper": [
+  {
+   "price": 50,
+   "items": [
+    {
+     "id": "Item_Enemy_16",
+     "num": 8
+    },
+    {
+     "id": "Item_Fruit_C",
+     "num": 5
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_16",
+     "zh": "黄色丘丘胶",
+     "num": 8
+    },
+    {
+     "id": "Item_Fruit_C",
+     "zh": "酥麻水果",
+     "num": 5
+    }
+   ]
+  }
+ ],
+ "Armor_1046_Head": [
+  {
+   "price": 10,
+   "items": [
+    {
+     "id": "Animal_Insect_AH",
+     "num": 3
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Animal_Insect_AH",
+     "zh": "贴贴蜥蜴",
+     "num": 3
+    }
+   ]
+  }
+ ],
+ "Armor_1046_Lower": [
+  {
+   "price": 10,
+   "items": [
+    {
+     "id": "Animal_Insect_AH",
+     "num": 3
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Animal_Insect_AH",
+     "zh": "贴贴蜥蜴",
+     "num": 3
+    }
+   ]
+  }
+ ],
+ "Armor_1046_Upper": [
+  {
+   "price": 10,
+   "items": [
+    {
+     "id": "Animal_Insect_AH",
+     "num": 3
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Animal_Insect_AH",
+     "zh": "贴贴蜥蜴",
+     "num": 3
+    }
+   ]
+  }
+ ],
+ "Armor_1047_Head": [
+  {
+   "price": 50,
+   "items": [
+    {
+     "id": "Item_Enemy_100",
+     "num": 5
+    },
+    {
+     "id": "Animal_Insect_AH",
+     "num": 5
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_100",
+     "zh": "霍拉布林的犄角",
+     "num": 5
+    },
+    {
+     "id": "Animal_Insect_AH",
+     "zh": "贴贴蜥蜴",
+     "num": 5
+    }
+   ]
+  }
+ ],
+ "Armor_1047_Lower": [
+  {
+   "price": 50,
+   "items": [
+    {
+     "id": "Item_Enemy_100",
+     "num": 5
+    },
+    {
+     "id": "Animal_Insect_AH",
+     "num": 5
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_100",
+     "zh": "霍拉布林的犄角",
+     "num": 5
+    },
+    {
+     "id": "Animal_Insect_AH",
+     "zh": "贴贴蜥蜴",
+     "num": 5
+    }
+   ]
+  }
+ ],
+ "Armor_1047_Upper": [
+  {
+   "price": 50,
+   "items": [
+    {
+     "id": "Item_Enemy_100",
+     "num": 5
+    },
+    {
+     "id": "Animal_Insect_AH",
+     "num": 5
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_100",
+     "zh": "霍拉布林的犄角",
+     "num": 5
+    },
+    {
+     "id": "Animal_Insect_AH",
+     "zh": "贴贴蜥蜴",
+     "num": 5
+    }
+   ]
+  }
+ ],
+ "Armor_1048_Head": [
+  {
+   "price": 200,
+   "items": [
+    {
+     "id": "Item_Enemy_101",
+     "num": 5
+    },
+    {
+     "id": "Animal_Insect_AG",
+     "num": 5
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_101",
+     "zh": "蓝色霍拉布林的犄角",
+     "num": 5
+    },
+    {
+     "id": "Animal_Insect_AG",
+     "zh": "贴贴青蛙",
+     "num": 5
+    }
+   ]
+  }
+ ],
+ "Armor_1048_Lower": [
+  {
+   "price": 200,
+   "items": [
+    {
+     "id": "Item_Enemy_101",
+     "num": 5
+    },
+    {
+     "id": "Animal_Insect_AG",
+     "num": 5
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_101",
+     "zh": "蓝色霍拉布林的犄角",
+     "num": 5
+    },
+    {
+     "id": "Animal_Insect_AG",
+     "zh": "贴贴青蛙",
+     "num": 5
+    }
+   ]
+  }
+ ],
+ "Armor_1048_Upper": [
+  {
+   "price": 200,
+   "items": [
+    {
+     "id": "Item_Enemy_101",
+     "num": 5
+    },
+    {
+     "id": "Animal_Insect_AG",
+     "num": 5
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_101",
+     "zh": "蓝色霍拉布林的犄角",
+     "num": 5
+    },
+    {
+     "id": "Animal_Insect_AG",
+     "zh": "贴贴青蛙",
+     "num": 5
+    }
+   ]
+  }
+ ],
+ "Armor_1049_Head": [
+  {
+   "price": 500,
+   "items": [
+    {
+     "id": "Item_Enemy_102",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_105",
+     "num": 10
+    },
+    {
+     "id": "Item_Ore_E",
+     "num": 10
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_102",
+     "zh": "黑色霍拉布林的犄角",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_105",
+     "zh": "霍拉布林的肝脏",
+     "num": 10
+    },
+    {
+     "id": "Item_Ore_E",
+     "zh": "蛋白石",
+     "num": 10
+    }
+   ]
+  }
+ ],
+ "Armor_1049_Lower": [
+  {
+   "price": 500,
+   "items": [
+    {
+     "id": "Item_Enemy_102",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_105",
+     "num": 10
+    },
+    {
+     "id": "Item_Ore_E",
+     "num": 10
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_102",
+     "zh": "黑色霍拉布林的犄角",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_105",
+     "zh": "霍拉布林的肝脏",
+     "num": 10
+    },
+    {
+     "id": "Item_Ore_E",
+     "zh": "蛋白石",
+     "num": 10
+    }
+   ]
+  }
+ ],
+ "Armor_1049_Upper": [
+  {
+   "price": 500,
+   "items": [
+    {
+     "id": "Item_Enemy_102",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_105",
+     "num": 10
+    },
+    {
+     "id": "Item_Ore_E",
+     "num": 10
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_102",
+     "zh": "黑色霍拉布林的犄角",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_105",
+     "zh": "霍拉布林的肝脏",
+     "num": 10
+    },
+    {
+     "id": "Item_Ore_E",
+     "zh": "蛋白石",
+     "num": 10
+    }
+   ]
+  }
+ ],
+ "Armor_104_Head": [
+  {
+   "price": 200,
+   "items": [
+    {
+     "id": "Item_Mushroom_H",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_43",
+     "num": 5
+    },
+    {
+     "id": "Item_PlantGet_L",
+     "num": 8
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Mushroom_H",
+     "zh": "酥麻蘑菇",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_43",
+     "zh": "电麻蜥蜴战士的尾巴",
+     "num": 5
+    },
+    {
+     "id": "Item_PlantGet_L",
+     "zh": "酥麻香草",
+     "num": 8
+    }
+   ]
+  }
+ ],
+ "Armor_104_Lower": [
+  {
+   "price": 200,
+   "items": [
+    {
+     "id": "Item_Mushroom_H",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_43",
+     "num": 5
+    },
+    {
+     "id": "Item_PlantGet_L",
+     "num": 8
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Mushroom_H",
+     "zh": "酥麻蘑菇",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_43",
+     "zh": "电麻蜥蜴战士的尾巴",
+     "num": 5
+    },
+    {
+     "id": "Item_PlantGet_L",
+     "zh": "酥麻香草",
+     "num": 8
+    }
+   ]
+  }
+ ],
+ "Armor_104_Upper": [
+  {
+   "price": 200,
+   "items": [
+    {
+     "id": "Item_Mushroom_H",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_43",
+     "num": 5
+    },
+    {
+     "id": "Item_PlantGet_L",
+     "num": 8
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Mushroom_H",
+     "zh": "酥麻蘑菇",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_43",
+     "zh": "电麻蜥蜴战士的尾巴",
+     "num": 5
+    },
+    {
+     "id": "Item_PlantGet_L",
+     "zh": "酥麻香草",
+     "num": 8
+    }
+   ]
+  }
+ ],
+ "Armor_1051_Head": [
+  {
+   "price": 10,
+   "items": [
+    {
+     "id": "LightBall_Small",
+     "num": 10
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "LightBall_Small",
+     "zh": "光亮花的种子",
+     "num": 10
+    }
+   ]
+  }
+ ],
+ "Armor_1051_Lower": [
+  {
+   "price": 10,
+   "items": [
+    {
+     "id": "LightBall_Small",
+     "num": 10
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "LightBall_Small",
+     "zh": "光亮花的种子",
+     "num": 10
+    }
+   ]
+  }
+ ],
+ "Armor_1051_Upper": [
+  {
+   "price": 10,
+   "items": [
+    {
+     "id": "LightBall_Small",
+     "num": 10
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "LightBall_Small",
+     "zh": "光亮花的种子",
+     "num": 10
+    }
+   ]
+  }
+ ],
+ "Armor_1052_Head": [
+  {
+   "price": 50,
+   "items": [
+    {
+     "id": "LightBall_Small",
+     "num": 20
+    },
+    {
+     "id": "Item_Mushroom_K",
+     "num": 5
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "LightBall_Small",
+     "zh": "光亮花的种子",
+     "num": 20
+    },
+    {
+     "id": "Item_Mushroom_K",
+     "zh": null,
+     "num": 5
+    }
+   ]
+  }
+ ],
+ "Armor_1052_Lower": [
+  {
+   "price": 50,
+   "items": [
+    {
+     "id": "LightBall_Small",
+     "num": 20
+    },
+    {
+     "id": "Item_Mushroom_K",
+     "num": 5
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "LightBall_Small",
+     "zh": "光亮花的种子",
+     "num": 20
+    },
+    {
+     "id": "Item_Mushroom_K",
+     "zh": null,
+     "num": 5
+    }
+   ]
+  }
+ ],
+ "Armor_1052_Upper": [
+  {
+   "price": 50,
+   "items": [
+    {
+     "id": "LightBall_Small",
+     "num": 20
+    },
+    {
+     "id": "Item_Mushroom_K",
+     "num": 5
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "LightBall_Small",
+     "zh": "光亮花的种子",
+     "num": 20
+    },
+    {
+     "id": "Item_Mushroom_K",
+     "zh": null,
+     "num": 5
+    }
+   ]
+  }
+ ],
+ "Armor_1053_Head": [
+  {
+   "price": 200,
+   "items": [
+    {
+     "id": "LightBall_Large",
+     "num": 15
+    },
+    {
+     "id": "Animal_Fish_AC",
+     "num": 5
+    },
+    {
+     "id": "Animal_Insect_AI",
+     "num": 10
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "LightBall_Large",
+     "zh": "巨大光亮花的种子",
+     "num": 15
+    },
+    {
+     "id": "Animal_Fish_AC",
+     "zh": null,
+     "num": 5
+    },
+    {
+     "id": "Animal_Insect_AI",
+     "zh": "暗萤火虫",
+     "num": 10
+    }
+   ]
+  }
+ ],
+ "Armor_1053_Lower": [
+  {
+   "price": 200,
+   "items": [
+    {
+     "id": "LightBall_Large",
+     "num": 15
+    },
+    {
+     "id": "Animal_Fish_AC",
+     "num": 5
+    },
+    {
+     "id": "Animal_Insect_AI",
+     "num": 10
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "LightBall_Large",
+     "zh": "巨大光亮花的种子",
+     "num": 15
+    },
+    {
+     "id": "Animal_Fish_AC",
+     "zh": null,
+     "num": 5
+    },
+    {
+     "id": "Animal_Insect_AI",
+     "zh": "暗萤火虫",
+     "num": 10
+    }
+   ]
+  }
+ ],
+ "Armor_1053_Upper": [
+  {
+   "price": 200,
+   "items": [
+    {
+     "id": "LightBall_Large",
+     "num": 15
+    },
+    {
+     "id": "Animal_Fish_AC",
+     "num": 5
+    },
+    {
+     "id": "Animal_Insect_AI",
+     "num": 10
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "LightBall_Large",
+     "zh": "巨大光亮花的种子",
+     "num": 15
+    },
+    {
+     "id": "Animal_Fish_AC",
+     "zh": null,
+     "num": 5
+    },
+    {
+     "id": "Animal_Insect_AI",
+     "zh": "暗萤火虫",
+     "num": 10
+    }
+   ]
+  }
+ ],
+ "Armor_1054_Head": [
+  {
+   "price": 500,
+   "items": [
+    {
+     "id": "LightBall_Large",
+     "num": 20
+    },
+    {
+     "id": "Item_Ore_A",
+     "num": 3
+    },
+    {
+     "id": "Item_Ore_M",
+     "num": 10
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "LightBall_Large",
+     "zh": "巨大光亮花的种子",
+     "num": 20
+    },
+    {
+     "id": "Item_Ore_A",
+     "zh": "钻石",
+     "num": 3
+    },
+    {
+     "id": "Item_Ore_M",
+     "zh": "大的左纳尼乌姆",
+     "num": 10
+    }
+   ]
+  }
+ ],
+ "Armor_1054_Lower": [
+  {
+   "price": 500,
+   "items": [
+    {
+     "id": "LightBall_Large",
+     "num": 20
+    },
+    {
+     "id": "Item_Ore_A",
+     "num": 3
+    },
+    {
+     "id": "Item_Ore_M",
+     "num": 10
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "LightBall_Large",
+     "zh": "巨大光亮花的种子",
+     "num": 20
+    },
+    {
+     "id": "Item_Ore_A",
+     "zh": "钻石",
+     "num": 3
+    },
+    {
+     "id": "Item_Ore_M",
+     "zh": "大的左纳尼乌姆",
+     "num": 10
+    }
+   ]
+  }
+ ],
+ "Armor_1054_Upper": [
+  {
+   "price": 500,
+   "items": [
+    {
+     "id": "LightBall_Large",
+     "num": 20
+    },
+    {
+     "id": "Item_Ore_A",
+     "num": 3
+    },
+    {
+     "id": "Item_Ore_M",
+     "num": 10
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "LightBall_Large",
+     "zh": "巨大光亮花的种子",
+     "num": 20
+    },
+    {
+     "id": "Item_Ore_A",
+     "zh": "钻石",
+     "num": 3
+    },
+    {
+     "id": "Item_Ore_M",
+     "zh": "大的左纳尼乌姆",
+     "num": 10
+    }
+   ]
+  }
+ ],
+ "Armor_105_Head": [
+  {
+   "price": 500,
+   "items": [
+    {
+     "id": "Item_Enemy_60",
+     "num": 5
+    },
+    {
+     "id": "Item_Ore_D",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_43",
+     "num": 8
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_60",
+     "zh": "电麻蜥蜴战士的犄角",
+     "num": 5
+    },
+    {
+     "id": "Item_Ore_D",
+     "zh": "黄玉",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_43",
+     "zh": "电麻蜥蜴战士的尾巴",
+     "num": 8
+    }
+   ]
+  }
+ ],
+ "Armor_105_Lower": [
+  {
+   "price": 500,
+   "items": [
+    {
+     "id": "Item_Enemy_60",
+     "num": 5
+    },
+    {
+     "id": "Item_Ore_D",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_43",
+     "num": 8
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_60",
+     "zh": "电麻蜥蜴战士的犄角",
+     "num": 5
+    },
+    {
+     "id": "Item_Ore_D",
+     "zh": "黄玉",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_43",
+     "zh": "电麻蜥蜴战士的尾巴",
+     "num": 8
+    }
+   ]
+  }
+ ],
+ "Armor_105_Upper": [
+  {
+   "price": 500,
+   "items": [
+    {
+     "id": "Item_Enemy_60",
+     "num": 5
+    },
+    {
+     "id": "Item_Ore_D",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_43",
+     "num": 8
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_60",
+     "zh": "电麻蜥蜴战士的犄角",
+     "num": 5
+    },
+    {
+     "id": "Item_Ore_D",
+     "zh": "黄玉",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_43",
+     "zh": "电麻蜥蜴战士的尾巴",
+     "num": 8
+    }
+   ]
+  }
+ ],
+ "Armor_1061_Head": [
+  {
+   "price": 10,
+   "items": [
+    {
+     "id": "FireFruit",
+     "num": 3
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "FireFruit",
+     "zh": "火焰果",
+     "num": 3
+    }
+   ]
+  }
+ ],
+ "Armor_1061_Lower": [
+  {
+   "price": 10,
+   "items": [
+    {
+     "id": "FireFruit",
+     "num": 3
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "FireFruit",
+     "zh": "火焰果",
+     "num": 3
+    }
+   ]
+  }
+ ],
+ "Armor_1061_Upper": [
+  {
+   "price": 10,
+   "items": [
+    {
+     "id": "FireFruit",
+     "num": 3
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "FireFruit",
+     "zh": "火焰果",
+     "num": 3
+    }
+   ]
+  }
+ ],
+ "Armor_1062_Head": [
+  {
+   "price": 50,
+   "items": [
+    {
+     "id": "Item_Enemy_58",
+     "num": 5
+    },
+    {
+     "id": "Animal_Insect_Q",
+     "num": 5
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_58",
+     "zh": "喷火蜥蜴战士的犄角",
+     "num": 5
+    },
+    {
+     "id": "Animal_Insect_Q",
+     "zh": "暖暖凤蝶",
+     "num": 5
+    }
+   ]
+  }
+ ],
+ "Armor_1062_Lower": [
+  {
+   "price": 50,
+   "items": [
+    {
+     "id": "Item_Enemy_58",
+     "num": 5
+    },
+    {
+     "id": "Animal_Insect_Q",
+     "num": 5
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_58",
+     "zh": "喷火蜥蜴战士的犄角",
+     "num": 5
+    },
+    {
+     "id": "Animal_Insect_Q",
+     "zh": "暖暖凤蝶",
+     "num": 5
+    }
+   ]
+  }
+ ],
+ "Armor_1062_Upper": [
+  {
+   "price": 50,
+   "items": [
+    {
+     "id": "Item_Enemy_58",
+     "num": 5
+    },
+    {
+     "id": "Animal_Insect_Q",
+     "num": 5
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_58",
+     "zh": "喷火蜥蜴战士的犄角",
+     "num": 5
+    },
+    {
+     "id": "Animal_Insect_Q",
+     "zh": "暖暖凤蝶",
+     "num": 5
+    }
+   ]
+  }
+ ],
+ "Armor_1063_Head": [
+  {
+   "price": 200,
+   "items": [
+    {
+     "id": "Item_Enemy_182",
+     "num": 5
+    },
+    {
+     "id": "Animal_Insect_T",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_131",
+     "num": 5
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_182",
+     "zh": "火焰莱克的胃石",
+     "num": 5
+    },
+    {
+     "id": "Animal_Insect_T",
+     "zh": "暖暖蜻蜓",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_131",
+     "zh": "大的左纳乌能源",
+     "num": 5
+    }
+   ]
+  }
+ ],
+ "Armor_1063_Lower": [
+  {
+   "price": 200,
+   "items": [
+    {
+     "id": "Item_Enemy_182",
+     "num": 5
+    },
+    {
+     "id": "Animal_Insect_T",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_131",
+     "num": 5
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_182",
+     "zh": "火焰莱克的胃石",
+     "num": 5
+    },
+    {
+     "id": "Animal_Insect_T",
+     "zh": "暖暖蜻蜓",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_131",
+     "zh": "大的左纳乌能源",
+     "num": 5
+    }
+   ]
+  }
+ ],
+ "Armor_1063_Upper": [
+  {
+   "price": 200,
+   "items": [
+    {
+     "id": "Item_Enemy_182",
+     "num": 5
+    },
+    {
+     "id": "Animal_Insect_T",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_131",
+     "num": 5
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_182",
+     "zh": "火焰莱克的胃石",
+     "num": 5
+    },
+    {
+     "id": "Animal_Insect_T",
+     "zh": "暖暖蜻蜓",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_131",
+     "zh": "大的左纳乌能源",
+     "num": 5
+    }
+   ]
+  }
+ ],
+ "Armor_1064_Head": [
+  {
+   "price": 500,
+   "items": [
+    {
+     "id": "Item_Enemy_153",
+     "num": 5
+    },
+    {
+     "id": "Item_FishGet_J",
+     "num": 10
+    },
+    {
+     "id": "Item_Enemy_131",
+     "num": 10
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_153",
+     "zh": "古栗欧克的火焰犄角",
+     "num": 5
+    },
+    {
+     "id": "Item_FishGet_J",
+     "zh": "暖暖鳟鱼",
+     "num": 10
+    },
+    {
+     "id": "Item_Enemy_131",
+     "zh": "大的左纳乌能源",
+     "num": 10
+    }
+   ]
+  }
+ ],
+ "Armor_1064_Lower": [
+  {
+   "price": 500,
+   "items": [
+    {
+     "id": "Item_Enemy_153",
+     "num": 5
+    },
+    {
+     "id": "Item_FishGet_J",
+     "num": 10
+    },
+    {
+     "id": "Item_Enemy_131",
+     "num": 10
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_153",
+     "zh": "古栗欧克的火焰犄角",
+     "num": 5
+    },
+    {
+     "id": "Item_FishGet_J",
+     "zh": "暖暖鳟鱼",
+     "num": 10
+    },
+    {
+     "id": "Item_Enemy_131",
+     "zh": "大的左纳乌能源",
+     "num": 10
+    }
+   ]
+  }
+ ],
+ "Armor_1064_Upper": [
+  {
+   "price": 500,
+   "items": [
+    {
+     "id": "Item_Enemy_153",
+     "num": 5
+    },
+    {
+     "id": "Item_FishGet_J",
+     "num": 10
+    },
+    {
+     "id": "Item_Enemy_131",
+     "num": 10
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_153",
+     "zh": "古栗欧克的火焰犄角",
+     "num": 5
+    },
+    {
+     "id": "Item_FishGet_J",
+     "zh": "暖暖鳟鱼",
+     "num": 10
+    },
+    {
+     "id": "Item_Enemy_131",
+     "zh": "大的左纳乌能源",
+     "num": 10
+    }
+   ]
+  }
+ ],
+ "Armor_1066_Head": [
+  {
+   "price": 10,
+   "items": [
+    {
+     "id": "ElectricalFruit",
+     "num": 3
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "ElectricalFruit",
+     "zh": "电流果",
+     "num": 3
+    }
+   ]
+  }
+ ],
+ "Armor_1066_Lower": [
+  {
+   "price": 10,
+   "items": [
+    {
+     "id": "ElectricalFruit",
+     "num": 3
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "ElectricalFruit",
+     "zh": "电流果",
+     "num": 3
+    }
+   ]
+  }
+ ],
+ "Armor_1066_Upper": [
+  {
+   "price": 10,
+   "items": [
+    {
+     "id": "ElectricalFruit",
+     "num": 3
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "ElectricalFruit",
+     "zh": "电流果",
+     "num": 3
+    }
+   ]
+  }
+ ],
+ "Armor_1067_Head": [
+  {
+   "price": 50,
+   "items": [
+    {
+     "id": "Item_Enemy_60",
+     "num": 5
+    },
+    {
+     "id": "Animal_Insect_R",
+     "num": 3
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_60",
+     "zh": "电麻蜥蜴战士的犄角",
+     "num": 5
+    },
+    {
+     "id": "Animal_Insect_R",
+     "zh": "酥麻凤蝶",
+     "num": 3
+    }
+   ]
+  }
+ ],
+ "Armor_1067_Lower": [
+  {
+   "price": 50,
+   "items": [
+    {
+     "id": "Item_Enemy_60",
+     "num": 5
+    },
+    {
+     "id": "Animal_Insect_R",
+     "num": 3
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_60",
+     "zh": "电麻蜥蜴战士的犄角",
+     "num": 5
+    },
+    {
+     "id": "Animal_Insect_R",
+     "zh": "酥麻凤蝶",
+     "num": 3
+    }
+   ]
+  }
+ ],
+ "Armor_1067_Upper": [
+  {
+   "price": 50,
+   "items": [
+    {
+     "id": "Item_Enemy_60",
+     "num": 5
+    },
+    {
+     "id": "Animal_Insect_R",
+     "num": 3
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_60",
+     "zh": "电麻蜥蜴战士的犄角",
+     "num": 5
+    },
+    {
+     "id": "Animal_Insect_R",
+     "zh": "酥麻凤蝶",
+     "num": 3
+    }
+   ]
+  }
+ ],
+ "Armor_1068_Head": [
+  {
+   "price": 200,
+   "items": [
+    {
+     "id": "Item_Enemy_183",
+     "num": 5
+    },
+    {
+     "id": "Animal_Insect_I",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_131",
+     "num": 3
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_183",
+     "zh": "电击莱克的胃石",
+     "num": 5
+    },
+    {
+     "id": "Animal_Insect_I",
+     "zh": "酥麻蜻蜓",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_131",
+     "zh": "大的左纳乌能源",
+     "num": 3
+    }
+   ]
+  }
+ ],
+ "Armor_1068_Lower": [
+  {
+   "price": 200,
+   "items": [
+    {
+     "id": "Item_Enemy_183",
+     "num": 5
+    },
+    {
+     "id": "Animal_Insect_I",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_131",
+     "num": 3
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_183",
+     "zh": "电击莱克的胃石",
+     "num": 5
+    },
+    {
+     "id": "Animal_Insect_I",
+     "zh": "酥麻蜻蜓",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_131",
+     "zh": "大的左纳乌能源",
+     "num": 3
+    }
+   ]
+  }
+ ],
+ "Armor_1068_Upper": [
+  {
+   "price": 200,
+   "items": [
+    {
+     "id": "Item_Enemy_183",
+     "num": 5
+    },
+    {
+     "id": "Animal_Insect_I",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_131",
+     "num": 3
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_183",
+     "zh": "电击莱克的胃石",
+     "num": 5
+    },
+    {
+     "id": "Animal_Insect_I",
+     "zh": "酥麻蜻蜓",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_131",
+     "zh": "大的左纳乌能源",
+     "num": 3
+    }
+   ]
+  }
+ ],
+ "Armor_1069_Head": [
+  {
+   "price": 500,
+   "items": [
+    {
+     "id": "Item_Enemy_155",
+     "num": 5
+    },
+    {
+     "id": "Item_FishGet_D",
+     "num": 10
+    },
+    {
+     "id": "Item_Enemy_131",
+     "num": 5
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_155",
+     "zh": "古栗欧克的雷电犄角",
+     "num": 5
+    },
+    {
+     "id": "Item_FishGet_D",
+     "zh": "酥麻鳟鱼",
+     "num": 10
+    },
+    {
+     "id": "Item_Enemy_131",
+     "zh": "大的左纳乌能源",
+     "num": 5
+    }
+   ]
+  }
+ ],
+ "Armor_1069_Lower": [
+  {
+   "price": 500,
+   "items": [
+    {
+     "id": "Item_Enemy_155",
+     "num": 5
+    },
+    {
+     "id": "Item_FishGet_D",
+     "num": 10
+    },
+    {
+     "id": "Item_Enemy_131",
+     "num": 5
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_155",
+     "zh": "古栗欧克的雷电犄角",
+     "num": 5
+    },
+    {
+     "id": "Item_FishGet_D",
+     "zh": "酥麻鳟鱼",
+     "num": 10
+    },
+    {
+     "id": "Item_Enemy_131",
+     "zh": "大的左纳乌能源",
+     "num": 5
+    }
+   ]
+  }
+ ],
+ "Armor_1069_Upper": [
+  {
+   "price": 500,
+   "items": [
+    {
+     "id": "Item_Enemy_155",
+     "num": 5
+    },
+    {
+     "id": "Item_FishGet_D",
+     "num": 10
+    },
+    {
+     "id": "Item_Enemy_131",
+     "num": 5
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_155",
+     "zh": "古栗欧克的雷电犄角",
+     "num": 5
+    },
+    {
+     "id": "Item_FishGet_D",
+     "zh": "酥麻鳟鱼",
+     "num": 10
+    },
+    {
+     "id": "Item_Enemy_131",
+     "zh": "大的左纳乌能源",
+     "num": 5
+    }
+   ]
+  }
+ ],
+ "Armor_1071_Head": [
+  {
+   "price": 10,
+   "items": [
+    {
+     "id": "IceFruit",
+     "num": 3
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "IceFruit",
+     "zh": "冷气果",
+     "num": 3
+    }
+   ]
+  }
+ ],
+ "Armor_1071_Lower": [
+  {
+   "price": 10,
+   "items": [
+    {
+     "id": "IceFruit",
+     "num": 3
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "IceFruit",
+     "zh": "冷气果",
+     "num": 3
+    }
+   ]
+  }
+ ],
+ "Armor_1071_Upper": [
+  {
+   "price": 10,
+   "items": [
+    {
+     "id": "IceFruit",
+     "num": 3
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "IceFruit",
+     "zh": "冷气果",
+     "num": 3
+    }
+   ]
+  }
+ ],
+ "Armor_1072_Head": [
+  {
+   "price": 50,
+   "items": [
+    {
+     "id": "Item_Enemy_59",
+     "num": 5
+    },
+    {
+     "id": "Animal_Insect_N",
+     "num": 5
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_59",
+     "zh": "吐雹蜥蜴战士的犄角",
+     "num": 5
+    },
+    {
+     "id": "Animal_Insect_N",
+     "zh": "冰冷凤蝶",
+     "num": 5
+    }
+   ]
+  }
+ ],
+ "Armor_1072_Lower": [
+  {
+   "price": 50,
+   "items": [
+    {
+     "id": "Item_Enemy_59",
+     "num": 5
+    },
+    {
+     "id": "Animal_Insect_N",
+     "num": 5
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_59",
+     "zh": "吐雹蜥蜴战士的犄角",
+     "num": 5
+    },
+    {
+     "id": "Animal_Insect_N",
+     "zh": "冰冷凤蝶",
+     "num": 5
+    }
+   ]
+  }
+ ],
+ "Armor_1072_Upper": [
+  {
+   "price": 50,
+   "items": [
+    {
+     "id": "Item_Enemy_59",
+     "num": 5
+    },
+    {
+     "id": "Animal_Insect_N",
+     "num": 5
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_59",
+     "zh": "吐雹蜥蜴战士的犄角",
+     "num": 5
+    },
+    {
+     "id": "Animal_Insect_N",
+     "zh": "冰冷凤蝶",
+     "num": 5
+    }
+   ]
+  }
+ ],
+ "Armor_1073_Head": [
+  {
+   "price": 200,
+   "items": [
+    {
+     "id": "Item_Enemy_184",
+     "num": 5
+    },
+    {
+     "id": "Animal_Insect_C",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_131",
+     "num": 5
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_184",
+     "zh": "冰雪莱克的胃石",
+     "num": 5
+    },
+    {
+     "id": "Animal_Insect_C",
+     "zh": "冰冷蜻蜓",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_131",
+     "zh": "大的左纳乌能源",
+     "num": 5
+    }
+   ]
+  }
+ ],
+ "Armor_1073_Lower": [
+  {
+   "price": 200,
+   "items": [
+    {
+     "id": "Item_Enemy_184",
+     "num": 5
+    },
+    {
+     "id": "Animal_Insect_C",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_131",
+     "num": 5
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_184",
+     "zh": "冰雪莱克的胃石",
+     "num": 5
+    },
+    {
+     "id": "Animal_Insect_C",
+     "zh": "冰冷蜻蜓",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_131",
+     "zh": "大的左纳乌能源",
+     "num": 5
+    }
+   ]
+  }
+ ],
+ "Armor_1073_Upper": [
+  {
+   "price": 200,
+   "items": [
+    {
+     "id": "Item_Enemy_184",
+     "num": 5
+    },
+    {
+     "id": "Animal_Insect_C",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_131",
+     "num": 5
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_184",
+     "zh": "冰雪莱克的胃石",
+     "num": 5
+    },
+    {
+     "id": "Animal_Insect_C",
+     "zh": "冰冷蜻蜓",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_131",
+     "zh": "大的左纳乌能源",
+     "num": 5
+    }
+   ]
+  }
+ ],
+ "Armor_1074_Head": [
+  {
+   "price": 500,
+   "items": [
+    {
+     "id": "Item_Enemy_154",
+     "num": 5
+    },
+    {
+     "id": "Item_FishGet_C",
+     "num": 10
+    },
+    {
+     "id": "Item_Enemy_131",
+     "num": 10
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_154",
+     "zh": "古栗欧克的冰雪犄角",
+     "num": 5
+    },
+    {
+     "id": "Item_FishGet_C",
+     "zh": "冰冷鳟鱼",
+     "num": 10
+    },
+    {
+     "id": "Item_Enemy_131",
+     "zh": "大的左纳乌能源",
+     "num": 10
+    }
+   ]
+  }
+ ],
+ "Armor_1074_Lower": [
+  {
+   "price": 500,
+   "items": [
+    {
+     "id": "Item_Enemy_154",
+     "num": 5
+    },
+    {
+     "id": "Item_FishGet_C",
+     "num": 10
+    },
+    {
+     "id": "Item_Enemy_131",
+     "num": 10
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_154",
+     "zh": "古栗欧克的冰雪犄角",
+     "num": 5
+    },
+    {
+     "id": "Item_FishGet_C",
+     "zh": "冰冷鳟鱼",
+     "num": 10
+    },
+    {
+     "id": "Item_Enemy_131",
+     "zh": "大的左纳乌能源",
+     "num": 10
+    }
+   ]
+  }
+ ],
+ "Armor_1074_Upper": [
+  {
+   "price": 500,
+   "items": [
+    {
+     "id": "Item_Enemy_154",
+     "num": 5
+    },
+    {
+     "id": "Item_FishGet_C",
+     "num": 10
+    },
+    {
+     "id": "Item_Enemy_131",
+     "num": 10
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_154",
+     "zh": "古栗欧克的冰雪犄角",
+     "num": 5
+    },
+    {
+     "id": "Item_FishGet_C",
+     "zh": "冰冷鳟鱼",
+     "num": 10
+    },
+    {
+     "id": "Item_Enemy_131",
+     "zh": "大的左纳乌能源",
+     "num": 10
+    }
+   ]
+  }
+ ],
+ "Armor_1091_Head": [
+  {
+   "price": 10,
+   "items": [
+    {
+     "id": "Item_Enemy_166",
+     "num": 5
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_166",
+     "zh": "兵队魔像的角",
+     "num": 5
+    }
+   ]
+  }
+ ],
+ "Armor_1091_Lower": [
+  {
+   "price": 10,
+   "items": [
+    {
+     "id": "Item_Enemy_166",
+     "num": 5
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_166",
+     "zh": "兵队魔像的角",
+     "num": 5
+    }
+   ]
+  }
+ ],
+ "Armor_1091_Upper": [
+  {
+   "price": 10,
+   "items": [
+    {
+     "id": "Item_Enemy_166",
+     "num": 5
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_166",
+     "zh": "兵队魔像的角",
+     "num": 5
+    }
+   ]
+  }
+ ],
+ "Armor_1092_Head": [
+  {
+   "price": 50,
+   "items": [
+    {
+     "id": "Item_Enemy_167",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_67",
+     "num": 5
+    },
+    {
+     "id": "Item_Ore_L",
+     "num": 5
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_167",
+     "zh": "兵队魔像的角（中等）",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_67",
+     "zh": "队长魔像的角",
+     "num": 5
+    },
+    {
+     "id": "Item_Ore_L",
+     "zh": "左纳尼乌姆",
+     "num": 5
+    }
+   ]
+  }
+ ],
+ "Armor_1092_Lower": [
+  {
+   "price": 50,
+   "items": [
+    {
+     "id": "Item_Enemy_167",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_67",
+     "num": 5
+    },
+    {
+     "id": "Item_Ore_L",
+     "num": 5
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_167",
+     "zh": "兵队魔像的角（中等）",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_67",
+     "zh": "队长魔像的角",
+     "num": 5
+    },
+    {
+     "id": "Item_Ore_L",
+     "zh": "左纳尼乌姆",
+     "num": 5
+    }
+   ]
+  }
+ ],
+ "Armor_1092_Upper": [
+  {
+   "price": 50,
+   "items": [
+    {
+     "id": "Item_Enemy_167",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_67",
+     "num": 5
+    },
+    {
+     "id": "Item_Ore_L",
+     "num": 5
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_167",
+     "zh": "兵队魔像的角（中等）",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_67",
+     "zh": "队长魔像的角",
+     "num": 5
+    },
+    {
+     "id": "Item_Ore_L",
+     "zh": "左纳尼乌姆",
+     "num": 5
+    }
+   ]
+  }
+ ],
+ "Armor_1093_Head": [
+  {
+   "price": 200,
+   "items": [
+    {
+     "id": "Item_Enemy_168",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_191",
+     "num": 5
+    },
+    {
+     "id": "Item_Ore_M",
+     "num": 5
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_168",
+     "zh": "兵队魔像的角（上等）",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_191",
+     "zh": "队长魔像的角（中等）",
+     "num": 5
+    },
+    {
+     "id": "Item_Ore_M",
+     "zh": "大的左纳尼乌姆",
+     "num": 5
+    }
+   ]
+  }
+ ],
+ "Armor_1093_Lower": [
+  {
+   "price": 200,
+   "items": [
+    {
+     "id": "Item_Enemy_168",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_191",
+     "num": 5
+    },
+    {
+     "id": "Item_Ore_M",
+     "num": 5
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_168",
+     "zh": "兵队魔像的角（上等）",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_191",
+     "zh": "队长魔像的角（中等）",
+     "num": 5
+    },
+    {
+     "id": "Item_Ore_M",
+     "zh": "大的左纳尼乌姆",
+     "num": 5
+    }
+   ]
+  }
+ ],
+ "Armor_1093_Upper": [
+  {
+   "price": 200,
+   "items": [
+    {
+     "id": "Item_Enemy_168",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_191",
+     "num": 5
+    },
+    {
+     "id": "Item_Ore_M",
+     "num": 5
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_168",
+     "zh": "兵队魔像的角（上等）",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_191",
+     "zh": "队长魔像的角（中等）",
+     "num": 5
+    },
+    {
+     "id": "Item_Ore_M",
+     "zh": "大的左纳尼乌姆",
+     "num": 5
+    }
+   ]
+  }
+ ],
+ "Armor_1094_Head": [
+  {
+   "price": 500,
+   "items": [
+    {
+     "id": "Item_Enemy_169",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_192",
+     "num": 5
+    },
+    {
+     "id": "Item_Ore_M",
+     "num": 10
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_169",
+     "zh": "兵队魔像的角（特等）",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_192",
+     "zh": "队长魔像的角（上等）",
+     "num": 5
+    },
+    {
+     "id": "Item_Ore_M",
+     "zh": "大的左纳尼乌姆",
+     "num": 10
+    }
+   ]
+  }
+ ],
+ "Armor_1094_Lower": [
+  {
+   "price": 500,
+   "items": [
+    {
+     "id": "Item_Enemy_169",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_192",
+     "num": 5
+    },
+    {
+     "id": "Item_Ore_M",
+     "num": 10
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_169",
+     "zh": "兵队魔像的角（特等）",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_192",
+     "zh": "队长魔像的角（上等）",
+     "num": 5
+    },
+    {
+     "id": "Item_Ore_M",
+     "zh": "大的左纳尼乌姆",
+     "num": 10
+    }
+   ]
+  }
+ ],
+ "Armor_1094_Upper": [
+  {
+   "price": 500,
+   "items": [
+    {
+     "id": "Item_Enemy_169",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_192",
+     "num": 5
+    },
+    {
+     "id": "Item_Ore_M",
+     "num": 10
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_169",
+     "zh": "兵队魔像的角（特等）",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_192",
+     "zh": "队长魔像的角（上等）",
+     "num": 5
+    },
+    {
+     "id": "Item_Ore_M",
+     "zh": "大的左纳尼乌姆",
+     "num": 10
+    }
+   ]
+  }
+ ],
+ "Armor_1096_Head": [
+  {
+   "price": 10,
+   "items": [
+    {
+     "id": "Item_Ore_G",
+     "num": 10
+    },
+    {
+     "id": "Item_Ore_J",
+     "num": 1
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_G",
+     "zh": "夜光石",
+     "num": 10
+    },
+    {
+     "id": "Item_Ore_J",
+     "zh": "星星碎片",
+     "num": 1
+    }
+   ]
+  }
+ ],
+ "Armor_1096_Lower": [
+  {
+   "price": 10,
+   "items": [
+    {
+     "id": "Item_Ore_G",
+     "num": 10
+    },
+    {
+     "id": "Item_Ore_J",
+     "num": 1
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_G",
+     "zh": "夜光石",
+     "num": 10
+    },
+    {
+     "id": "Item_Ore_J",
+     "zh": "星星碎片",
+     "num": 1
+    }
+   ]
+  }
+ ],
+ "Armor_1096_Upper": [
+  {
+   "price": 10,
+   "items": [
+    {
+     "id": "Item_Ore_G",
+     "num": 10
+    },
+    {
+     "id": "Item_Ore_J",
+     "num": 1
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_G",
+     "zh": "夜光石",
+     "num": 10
+    },
+    {
+     "id": "Item_Ore_J",
+     "zh": "星星碎片",
+     "num": 1
+    }
+   ]
+  }
+ ],
+ "Armor_1097_Head": [
+  {
+   "price": 50,
+   "items": [
+    {
+     "id": "Item_Ore_G",
+     "num": 15
+    },
+    {
+     "id": "Item_Ore_J",
+     "num": 1
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_G",
+     "zh": "夜光石",
+     "num": 15
+    },
+    {
+     "id": "Item_Ore_J",
+     "zh": "星星碎片",
+     "num": 1
+    }
+   ]
+  }
+ ],
+ "Armor_1097_Lower": [
+  {
+   "price": 50,
+   "items": [
+    {
+     "id": "Item_Ore_G",
+     "num": 15
+    },
+    {
+     "id": "Item_Ore_J",
+     "num": 1
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_G",
+     "zh": "夜光石",
+     "num": 15
+    },
+    {
+     "id": "Item_Ore_J",
+     "zh": "星星碎片",
+     "num": 1
+    }
+   ]
+  }
+ ],
+ "Armor_1097_Upper": [
+  {
+   "price": 50,
+   "items": [
+    {
+     "id": "Item_Ore_G",
+     "num": 15
+    },
+    {
+     "id": "Item_Ore_J",
+     "num": 1
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_G",
+     "zh": "夜光石",
+     "num": 15
+    },
+    {
+     "id": "Item_Ore_J",
+     "zh": "星星碎片",
+     "num": 1
+    }
+   ]
+  }
+ ],
+ "Armor_1098_Head": [
+  {
+   "price": 200,
+   "items": [
+    {
+     "id": "Item_Ore_G",
+     "num": 20
+    },
+    {
+     "id": "Item_Ore_J",
+     "num": 1
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_G",
+     "zh": "夜光石",
+     "num": 20
+    },
+    {
+     "id": "Item_Ore_J",
+     "zh": "星星碎片",
+     "num": 1
+    }
+   ]
+  }
+ ],
+ "Armor_1098_Lower": [
+  {
+   "price": 200,
+   "items": [
+    {
+     "id": "Item_Ore_G",
+     "num": 20
+    },
+    {
+     "id": "Item_Ore_J",
+     "num": 1
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_G",
+     "zh": "夜光石",
+     "num": 20
+    },
+    {
+     "id": "Item_Ore_J",
+     "zh": "星星碎片",
+     "num": 1
+    }
+   ]
+  }
+ ],
+ "Armor_1098_Upper": [
+  {
+   "price": 200,
+   "items": [
+    {
+     "id": "Item_Ore_G",
+     "num": 20
+    },
+    {
+     "id": "Item_Ore_J",
+     "num": 1
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_G",
+     "zh": "夜光石",
+     "num": 20
+    },
+    {
+     "id": "Item_Ore_J",
+     "zh": "星星碎片",
+     "num": 1
+    }
+   ]
+  }
+ ],
+ "Armor_1099_Head": [
+  {
+   "price": 500,
+   "items": [
+    {
+     "id": "Item_Ore_G",
+     "num": 30
+    },
+    {
+     "id": "Item_Ore_J",
+     "num": 1
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_G",
+     "zh": "夜光石",
+     "num": 30
+    },
+    {
+     "id": "Item_Ore_J",
+     "zh": "星星碎片",
+     "num": 1
+    }
+   ]
+  }
+ ],
+ "Armor_1099_Lower": [
+  {
+   "price": 500,
+   "items": [
+    {
+     "id": "Item_Ore_G",
+     "num": 30
+    },
+    {
+     "id": "Item_Ore_J",
+     "num": 1
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_G",
+     "zh": "夜光石",
+     "num": 30
+    },
+    {
+     "id": "Item_Ore_J",
+     "zh": "星星碎片",
+     "num": 1
+    }
+   ]
+  }
+ ],
+ "Armor_1099_Upper": [
+  {
+   "price": 500,
+   "items": [
+    {
+     "id": "Item_Ore_G",
+     "num": 30
+    },
+    {
+     "id": "Item_Ore_J",
+     "num": 1
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_G",
+     "zh": "夜光石",
+     "num": 30
+    },
+    {
+     "id": "Item_Ore_J",
+     "zh": "星星碎片",
+     "num": 1
+    }
+   ]
+  }
+ ],
+ "Armor_1106_Upper": [
+  {
+   "price": 10,
+   "items": [
+    {
+     "id": "Item_PlantGet_J",
+     "num": 3
+    },
+    {
+     "id": "Item_Enemy_158",
+     "num": 2
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_PlantGet_J",
+     "zh": "宁静公主",
+     "num": 3
+    },
+    {
+     "id": "Item_Enemy_158",
+     "zh": "白龙的鳞片",
+     "num": 2
+    }
+   ]
+  }
+ ],
+ "Armor_1107_Upper": [
+  {
+   "price": 50,
+   "items": [
+    {
+     "id": "Item_PlantGet_J",
+     "num": 3
+    },
+    {
+     "id": "Item_Enemy_159",
+     "num": 2
+    },
+    {
+     "id": "Item_PlantGet_R",
+     "num": 10
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_PlantGet_J",
+     "zh": "宁静公主",
+     "num": 3
+    },
+    {
+     "id": "Item_Enemy_159",
+     "zh": "白龙的爪子",
+     "num": 2
+    },
+    {
+     "id": "Item_PlantGet_R",
+     "zh": "向阳草",
+     "num": 10
+    }
+   ]
+  }
+ ],
+ "Armor_1108_Upper": [
+  {
+   "price": 200,
+   "items": [
+    {
+     "id": "Item_PlantGet_J",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_160",
+     "num": 2
+    },
+    {
+     "id": "Item_PlantGet_R",
+     "num": 15
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_PlantGet_J",
+     "zh": "宁静公主",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_160",
+     "zh": "白龙的牙齿碎片",
+     "num": 2
+    },
+    {
+     "id": "Item_PlantGet_R",
+     "zh": "向阳草",
+     "num": 15
+    }
+   ]
+  }
+ ],
+ "Armor_1109_Upper": [
+  {
+   "price": 500,
+   "items": [
+    {
+     "id": "Item_PlantGet_J",
+     "num": 10
+    },
+    {
+     "id": "Item_Enemy_214",
+     "num": 2
+    },
+    {
+     "id": "Item_PlantGet_R",
+     "num": 20
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_PlantGet_J",
+     "zh": "宁静公主",
+     "num": 10
+    },
+    {
+     "id": "Item_Enemy_214",
+     "zh": "白龙的犄角",
+     "num": 2
+    },
+    {
+     "id": "Item_PlantGet_R",
+     "zh": "向阳草",
+     "num": 20
+    }
+   ]
+  }
+ ],
+ "Armor_111_Head": [
+  {
+   "price": 50,
+   "items": [
+    {
+     "id": "Item_Enemy_148",
+     "num": 2
+    },
+    {
+     "id": "Item_Enemy_215",
+     "num": 2
+    },
+    {
+     "id": "Item_Mushroom_L",
+     "num": 5
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_148",
+     "zh": "莱尼尔的刃角",
+     "num": 2
+    },
+    {
+     "id": "Item_Enemy_215",
+     "zh": "莱尼尔的碎角",
+     "num": 2
+    },
+    {
+     "id": "Item_Mushroom_L",
+     "zh": "大剑蘑菇",
+     "num": 5
+    }
+   ]
+  }
+ ],
+ "Armor_111_Lower": [
+  {
+   "price": 50,
+   "items": [
+    {
+     "id": "Item_Enemy_148",
+     "num": 2
+    },
+    {
+     "id": "Item_Enemy_215",
+     "num": 2
+    },
+    {
+     "id": "Item_Mushroom_L",
+     "num": 5
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_148",
+     "zh": "莱尼尔的刃角",
+     "num": 2
+    },
+    {
+     "id": "Item_Enemy_215",
+     "zh": "莱尼尔的碎角",
+     "num": 2
+    },
+    {
+     "id": "Item_Mushroom_L",
+     "zh": "大剑蘑菇",
+     "num": 5
+    }
+   ]
+  }
+ ],
+ "Armor_111_Upper": [
+  {
+   "price": 50,
+   "items": [
+    {
+     "id": "Item_Enemy_148",
+     "num": 2
+    },
+    {
+     "id": "Item_Enemy_215",
+     "num": 2
+    },
+    {
+     "id": "Item_Mushroom_L",
+     "num": 5
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_148",
+     "zh": "莱尼尔的刃角",
+     "num": 2
+    },
+    {
+     "id": "Item_Enemy_215",
+     "zh": "莱尼尔的碎角",
+     "num": 2
+    },
+    {
+     "id": "Item_Mushroom_L",
+     "zh": "大剑蘑菇",
+     "num": 5
+    }
+   ]
+  }
+ ],
+ "Armor_112_Head": [
+  {
+   "price": 200,
+   "items": [
+    {
+     "id": "Item_Enemy_149",
+     "num": 3
+    },
+    {
+     "id": "Item_Enemy_216",
+     "num": 3
+    },
+    {
+     "id": "Item_InsectGet_K",
+     "num": 3
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_149",
+     "zh": "蓝鬃莱尼尔的刃角",
+     "num": 3
+    },
+    {
+     "id": "Item_Enemy_216",
+     "zh": "蓝鬃莱尼尔的碎角",
+     "num": 3
+    },
+    {
+     "id": "Item_InsectGet_K",
+     "zh": "大剑螃蟹",
+     "num": 3
+    }
+   ]
+  }
+ ],
+ "Armor_112_Lower": [
+  {
+   "price": 200,
+   "items": [
+    {
+     "id": "Item_Enemy_149",
+     "num": 3
+    },
+    {
+     "id": "Item_Enemy_216",
+     "num": 3
+    },
+    {
+     "id": "Item_InsectGet_K",
+     "num": 3
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_149",
+     "zh": "蓝鬃莱尼尔的刃角",
+     "num": 3
+    },
+    {
+     "id": "Item_Enemy_216",
+     "zh": "蓝鬃莱尼尔的碎角",
+     "num": 3
+    },
+    {
+     "id": "Item_InsectGet_K",
+     "zh": "大剑螃蟹",
+     "num": 3
+    }
+   ]
+  }
+ ],
+ "Armor_112_Upper": [
+  {
+   "price": 200,
+   "items": [
+    {
+     "id": "Item_Enemy_149",
+     "num": 3
+    },
+    {
+     "id": "Item_Enemy_216",
+     "num": 3
+    },
+    {
+     "id": "Item_InsectGet_K",
+     "num": 3
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_149",
+     "zh": "蓝鬃莱尼尔的刃角",
+     "num": 3
+    },
+    {
+     "id": "Item_Enemy_216",
+     "zh": "蓝鬃莱尼尔的碎角",
+     "num": 3
+    },
+    {
+     "id": "Item_InsectGet_K",
+     "zh": "大剑螃蟹",
+     "num": 3
+    }
+   ]
+  }
+ ],
+ "Armor_113_Head": [
+  {
+   "price": 500,
+   "items": [
+    {
+     "id": "Item_Enemy_150",
+     "num": 3
+    },
+    {
+     "id": "Item_Enemy_217",
+     "num": 3
+    },
+    {
+     "id": "Animal_Insect_G",
+     "num": 3
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_150",
+     "zh": "白鬃莱尼尔的刃角",
+     "num": 3
+    },
+    {
+     "id": "Item_Enemy_217",
+     "zh": "白鬃莱尼尔的碎角",
+     "num": 3
+    },
+    {
+     "id": "Animal_Insect_G",
+     "zh": "大剑独角仙",
+     "num": 3
+    }
+   ]
+  }
+ ],
+ "Armor_113_Lower": [
+  {
+   "price": 500,
+   "items": [
+    {
+     "id": "Item_Enemy_150",
+     "num": 3
+    },
+    {
+     "id": "Item_Enemy_217",
+     "num": 3
+    },
+    {
+     "id": "Animal_Insect_G",
+     "num": 3
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_150",
+     "zh": "白鬃莱尼尔的刃角",
+     "num": 3
+    },
+    {
+     "id": "Item_Enemy_217",
+     "zh": "白鬃莱尼尔的碎角",
+     "num": 3
+    },
+    {
+     "id": "Animal_Insect_G",
+     "zh": "大剑独角仙",
+     "num": 3
+    }
+   ]
+  }
+ ],
+ "Armor_113_Upper": [
+  {
+   "price": 500,
+   "items": [
+    {
+     "id": "Item_Enemy_150",
+     "num": 3
+    },
+    {
+     "id": "Item_Enemy_217",
+     "num": 3
+    },
+    {
+     "id": "Animal_Insect_G",
+     "num": 3
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_150",
+     "zh": "白鬃莱尼尔的刃角",
+     "num": 3
+    },
+    {
+     "id": "Item_Enemy_217",
+     "zh": "白鬃莱尼尔的碎角",
+     "num": 3
+    },
+    {
+     "id": "Animal_Insect_G",
+     "zh": "大剑独角仙",
+     "num": 3
+    }
+   ]
+  }
+ ],
+ "Armor_1141_Head": [
+  {
+   "price": 10,
+   "items": [
+    {
+     "id": "Animal_Insect_AI",
+     "num": 3
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Animal_Insect_AI",
+     "zh": "暗萤火虫",
+     "num": 3
+    }
+   ]
+  }
+ ],
+ "Armor_1141_Lower": [
+  {
+   "price": 10,
+   "items": [
+    {
+     "id": "Animal_Insect_AI",
+     "num": 3
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Animal_Insect_AI",
+     "zh": "暗萤火虫",
+     "num": 3
+    }
+   ]
+  }
+ ],
+ "Armor_1141_Upper": [
+  {
+   "price": 10,
+   "items": [
+    {
+     "id": "Animal_Insect_AI",
+     "num": 3
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Animal_Insect_AI",
+     "zh": "暗萤火虫",
+     "num": 3
+    }
+   ]
+  }
+ ],
+ "Armor_1142_Head": [
+  {
+   "price": 50,
+   "items": [
+    {
+     "id": "Item_Enemy_186",
+     "num": 3
+    },
+    {
+     "id": "Item_Material_11",
+     "num": 5
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_186",
+     "zh": "巨霸迦马的大牙",
+     "num": 3
+    },
+    {
+     "id": "Item_Material_11",
+     "zh": "暗之块",
+     "num": 5
+    }
+   ]
+  }
+ ],
+ "Armor_1142_Lower": [
+  {
+   "price": 50,
+   "items": [
+    {
+     "id": "Item_Enemy_186",
+     "num": 3
+    },
+    {
+     "id": "Item_Material_11",
+     "num": 5
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_186",
+     "zh": "巨霸迦马的大牙",
+     "num": 3
+    },
+    {
+     "id": "Item_Material_11",
+     "zh": "暗之块",
+     "num": 5
+    }
+   ]
+  }
+ ],
+ "Armor_1142_Upper": [
+  {
+   "price": 50,
+   "items": [
+    {
+     "id": "Item_Enemy_186",
+     "num": 3
+    },
+    {
+     "id": "Item_Material_11",
+     "num": 5
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_186",
+     "zh": "巨霸迦马的大牙",
+     "num": 3
+    },
+    {
+     "id": "Item_Material_11",
+     "zh": "暗之块",
+     "num": 5
+    }
+   ]
+  }
+ ],
+ "Armor_1143_Head": [
+  {
+   "price": 200,
+   "items": [
+    {
+     "id": "Item_Enemy_187",
+     "num": 3
+    },
+    {
+     "id": "Item_Ore_L",
+     "num": 20
+    },
+    {
+     "id": "Item_Enemy_189",
+     "num": 3
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_187",
+     "zh": "黑曜巨霸迦马的大牙",
+     "num": 3
+    },
+    {
+     "id": "Item_Ore_L",
+     "zh": "左纳尼乌姆",
+     "num": 20
+    },
+    {
+     "id": "Item_Enemy_189",
+     "zh": "巨霸迦马的爪子",
+     "num": 3
+    }
+   ]
+  }
+ ],
+ "Armor_1143_Lower": [
+  {
+   "price": 200,
+   "items": [
+    {
+     "id": "Item_Enemy_187",
+     "num": 3
+    },
+    {
+     "id": "Item_Ore_L",
+     "num": 20
+    },
+    {
+     "id": "Item_Enemy_189",
+     "num": 3
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_187",
+     "zh": "黑曜巨霸迦马的大牙",
+     "num": 3
+    },
+    {
+     "id": "Item_Ore_L",
+     "zh": "左纳尼乌姆",
+     "num": 20
+    },
+    {
+     "id": "Item_Enemy_189",
+     "zh": "巨霸迦马的爪子",
+     "num": 3
+    }
+   ]
+  }
+ ],
+ "Armor_1143_Upper": [
+  {
+   "price": 200,
+   "items": [
+    {
+     "id": "Item_Enemy_187",
+     "num": 3
+    },
+    {
+     "id": "Item_Ore_L",
+     "num": 20
+    },
+    {
+     "id": "Item_Enemy_189",
+     "num": 3
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_187",
+     "zh": "黑曜巨霸迦马的大牙",
+     "num": 3
+    },
+    {
+     "id": "Item_Ore_L",
+     "zh": "左纳尼乌姆",
+     "num": 20
+    },
+    {
+     "id": "Item_Enemy_189",
+     "zh": "巨霸迦马的爪子",
+     "num": 3
+    }
+   ]
+  }
+ ],
+ "Armor_1144_Head": [
+  {
+   "price": 500,
+   "items": [
+    {
+     "id": "Item_Enemy_188",
+     "num": 5
+    },
+    {
+     "id": "Item_Ore_M",
+     "num": 10
+    },
+    {
+     "id": "Item_Enemy_190",
+     "num": 3
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_188",
+     "zh": "白苍巨霸迦马的大牙",
+     "num": 5
+    },
+    {
+     "id": "Item_Ore_M",
+     "zh": "大的左纳尼乌姆",
+     "num": 10
+    },
+    {
+     "id": "Item_Enemy_190",
+     "zh": "巨霸迦马的肝脏",
+     "num": 3
+    }
+   ]
+  }
+ ],
+ "Armor_1144_Lower": [
+  {
+   "price": 500,
+   "items": [
+    {
+     "id": "Item_Enemy_188",
+     "num": 5
+    },
+    {
+     "id": "Item_Ore_M",
+     "num": 10
+    },
+    {
+     "id": "Item_Enemy_190",
+     "num": 3
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_188",
+     "zh": "白苍巨霸迦马的大牙",
+     "num": 5
+    },
+    {
+     "id": "Item_Ore_M",
+     "zh": "大的左纳尼乌姆",
+     "num": 10
+    },
+    {
+     "id": "Item_Enemy_190",
+     "zh": "巨霸迦马的肝脏",
+     "num": 3
+    }
+   ]
+  }
+ ],
+ "Armor_1144_Upper": [
+  {
+   "price": 500,
+   "items": [
+    {
+     "id": "Item_Enemy_188",
+     "num": 5
+    },
+    {
+     "id": "Item_Ore_M",
+     "num": 10
+    },
+    {
+     "id": "Item_Enemy_190",
+     "num": 3
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_188",
+     "zh": "白苍巨霸迦马的大牙",
+     "num": 5
+    },
+    {
+     "id": "Item_Ore_M",
+     "zh": "大的左纳尼乌姆",
+     "num": 10
+    },
+    {
+     "id": "Item_Enemy_190",
+     "zh": "巨霸迦马的肝脏",
+     "num": 3
+    }
+   ]
+  }
+ ],
+ "Armor_1146_Head": [
+  {
+   "price": 50,
+   "items": [
+    {
+     "id": "Item_Enemy_132",
+     "num": 3
+    },
+    {
+     "id": "Item_Enemy_136",
+     "num": 3
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_132",
+     "zh": "蓝色首领波克布林的犄角",
+     "num": 3
+    },
+    {
+     "id": "Item_Enemy_136",
+     "zh": "首领波克布林的肝脏",
+     "num": 3
+    }
+   ]
+  }
+ ],
+ "Armor_1146_Lower": [
+  {
+   "price": 50,
+   "items": [
+    {
+     "id": "Item_Enemy_132",
+     "num": 3
+    },
+    {
+     "id": "Item_Enemy_136",
+     "num": 3
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_132",
+     "zh": "蓝色首领波克布林的犄角",
+     "num": 3
+    },
+    {
+     "id": "Item_Enemy_136",
+     "zh": "首领波克布林的肝脏",
+     "num": 3
+    }
+   ]
+  }
+ ],
+ "Armor_1146_Upper": [
+  {
+   "price": 50,
+   "items": [
+    {
+     "id": "Item_Enemy_132",
+     "num": 3
+    },
+    {
+     "id": "Item_Enemy_136",
+     "num": 3
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_132",
+     "zh": "蓝色首领波克布林的犄角",
+     "num": 3
+    },
+    {
+     "id": "Item_Enemy_136",
+     "zh": "首领波克布林的肝脏",
+     "num": 3
+    }
+   ]
+  }
+ ],
+ "Armor_1147_Head": [
+  {
+   "price": 200,
+   "items": [
+    {
+     "id": "Item_Enemy_133",
+     "num": 3
+    },
+    {
+     "id": "Item_Enemy_34",
+     "num": 3
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_133",
+     "zh": "黑色首领波克布林的犄角",
+     "num": 3
+    },
+    {
+     "id": "Item_Enemy_34",
+     "zh": "西诺克斯的肝脏",
+     "num": 3
+    }
+   ]
+  }
+ ],
+ "Armor_1147_Lower": [
+  {
+   "price": 200,
+   "items": [
+    {
+     "id": "Item_Enemy_133",
+     "num": 3
+    },
+    {
+     "id": "Item_Enemy_34",
+     "num": 3
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_133",
+     "zh": "黑色首领波克布林的犄角",
+     "num": 3
+    },
+    {
+     "id": "Item_Enemy_34",
+     "zh": "西诺克斯的肝脏",
+     "num": 3
+    }
+   ]
+  }
+ ],
+ "Armor_1147_Upper": [
+  {
+   "price": 200,
+   "items": [
+    {
+     "id": "Item_Enemy_133",
+     "num": 3
+    },
+    {
+     "id": "Item_Enemy_34",
+     "num": 3
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_133",
+     "zh": "黑色首领波克布林的犄角",
+     "num": 3
+    },
+    {
+     "id": "Item_Enemy_34",
+     "zh": "西诺克斯的肝脏",
+     "num": 3
+    }
+   ]
+  }
+ ],
+ "Armor_1148_Head": [
+  {
+   "price": 500,
+   "items": [
+    {
+     "id": "Item_Enemy_134",
+     "num": 3
+    },
+    {
+     "id": "Item_Enemy_25",
+     "num": 3
+    },
+    {
+     "id": "Item_Enemy_157",
+     "num": 3
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_134",
+     "zh": "白银首领波克布林的犄角",
+     "num": 3
+    },
+    {
+     "id": "Item_Enemy_25",
+     "zh": "莫尔德拉吉克的肝脏",
+     "num": 3
+    },
+    {
+     "id": "Item_Enemy_157",
+     "zh": "古栗欧克的肝脏",
+     "num": 3
+    }
+   ]
+  }
+ ],
+ "Armor_1148_Lower": [
+  {
+   "price": 500,
+   "items": [
+    {
+     "id": "Item_Enemy_134",
+     "num": 3
+    },
+    {
+     "id": "Item_Enemy_25",
+     "num": 3
+    },
+    {
+     "id": "Item_Enemy_157",
+     "num": 3
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_134",
+     "zh": "白银首领波克布林的犄角",
+     "num": 3
+    },
+    {
+     "id": "Item_Enemy_25",
+     "zh": "莫尔德拉吉克的肝脏",
+     "num": 3
+    },
+    {
+     "id": "Item_Enemy_157",
+     "zh": "古栗欧克的肝脏",
+     "num": 3
+    }
+   ]
+  }
+ ],
+ "Armor_1148_Upper": [
+  {
+   "price": 500,
+   "items": [
+    {
+     "id": "Item_Enemy_134",
+     "num": 3
+    },
+    {
+     "id": "Item_Enemy_25",
+     "num": 3
+    },
+    {
+     "id": "Item_Enemy_157",
+     "num": 3
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_134",
+     "zh": "白银首领波克布林的犄角",
+     "num": 3
+    },
+    {
+     "id": "Item_Enemy_25",
+     "zh": "莫尔德拉吉克的肝脏",
+     "num": 3
+    },
+    {
+     "id": "Item_Enemy_157",
+     "zh": "古栗欧克的肝脏",
+     "num": 3
+    }
+   ]
+  }
+ ],
+ "Armor_1150_Upper": [
+  {
+   "price": 10,
+   "items": [
+    {
+     "id": "Item_PlantGet_J",
+     "num": 3
+    },
+    {
+     "id": "Item_Enemy_158",
+     "num": 2
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_PlantGet_J",
+     "zh": "宁静公主",
+     "num": 3
+    },
+    {
+     "id": "Item_Enemy_158",
+     "zh": "白龙的鳞片",
+     "num": 2
+    }
+   ]
+  }
+ ],
+ "Armor_1152_Head": [
+  {
+   "price": 10,
+   "items": [
+    {
+     "id": "Item_Enemy_77",
+     "num": 5
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_77",
+     "zh": "波克布林的犄角",
+     "num": 5
+    }
+   ]
+  }
+ ],
+ "Armor_1152_Head_B": [
+  {
+   "price": 10,
+   "items": [
+    {
+     "id": "Item_Enemy_77",
+     "num": 5
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_77",
+     "zh": "波克布林的犄角",
+     "num": 5
+    }
+   ]
+  }
+ ],
+ "Armor_1153_Head": [
+  {
+   "price": 50,
+   "items": [
+    {
+     "id": "Item_Enemy_78",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_01",
+     "num": 3
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_78",
+     "zh": "蓝色波克布林的犄角",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_01",
+     "zh": "波克布林的牙齿",
+     "num": 3
+    }
+   ]
+  }
+ ],
+ "Armor_1153_Head_B": [
+  {
+   "price": 50,
+   "items": [
+    {
+     "id": "Item_Enemy_78",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_01",
+     "num": 3
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_78",
+     "zh": "蓝色波克布林的犄角",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_01",
+     "zh": "波克布林的牙齿",
+     "num": 3
+    }
+   ]
+  }
+ ],
+ "Armor_1154_Head": [
+  {
+   "price": 200,
+   "items": [
+    {
+     "id": "Item_Enemy_79",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_02",
+     "num": 3
+    },
+    {
+     "id": "Item_Ore_F",
+     "num": 20
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_79",
+     "zh": "黑色波克布林的犄角",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_02",
+     "zh": "波克布林的肝脏",
+     "num": 3
+    },
+    {
+     "id": "Item_Ore_F",
+     "zh": "琥珀",
+     "num": 20
+    }
+   ]
+  }
+ ],
+ "Armor_1154_Head_B": [
+  {
+   "price": 200,
+   "items": [
+    {
+     "id": "Item_Enemy_79",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_02",
+     "num": 3
+    },
+    {
+     "id": "Item_Ore_F",
+     "num": 20
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_79",
+     "zh": "黑色波克布林的犄角",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_02",
+     "zh": "波克布林的肝脏",
+     "num": 3
+    },
+    {
+     "id": "Item_Ore_F",
+     "zh": "琥珀",
+     "num": 20
+    }
+   ]
+  }
+ ],
+ "Armor_1155_Head": [
+  {
+   "price": 500,
+   "items": [
+    {
+     "id": "Item_Enemy_80",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_02",
+     "num": 5
+    },
+    {
+     "id": "Item_Ore_F",
+     "num": 30
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_80",
+     "zh": "白银波克布林的犄角",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_02",
+     "zh": "波克布林的肝脏",
+     "num": 5
+    },
+    {
+     "id": "Item_Ore_F",
+     "zh": "琥珀",
+     "num": 30
+    }
+   ]
+  }
+ ],
+ "Armor_1155_Head_B": [
+  {
+   "price": 500,
+   "items": [
+    {
+     "id": "Item_Enemy_80",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_02",
+     "num": 5
+    },
+    {
+     "id": "Item_Ore_F",
+     "num": 30
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_80",
+     "zh": "白银波克布林的犄角",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_02",
+     "zh": "波克布林的肝脏",
+     "num": 5
+    },
+    {
+     "id": "Item_Ore_F",
+     "zh": "琥珀",
+     "num": 30
+    }
+   ]
+  }
+ ],
+ "Armor_116_Upper": [
+  {
+   "price": 10,
+   "items": [
+    {
+     "id": "Item_PlantGet_J",
+     "num": 3
+    },
+    {
+     "id": "Item_Enemy_158",
+     "num": 1
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_PlantGet_J",
+     "zh": "宁静公主",
+     "num": 3
+    },
+    {
+     "id": "Item_Enemy_158",
+     "zh": "白龙的鳞片",
+     "num": 1
+    }
+   ]
+  }
+ ],
+ "Armor_117_Head": [
+  {
+   "price": 50,
+   "items": [
+    {
+     "id": "Item_Ore_A",
+     "num": 3
+    },
+    {
+     "id": "Item_Ore_I",
+     "num": 5
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_A",
+     "zh": "钻石",
+     "num": 3
+    },
+    {
+     "id": "Item_Ore_I",
+     "zh": "打火石",
+     "num": 5
+    }
+   ]
+  }
+ ],
+ "Armor_118_Head": [
+  {
+   "price": 200,
+   "items": [
+    {
+     "id": "Item_Ore_A",
+     "num": 5
+    },
+    {
+     "id": "Item_Ore_J",
+     "num": 1
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_A",
+     "zh": "钻石",
+     "num": 5
+    },
+    {
+     "id": "Item_Ore_J",
+     "zh": "星星碎片",
+     "num": 1
+    }
+   ]
+  }
+ ],
+ "Armor_119_Head": [
+  {
+   "price": 500,
+   "items": [
+    {
+     "id": "Item_Ore_A",
+     "num": 8
+    },
+    {
+     "id": "Item_Ore_J",
+     "num": 2
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_A",
+     "zh": "钻石",
+     "num": 8
+    },
+    {
+     "id": "Item_Ore_J",
+     "zh": "星星碎片",
+     "num": 2
+    }
+   ]
+  }
+ ],
+ "Armor_121_Head": [
+  {
+   "price": 50,
+   "items": [
+    {
+     "id": "Item_Ore_B",
+     "num": 4
+    },
+    {
+     "id": "Item_Ore_I",
+     "num": 5
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_B",
+     "zh": "红宝石",
+     "num": 4
+    },
+    {
+     "id": "Item_Ore_I",
+     "zh": "打火石",
+     "num": 5
+    }
+   ]
+  }
+ ],
+ "Armor_122_Head": [
+  {
+   "price": 200,
+   "items": [
+    {
+     "id": "Item_Ore_B",
+     "num": 6
+    },
+    {
+     "id": "Item_Ore_J",
+     "num": 1
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_B",
+     "zh": "红宝石",
+     "num": 6
+    },
+    {
+     "id": "Item_Ore_J",
+     "zh": "星星碎片",
+     "num": 1
+    }
+   ]
+  }
+ ],
+ "Armor_123_Head": [
+  {
+   "price": 500,
+   "items": [
+    {
+     "id": "Item_Ore_B",
+     "num": 10
+    },
+    {
+     "id": "Item_Ore_J",
+     "num": 2
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_B",
+     "zh": "红宝石",
+     "num": 10
+    },
+    {
+     "id": "Item_Ore_J",
+     "zh": "星星碎片",
+     "num": 2
+    }
+   ]
+  }
+ ],
+ "Armor_125_Head": [
+  {
+   "price": 50,
+   "items": [
+    {
+     "id": "Item_Ore_C",
+     "num": 4
+    },
+    {
+     "id": "Item_Ore_I",
+     "num": 5
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_C",
+     "zh": "蓝宝石",
+     "num": 4
+    },
+    {
+     "id": "Item_Ore_I",
+     "zh": "打火石",
+     "num": 5
+    }
+   ]
+  }
+ ],
+ "Armor_126_Head": [
+  {
+   "price": 200,
+   "items": [
+    {
+     "id": "Item_Ore_C",
+     "num": 6
+    },
+    {
+     "id": "Item_Ore_J",
+     "num": 1
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_C",
+     "zh": "蓝宝石",
+     "num": 6
+    },
+    {
+     "id": "Item_Ore_J",
+     "zh": "星星碎片",
+     "num": 1
+    }
+   ]
+  }
+ ],
+ "Armor_127_Head": [
+  {
+   "price": 500,
+   "items": [
+    {
+     "id": "Item_Ore_C",
+     "num": 10
+    },
+    {
+     "id": "Item_Ore_J",
+     "num": 2
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_C",
+     "zh": "蓝宝石",
+     "num": 10
+    },
+    {
+     "id": "Item_Ore_J",
+     "zh": "星星碎片",
+     "num": 2
+    }
+   ]
+  }
+ ],
+ "Armor_129_Head": [
+  {
+   "price": 50,
+   "items": [
+    {
+     "id": "Item_Ore_D",
+     "num": 4
+    },
+    {
+     "id": "Item_Ore_I",
+     "num": 5
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_D",
+     "zh": "黄玉",
+     "num": 4
+    },
+    {
+     "id": "Item_Ore_I",
+     "zh": "打火石",
+     "num": 5
+    }
+   ]
+  }
+ ],
+ "Armor_1300_Head": [
+  {
+   "price": 10,
+   "items": [
+    {
+     "id": "Item_Enemy_21",
+     "num": 2
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_21",
+     "zh": "八爪怪的眼珠",
+     "num": 2
+    }
+   ]
+  }
+ ],
+ "Armor_1300_Lower": [
+  {
+   "price": 10,
+   "items": [
+    {
+     "id": "Item_Enemy_21",
+     "num": 2
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_21",
+     "zh": "八爪怪的眼珠",
+     "num": 2
+    }
+   ]
+  }
+ ],
+ "Armor_1300_Upper": [
+  {
+   "price": 10,
+   "items": [
+    {
+     "id": "Item_Enemy_21",
+     "num": 2
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_21",
+     "zh": "八爪怪的眼珠",
+     "num": 2
+    }
+   ]
+  }
+ ],
+ "Armor_1301_Head": [
+  {
+   "price": 50,
+   "items": [
+    {
+     "id": "Item_Enemy_41",
+     "num": 3
+    },
+    {
+     "id": "SmokeFruit",
+     "num": 3
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_41",
+     "zh": "喷火蜥蜴战士的尾巴",
+     "num": 3
+    },
+    {
+     "id": "SmokeFruit",
+     "zh": "烟雾蘑菇",
+     "num": 3
+    }
+   ]
+  }
+ ],
+ "Armor_1301_Lower": [
+  {
+   "price": 50,
+   "items": [
+    {
+     "id": "Item_Enemy_41",
+     "num": 3
+    },
+    {
+     "id": "SmokeFruit",
+     "num": 3
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_41",
+     "zh": "喷火蜥蜴战士的尾巴",
+     "num": 3
+    },
+    {
+     "id": "SmokeFruit",
+     "zh": "烟雾蘑菇",
+     "num": 3
+    }
+   ]
+  }
+ ],
+ "Armor_1301_Upper": [
+  {
+   "price": 50,
+   "items": [
+    {
+     "id": "Item_Enemy_41",
+     "num": 3
+    },
+    {
+     "id": "SmokeFruit",
+     "num": 3
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_41",
+     "zh": "喷火蜥蜴战士的尾巴",
+     "num": 3
+    },
+    {
+     "id": "SmokeFruit",
+     "zh": "烟雾蘑菇",
+     "num": 3
+    }
+   ]
+  }
+ ],
+ "Armor_1302_Head": [
+  {
+   "price": 200,
+   "items": [
+    {
+     "id": "Item_Enemy_42",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_19",
+     "num": 5
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_42",
+     "zh": "吐雹蜥蜴战士的尾巴",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_19",
+     "zh": "蝙蝠的眼珠",
+     "num": 5
+    }
+   ]
+  }
+ ],
+ "Armor_1302_Lower": [
+  {
+   "price": 200,
+   "items": [
+    {
+     "id": "Item_Enemy_42",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_19",
+     "num": 5
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_42",
+     "zh": "吐雹蜥蜴战士的尾巴",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_19",
+     "zh": "蝙蝠的眼珠",
+     "num": 5
+    }
+   ]
+  }
+ ],
+ "Armor_1302_Upper": [
+  {
+   "price": 200,
+   "items": [
+    {
+     "id": "Item_Enemy_42",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_19",
+     "num": 5
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_42",
+     "zh": "吐雹蜥蜴战士的尾巴",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_19",
+     "zh": "蝙蝠的眼珠",
+     "num": 5
+    }
+   ]
+  }
+ ],
+ "Armor_1303_Head": [
+  {
+   "price": 500,
+   "items": [
+    {
+     "id": "Item_Enemy_43",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_144",
+     "num": 3
+    },
+    {
+     "id": "Item_Fruit_H",
+     "num": 10
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_43",
+     "zh": "电麻蜥蜴战士的尾巴",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_144",
+     "zh": "黑色西诺克斯的犄角",
+     "num": 3
+    },
+    {
+     "id": "Item_Fruit_H",
+     "zh": "大剑香蕉",
+     "num": 10
+    }
+   ]
+  }
+ ],
+ "Armor_1303_Lower": [
+  {
+   "price": 500,
+   "items": [
+    {
+     "id": "Item_Enemy_43",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_144",
+     "num": 3
+    },
+    {
+     "id": "Item_Fruit_H",
+     "num": 10
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_43",
+     "zh": "电麻蜥蜴战士的尾巴",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_144",
+     "zh": "黑色西诺克斯的犄角",
+     "num": 3
+    },
+    {
+     "id": "Item_Fruit_H",
+     "zh": "大剑香蕉",
+     "num": 10
+    }
+   ]
+  }
+ ],
+ "Armor_1303_Upper": [
+  {
+   "price": 500,
+   "items": [
+    {
+     "id": "Item_Enemy_43",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_144",
+     "num": 3
+    },
+    {
+     "id": "Item_Fruit_H",
+     "num": 10
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_43",
+     "zh": "电麻蜥蜴战士的尾巴",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_144",
+     "zh": "黑色西诺克斯的犄角",
+     "num": 3
+    },
+    {
+     "id": "Item_Fruit_H",
+     "zh": "大剑香蕉",
+     "num": 10
+    }
+   ]
+  }
+ ],
+ "Armor_130_Head": [
+  {
+   "price": 200,
+   "items": [
+    {
+     "id": "Item_Ore_D",
+     "num": 6
+    },
+    {
+     "id": "Item_Ore_J",
+     "num": 1
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_D",
+     "zh": "黄玉",
+     "num": 6
+    },
+    {
+     "id": "Item_Ore_J",
+     "zh": "星星碎片",
+     "num": 1
+    }
+   ]
+  }
+ ],
+ "Armor_131_Head": [
+  {
+   "price": 500,
+   "items": [
+    {
+     "id": "Item_Ore_D",
+     "num": 10
+    },
+    {
+     "id": "Item_Ore_J",
+     "num": 2
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_D",
+     "zh": "黄玉",
+     "num": 10
+    },
+    {
+     "id": "Item_Ore_J",
+     "zh": "星星碎片",
+     "num": 2
+    }
+   ]
+  }
+ ],
+ "Armor_133_Head": [
+  {
+   "price": 50,
+   "items": [
+    {
+     "id": "Item_Ore_E",
+     "num": 12
+    },
+    {
+     "id": "Item_Ore_I",
+     "num": 10
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_E",
+     "zh": "蛋白石",
+     "num": 12
+    },
+    {
+     "id": "Item_Ore_I",
+     "zh": "打火石",
+     "num": 10
+    }
+   ]
+  }
+ ],
+ "Armor_134_Head": [
+  {
+   "price": 200,
+   "items": [
+    {
+     "id": "Item_Ore_E",
+     "num": 18
+    },
+    {
+     "id": "Item_Ore_I",
+     "num": 15
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_E",
+     "zh": "蛋白石",
+     "num": 18
+    },
+    {
+     "id": "Item_Ore_I",
+     "zh": "打火石",
+     "num": 15
+    }
+   ]
+  }
+ ],
+ "Armor_135_Head": [
+  {
+   "price": 500,
+   "items": [
+    {
+     "id": "Item_Ore_E",
+     "num": 30
+    },
+    {
+     "id": "Item_Ore_I",
+     "num": 25
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_E",
+     "zh": "蛋白石",
+     "num": 30
+    },
+    {
+     "id": "Item_Ore_I",
+     "zh": "打火石",
+     "num": 25
+    }
+   ]
+  }
+ ],
+ "Armor_137_Head": [
+  {
+   "price": 50,
+   "items": [
+    {
+     "id": "Item_Ore_F",
+     "num": 20
+    },
+    {
+     "id": "Item_Ore_I",
+     "num": 10
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_F",
+     "zh": "琥珀",
+     "num": 20
+    },
+    {
+     "id": "Item_Ore_I",
+     "zh": "打火石",
+     "num": 10
+    }
+   ]
+  }
+ ],
+ "Armor_138_Head": [
+  {
+   "price": 200,
+   "items": [
+    {
+     "id": "Item_Ore_F",
+     "num": 35
+    },
+    {
+     "id": "Item_Ore_I",
+     "num": 15
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_F",
+     "zh": "琥珀",
+     "num": 35
+    },
+    {
+     "id": "Item_Ore_I",
+     "zh": "打火石",
+     "num": 15
+    }
+   ]
+  }
+ ],
+ "Armor_139_Head": [
+  {
+   "price": 500,
+   "items": [
+    {
+     "id": "Item_Ore_F",
+     "num": 60
+    },
+    {
+     "id": "Item_Ore_I",
+     "num": 25
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_F",
+     "zh": "琥珀",
+     "num": 60
+    },
+    {
+     "id": "Item_Ore_I",
+     "zh": "打火石",
+     "num": 25
+    }
+   ]
+  }
+ ],
+ "Armor_141_Lower": [
+  {
+   "price": 10,
+   "items": [
+    {
+     "id": "Animal_Insect_S",
+     "num": 3
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Animal_Insect_S",
+     "zh": "速速蜥蜴",
+     "num": 3
+    }
+   ]
+  }
+ ],
+ "Armor_148_Upper": [
+  {
+   "price": 50,
+   "items": [
+    {
+     "id": "Item_PlantGet_J",
+     "num": 3
+    },
+    {
+     "id": "Item_Enemy_159",
+     "num": 1
+    },
+    {
+     "id": "Item_Enemy_213",
+     "num": 2
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_PlantGet_J",
+     "zh": "宁静公主",
+     "num": 3
+    },
+    {
+     "id": "Item_Enemy_159",
+     "zh": "白龙的爪子",
+     "num": 1
+    },
+    {
+     "id": "Item_Enemy_213",
+     "zh": "费罗龙的犄角",
+     "num": 2
+    }
+   ]
+  }
+ ],
+ "Armor_149_Upper": [
+  {
+   "price": 200,
+   "items": [
+    {
+     "id": "Item_PlantGet_J",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_160",
+     "num": 1
+    },
+    {
+     "id": "Item_Enemy_212",
+     "num": 2
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_PlantGet_J",
+     "zh": "宁静公主",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_160",
+     "zh": "白龙的牙齿碎片",
+     "num": 1
+    },
+    {
+     "id": "Item_Enemy_212",
+     "zh": "聂尔龙的犄角",
+     "num": 2
+    }
+   ]
+  }
+ ],
+ "Armor_150_Upper": [
+  {
+   "price": 500,
+   "items": [
+    {
+     "id": "Item_PlantGet_J",
+     "num": 10
+    },
+    {
+     "id": "Item_Enemy_214",
+     "num": 1
+    },
+    {
+     "id": "Item_Enemy_211",
+     "num": 2
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_PlantGet_J",
+     "zh": "宁静公主",
+     "num": 10
+    },
+    {
+     "id": "Item_Enemy_214",
+     "zh": "白龙的犄角",
+     "num": 1
+    },
+    {
+     "id": "Item_Enemy_211",
+     "zh": "奥尔龙的犄角",
+     "num": 2
+    }
+   ]
+  }
+ ],
+ "Armor_152_Lower": [
+  {
+   "price": 50,
+   "items": [
+    {
+     "id": "Item_Enemy_69",
+     "num": 20
+    },
+    {
+     "id": "Item_Plant_M",
+     "num": 5
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_69",
+     "zh": "吉波得之骨",
+     "num": 20
+    },
+    {
+     "id": "Item_Plant_M",
+     "zh": null,
+     "num": 5
+    }
+   ]
+  }
+ ],
+ "Armor_153_Lower": [
+  {
+   "price": 200,
+   "items": [
+    {
+     "id": "Item_Enemy_121",
+     "num": 5
+    },
+    {
+     "id": "Item_Mushroom_D",
+     "num": 10
+    },
+    {
+     "id": "Item_Enemy_24",
+     "num": 5
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_121",
+     "zh": "吉波得的肝脏",
+     "num": 5
+    },
+    {
+     "id": "Item_Mushroom_D",
+     "zh": null,
+     "num": 10
+    },
+    {
+     "id": "Item_Enemy_24",
+     "zh": "莫尔德拉吉克的背鳍",
+     "num": 5
+    }
+   ]
+  }
+ ],
+ "Armor_154_Lower": [
+  {
+   "price": 500,
+   "items": [
+    {
+     "id": "Item_Enemy_25",
+     "num": 5
+    },
+    {
+     "id": "Item_Plant_O",
+     "num": 10
+    },
+    {
+     "id": "Animal_Insect_M",
+     "num": 5
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_25",
+     "zh": "莫尔德拉吉克的肝脏",
+     "num": 5
+    },
+    {
+     "id": "Item_Plant_O",
+     "zh": null,
+     "num": 10
+    },
+    {
+     "id": "Animal_Insect_M",
+     "zh": "生命蜥蜴",
+     "num": 5
+    }
+   ]
+  }
+ ],
+ "Armor_156_Lower": [
+  {
+   "price": 50,
+   "items": [
+    {
+     "id": "Item_Enemy_20",
+     "num": 5
+    },
+    {
+     "id": "Item_Plant_M",
+     "num": 5
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_20",
+     "zh": "八爪怪的脚",
+     "num": 5
+    },
+    {
+     "id": "Item_Plant_M",
+     "zh": null,
+     "num": 5
+    }
+   ]
+  }
+ ],
+ "Armor_157_Lower": [
+  {
+   "price": 200,
+   "items": [
+    {
+     "id": "Item_Enemy_57",
+     "num": 5
+    },
+    {
+     "id": "Item_Mushroom_D",
+     "num": 20
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_57",
+     "zh": "八爪怪气球",
+     "num": 5
+    },
+    {
+     "id": "Item_Mushroom_D",
+     "zh": null,
+     "num": 20
+    }
+   ]
+  }
+ ],
+ "Armor_158_Lower": [
+  {
+   "price": 500,
+   "items": [
+    {
+     "id": "Item_Enemy_49",
+     "num": 2
+    },
+    {
+     "id": "Item_Plant_O",
+     "num": 20
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_49",
+     "zh": "聂尔龙的鳞片",
+     "num": 2
+    },
+    {
+     "id": "Item_Plant_O",
+     "zh": null,
+     "num": 20
+    }
+   ]
+  }
+ ],
+ "Armor_168_Head": [
+  {
+   "price": 500,
+   "items": [
+    {
+     "id": "Item_Ore_D",
+     "num": 10
+    },
+    {
+     "id": "Item_Ore_M",
+     "num": 10
+    },
+    {
+     "id": "LightFruit",
+     "num": 10
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_D",
+     "zh": "黄玉",
+     "num": 10
+    },
+    {
+     "id": "Item_Ore_M",
+     "zh": "大的左纳尼乌姆",
+     "num": 10
+    },
+    {
+     "id": "LightFruit",
+     "zh": "闪耀果",
+     "num": 10
+    }
+   ]
+  }
+ ],
+ "Armor_179_Head": [
+  {
+   "price": 10,
+   "items": [
+    {
+     "id": "Item_Enemy_64",
+     "num": 3
+    },
+    {
+     "id": "Item_Enemy_02",
+     "num": 3
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_64",
+     "zh": "首领波克布林的犄角",
+     "num": 3
+    },
+    {
+     "id": "Item_Enemy_02",
+     "zh": "波克布林的肝脏",
+     "num": 3
+    }
+   ]
+  }
+ ],
+ "Armor_179_Lower": [
+  {
+   "price": 10,
+   "items": [
+    {
+     "id": "Item_Enemy_64",
+     "num": 3
+    },
+    {
+     "id": "Item_Enemy_02",
+     "num": 3
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_64",
+     "zh": "首领波克布林的犄角",
+     "num": 3
+    },
+    {
+     "id": "Item_Enemy_02",
+     "zh": "波克布林的肝脏",
+     "num": 3
+    }
+   ]
+  }
+ ],
+ "Armor_179_Upper": [
+  {
+   "price": 10,
+   "items": [
+    {
+     "id": "Item_Enemy_64",
+     "num": 3
+    },
+    {
+     "id": "Item_Enemy_02",
+     "num": 3
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_64",
+     "zh": "首领波克布林的犄角",
+     "num": 3
+    },
+    {
+     "id": "Item_Enemy_02",
+     "zh": "波克布林的肝脏",
+     "num": 3
+    }
+   ]
+  }
+ ],
+ "Armor_181_Head": [
+  {
+   "price": 10,
+   "items": [
+    {
+     "id": "Item_Ore_E",
+     "num": 5
+    },
+    {
+     "id": "Item_Ore_L",
+     "num": 5
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_E",
+     "zh": "蛋白石",
+     "num": 5
+    },
+    {
+     "id": "Item_Ore_L",
+     "zh": "左纳尼乌姆",
+     "num": 5
+    }
+   ]
+  }
+ ],
+ "Armor_182_Head": [
+  {
+   "price": 10,
+   "items": [
+    {
+     "id": "Item_Ore_C",
+     "num": 1
+    },
+    {
+     "id": "Item_Ore_L",
+     "num": 5
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_C",
+     "zh": "蓝宝石",
+     "num": 1
+    },
+    {
+     "id": "Item_Ore_L",
+     "zh": "左纳尼乌姆",
+     "num": 5
+    }
+   ]
+  }
+ ],
+ "Armor_183_Head": [
+  {
+   "price": 10,
+   "items": [
+    {
+     "id": "Item_Ore_B",
+     "num": 1
+    },
+    {
+     "id": "Item_Ore_L",
+     "num": 5
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_B",
+     "zh": "红宝石",
+     "num": 1
+    },
+    {
+     "id": "Item_Ore_L",
+     "zh": "左纳尼乌姆",
+     "num": 5
+    }
+   ]
+  }
+ ],
+ "Armor_184_Head": [
+  {
+   "price": 10,
+   "items": [
+    {
+     "id": "Item_Ore_D",
+     "num": 1
+    },
+    {
+     "id": "Item_Ore_L",
+     "num": 5
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_D",
+     "zh": "黄玉",
+     "num": 1
+    },
+    {
+     "id": "Item_Ore_L",
+     "zh": "左纳尼乌姆",
+     "num": 5
+    }
+   ]
+  }
+ ],
+ "Armor_186_Head": [
+  {
+   "price": 50,
+   "items": [
+    {
+     "id": "Item_Ore_E",
+     "num": 10
+    },
+    {
+     "id": "Item_Ore_L",
+     "num": 10
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_E",
+     "zh": "蛋白石",
+     "num": 10
+    },
+    {
+     "id": "Item_Ore_L",
+     "zh": "左纳尼乌姆",
+     "num": 10
+    }
+   ]
+  }
+ ],
+ "Armor_187_Head": [
+  {
+   "price": 200,
+   "items": [
+    {
+     "id": "Item_Ore_E",
+     "num": 15
+    },
+    {
+     "id": "Item_Ore_M",
+     "num": 5
+    },
+    {
+     "id": "LightFruit",
+     "num": 5
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_E",
+     "zh": "蛋白石",
+     "num": 15
+    },
+    {
+     "id": "Item_Ore_M",
+     "zh": "大的左纳尼乌姆",
+     "num": 5
+    },
+    {
+     "id": "LightFruit",
+     "zh": "闪耀果",
+     "num": 5
+    }
+   ]
+  }
+ ],
+ "Armor_188_Head": [
+  {
+   "price": 500,
+   "items": [
+    {
+     "id": "Item_Ore_E",
+     "num": 25
+    },
+    {
+     "id": "Item_Ore_M",
+     "num": 10
+    },
+    {
+     "id": "LightFruit",
+     "num": 10
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_E",
+     "zh": "蛋白石",
+     "num": 25
+    },
+    {
+     "id": "Item_Ore_M",
+     "zh": "大的左纳尼乌姆",
+     "num": 10
+    },
+    {
+     "id": "LightFruit",
+     "zh": "闪耀果",
+     "num": 10
+    }
+   ]
+  }
+ ],
+ "Armor_190_Head": [
+  {
+   "price": 50,
+   "items": [
+    {
+     "id": "Item_Ore_C",
+     "num": 4
+    },
+    {
+     "id": "Item_Ore_L",
+     "num": 10
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_C",
+     "zh": "蓝宝石",
+     "num": 4
+    },
+    {
+     "id": "Item_Ore_L",
+     "zh": "左纳尼乌姆",
+     "num": 10
+    }
+   ]
+  }
+ ],
+ "Armor_191_Head": [
+  {
+   "price": 200,
+   "items": [
+    {
+     "id": "Item_Ore_C",
+     "num": 6
+    },
+    {
+     "id": "Item_Ore_M",
+     "num": 5
+    },
+    {
+     "id": "LightFruit",
+     "num": 5
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_C",
+     "zh": "蓝宝石",
+     "num": 6
+    },
+    {
+     "id": "Item_Ore_M",
+     "zh": "大的左纳尼乌姆",
+     "num": 5
+    },
+    {
+     "id": "LightFruit",
+     "zh": "闪耀果",
+     "num": 5
+    }
+   ]
+  }
+ ],
+ "Armor_192_Head": [
+  {
+   "price": 500,
+   "items": [
+    {
+     "id": "Item_Ore_C",
+     "num": 10
+    },
+    {
+     "id": "Item_Ore_M",
+     "num": 10
+    },
+    {
+     "id": "LightFruit",
+     "num": 10
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_C",
+     "zh": "蓝宝石",
+     "num": 10
+    },
+    {
+     "id": "Item_Ore_M",
+     "zh": "大的左纳尼乌姆",
+     "num": 10
+    },
+    {
+     "id": "LightFruit",
+     "zh": "闪耀果",
+     "num": 10
+    }
+   ]
+  }
+ ],
+ "Armor_194_Head": [
+  {
+   "price": 50,
+   "items": [
+    {
+     "id": "Item_Ore_B",
+     "num": 4
+    },
+    {
+     "id": "Item_Ore_L",
+     "num": 10
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_B",
+     "zh": "红宝石",
+     "num": 4
+    },
+    {
+     "id": "Item_Ore_L",
+     "zh": "左纳尼乌姆",
+     "num": 10
+    }
+   ]
+  }
+ ],
+ "Armor_195_Head": [
+  {
+   "price": 200,
+   "items": [
+    {
+     "id": "Item_Ore_B",
+     "num": 6
+    },
+    {
+     "id": "Item_Ore_M",
+     "num": 5
+    },
+    {
+     "id": "LightFruit",
+     "num": 5
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_B",
+     "zh": "红宝石",
+     "num": 6
+    },
+    {
+     "id": "Item_Ore_M",
+     "zh": "大的左纳尼乌姆",
+     "num": 5
+    },
+    {
+     "id": "LightFruit",
+     "zh": "闪耀果",
+     "num": 5
+    }
+   ]
+  }
+ ],
+ "Armor_196_Head": [
+  {
+   "price": 500,
+   "items": [
+    {
+     "id": "Item_Ore_B",
+     "num": 10
+    },
+    {
+     "id": "Item_Ore_M",
+     "num": 10
+    },
+    {
+     "id": "LightFruit",
+     "num": 10
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_B",
+     "zh": "红宝石",
+     "num": 10
+    },
+    {
+     "id": "Item_Ore_M",
+     "zh": "大的左纳尼乌姆",
+     "num": 10
+    },
+    {
+     "id": "LightFruit",
+     "zh": "闪耀果",
+     "num": 10
+    }
+   ]
+  }
+ ],
+ "Armor_198_Head": [
+  {
+   "price": 50,
+   "items": [
+    {
+     "id": "Item_Ore_D",
+     "num": 4
+    },
+    {
+     "id": "Item_Ore_L",
+     "num": 10
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_D",
+     "zh": "黄玉",
+     "num": 4
+    },
+    {
+     "id": "Item_Ore_L",
+     "zh": "左纳尼乌姆",
+     "num": 10
+    }
+   ]
+  }
+ ],
+ "Armor_199_Head": [
+  {
+   "price": 200,
+   "items": [
+    {
+     "id": "Item_Ore_D",
+     "num": 6
+    },
+    {
+     "id": "Item_Ore_M",
+     "num": 5
+    },
+    {
+     "id": "LightFruit",
+     "num": 5
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_D",
+     "zh": "黄玉",
+     "num": 6
+    },
+    {
+     "id": "Item_Ore_M",
+     "zh": "大的左纳尼乌姆",
+     "num": 5
+    },
+    {
+     "id": "LightFruit",
+     "zh": "闪耀果",
+     "num": 5
+    }
+   ]
+  }
+ ],
+ "Armor_200_Head": [
+  {
+   "price": 10,
+   "items": [
+    {
+     "id": "Item_Ore_F",
+     "num": 10
+    },
+    {
+     "id": "Item_Ore_J",
+     "num": 1
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_F",
+     "zh": "琥珀",
+     "num": 10
+    },
+    {
+     "id": "Item_Ore_J",
+     "zh": "星星碎片",
+     "num": 1
+    }
+   ]
+  }
+ ],
+ "Armor_200_Lower": [
+  {
+   "price": 10,
+   "items": [
+    {
+     "id": "Item_Ore_F",
+     "num": 10
+    },
+    {
+     "id": "Item_Ore_J",
+     "num": 1
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_F",
+     "zh": "琥珀",
+     "num": 10
+    },
+    {
+     "id": "Item_Ore_J",
+     "zh": "星星碎片",
+     "num": 1
+    }
+   ]
+  }
+ ],
+ "Armor_200_Upper": [
+  {
+   "price": 10,
+   "items": [
+    {
+     "id": "Item_Ore_F",
+     "num": 10
+    },
+    {
+     "id": "Item_Ore_J",
+     "num": 1
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_F",
+     "zh": "琥珀",
+     "num": 10
+    },
+    {
+     "id": "Item_Ore_J",
+     "zh": "星星碎片",
+     "num": 1
+    }
+   ]
+  }
+ ],
+ "Armor_201_Head": [
+  {
+   "price": 50,
+   "items": [
+    {
+     "id": "Item_Ore_F",
+     "num": 20
+    },
+    {
+     "id": "Item_Ore_J",
+     "num": 1
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_F",
+     "zh": "琥珀",
+     "num": 20
+    },
+    {
+     "id": "Item_Ore_J",
+     "zh": "星星碎片",
+     "num": 1
+    }
+   ]
+  }
+ ],
+ "Armor_201_Lower": [
+  {
+   "price": 50,
+   "items": [
+    {
+     "id": "Item_Ore_F",
+     "num": 20
+    },
+    {
+     "id": "Item_Ore_J",
+     "num": 1
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_F",
+     "zh": "琥珀",
+     "num": 20
+    },
+    {
+     "id": "Item_Ore_J",
+     "zh": "星星碎片",
+     "num": 1
+    }
+   ]
+  }
+ ],
+ "Armor_201_Upper": [
+  {
+   "price": 50,
+   "items": [
+    {
+     "id": "Item_Ore_F",
+     "num": 20
+    },
+    {
+     "id": "Item_Ore_J",
+     "num": 1
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_F",
+     "zh": "琥珀",
+     "num": 20
+    },
+    {
+     "id": "Item_Ore_J",
+     "zh": "星星碎片",
+     "num": 1
+    }
+   ]
+  }
+ ],
+ "Armor_202_Head": [
+  {
+   "price": 200,
+   "items": [
+    {
+     "id": "Item_Ore_F",
+     "num": 30
+    },
+    {
+     "id": "Item_Ore_J",
+     "num": 1
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_F",
+     "zh": "琥珀",
+     "num": 30
+    },
+    {
+     "id": "Item_Ore_J",
+     "zh": "星星碎片",
+     "num": 1
+    }
+   ]
+  }
+ ],
+ "Armor_202_Lower": [
+  {
+   "price": 200,
+   "items": [
+    {
+     "id": "Item_Ore_F",
+     "num": 30
+    },
+    {
+     "id": "Item_Ore_J",
+     "num": 1
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_F",
+     "zh": "琥珀",
+     "num": 30
+    },
+    {
+     "id": "Item_Ore_J",
+     "zh": "星星碎片",
+     "num": 1
+    }
+   ]
+  }
+ ],
+ "Armor_202_Upper": [
+  {
+   "price": 200,
+   "items": [
+    {
+     "id": "Item_Ore_F",
+     "num": 30
+    },
+    {
+     "id": "Item_Ore_J",
+     "num": 1
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_F",
+     "zh": "琥珀",
+     "num": 30
+    },
+    {
+     "id": "Item_Ore_J",
+     "zh": "星星碎片",
+     "num": 1
+    }
+   ]
+  }
+ ],
+ "Armor_203_Head": [
+  {
+   "price": 500,
+   "items": [
+    {
+     "id": "Item_Ore_F",
+     "num": 40
+    },
+    {
+     "id": "Item_Ore_J",
+     "num": 1
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_F",
+     "zh": "琥珀",
+     "num": 40
+    },
+    {
+     "id": "Item_Ore_J",
+     "zh": "星星碎片",
+     "num": 1
+    }
+   ]
+  }
+ ],
+ "Armor_203_Lower": [
+  {
+   "price": 500,
+   "items": [
+    {
+     "id": "Item_Ore_F",
+     "num": 40
+    },
+    {
+     "id": "Item_Ore_J",
+     "num": 1
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_F",
+     "zh": "琥珀",
+     "num": 40
+    },
+    {
+     "id": "Item_Ore_J",
+     "zh": "星星碎片",
+     "num": 1
+    }
+   ]
+  }
+ ],
+ "Armor_203_Upper": [
+  {
+   "price": 500,
+   "items": [
+    {
+     "id": "Item_Ore_F",
+     "num": 40
+    },
+    {
+     "id": "Item_Ore_J",
+     "num": 1
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_F",
+     "zh": "琥珀",
+     "num": 40
+    },
+    {
+     "id": "Item_Ore_J",
+     "zh": "星星碎片",
+     "num": 1
+    }
+   ]
+  }
+ ],
+ "Armor_205_Head": [
+  {
+   "price": 10,
+   "items": [
+    {
+     "id": "Item_Ore_E",
+     "num": 5
+    },
+    {
+     "id": "Item_Ore_J",
+     "num": 1
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_E",
+     "zh": "蛋白石",
+     "num": 5
+    },
+    {
+     "id": "Item_Ore_J",
+     "zh": "星星碎片",
+     "num": 1
+    }
+   ]
+  }
+ ],
+ "Armor_205_Lower": [
+  {
+   "price": 10,
+   "items": [
+    {
+     "id": "Item_Ore_E",
+     "num": 5
+    },
+    {
+     "id": "Item_Ore_J",
+     "num": 1
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_E",
+     "zh": "蛋白石",
+     "num": 5
+    },
+    {
+     "id": "Item_Ore_J",
+     "zh": "星星碎片",
+     "num": 1
+    }
+   ]
+  }
+ ],
+ "Armor_205_Upper": [
+  {
+   "price": 10,
+   "items": [
+    {
+     "id": "Item_Ore_E",
+     "num": 5
+    },
+    {
+     "id": "Item_Ore_J",
+     "num": 1
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_E",
+     "zh": "蛋白石",
+     "num": 5
+    },
+    {
+     "id": "Item_Ore_J",
+     "zh": "星星碎片",
+     "num": 1
+    }
+   ]
+  }
+ ],
+ "Armor_206_Head": [
+  {
+   "price": 50,
+   "items": [
+    {
+     "id": "Item_Ore_E",
+     "num": 10
+    },
+    {
+     "id": "Item_Ore_J",
+     "num": 1
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_E",
+     "zh": "蛋白石",
+     "num": 10
+    },
+    {
+     "id": "Item_Ore_J",
+     "zh": "星星碎片",
+     "num": 1
+    }
+   ]
+  }
+ ],
+ "Armor_206_Lower": [
+  {
+   "price": 50,
+   "items": [
+    {
+     "id": "Item_Ore_E",
+     "num": 10
+    },
+    {
+     "id": "Item_Ore_J",
+     "num": 1
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_E",
+     "zh": "蛋白石",
+     "num": 10
+    },
+    {
+     "id": "Item_Ore_J",
+     "zh": "星星碎片",
+     "num": 1
+    }
+   ]
+  }
+ ],
+ "Armor_206_Upper": [
+  {
+   "price": 50,
+   "items": [
+    {
+     "id": "Item_Ore_E",
+     "num": 10
+    },
+    {
+     "id": "Item_Ore_J",
+     "num": 1
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_E",
+     "zh": "蛋白石",
+     "num": 10
+    },
+    {
+     "id": "Item_Ore_J",
+     "zh": "星星碎片",
+     "num": 1
+    }
+   ]
+  }
+ ],
+ "Armor_207_Head": [
+  {
+   "price": 200,
+   "items": [
+    {
+     "id": "Item_Ore_E",
+     "num": 15
+    },
+    {
+     "id": "Item_Ore_J",
+     "num": 1
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_E",
+     "zh": "蛋白石",
+     "num": 15
+    },
+    {
+     "id": "Item_Ore_J",
+     "zh": "星星碎片",
+     "num": 1
+    }
+   ]
+  }
+ ],
+ "Armor_207_Lower": [
+  {
+   "price": 200,
+   "items": [
+    {
+     "id": "Item_Ore_E",
+     "num": 15
+    },
+    {
+     "id": "Item_Ore_J",
+     "num": 1
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_E",
+     "zh": "蛋白石",
+     "num": 15
+    },
+    {
+     "id": "Item_Ore_J",
+     "zh": "星星碎片",
+     "num": 1
+    }
+   ]
+  }
+ ],
+ "Armor_207_Upper": [
+  {
+   "price": 200,
+   "items": [
+    {
+     "id": "Item_Ore_E",
+     "num": 15
+    },
+    {
+     "id": "Item_Ore_J",
+     "num": 1
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_E",
+     "zh": "蛋白石",
+     "num": 15
+    },
+    {
+     "id": "Item_Ore_J",
+     "zh": "星星碎片",
+     "num": 1
+    }
+   ]
+  }
+ ],
+ "Armor_208_Head": [
+  {
+   "price": 500,
+   "items": [
+    {
+     "id": "Item_Ore_E",
+     "num": 25
+    },
+    {
+     "id": "Item_Ore_J",
+     "num": 1
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_E",
+     "zh": "蛋白石",
+     "num": 25
+    },
+    {
+     "id": "Item_Ore_J",
+     "zh": "星星碎片",
+     "num": 1
+    }
+   ]
+  }
+ ],
+ "Armor_208_Lower": [
+  {
+   "price": 500,
+   "items": [
+    {
+     "id": "Item_Ore_E",
+     "num": 25
+    },
+    {
+     "id": "Item_Ore_J",
+     "num": 1
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_E",
+     "zh": "蛋白石",
+     "num": 25
+    },
+    {
+     "id": "Item_Ore_J",
+     "zh": "星星碎片",
+     "num": 1
+    }
+   ]
+  }
+ ],
+ "Armor_208_Upper": [
+  {
+   "price": 500,
+   "items": [
+    {
+     "id": "Item_Ore_E",
+     "num": 25
+    },
+    {
+     "id": "Item_Ore_J",
+     "num": 1
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_E",
+     "zh": "蛋白石",
+     "num": 25
+    },
+    {
+     "id": "Item_Ore_J",
+     "zh": "星星碎片",
+     "num": 1
+    }
+   ]
+  }
+ ],
+ "Armor_210_Head": [
+  {
+   "price": 10,
+   "items": [
+    {
+     "id": "Item_Ore_D",
+     "num": 1
+    },
+    {
+     "id": "Item_Ore_J",
+     "num": 1
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_D",
+     "zh": "黄玉",
+     "num": 1
+    },
+    {
+     "id": "Item_Ore_J",
+     "zh": "星星碎片",
+     "num": 1
+    }
+   ]
+  }
+ ],
+ "Armor_210_Lower": [
+  {
+   "price": 10,
+   "items": [
+    {
+     "id": "Item_Ore_D",
+     "num": 1
+    },
+    {
+     "id": "Item_Ore_J",
+     "num": 1
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_D",
+     "zh": "黄玉",
+     "num": 1
+    },
+    {
+     "id": "Item_Ore_J",
+     "zh": "星星碎片",
+     "num": 1
+    }
+   ]
+  }
+ ],
+ "Armor_210_Upper": [
+  {
+   "price": 10,
+   "items": [
+    {
+     "id": "Item_Ore_D",
+     "num": 1
+    },
+    {
+     "id": "Item_Ore_J",
+     "num": 1
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_D",
+     "zh": "黄玉",
+     "num": 1
+    },
+    {
+     "id": "Item_Ore_J",
+     "zh": "星星碎片",
+     "num": 1
+    }
+   ]
+  }
+ ],
+ "Armor_211_Head": [
+  {
+   "price": 50,
+   "items": [
+    {
+     "id": "Item_Ore_D",
+     "num": 4
+    },
+    {
+     "id": "Item_Ore_J",
+     "num": 1
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_D",
+     "zh": "黄玉",
+     "num": 4
+    },
+    {
+     "id": "Item_Ore_J",
+     "zh": "星星碎片",
+     "num": 1
+    }
+   ]
+  }
+ ],
+ "Armor_211_Lower": [
+  {
+   "price": 50,
+   "items": [
+    {
+     "id": "Item_Ore_D",
+     "num": 4
+    },
+    {
+     "id": "Item_Ore_J",
+     "num": 1
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_D",
+     "zh": "黄玉",
+     "num": 4
+    },
+    {
+     "id": "Item_Ore_J",
+     "zh": "星星碎片",
+     "num": 1
+    }
+   ]
+  }
+ ],
+ "Armor_211_Upper": [
+  {
+   "price": 50,
+   "items": [
+    {
+     "id": "Item_Ore_D",
+     "num": 4
+    },
+    {
+     "id": "Item_Ore_J",
+     "num": 1
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_D",
+     "zh": "黄玉",
+     "num": 4
+    },
+    {
+     "id": "Item_Ore_J",
+     "zh": "星星碎片",
+     "num": 1
+    }
+   ]
+  }
+ ],
+ "Armor_212_Head": [
+  {
+   "price": 200,
+   "items": [
+    {
+     "id": "Item_Ore_D",
+     "num": 6
+    },
+    {
+     "id": "Item_Ore_J",
+     "num": 1
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_D",
+     "zh": "黄玉",
+     "num": 6
+    },
+    {
+     "id": "Item_Ore_J",
+     "zh": "星星碎片",
+     "num": 1
+    }
+   ]
+  }
+ ],
+ "Armor_212_Lower": [
+  {
+   "price": 200,
+   "items": [
+    {
+     "id": "Item_Ore_D",
+     "num": 6
+    },
+    {
+     "id": "Item_Ore_J",
+     "num": 1
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_D",
+     "zh": "黄玉",
+     "num": 6
+    },
+    {
+     "id": "Item_Ore_J",
+     "zh": "星星碎片",
+     "num": 1
+    }
+   ]
+  }
+ ],
+ "Armor_212_Upper": [
+  {
+   "price": 200,
+   "items": [
+    {
+     "id": "Item_Ore_D",
+     "num": 6
+    },
+    {
+     "id": "Item_Ore_J",
+     "num": 1
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_D",
+     "zh": "黄玉",
+     "num": 6
+    },
+    {
+     "id": "Item_Ore_J",
+     "zh": "星星碎片",
+     "num": 1
+    }
+   ]
+  }
+ ],
+ "Armor_213_Head": [
+  {
+   "price": 500,
+   "items": [
+    {
+     "id": "Item_Ore_D",
+     "num": 10
+    },
+    {
+     "id": "Item_Ore_J",
+     "num": 1
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_D",
+     "zh": "黄玉",
+     "num": 10
+    },
+    {
+     "id": "Item_Ore_J",
+     "zh": "星星碎片",
+     "num": 1
+    }
+   ]
+  }
+ ],
+ "Armor_213_Lower": [
+  {
+   "price": 500,
+   "items": [
+    {
+     "id": "Item_Ore_D",
+     "num": 10
+    },
+    {
+     "id": "Item_Ore_J",
+     "num": 1
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_D",
+     "zh": "黄玉",
+     "num": 10
+    },
+    {
+     "id": "Item_Ore_J",
+     "zh": "星星碎片",
+     "num": 1
+    }
+   ]
+  }
+ ],
+ "Armor_213_Upper": [
+  {
+   "price": 500,
+   "items": [
+    {
+     "id": "Item_Ore_D",
+     "num": 10
+    },
+    {
+     "id": "Item_Ore_J",
+     "num": 1
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_D",
+     "zh": "黄玉",
+     "num": 10
+    },
+    {
+     "id": "Item_Ore_J",
+     "zh": "星星碎片",
+     "num": 1
+    }
+   ]
+  }
+ ],
+ "Armor_215_Head": [
+  {
+   "price": 10,
+   "items": [
+    {
+     "id": "Item_Ore_C",
+     "num": 1
+    },
+    {
+     "id": "Item_Ore_J",
+     "num": 1
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_C",
+     "zh": "蓝宝石",
+     "num": 1
+    },
+    {
+     "id": "Item_Ore_J",
+     "zh": "星星碎片",
+     "num": 1
+    }
+   ]
+  }
+ ],
+ "Armor_215_Lower": [
+  {
+   "price": 10,
+   "items": [
+    {
+     "id": "Item_Ore_C",
+     "num": 1
+    },
+    {
+     "id": "Item_Ore_J",
+     "num": 1
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_C",
+     "zh": "蓝宝石",
+     "num": 1
+    },
+    {
+     "id": "Item_Ore_J",
+     "zh": "星星碎片",
+     "num": 1
+    }
+   ]
+  }
+ ],
+ "Armor_215_Upper": [
+  {
+   "price": 10,
+   "items": [
+    {
+     "id": "Item_Ore_C",
+     "num": 1
+    },
+    {
+     "id": "Item_Ore_J",
+     "num": 1
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_C",
+     "zh": "蓝宝石",
+     "num": 1
+    },
+    {
+     "id": "Item_Ore_J",
+     "zh": "星星碎片",
+     "num": 1
+    }
+   ]
+  }
+ ],
+ "Armor_216_Head": [
+  {
+   "price": 50,
+   "items": [
+    {
+     "id": "Item_Ore_C",
+     "num": 4
+    },
+    {
+     "id": "Item_Ore_J",
+     "num": 1
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_C",
+     "zh": "蓝宝石",
+     "num": 4
+    },
+    {
+     "id": "Item_Ore_J",
+     "zh": "星星碎片",
+     "num": 1
+    }
+   ]
+  }
+ ],
+ "Armor_216_Lower": [
+  {
+   "price": 50,
+   "items": [
+    {
+     "id": "Item_Ore_C",
+     "num": 4
+    },
+    {
+     "id": "Item_Ore_J",
+     "num": 1
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_C",
+     "zh": "蓝宝石",
+     "num": 4
+    },
+    {
+     "id": "Item_Ore_J",
+     "zh": "星星碎片",
+     "num": 1
+    }
+   ]
+  }
+ ],
+ "Armor_216_Upper": [
+  {
+   "price": 50,
+   "items": [
+    {
+     "id": "Item_Ore_C",
+     "num": 4
+    },
+    {
+     "id": "Item_Ore_J",
+     "num": 1
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_C",
+     "zh": "蓝宝石",
+     "num": 4
+    },
+    {
+     "id": "Item_Ore_J",
+     "zh": "星星碎片",
+     "num": 1
+    }
+   ]
+  }
+ ],
+ "Armor_217_Head": [
+  {
+   "price": 200,
+   "items": [
+    {
+     "id": "Item_Ore_C",
+     "num": 6
+    },
+    {
+     "id": "Item_Ore_J",
+     "num": 1
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_C",
+     "zh": "蓝宝石",
+     "num": 6
+    },
+    {
+     "id": "Item_Ore_J",
+     "zh": "星星碎片",
+     "num": 1
+    }
+   ]
+  }
+ ],
+ "Armor_217_Lower": [
+  {
+   "price": 200,
+   "items": [
+    {
+     "id": "Item_Ore_C",
+     "num": 6
+    },
+    {
+     "id": "Item_Ore_J",
+     "num": 1
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_C",
+     "zh": "蓝宝石",
+     "num": 6
+    },
+    {
+     "id": "Item_Ore_J",
+     "zh": "星星碎片",
+     "num": 1
+    }
+   ]
+  }
+ ],
+ "Armor_217_Upper": [
+  {
+   "price": 200,
+   "items": [
+    {
+     "id": "Item_Ore_C",
+     "num": 6
+    },
+    {
+     "id": "Item_Ore_J",
+     "num": 1
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_C",
+     "zh": "蓝宝石",
+     "num": 6
+    },
+    {
+     "id": "Item_Ore_J",
+     "zh": "星星碎片",
+     "num": 1
+    }
+   ]
+  }
+ ],
+ "Armor_218_Head": [
+  {
+   "price": 500,
+   "items": [
+    {
+     "id": "Item_Ore_C",
+     "num": 10
+    },
+    {
+     "id": "Item_Ore_J",
+     "num": 1
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_C",
+     "zh": "蓝宝石",
+     "num": 10
+    },
+    {
+     "id": "Item_Ore_J",
+     "zh": "星星碎片",
+     "num": 1
+    }
+   ]
+  }
+ ],
+ "Armor_218_Lower": [
+  {
+   "price": 500,
+   "items": [
+    {
+     "id": "Item_Ore_C",
+     "num": 10
+    },
+    {
+     "id": "Item_Ore_J",
+     "num": 1
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_C",
+     "zh": "蓝宝石",
+     "num": 10
+    },
+    {
+     "id": "Item_Ore_J",
+     "zh": "星星碎片",
+     "num": 1
+    }
+   ]
+  }
+ ],
+ "Armor_218_Upper": [
+  {
+   "price": 500,
+   "items": [
+    {
+     "id": "Item_Ore_C",
+     "num": 10
+    },
+    {
+     "id": "Item_Ore_J",
+     "num": 1
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_C",
+     "zh": "蓝宝石",
+     "num": 10
+    },
+    {
+     "id": "Item_Ore_J",
+     "zh": "星星碎片",
+     "num": 1
+    }
+   ]
+  }
+ ],
+ "Armor_220_Head": [
+  {
+   "price": 10,
+   "items": [
+    {
+     "id": "Item_Plant_J",
+     "num": 1
+    },
+    {
+     "id": "Item_Ore_J",
+     "num": 1
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Plant_J",
+     "zh": null,
+     "num": 1
+    },
+    {
+     "id": "Item_Ore_J",
+     "zh": "星星碎片",
+     "num": 1
+    }
+   ]
+  }
+ ],
+ "Armor_220_Head_B": [
+  {
+   "price": 10,
+   "items": [
+    {
+     "id": "Item_Plant_J",
+     "num": 1
+    },
+    {
+     "id": "Item_Ore_J",
+     "num": 1
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Plant_J",
+     "zh": null,
+     "num": 1
+    },
+    {
+     "id": "Item_Ore_J",
+     "zh": "星星碎片",
+     "num": 1
+    }
+   ]
+  }
+ ],
+ "Armor_221_Head": [
+  {
+   "price": 50,
+   "items": [
+    {
+     "id": "Item_Plant_J",
+     "num": 2
+    },
+    {
+     "id": "Item_Ore_J",
+     "num": 2
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Plant_J",
+     "zh": null,
+     "num": 2
+    },
+    {
+     "id": "Item_Ore_J",
+     "zh": "星星碎片",
+     "num": 2
+    }
+   ]
+  }
+ ],
+ "Armor_221_Head_B": [
+  {
+   "price": 50,
+   "items": [
+    {
+     "id": "Item_Plant_J",
+     "num": 2
+    },
+    {
+     "id": "Item_Ore_J",
+     "num": 2
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Plant_J",
+     "zh": null,
+     "num": 2
+    },
+    {
+     "id": "Item_Ore_J",
+     "zh": "星星碎片",
+     "num": 2
+    }
+   ]
+  }
+ ],
+ "Armor_222_Head": [
+  {
+   "price": 200,
+   "items": [
+    {
+     "id": "Item_Plant_J",
+     "num": 4
+    },
+    {
+     "id": "Item_Ore_J",
+     "num": 3
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Plant_J",
+     "zh": null,
+     "num": 4
+    },
+    {
+     "id": "Item_Ore_J",
+     "zh": "星星碎片",
+     "num": 3
+    }
+   ]
+  }
+ ],
+ "Armor_222_Head_B": [
+  {
+   "price": 200,
+   "items": [
+    {
+     "id": "Item_Plant_J",
+     "num": 4
+    },
+    {
+     "id": "Item_Ore_J",
+     "num": 3
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Plant_J",
+     "zh": null,
+     "num": 4
+    },
+    {
+     "id": "Item_Ore_J",
+     "zh": "星星碎片",
+     "num": 3
+    }
+   ]
+  }
+ ],
+ "Armor_223_Head": [
+  {
+   "price": 500,
+   "items": [
+    {
+     "id": "Item_Plant_J",
+     "num": 8
+    },
+    {
+     "id": "Item_Ore_J",
+     "num": 4
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Plant_J",
+     "zh": null,
+     "num": 8
+    },
+    {
+     "id": "Item_Ore_J",
+     "zh": "星星碎片",
+     "num": 4
+    }
+   ]
+  }
+ ],
+ "Armor_223_Head_B": [
+  {
+   "price": 500,
+   "items": [
+    {
+     "id": "Item_Plant_J",
+     "num": 8
+    },
+    {
+     "id": "Item_Ore_J",
+     "num": 4
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Plant_J",
+     "zh": null,
+     "num": 8
+    },
+    {
+     "id": "Item_Ore_J",
+     "zh": "星星碎片",
+     "num": 4
+    }
+   ]
+  }
+ ],
+ "Armor_225_Head": [
+  {
+   "price": 10,
+   "items": [
+    {
+     "id": "Item_Enemy_32",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_38",
+     "num": 1
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_32",
+     "zh": "西诺克斯的指甲",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_38",
+     "zh": "奥尔龙的鳞片",
+     "num": 1
+    }
+   ]
+  }
+ ],
+ "Armor_225_Lower": [
+  {
+   "price": 10,
+   "items": [
+    {
+     "id": "Item_Enemy_32",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_53",
+     "num": 1
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_32",
+     "zh": "西诺克斯的指甲",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_53",
+     "zh": "费罗龙的鳞片",
+     "num": 1
+    }
+   ]
+  }
+ ],
+ "Armor_225_Upper": [
+  {
+   "price": 10,
+   "items": [
+    {
+     "id": "Item_Enemy_32",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_49",
+     "num": 1
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_32",
+     "zh": "西诺克斯的指甲",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_49",
+     "zh": "聂尔龙的鳞片",
+     "num": 1
+    }
+   ]
+  }
+ ],
+ "Armor_226_Head": [
+  {
+   "price": 50,
+   "items": [
+    {
+     "id": "Item_Enemy_33",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_39",
+     "num": 1
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_33",
+     "zh": "西诺克斯的牙齿",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_39",
+     "zh": "奥尔龙的爪子",
+     "num": 1
+    }
+   ]
+  }
+ ],
+ "Armor_226_Lower": [
+  {
+   "price": 50,
+   "items": [
+    {
+     "id": "Item_Enemy_33",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_54",
+     "num": 1
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_33",
+     "zh": "西诺克斯的牙齿",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_54",
+     "zh": "费罗龙的爪子",
+     "num": 1
+    }
+   ]
+  }
+ ],
+ "Armor_226_Upper": [
+  {
+   "price": 50,
+   "items": [
+    {
+     "id": "Item_Enemy_33",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_50",
+     "num": 1
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_33",
+     "zh": "西诺克斯的牙齿",
+     "num": 5
+    },
+    {
+     "id": "Item_Enemy_50",
+     "zh": "聂尔龙的爪子",
+     "num": 1
+    }
+   ]
+  }
+ ],
+ "Armor_227_Head": [
+  {
+   "price": 200,
+   "items": [
+    {
+     "id": "Item_Enemy_34",
+     "num": 2
+    },
+    {
+     "id": "Item_Enemy_47",
+     "num": 1
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_34",
+     "zh": "西诺克斯的肝脏",
+     "num": 2
+    },
+    {
+     "id": "Item_Enemy_47",
+     "zh": "奥尔龙的牙齿碎片",
+     "num": 1
+    }
+   ]
+  }
+ ],
+ "Armor_227_Lower": [
+  {
+   "price": 200,
+   "items": [
+    {
+     "id": "Item_Enemy_34",
+     "num": 2
+    },
+    {
+     "id": "Item_Enemy_55",
+     "num": 1
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_34",
+     "zh": "西诺克斯的肝脏",
+     "num": 2
+    },
+    {
+     "id": "Item_Enemy_55",
+     "zh": "费罗龙的牙齿碎片",
+     "num": 1
+    }
+   ]
+  }
+ ],
+ "Armor_227_Upper": [
+  {
+   "price": 200,
+   "items": [
+    {
+     "id": "Item_Enemy_34",
+     "num": 2
+    },
+    {
+     "id": "Item_Enemy_51",
+     "num": 1
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_34",
+     "zh": "西诺克斯的肝脏",
+     "num": 2
+    },
+    {
+     "id": "Item_Enemy_51",
+     "zh": "聂尔龙的牙齿碎片",
+     "num": 1
+    }
+   ]
+  }
+ ],
+ "Armor_228_Head": [
+  {
+   "price": 500,
+   "items": [
+    {
+     "id": "Item_Enemy_14",
+     "num": 2
+    },
+    {
+     "id": "Item_Enemy_211",
+     "num": 1
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_14",
+     "zh": "莱尼尔的肝脏",
+     "num": 2
+    },
+    {
+     "id": "Item_Enemy_211",
+     "zh": "奥尔龙的犄角",
+     "num": 1
+    }
+   ]
+  }
+ ],
+ "Armor_228_Lower": [
+  {
+   "price": 500,
+   "items": [
+    {
+     "id": "Item_Enemy_14",
+     "num": 2
+    },
+    {
+     "id": "Item_Enemy_213",
+     "num": 1
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_14",
+     "zh": "莱尼尔的肝脏",
+     "num": 2
+    },
+    {
+     "id": "Item_Enemy_213",
+     "zh": "费罗龙的犄角",
+     "num": 1
+    }
+   ]
+  }
+ ],
+ "Armor_228_Upper": [
+  {
+   "price": 500,
+   "items": [
+    {
+     "id": "Item_Enemy_14",
+     "num": 2
+    },
+    {
+     "id": "Item_Enemy_212",
+     "num": 1
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Enemy_14",
+     "zh": "莱尼尔的肝脏",
+     "num": 2
+    },
+    {
+     "id": "Item_Enemy_212",
+     "zh": "聂尔龙的犄角",
+     "num": 1
+    }
+   ]
+  }
+ ],
+ "Armor_230_Head": [
+  {
+   "price": 10,
+   "items": [
+    {
+     "id": "Item_Ore_B",
+     "num": 1
+    },
+    {
+     "id": "Item_Ore_J",
+     "num": 1
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_B",
+     "zh": "红宝石",
+     "num": 1
+    },
+    {
+     "id": "Item_Ore_J",
+     "zh": "星星碎片",
+     "num": 1
+    }
+   ]
+  }
+ ],
+ "Armor_230_Lower": [
+  {
+   "price": 10,
+   "items": [
+    {
+     "id": "Item_Ore_B",
+     "num": 1
+    },
+    {
+     "id": "Item_Ore_J",
+     "num": 1
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_B",
+     "zh": "红宝石",
+     "num": 1
+    },
+    {
+     "id": "Item_Ore_J",
+     "zh": "星星碎片",
+     "num": 1
+    }
+   ]
+  }
+ ],
+ "Armor_230_Upper": [
+  {
+   "price": 10,
+   "items": [
+    {
+     "id": "Item_Ore_B",
+     "num": 1
+    },
+    {
+     "id": "Item_Ore_J",
+     "num": 1
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_B",
+     "zh": "红宝石",
+     "num": 1
+    },
+    {
+     "id": "Item_Ore_J",
+     "zh": "星星碎片",
+     "num": 1
+    }
+   ]
+  }
+ ],
+ "Armor_231_Head": [
+  {
+   "price": 50,
+   "items": [
+    {
+     "id": "Item_Ore_B",
+     "num": 4
+    },
+    {
+     "id": "Item_Ore_J",
+     "num": 1
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_B",
+     "zh": "红宝石",
+     "num": 4
+    },
+    {
+     "id": "Item_Ore_J",
+     "zh": "星星碎片",
+     "num": 1
+    }
+   ]
+  }
+ ],
+ "Armor_231_Lower": [
+  {
+   "price": 50,
+   "items": [
+    {
+     "id": "Item_Ore_B",
+     "num": 4
+    },
+    {
+     "id": "Item_Ore_J",
+     "num": 1
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_B",
+     "zh": "红宝石",
+     "num": 4
+    },
+    {
+     "id": "Item_Ore_J",
+     "zh": "星星碎片",
+     "num": 1
+    }
+   ]
+  }
+ ],
+ "Armor_231_Upper": [
+  {
+   "price": 50,
+   "items": [
+    {
+     "id": "Item_Ore_B",
+     "num": 4
+    },
+    {
+     "id": "Item_Ore_J",
+     "num": 1
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_B",
+     "zh": "红宝石",
+     "num": 4
+    },
+    {
+     "id": "Item_Ore_J",
+     "zh": "星星碎片",
+     "num": 1
+    }
+   ]
+  }
+ ],
+ "Armor_232_Head": [
+  {
+   "price": 200,
+   "items": [
+    {
+     "id": "Item_Ore_B",
+     "num": 6
+    },
+    {
+     "id": "Item_Ore_J",
+     "num": 1
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_B",
+     "zh": "红宝石",
+     "num": 6
+    },
+    {
+     "id": "Item_Ore_J",
+     "zh": "星星碎片",
+     "num": 1
+    }
+   ]
+  }
+ ],
+ "Armor_232_Lower": [
+  {
+   "price": 200,
+   "items": [
+    {
+     "id": "Item_Ore_B",
+     "num": 6
+    },
+    {
+     "id": "Item_Ore_J",
+     "num": 1
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_B",
+     "zh": "红宝石",
+     "num": 6
+    },
+    {
+     "id": "Item_Ore_J",
+     "zh": "星星碎片",
+     "num": 1
+    }
+   ]
+  }
+ ],
+ "Armor_232_Upper": [
+  {
+   "price": 200,
+   "items": [
+    {
+     "id": "Item_Ore_B",
+     "num": 6
+    },
+    {
+     "id": "Item_Ore_J",
+     "num": 1
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_B",
+     "zh": "红宝石",
+     "num": 6
+    },
+    {
+     "id": "Item_Ore_J",
+     "zh": "星星碎片",
+     "num": 1
+    }
+   ]
+  }
+ ],
+ "Armor_233_Head": [
+  {
+   "price": 500,
+   "items": [
+    {
+     "id": "Item_Ore_B",
+     "num": 10
+    },
+    {
+     "id": "Item_Ore_J",
+     "num": 1
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_B",
+     "zh": "红宝石",
+     "num": 10
+    },
+    {
+     "id": "Item_Ore_J",
+     "zh": "星星碎片",
+     "num": 1
+    }
+   ]
+  }
+ ],
+ "Armor_233_Lower": [
+  {
+   "price": 500,
+   "items": [
+    {
+     "id": "Item_Ore_B",
+     "num": 10
+    },
+    {
+     "id": "Item_Ore_J",
+     "num": 1
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_B",
+     "zh": "红宝石",
+     "num": 10
+    },
+    {
+     "id": "Item_Ore_J",
+     "zh": "星星碎片",
+     "num": 1
+    }
+   ]
+  }
+ ],
+ "Armor_233_Upper": [
+  {
+   "price": 500,
+   "items": [
+    {
+     "id": "Item_Ore_B",
+     "num": 10
+    },
+    {
+     "id": "Item_Ore_J",
+     "num": 1
+    }
+   ],
+   "items_zh": [
+    {
+     "id": "Item_Ore_B",
+     "zh": "红宝石",
+     "num": 10
+    },
+    {
+     "id": "Item_Ore_J",
+     "zh": "星星碎片",
+     "num": 1
+    }
+   ]
+  }
+ ]
+}
