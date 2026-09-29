@@ -15,13 +15,14 @@
 
     <div v-if="filtered.length" class="item-grid">
       <div
-        v-for="d in filtered"
+        v-for="(d, i) in filtered"
         :key="d.actor"
         class="item-cell dish-cell"
         :class="{ sel: sel && sel.actor === d.actor }"
-        @click="sel = sel && sel.actor === d.actor ? null : d"
+        @click="open(i)"
       >
         <span class="num">#{{ d.num }}</span>
+        <span v-if="!d.recipes.length" class="norc">自由组合</span>
         <img :src="'/icons/' + d.actor + '.png'" loading="lazy" :alt="d.zh" />
         <div class="nm" :title="d.zh">{{ d.zh }}</div>
       </div>
@@ -30,49 +31,70 @@
       没有匹配的料理
     </p>
 
-    <!-- 详情卡：选中时展示 -->
-    <div v-if="sel" class="card dish-detail">
-      <div class="dish-head">
-        <img :src="'/icons/' + sel.actor + '.png'" :alt="sel.zh" />
-        <div>
-          <div class="sec-title" style="margin: 0;">
-            #{{ sel.num }} {{ sel.zh }}
-            <span class="en">{{ sel.name }}</span>
-          </div>
-          <div class="ings">{{ sel.zh_ings || sel.ingredients }}</div>
-          <div v-if="bonusText" class="bonus">{{ bonusText }}</div>
-        </div>
-      </div>
+    <Teleport to="body">
+      <div v-if="sel" class="modal-mask" @click.self="close">
+        <div class="modal dish-detail" role="dialog" aria-modal="true">
+          <button class="close" @click="close" aria-label="关闭">×</button>
 
-      <div v-if="sel.recipes.length" class="recipe-list">
-        <div v-for="(r, ri) in sel.recipes" :key="ri" class="recipe">
-          <div class="recipe-tag" v-if="sel.recipes.length > 1">配方 {{ ri + 1 }}<template v-if="r.single">（单一材料）</template></div>
-          <div v-for="(s, si) in r.slots" :key="si" class="slot">
-            <template v-if="s.type === 'actor'">
-              <RouterLink :to="'/items/' + s.id" class="mat">{{ s.zh || s.id }}</RouterLink>
-            </template>
-            <template v-else>
-              <span class="mat tag">{{ tagZh(s.name) }}</span>
-              <span class="sub">任意一种：</span>
-              <RouterLink
-                v-for="m in s.items"
-                :key="m.id"
-                :to="'/items/' + m.id"
-                class="mat mini"
-              >{{ m.zh || m.id }}</RouterLink>
-            </template>
+          <div class="modal-top">
+            <button class="arrow" :disabled="idx <= 0" @click="step(-1)" aria-label="上一道">‹</button>
+            <span class="pos">{{ idx + 1 }} / {{ filtered.length }}</span>
+            <button
+              class="arrow"
+              :disabled="idx >= filtered.length - 1"
+              @click="step(1)"
+              aria-label="下一道"
+            >›</button>
           </div>
+
+          <div class="dish-head">
+            <img :src="'/icons/' + sel.actor + '.png'" :alt="sel.zh" />
+            <div>
+              <div class="sec-title" style="margin: 0;">
+                #{{ sel.num }} {{ sel.zh }}
+                <span class="en">{{ sel.name }}</span>
+              </div>
+              <div class="ings">{{ sel.zh_ings || sel.ingredients }}</div>
+              <div v-if="bonusText" class="bonus">{{ bonusText }}</div>
+            </div>
+          </div>
+
+          <div v-if="sel.recipes.length" class="recipe-list">
+            <div v-for="(r, ri) in sel.recipes" :key="ri" class="recipe">
+              <div class="recipe-tag" v-if="sel.recipes.length > 1">
+                配方 {{ ri + 1 }}<template v-if="r.single">（单一材料）</template>
+              </div>
+              <div v-for="(s, si) in r.slots" :key="si" class="slot">
+                <template v-if="s.type === 'actor'">
+                  <RouterLink :to="'/items/' + s.id" class="mat" @click="close">
+                    {{ s.zh || s.id }}
+                  </RouterLink>
+                </template>
+                <template v-else>
+                  <span class="mat tag">{{ tagZh(s.name) }}</span>
+                  <span class="sub">任意一种：</span>
+                  <RouterLink
+                    v-for="m in s.items"
+                    :key="m.id"
+                    :to="'/items/' + m.id"
+                    class="mat mini"
+                    @click="close"
+                  >{{ m.zh || m.id }}</RouterLink>
+                </template>
+              </div>
+            </div>
+          </div>
+          <p v-else class="norecipe">
+            图鉴收录条目，romfs 中无固定配方（多为烤制 / 单材料合成类，游戏内自由组合）
+          </p>
         </div>
       </div>
-      <p v-else class="norecipe">
-        图鉴收录条目，romfs 中无固定配方（多为烤制 / 单材料合成类，游戏内自由组合）
-      </p>
-    </div>
+    </Teleport>
   </main>
 </template>
 
 <script setup>
-import { ref, computed } from 'vue'
+import { ref, computed, watch, onMounted, onUnmounted } from 'vue'
 import { loadDishes, fmtTime } from '../data'
 
 const dishes = ref([])
@@ -97,6 +119,43 @@ const filtered = computed(() => {
       d.actor.toLowerCase().includes(kw)
     )
   })
+})
+
+const idx = computed(() =>
+  sel.value ? filtered.value.findIndex((d) => d.actor === sel.value.actor) : -1
+)
+
+function open(i) {
+  sel.value = filtered.value[i]
+}
+function close() {
+  sel.value = null
+}
+function step(n) {
+  const j = idx.value + n
+  if (j >= 0 && j < filtered.value.length) sel.value = filtered.value[j]
+}
+
+// the open dish must stay inside the current filter result
+watch(filtered, (list) => {
+  if (sel.value && !list.some((d) => d.actor === sel.value.actor)) close()
+})
+
+function onKey(e) {
+  if (!sel.value) return
+  if (e.key === 'Escape') close()
+  else if (e.key === 'ArrowLeft') step(-1)
+  else if (e.key === 'ArrowRight') step(1)
+}
+
+watch(sel, (v) => {
+  document.body.style.overflow = v ? 'hidden' : ''
+})
+
+onMounted(() => window.addEventListener('keydown', onKey))
+onUnmounted(() => {
+  window.removeEventListener('keydown', onKey)
+  document.body.style.overflow = ''
 })
 
 const bonusText = computed(() => {
@@ -129,7 +188,45 @@ function tagZh(t) {
   position: absolute; top: 4px; left: 6px;
   font-size: 10.5px; color: var(--faint); font-variant-numeric: tabular-nums;
 }
-.dish-detail { margin-top: 18px; }
+.dish-cell .norc {
+  position: absolute; top: 4px; right: 5px;
+  font-size: 9.5px; color: var(--faint); background: var(--bg);
+  border-radius: 4px; padding: 0 4px;
+}
+
+.modal-mask {
+  position: fixed; inset: 0; z-index: 50;
+  background: rgba(44, 44, 42, 0.34);
+  display: flex; align-items: center; justify-content: center;
+  padding: 24px;
+}
+.modal {
+  position: relative;
+  background: var(--card); border: 1px solid var(--line); border-radius: var(--radius);
+  width: 100%; max-width: 560px; max-height: 84vh; overflow-y: auto;
+  padding: 18px 20px;
+}
+.modal .close {
+  position: absolute; top: 8px; right: 10px; z-index: 1;
+  border: none; background: transparent; color: var(--faint);
+  font-size: 22px; line-height: 1; cursor: pointer; padding: 4px 8px;
+}
+.modal .close:hover { color: var(--text); }
+.modal-top {
+  display: flex; align-items: center; justify-content: center; gap: 14px;
+  margin-bottom: 10px;
+}
+.modal-top .pos {
+  font-size: 12px; color: var(--faint); font-variant-numeric: tabular-nums;
+  min-width: 62px; text-align: center;
+}
+.modal-top .arrow {
+  width: 30px; height: 26px; border: 1px solid var(--line); background: var(--bg);
+  border-radius: 7px; color: var(--muted); cursor: pointer; font-size: 16px; line-height: 1;
+}
+.modal-top .arrow:hover:not(:disabled) { border-color: var(--teal); color: var(--teal-deep); }
+.modal-top .arrow:disabled { opacity: 0.4; cursor: default; }
+
 .dish-head { display: flex; gap: 16px; align-items: flex-start; }
 .dish-head img { width: 96px; height: 96px; object-fit: contain; flex: none; }
 .dish-head .en { color: var(--faint); font-size: 13px; font-weight: 400; margin-left: 6px; }
@@ -150,8 +247,12 @@ function tagZh(t) {
 
 @media (max-width: 720px) {
   .item-grid { grid-template-columns: repeat(auto-fill, minmax(84px, 1fr)); gap: 8px; }
+  .modal-mask { align-items: flex-end; padding: 0; }
+  .modal {
+    max-width: none; max-height: 88vh; border-radius: 16px 16px 0 0;
+    padding: 16px 16px 22px;
+  }
   .dish-head { gap: 12px; }
   .dish-head img { width: 72px; height: 72px; }
-  .dish-detail { padding: 12px 14px; }
 }
 </style>
