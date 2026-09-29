@@ -110,3 +110,31 @@ input, button { font: inherit; }
   background: var(--card); outline: none;
 }
 .search-box input:focus { border-color: var(--teal); }
+
+/* mobile */
+@media (max-width: 720px) {
+  .site-header .inner {
+    height: auto; padding: 8px 14px; gap: 10px; flex-wrap: wrap;
+  }
+  .logo { font-size: 15px; }
+  .logo .sub { display: none; }
+  .nav {
+    margin-left: 0; width: 100%; overflow-x: auto;
+    -webkit-overflow-scrolling: touch; scrollbar-width: none;
+  }
+  .nav::-webkit-scrollbar { display: none; }
+  .nav a { flex: none; padding: 6px 10px; }
+
+  .container { padding: 0 14px; }
+
+  .item-grid { grid-template-columns: repeat(auto-fill, minmax(78px, 1fr)); gap: 8px; }
+  .item-cell { padding: 8px 4px 6px; }
+  .item-cell img { width: 48px; height: 48px; }
+  .item-cell .ph { width: 48px; height: 48px; font-size: 18px; }
+  .item-cell .nm { font-size: 12px; }
+
+  .tabs { gap: 5px; margin: 10px 0; }
+  .tabs button { padding: 5px 11px; font-size: 12.5px; }
+
+  .search-box input { padding: 9px 13px; }
+}

@@ -147,4 +147,11 @@ function tagZh(t) {
 .mat.mini { background: var(--bg); border: 1px solid var(--line); color: var(--text); font-size: 12.5px; }
 .sub { color: var(--faint); font-size: 12px; }
 .norecipe { margin-top: 12px; color: var(--faint); font-size: 13px; }
+
+@media (max-width: 720px) {
+  .item-grid { grid-template-columns: repeat(auto-fill, minmax(84px, 1fr)); gap: 8px; }
+  .dish-head { gap: 12px; }
+  .dish-head img { width: 72px; height: 72px; }
+  .dish-detail { padding: 12px 14px; }
+}
 </style>

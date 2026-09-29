@@ -6,6 +6,14 @@ export function loadItems() {
   return _items
 }
 
+// list views only show entries with a Chinese name; entries without one are
+// internal actors (bundles / dye variants / npc props) kept only for deep links
+export function loadItemsVisible() {
+  if (!loadItemsVisible._p)
+    loadItemsVisible._p = loadItems().then((d) => d.filter((i) => i.zh))
+  return loadItemsVisible._p
+}
+
 export function loadRecipes() {
   if (!_recipes) _recipes = fetch('/data/recipes.json').then((r) => r.json())
   return _recipes

@@ -221,4 +221,14 @@ function iconOf(id) {
 }
 .map-btn:hover { border-color: var(--blue); text-decoration: none; }
 .map-btn .map-sub { display: block; margin-top: 3px; font-size: 11.5px; color: var(--muted); }
+
+@media (max-width: 720px) {
+  .head { gap: 12px; padding: 14px; }
+  .big-icon { width: 64px; height: 64px; }
+  .head h1 { font-size: 19px !important; }
+  .stat-grid { grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); gap: 8px; }
+  .stat { padding: 10px 12px; }
+  .stat .v { font-size: 17px; }
+  .sec { padding: 12px 14px; }
+}
 </style>

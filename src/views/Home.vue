@@ -40,7 +40,7 @@
 <script setup>
 import { ref, computed } from 'vue'
 import { useRouter } from 'vue-router'
-import { loadItems, loadRecipes, GROUP_ORDER } from '../data'
+import { loadItemsVisible, loadRecipes, GROUP_ORDER } from '../data'
 import { MAP_URL } from '../mapLink'
 
 const router = useRouter()
@@ -49,7 +49,7 @@ const q = ref('')
 const items = ref([])
 const recipeCount = ref(0)
 
-loadItems().then((d) => (items.value = d))
+loadItemsVisible().then((d) => (items.value = d))
 loadRecipes().then((d) => (recipeCount.value = d.length))
 
 const total = computed(() => items.value.length)
@@ -81,4 +81,10 @@ function go() {
 .cat-card:hover { border-color: var(--teal); text-decoration: none; }
 .cat-card .cnt { font-size: 22px; font-weight: 500; color: var(--teal); }
 .cat-card .nm { font-size: 13px; color: var(--muted); margin-top: 2px; }
+
+@media (max-width: 720px) {
+  .cat-grid { grid-template-columns: repeat(auto-fill, minmax(92px, 1fr)); gap: 10px; }
+  .cat-card { padding: 12px 6px; }
+  h1 { font-size: 24px !important; }
+}
 </style>
