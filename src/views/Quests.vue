@@ -1,5 +1,10 @@
 <template>
   <main class="container" style="padding-top: 24px;">
+    <h1 class="page-head">
+      <span class="ph-icon">◈</span>任务挑战
+      <span class="ph-sub">{{ quests.length }} 个任务 · 攻略步骤与坐标</span>
+    </h1>
+
     <div class="search-box" style="max-width: 560px;">
       <input
         v-model="q"
@@ -28,7 +33,7 @@
         v-for="l in layerList"
         :key="l"
         :class="{ on: layer === l }"
-        @click="layer = layer === l ? null : l"
+        @click="layer = layer === c ? null : l"
       >
         {{ l }} {{ layerCounts[l] }}
       </button>
@@ -46,7 +51,7 @@
       <span class="result-count">已显示 {{ filtered.length }} / 共 {{ quests.length }}</span>
     </div>
 
-    <p v-if="!filtered.length" style="color: var(--faint); text-align: center; padding: 48px 0;">
+    <p v-if="!filtered.length" class="empty-tip">
       没有匹配的任务
     </p>
 
@@ -57,19 +62,22 @@
         class="card quest-card"
         @click="openById(t.id)"
       >
-        <div class="quest-head">
+        <div class="q-side" :class="'lv-' + layerKey(t)" aria-hidden="true" />
+        <div class="q-main">
           <div class="quest-title">
-            <span class="quest-name">{{ t.zh || t.id }}</span>
-            <span v-if="!t.zh" class="nozh">暂无中文译名</span>
+            <span class="quest-name">{{ t.zh && t.zh !== t.id ? t.zh : '暂无中文译名' }}</span>
+            <span v-if="!t.zh || t.zh === t.id" class="nozh">{{ t.id }}</span>
           </div>
           <div class="quest-meta">
             <span class="chip-cat">{{ t.cat }}</span>
-            <span v-if="t.region" class="chip-region">{{ t.region }}</span>
+            <span v-if="t.region && t.region !== '未标注'" class="chip-region">{{ t.region }}</span>
+            <span v-else class="chip-region dim">地区未标注</span>
             <span v-if="t.npcCn" class="chip-npc">{{ t.npcCn }}</span>
-            <span v-if="t.layer" class="chip-layer">{{ t.layer }}</span>
+            <span v-if="t.layer" class="chip-layer" :class="'lv-' + layerKey(t)">{{ t.layer }}</span>
             <span v-if="t.nStep" class="chip-step">{{ t.nStep }} 步</span>
           </div>
         </div>
+        <span class="q-arrow" aria-hidden="true">›</span>
       </div>
     </div>
 
@@ -85,12 +93,13 @@
             <button class="arrow" :disabled="selIdx >= filtered.length - 1" @click="next">›</button>
           </div>
 
-          <h2 class="q-title">{{ sel.zh || sel.id }}</h2>
+          <h2 class="q-title">{{ sel.zh && sel.zh !== sel.id ? sel.zh : '暂无中文译名' }}</h2>
           <div class="badges">
             <span class="chip-cat">{{ sel.cat }}</span>
-            <span v-if="sel.region" class="chip-region">{{ sel.region }}</span>
-            <span v-if="sel.layer" class="chip-layer">{{ sel.layer }}</span>
+            <span v-if="sel.region && sel.region !== '未标注'" class="chip-region">{{ sel.region }}</span>
+            <span v-if="sel.layer" class="chip-layer" :class="'lv-' + layerKey(sel)">{{ sel.layer }}</span>
             <span v-if="sel.npcCn" class="chip-npc">委托人：{{ sel.npcCn }}</span>
+            <span class="chip plain mono">{{ sel.id }}</span>
           </div>
 
           <a :href="mapUrl" target="_blank" rel="noopener" class="map-btn">
@@ -211,6 +220,13 @@ const CAT_ORDER = [
   '主剧情挑战', '情节挑战', '神庙挑战', '迷你挑战', '迷你游戏', '重要支线', '其他',
 ]
 
+// 图层 → 视觉 key（天空/地表/地底 三色）
+function layerKey(t) {
+  if (t.layer === '天空') return 'sky'
+  if (t.layer === '地底') return 'depth'
+  return 'surface'
+}
+
 function countBy(fn) {
   const c = {}
   for (const t of quests.value) {
@@ -259,19 +275,31 @@ const regionList = computed(() =>
 
 const filtered = computed(() => {
   const kw = q.value.trim().toLowerCase()
-  return quests.value.filter((t) => {
-    if (cat.value && t.cat !== cat.value) return false
-    if (layer.value && t.layer !== layer.value) return false
-    if (region.value && t.region !== region.value) return false
-    if (!kw) return true
-    return (
-      (t.zh && t.zh.toLowerCase().includes(kw)) ||
-      t.id.toLowerCase().includes(kw) ||
-      (t.region && t.region.toLowerCase().includes(kw)) ||
-      (t.npcCn && t.npcCn.toLowerCase().includes(kw)) ||
-      (t.npc && t.npc.toLowerCase().includes(kw))
-    )
-  })
+  return quests.value
+    .filter((t) => {
+      if (cat.value && t.cat !== cat.value) return false
+      if (layer.value && t.layer !== layer.value) return false
+      if (region.value && t.region !== region.value) return false
+      if (!kw) return true
+      return (
+        (t.zh && t.zh.toLowerCase().includes(kw)) ||
+        t.id.toLowerCase().includes(kw) ||
+        (t.region && t.region.toLowerCase().includes(kw)) ||
+        (t.npcCn && t.npcCn.toLowerCase().includes(kw)) ||
+        (t.npc && t.npc.toLowerCase().includes(kw))
+      )
+    })
+    .sort((a, b) => {
+      // 展示排序：有官方中文名的优先；其余按分类难度序，最后按名称
+      const az = a.zh && a.zh !== a.id ? 0 : 1
+      const bz = b.zh && b.zh !== b.id ? 0 : 1
+      if (az !== bz) return az - bz
+      const ia = CAT_ORDER.indexOf(a.cat), ib = CAT_ORDER.indexOf(b.cat)
+      if (ia >= 0 && ib >= 0 && ia !== ib) return ia - ib
+      if (ia >= 0) return -1
+      if (ib >= 0) return 1
+      return (a.zh || a.id).localeCompare(b.zh || b.id, 'zh')
+    })
 })
 
 const sel = computed(() =>
@@ -366,97 +394,145 @@ onUnmounted(() => {
 </script>
 
 <style scoped>
+/* 页头：金菱形 + 标题 + 副标题（各页统一） */
+.page-head {
+  display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap;
+  font-size: 20px; font-weight: 700; margin: 0 0 16px; color: var(--text);
+}
+.page-head .ph-icon {
+  color: var(--gold); font-size: 15px;
+  text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+}
+.page-head .ph-sub { font-size: 12.5px; color: var(--faint); font-weight: 400; }
+
 .tabs.sub { margin-top: 8px; }
 .filter-row {
   display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin: 12px 0 6px;
 }
 .filter-row select {
   border: 1px solid var(--line2); border-radius: 10px; padding: 8px 12px;
-  background: var(--card); font-size: 13px; max-width: 320px;
+  background: var(--bg2); color: var(--text); font-size: 13px; max-width: 320px;
 }
 .btn-clear {
   border: 1px solid var(--line2); background: var(--card); border-radius: 999px;
   padding: 6px 14px; font-size: 12.5px; color: var(--muted); cursor: pointer;
+  transition: border-color 0.15s, color 0.15s;
 }
-.btn-clear:hover { border-color: var(--teal); color: var(--teal-deep); }
+.btn-clear:hover { border-color: var(--gold); color: var(--gold); }
 .result-count { font-size: 12.5px; color: var(--faint); margin-left: auto; }
+.empty-tip { color: var(--faint); text-align: center; padding: 48px 0; margin: 0; }
 
+/* ============ 任务卡片化 ============ */
 .quest-list { display: flex; flex-direction: column; gap: 10px; margin-top: 6px; }
-.quest-card { cursor: pointer; transition: border-color 0.15s; }
-.quest-card:hover { border-color: var(--teal); }
-.quest-head {
-  display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap;
+.quest-card {
+  display: flex; align-items: center; gap: 14px;
+  padding: 13px 16px; cursor: pointer;
+  transition: border-color 0.15s, transform 0.15s, box-shadow 0.15s;
 }
-.quest-title { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
-.quest-name { font-weight: 600; font-size: 14.5px; }
-.nozh { color: var(--faint); font-size: 12px; }
-.quest-meta { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; }
+.quest-card:hover {
+  border-color: var(--gold); transform: translateX(3px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+}
+/* 左侧图层色条：天空荧绿 / 地表金 / 地底橙红 */
+.q-side {
+  flex: none; width: 4px; align-self: stretch; border-radius: 999px;
+  background: var(--line2);
+}
+.q-side.lv-sky { background: var(--teal); box-shadow: 0 0 8px rgba(79, 209, 165, 0.5); }
+.q-side.lv-surface { background: var(--gold); box-shadow: 0 0 8px rgba(212, 175, 55, 0.5); }
+.q-side.lv-depth { background: var(--red); box-shadow: 0 0 8px rgba(224, 120, 86, 0.5); }
+
+.q-main { flex: 1; min-width: 0; }
+.quest-title { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+.quest-name {
+  font-weight: 600; font-size: 14.5px; color: var(--text);
+  transition: color 0.15s;
+}
+.quest-card:hover .quest-name { color: var(--gold); }
+.nozh { color: var(--faint); font-size: 11.5px; font-family: ui-monospace, Consolas, monospace; }
+.quest-meta { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; margin-top: 5px; }
+
+.q-arrow { flex: none; color: var(--faint); font-size: 18px; transition: color 0.15s, transform 0.15s; }
+.quest-card:hover .q-arrow { color: var(--gold); transform: translateX(3px); }
 
 .chip-cat {
-  background: var(--teal-bg); color: var(--teal-deep);
+  background: var(--teal-bg); color: var(--teal);
   border-radius: 999px; padding: 2px 10px; font-size: 12px;
 }
 .chip-region {
-  background: #eef2ff; color: #4338ca;
+  background: var(--blue-bg); color: var(--blue);
   border-radius: 999px; padding: 2px 10px; font-size: 12px;
 }
+.chip-region.dim { background: var(--bg2); color: var(--faint); }
 .chip-npc {
   background: var(--amber-bg); color: var(--amber);
   border-radius: 999px; padding: 2px 10px; font-size: 12px;
 }
 .chip-layer {
-  background: var(--bg); color: var(--muted);
+  background: var(--bg2); color: var(--muted);
   border-radius: 999px; padding: 2px 10px; font-size: 12px;
 }
+.chip-layer.lv-sky { background: var(--teal-bg); color: var(--teal); }
+.chip-layer.lv-surface { background: var(--gold-bg); color: var(--gold); }
+.chip-layer.lv-depth { background: var(--red-bg); color: var(--red); }
 .chip-step { color: var(--faint); font-size: 12px; }
 
-/* 弹层 */
+/* 弹层：暗底 + 羊皮纸卡 */
 .modal-mask {
-  position: fixed; inset: 0; background: rgba(15, 23, 42, 0.45);
+  position: fixed; inset: 0; background: rgba(8, 6, 3, 0.66);
+  backdrop-filter: blur(3px);
   display: flex; align-items: center; justify-content: center;
   z-index: 60; padding: 24px;
 }
 .modal {
-  background: var(--card); border-radius: 16px; padding: 24px 26px;
+  background:
+    radial-gradient(400px 200px at 50% 0%, rgba(212, 175, 55, 0.07), transparent 70%),
+    var(--paper-tex), var(--card);
+  background-size: auto, 160px 160px, auto;
+  border: 1px solid var(--line2); border-radius: 16px; padding: 24px 26px;
   max-width: 640px; width: 100%; max-height: 86vh; overflow-y: auto;
-  position: relative; box-shadow: 0 20px 60px rgba(15, 23, 42, 0.25);
+  position: relative; box-shadow: 0 24px 70px rgba(0, 0, 0, 0.55);
 }
 .modal .close {
   position: absolute; top: 12px; right: 14px; border: none; background: none;
   font-size: 24px; line-height: 1; color: var(--faint); cursor: pointer;
 }
-.modal .close:hover { color: var(--text); }
+.modal .close:hover { color: var(--gold); }
 .modal-top {
   display: flex; align-items: center; justify-content: center; gap: 14px;
   margin-bottom: 10px; padding-right: 32px;
 }
 .modal-top .pos { font-size: 12.5px; color: var(--muted); min-width: 60px; text-align: center; }
 .modal-top .arrow {
-  border: 1px solid var(--line2); background: var(--card); border-radius: 8px;
+  border: 1px solid var(--line2); background: var(--bg2); border-radius: 8px;
   width: 30px; height: 30px; cursor: pointer; color: var(--muted); font-size: 16px;
+  transition: border-color 0.15s, color 0.15s;
 }
-.modal-top .arrow:hover:not(:disabled) { border-color: var(--teal); color: var(--teal-deep); }
+.modal-top .arrow:hover:not(:disabled) { border-color: var(--gold); color: var(--gold); }
 .modal-top .arrow:disabled { opacity: 0.35; cursor: default; }
 
-.q-title { font-size: 18px; font-weight: 600; margin: 0 0 10px; }
-.badges { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 14px; }
+.q-title { font-size: 18px; font-weight: 700; margin: 0 0 10px; color: var(--gold); }
+.badges { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 14px; align-items: center; }
 
 .map-btn {
-  display: block; border: 1px solid var(--line2); border-radius: 10px;
-  padding: 10px 14px; text-decoration: none; color: var(--blue);
-  font-size: 13.5px; margin-bottom: 16px;
+  display: block; border: 1px solid var(--gold); border-radius: 10px;
+  padding: 11px 14px; text-decoration: none; color: var(--gold);
+  font-size: 13.5px; font-weight: 600; margin-bottom: 16px;
+  background: linear-gradient(180deg, rgba(212, 175, 55, 0.14), rgba(212, 175, 55, 0.05));
+  transition: box-shadow 0.15s;
 }
-.map-btn:hover { border-color: var(--blue); text-decoration: none; }
-.map-btn .map-sub { display: block; margin-top: 3px; font-size: 11.5px; color: var(--muted); }
+.map-btn:hover { color: var(--gold); box-shadow: 0 0 18px rgba(212, 175, 55, 0.22); }
+.map-btn .map-sub { display: block; margin-top: 3px; font-size: 11.5px; color: var(--muted); font-weight: 400; }
 
 section { margin-bottom: 18px; }
 section h3 {
-  font-size: 13px; font-weight: 600; color: var(--muted);
-  margin: 0 0 8px; display: flex; align-items: center; gap: 8px;
+  font-size: 13px; font-weight: 600; color: var(--gold);
+  margin: 0 0 8px; display: flex; align-items: center; gap: 8px; letter-spacing: 1px;
 }
 .src-tag {
   font-weight: 400; font-size: 11px; color: var(--faint);
   border: 1px solid var(--line); border-radius: 999px; padding: 1px 8px;
+  letter-spacing: 0;
 }
 .step { display: flex; gap: 10px; padding: 4px 0; }
 .step p { margin: 0; color: var(--muted); font-size: 13.5px; line-height: 1.65; white-space: pre-line; }
@@ -464,10 +540,10 @@ section h3 {
 .step-body { flex: 1; min-width: 0; }
 .step-no {
   flex: none; width: 20px; height: 20px; border-radius: 50%;
-  background: var(--teal-bg); color: var(--teal-deep);
+  background: var(--gold-bg); color: var(--gold);
   font-size: 11.5px; display: flex; align-items: center; justify-content: center; margin-top: 3px;
 }
-.step-no.done { background: #e3f3ea; color: var(--teal); }
+.step-no.done { background: var(--teal-bg); color: var(--teal); }
 .pts { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 4px; }
 .pt { font-size: 11.5px; color: var(--faint); }
 
@@ -477,8 +553,9 @@ section h3 {
 
 .chain { display: flex; gap: 8px; flex-wrap: wrap; }
 .chain-item {
-  border: 1px solid var(--line2); background: var(--card); border-radius: 999px;
-  padding: 5px 14px; font-size: 13px; color: var(--teal-deep); cursor: pointer;
+  border: 1px solid var(--line2); background: var(--bg2); border-radius: 999px;
+  padding: 5px 14px; font-size: 13px; color: var(--teal); cursor: pointer;
+  transition: border-color 0.15s, background 0.15s;
 }
 .chain-item.link:hover { border-color: var(--teal); background: var(--teal-bg); }
 .chain-item.dim { color: var(--faint); cursor: default; }
@@ -494,5 +571,6 @@ section h3 {
     max-width: 100%; border-radius: 16px 16px 0 0; max-height: 88vh; padding: 20px 18px;
   }
   .q-title { font-size: 16px; }
+  .quest-card { padding: 11px 13px; gap: 10px; }
 }
 </style>

@@ -1,7 +1,9 @@
 <template>
   <main class="container lab-page" style="padding-top: 24px;">
     <div class="lab-head">
-      <h2>模拟料理</h2>
+      <h1 class="page-head" style="margin-bottom: 6px;">
+        <span class="ph-icon">◈</span>模拟料理
+      </h1>
       <p class="lab-sub">
         选 1~5 个材料下锅，按游戏内置的 158 条配方与效果规则实时演算。
         规则引擎经 446 组组合回归验证，与图鉴 228 道锅煮菜判定 100% 一致。
@@ -30,7 +32,7 @@
             class="mat-row"
             :title="m.id"
           >
-            <img v-if="m.icon" :src="'icons/' + m.icon" loading="lazy" :alt="m.zh" />
+            <img v-if="m.icon" :src="'/icons/' + m.icon" loading="lazy" :alt="m.zh" />
             <div v-else class="mat-ph">{{ (m.zh || m.id)[0] }}</div>
             <div class="mat-info">
               <div class="mat-zh">{{ m.zh || m.id }}</div>
@@ -63,7 +65,7 @@
             @click="potIds[i - 1] && remove(i - 1)"
           >
             <template v-if="potIds[i - 1]">
-              <img v-if="matOf(potIds[i - 1]).icon" :src="'icons/' + matOf(potIds[i - 1]).icon" :alt="matOf(potIds[i - 1]).zh" />
+              <img v-if="matOf(potIds[i - 1]).icon" :src="'/icons/' + matOf(potIds[i - 1]).icon" :alt="matOf(potIds[i - 1]).zh" />
               <span v-else class="slot-ph">{{ (matOf(potIds[i - 1]).zh || '?')[0] }}</span>
               <span class="slot-zh">{{ matOf(potIds[i - 1]).zh }}</span>
             </template>
@@ -87,7 +89,7 @@
 
         <template v-else>
           <div class="result-head">
-            <img v-if="result.icon" :src="'icons/' + result.icon" :alt="result.zh" class="result-icon" />
+            <img v-if="result.icon" :src="'/icons/' + result.icon" :alt="result.zh" class="result-icon" />
             <div v-else class="result-icon result-ph">{{ (result.zh || '?')[0] }}</div>
             <div>
               <div class="result-zh">{{ result.zh || '…' }}</div>
@@ -272,36 +274,40 @@ watch(potIds, (v) => {
   gap: 14px; align-items: start;
 }
 .lab-col { padding: 14px; }
-.lab-col h3 { font-size: 14px; font-weight: 600; margin: 0 0 10px; }
+.lab-col h3 { font-size: 14px; font-weight: 600; margin: 0 0 10px; color: var(--gold); letter-spacing: 1px; }
 
 .cat-tabs { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 10px; }
 .cat-tabs button {
   border: 1px solid var(--line2); background: var(--card); border-radius: 999px;
   padding: 3px 10px; font-size: 11.5px; color: var(--muted); cursor: pointer;
+  transition: border-color 0.15s, color 0.15s;
 }
-.cat-tabs button.on { border-color: var(--teal); color: var(--teal-deep); background: var(--teal-bg); }
+.cat-tabs button.on { border-color: var(--gold); color: var(--gold); background: var(--gold-bg); }
 
 .mat-list { max-height: 480px; overflow-y: auto; display: flex; flex-direction: column; gap: 6px; }
 .mat-row {
   display: flex; align-items: center; gap: 8px;
   border: 1px solid var(--line); border-radius: 10px; padding: 5px 8px;
+  transition: border-color 0.15s;
 }
+.mat-row:hover { border-color: var(--gold); }
 .mat-row img, .mat-ph {
   width: 30px; height: 30px; object-fit: contain; flex: none;
 }
 .mat-ph {
   display: flex; align-items: center; justify-content: center;
-  background: var(--bg); border-radius: 8px; color: var(--faint); font-size: 14px;
+  background: var(--bg2); border-radius: 8px; color: var(--faint); font-size: 14px;
 }
 .mat-info { flex: 1; min-width: 0; }
 .mat-zh { font-size: 12.5px; font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.mat-eff { font-size: 11px; color: var(--teal-deep); }
+.mat-eff { font-size: 11px; color: var(--teal); }
 .add-btn {
   flex: none; width: 26px; height: 26px; border-radius: 50%;
-  border: 1px solid var(--teal); background: var(--teal-bg); color: var(--teal-deep);
+  border: 1px solid var(--teal); background: var(--teal-bg); color: var(--teal);
   font-size: 15px; line-height: 1; cursor: pointer;
+  transition: background 0.15s, color 0.15s;
 }
-.add-btn:hover:not(:disabled) { background: var(--teal); color: #fff; }
+.add-btn:hover:not(:disabled) { background: var(--teal); color: #10231b; }
 .add-btn:disabled { opacity: 0.35; cursor: default; }
 .empty-tip { color: var(--faint); font-size: 12.5px; text-align: center; margin: 12px 0; }
 
@@ -341,28 +347,28 @@ watch(potIds, (v) => {
 .result-icon { width: 60px; height: 60px; object-fit: contain; flex: none; }
 .result-ph {
   display: flex; align-items: center; justify-content: center;
-  background: var(--bg); border-radius: 12px; color: var(--faint); font-size: 24px;
+  background: var(--bg2); border: 1px solid var(--line); border-radius: 12px; color: var(--faint); font-size: 24px;
 }
 .result-zh { font-size: 16px; font-weight: 600; margin-bottom: 5px; }
 .path-badge {
   font-size: 11px; border-radius: 999px; padding: 2px 10px;
-  background: var(--bg); color: var(--muted);
+  background: var(--bg2); color: var(--muted);
 }
-.path-badge.fixed { background: var(--teal-bg); color: var(--teal-deep); }
-.path-badge.elixir { background: #E6F1FB; color: var(--blue); }
-.path-badge.fail { background: #FCEBEB; color: var(--red); }
+.path-badge.fixed { background: var(--teal-bg); color: var(--teal); }
+.path-badge.elixir { background: var(--blue-bg); color: var(--blue); }
+.path-badge.fail { background: var(--red-bg); color: var(--red); }
 
 .result-rows { display: flex; flex-direction: column; gap: 6px; margin-bottom: 12px; }
 .rrow { display: flex; justify-content: space-between; font-size: 13px; }
 .rk { color: var(--muted); }
-.rv { font-weight: 600; color: var(--teal-deep); }
+.rv { font-weight: 600; color: var(--gold); }
 
 .crit-box {
   background: var(--amber-bg); color: var(--amber); border-radius: 10px;
   padding: 8px 12px; font-size: 12.5px; margin-bottom: 8px;
 }
 .warn-box {
-  background: #FCEBEB; color: var(--red); border-radius: 10px;
+  background: var(--red-bg); color: var(--red); border-radius: 10px;
   padding: 8px 12px; font-size: 12.5px; margin-bottom: 8px;
 }
 .note-box {
@@ -377,7 +383,7 @@ watch(potIds, (v) => {
   color: var(--amber); border-radius: 10px; padding: 9px 0; font-size: 13px;
   cursor: pointer;
 }
-.fav-btn:hover:not(:disabled) { background: var(--amber); color: #fff; }
+.fav-btn:hover:not(:disabled) { background: var(--amber); color: #241a08; }
 .fav-btn:disabled { opacity: 0.4; cursor: default; }
 
 .fav-list { margin-top: 16px; border-top: 1px dashed var(--line); padding-top: 12px; }

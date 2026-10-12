@@ -1,16 +1,17 @@
 <template>
   <main v-if="item" class="container" style="padding-top: 24px; max-width: 760px;">
-    <!-- header -->
+    <!-- header：大图标 + 名称 + 品类 chips -->
     <div class="card head">
-      <img v-if="item.icon" :src="'icons/' + item.icon" class="big-icon" :alt="item.zh" />
+      <div class="head-glow" aria-hidden="true" />
+      <img v-if="item.icon" :src="'/icons/' + item.icon" class="big-icon" :alt="item.zh" />
       <div v-else class="big-icon ph">{{ (item.zh || item.id)[0] }}</div>
       <div style="flex: 1; min-width: 0;">
         <div style="display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap;">
-          <h1 style="font-size: 22px; font-weight: 500; margin: 0;">{{ item.zh || item.id }}</h1>
-          <span v-if="item.en" style="color: var(--muted); font-size: 13px;">{{ item.en }}</span>
+          <h1 style="font-size: 22px; font-weight: 600; margin: 0; color: var(--text);">{{ item.zh || item.id }}</h1>
+          <span v-if="item.en" style="color: var(--faint); font-size: 13px;">{{ item.en }}</span>
         </div>
         <div style="display: flex; gap: 6px; margin-top: 8px; flex-wrap: wrap;">
-          <span class="chip">{{ item.g }}</span>
+          <span class="chip gold">{{ item.g }}</span>
           <span v-if="item.num" class="chip amber">图鉴 #{{ item.num }}</span>
           <span class="chip plain mono">{{ item.id }}</span>
         </div>
@@ -36,8 +37,8 @@
       <div class="sec-title">料理 / 药用效果</div>
       <p class="desc">
         <span class="chip blue">{{ item.eff }}</span>
-        <span v-if="item.effLv" style="margin-left: 8px;">等级 {{ item.effLv }}</span>
-        <span v-if="minText" style="margin-left: 8px;">· 时长 {{ minText }}</span>
+        <span v-if="item.effLv" style="margin-left: 8px; color: var(--muted);">等级 {{ item.effLv }}</span>
+        <span v-if="minText" style="margin-left: 8px; color: var(--muted);">· 时长 {{ minText }}</span>
       </p>
     </div>
 
@@ -51,13 +52,13 @@
     </div>
     <div v-else-if="isArmor && !enhRows.length" class="card sec">
       <div class="sec-title">强化</div>
-      <p class="desc" style="color: var(--faint);">无法强化或已满级</p>
+      <p class="desc dim-text">无法强化或已满级</p>
     </div>
 
     <!-- dish recipe -->
     <div v-if="ingRecipes.length" class="card sec">
       <div class="sec-title">配方</div>
-      <div v-for="r in ingRecipes" :key="r.__i" class="recipe">
+      <div v-for="(r, ri) in ingRecipes" :key="r.__i" class="recipe">
         <div v-for="(s, si) in r.slots" :key="si" class="slot">
           <template v-if="s.type === 'actor'">
             <RouterLink :to="'/items/' + s.id" class="mat">{{ s.zh || s.id }}</RouterLink>
@@ -111,8 +112,8 @@
   </main>
 
   <main v-else-if="loaded" class="container" style="padding-top: 48px; text-align: center;">
-    <p style="color: var(--faint);">未找到该条目</p>
-    <RouterLink to="/items">← 返回图鉴</RouterLink>
+    <p class="empty-tip">未找到该条目</p>
+    <RouterLink to="/items" class="back-link">← 返回图鉴</RouterLink>
   </main>
 </template>
 
@@ -178,21 +179,46 @@ function iconOf(id) {
 </script>
 
 <style scoped>
-.head { display: flex; gap: 18px; padding: 20px; align-items: center; }
-.big-icon { width: 84px; height: 84px; object-fit: contain; border-radius: 12px; background: var(--bg); border: 1px solid var(--line); }
-.big-icon.ph { display: flex; align-items: center; justify-content: center; font-size: 30px; color: var(--faint); }
+/* 详情头图区：微光从大图标背后漫出 */
+.head {
+  position: relative; overflow: hidden;
+  display: flex; gap: 18px; padding: 22px; align-items: center;
+  background:
+    radial-gradient(320px 160px at 18% 50%, rgba(212, 175, 55, 0.1), transparent 70%),
+    var(--paper-tex), var(--card);
+  background-size: auto, 160px 160px, auto;
+}
+.head-glow {
+  position: absolute; left: 10px; top: 50%; width: 120px; height: 120px;
+  transform: translateY(-50%); border-radius: 50%;
+  background: radial-gradient(circle, rgba(79, 209, 165, 0.16), transparent 70%);
+  pointer-events: none;
+}
+.big-icon {
+  position: relative; z-index: 1;
+  width: 88px; height: 88px; object-fit: contain; border-radius: 12px;
+  background: var(--bg2); border: 1px solid var(--line2);
+}
+.big-icon.ph {
+  display: flex; align-items: center; justify-content: center;
+  font-size: 30px; color: var(--faint);
+}
 .mono { font-family: ui-monospace, Consolas, monospace; font-size: 11.5px; }
 
 .stat-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 10px; margin-top: 14px; }
-.stat { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; }
+.stat {
+  background: var(--paper-tex), var(--card); background-size: 160px 160px, auto;
+  border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px;
+}
 .stat .k { font-size: 12px; color: var(--muted); }
-.stat .v { font-size: 19px; font-weight: 500; margin-top: 2px; }
+.stat .v { font-size: 19px; font-weight: 600; margin-top: 2px; color: var(--text); }
 .stat .v.red { color: var(--red); }
 .stat .v.green { color: var(--green); }
 
 .sec { margin-top: 14px; padding: 14px 18px; }
-.sec-title { font-size: 12px; color: var(--faint); margin-bottom: 8px; }
-.desc { margin: 0; line-height: 1.8; white-space: pre-line; }
+.sec-title { font-size: 12px; color: var(--gold); margin-bottom: 8px; letter-spacing: 1px; }
+.desc { margin: 0; line-height: 1.8; white-space: pre-line; color: var(--muted); }
+.dim-text { color: var(--faint) !important; }
 
 .line-row { display: flex; justify-content: space-between; gap: 12px; padding: 5px 0; border-bottom: 1px dashed var(--line); }
 .line-row:last-child { border-bottom: none; }
@@ -202,6 +228,7 @@ function iconOf(id) {
 .recipe:last-child { border-bottom: none; }
 .slot { padding: 3px 0; }
 .mat { color: var(--teal); }
+.mat:hover { color: var(--gold); }
 .mat.tag { background: var(--blue-bg); color: var(--blue); border-radius: 6px; padding: 1px 8px; }
 .mat.mini { color: var(--muted); margin-left: 6px; font-size: 12.5px; }
 
@@ -209,18 +236,31 @@ function iconOf(id) {
 .used-cell {
   display: flex; align-items: center; gap: 8px; border: 1px solid var(--line);
   border-radius: 8px; padding: 6px 10px; color: var(--text); font-size: 13px;
+  transition: border-color 0.15s;
 }
-.used-cell:hover { border-color: var(--teal); text-decoration: none; }
+.used-cell:hover { border-color: var(--gold); color: var(--text); }
 .used-cell img { width: 28px; height: 28px; object-fit: contain; }
 
+/* 地图 CTA：金色羊皮纸按钮 */
 .map-cta { margin-top: 18px; text-align: center; }
 .map-btn {
-  display: block; width: 100%; box-sizing: border-box; padding: 12px; border-radius: 10px;
-  border: 1px solid var(--line); background: var(--blue-bg); color: var(--blue);
-  font-size: 14px; text-decoration: none; transition: border-color .15s;
+  display: block; width: 100%; box-sizing: border-box; padding: 13px;
+  border-radius: 10px;
+  border: 1px solid var(--gold);
+  background: linear-gradient(180deg, rgba(212, 175, 55, 0.16), rgba(212, 175, 55, 0.07));
+  color: var(--gold);
+  font-size: 14px; font-weight: 600; letter-spacing: 0.5px;
+  transition: box-shadow 0.15s, transform 0.15s;
 }
-.map-btn:hover { border-color: var(--blue); text-decoration: none; }
-.map-btn .map-sub { display: block; margin-top: 3px; font-size: 11.5px; color: var(--muted); }
+.map-btn:hover {
+  color: var(--gold);
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.25);
+  transform: translateY(-1px);
+}
+.map-btn .map-sub { display: block; margin-top: 3px; font-size: 11.5px; color: var(--muted); font-weight: 400; }
+
+.empty-tip { color: var(--faint); margin: 0 0 10px; }
+.back-link { color: var(--teal); }
 
 @media (max-width: 720px) {
   .head { gap: 12px; padding: 14px; }

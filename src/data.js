@@ -6,7 +6,7 @@ function loadData(key) {
   if (OFFLINE && window.__OFFLINE_DATA__[key]) {
     return Promise.resolve(window.__OFFLINE_DATA__[key])
   }
-  return fetch('data/' + key + '.json').then((r) => r.json())
+  return fetch('/data/' + key + '.json').then((r) => r.json())
 }
 
 let _items = null
@@ -60,7 +60,7 @@ export function loadCookingLab() {
 }
 
 export function iconUrl(item) {
-  return item.icon ? 'icons/' + item.icon : null
+  return item.icon ? '/icons/' + item.icon : null
 }
 
 export const GROUP_ORDER = [

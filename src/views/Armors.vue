@@ -1,5 +1,9 @@
 <template>
   <main class="container" style="padding-top: 24px;">
+    <h1 class="page-head">
+      <span class="ph-icon">◈</span>防具图鉴
+      <span class="ph-sub">{{ armors.length }} 件 · 67 套装 · 四星强化阶梯</span>
+    </h1>
     <div class="search-box" style="max-width: 560px;">
       <input
         v-model="q"
@@ -31,7 +35,7 @@
         class="card armor-card"
         @click="openById(a.id)"
       >
-        <img v-if="a.icon" :src="'icons/' + a.icon" loading="lazy" :alt="a.zh" />
+        <img v-if="a.icon" :src="'/icons/' + a.icon" loading="lazy" :alt="a.zh" />
         <div v-else class="ph">{{ (a.zh || a.id)[0] }}</div>
         <div class="nm" :title="a.zh">{{ a.zh || a.id }}</div>
         <div class="sub">
@@ -52,7 +56,7 @@
           <button class="close" @click="close" aria-label="关闭">×</button>
 
           <div class="detail-head">
-            <img v-if="sel.icon" :src="'icons/' + sel.icon" :alt="sel.zh" class="big-icon" />
+            <img v-if="sel.icon" :src="'/icons/' + sel.icon" :alt="sel.zh" class="big-icon" />
             <div v-else class="ph big-icon">{{ (sel.zh || sel.id)[0] }}</div>
             <div class="head-info">
               <h2 class="a-title">{{ sel.zh || sel.id }}</h2>
@@ -98,16 +102,16 @@
                   <td>{{ r.cost != null ? r.cost + ' 卢比' : '—' }}</td>
                   <td class="mats">
                     <template v-if="r.mats.length">
-                      <RouterLink
-                        v-for="(m, j) in r.mats"
-                        :key="j"
-                        v-if="m.itemId"
-                        :to="'/items/' + m.itemId"
-                        class="mat"
-                      >{{ m.zh }}×{{ m.n }}</RouterLink>
-                      <span v-for="(m, j) in r.mats" :key="'n' + j" v-if="!m.itemId" class="mat dim">
-                        {{ m.zh || '未知材料' }}×{{ m.n }}
-                      </span>
+                      <template v-for="(m, j) in r.mats" :key="j">
+                        <RouterLink
+                          v-if="m.itemId"
+                          :to="'/items/' + m.itemId"
+                          class="mat"
+                        >{{ m.zh }}×{{ m.n }}</RouterLink>
+                        <span v-else class="mat dim">
+                          {{ m.zh || '未知材料' }}×{{ m.n }}
+                        </span>
+                      </template>
                     </template>
                     <span v-else>—</span>
                   </td>
@@ -132,7 +136,7 @@
                 :class="{ cur: m.id === sel.id }"
                 @click="openById(m.id)"
               >
-                <img v-if="m.icon" :src="'icons/' + m.icon" loading="lazy" :alt="m.zh" />
+                <img v-if="m.icon" :src="'/icons/' + m.icon" loading="lazy" :alt="m.zh" />
                 <span>{{ m.zh || m.id }}</span>
               </button>
             </div>
@@ -304,14 +308,17 @@ onUnmounted(() => {
 }
 .armor-card {
   padding: 12px 10px; text-align: center; cursor: pointer;
-  transition: border-color 0.15s;
+  transition: border-color 0.15s, transform 0.15s, box-shadow 0.15s;
 }
-.armor-card:hover { border-color: var(--teal); }
+.armor-card:hover {
+  border-color: var(--gold); transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+}
 .armor-card img { width: 64px; height: 64px; object-fit: contain; }
 .armor-card .ph {
   width: 64px; height: 64px; margin: 0 auto; display: flex;
   align-items: center; justify-content: center;
-  background: var(--bg); border-radius: 10px; color: var(--faint); font-size: 20px;
+  background: var(--bg2); border-radius: 10px; color: var(--faint); font-size: 20px;
 }
 .armor-card .nm {
   margin-top: 8px; font-size: 13px; font-weight: 600;
@@ -321,22 +328,28 @@ onUnmounted(() => {
   margin-top: 4px; display: flex; gap: 6px; justify-content: center; align-items: center;
 }
 .slot-tag {
-  background: var(--bg); color: var(--muted); border-radius: 999px;
+  background: var(--bg2); color: var(--muted); border-radius: 999px;
   padding: 1px 8px; font-size: 11px;
 }
-.def-tag { color: var(--teal-deep); font-size: 11.5px; }
+.def-tag { color: var(--gold); font-size: 11.5px; font-weight: 600; }
 
-/* 弹层 */
+/* 弹层：暗底 + 羊皮纸卡 */
 .modal-mask {
-  position: fixed; inset: 0; background: rgba(15, 23, 42, 0.45);
+  position: fixed; inset: 0; background: rgba(8, 6, 3, 0.66);
+  backdrop-filter: blur(3px);
   display: flex; align-items: center; justify-content: center;
   z-index: 60; padding: 24px;
 }
 .modal {
-  background: var(--card); border-radius: 16px; padding: 24px 26px;
+  background:
+    radial-gradient(400px 200px at 50% 0%, rgba(212, 175, 55, 0.07), transparent 70%),
+    var(--paper-tex), var(--card);
+  background-size: auto, 160px 160px, auto;
+  border: 1px solid var(--line2); border-radius: 16px; padding: 24px 26px;
   max-width: 640px; width: 100%; max-height: 86vh; overflow-y: auto;
-  position: relative; box-shadow: 0 20px 60px rgba(15, 23, 42, 0.25);
+  position: relative; box-shadow: 0 24px 70px rgba(0, 0, 0, 0.55);
 }
+.modal .close:hover { color: var(--gold); }
 .modal .close {
   position: absolute; top: 12px; right: 14px; border: none; background: none;
   font-size: 24px; line-height: 1; color: var(--faint); cursor: pointer;
@@ -347,34 +360,36 @@ onUnmounted(() => {
 .big-icon { width: 96px; height: 96px; object-fit: contain; flex: none; }
 .big-icon.ph {
   display: flex; align-items: center; justify-content: center;
-  background: var(--bg); border-radius: 12px; color: var(--faint); font-size: 32px;
+  background: var(--bg2); border: 1px solid var(--line2); border-radius: 12px; color: var(--faint); font-size: 32px;
 }
 .a-title { font-size: 18px; font-weight: 600; margin: 0 0 8px; }
 .badges { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 8px; }
 .set-tag {
-  background: var(--teal-bg); color: var(--teal-deep);
+  background: var(--teal-bg); color: var(--teal);
   border-radius: 999px; padding: 2px 10px; font-size: 12px;
 }
 .layer-tag {
-  background: var(--bg); color: var(--muted);
+  background: var(--bg2); color: var(--muted);
   border-radius: 999px; padding: 2px 10px; font-size: 12px;
 }
 .stats { display: flex; gap: 14px; font-size: 13px; color: var(--muted); flex-wrap: wrap; }
-.stats b { color: var(--teal-deep); font-weight: 600; }
+.stats b { color: var(--gold); font-weight: 600; }
 .desc { color: var(--muted); font-size: 13.5px; line-height: 1.7; margin: 14px 0; }
 
 .map-btn {
-  display: block; border: 1px solid var(--line2); border-radius: 10px;
-  padding: 10px 14px; text-decoration: none; color: var(--blue);
-  font-size: 13.5px; margin-bottom: 16px;
+  display: block; border: 1px solid var(--gold); border-radius: 10px;
+  padding: 11px 14px; text-decoration: none; color: var(--gold);
+  font-size: 13.5px; font-weight: 600; margin-bottom: 16px;
+  background: linear-gradient(180deg, rgba(212, 175, 55, 0.14), rgba(212, 175, 55, 0.05));
+  transition: box-shadow 0.15s;
 }
-.map-btn:hover { border-color: var(--blue); }
-.map-btn .map-sub { display: block; margin-top: 3px; font-size: 11.5px; color: var(--muted); }
+.map-btn:hover { color: var(--gold); box-shadow: 0 0 18px rgba(212, 175, 55, 0.22); }
+.map-btn .map-sub { display: block; margin-top: 3px; font-size: 11.5px; color: var(--muted); font-weight: 400; }
 
 section { margin-bottom: 18px; }
 section h3 {
-  font-size: 13px; font-weight: 600; color: var(--muted);
-  margin: 0 0 8px; display: flex; align-items: center; gap: 8px;
+  font-size: 13px; font-weight: 600; color: var(--gold);
+  margin: 0 0 8px; display: flex; align-items: center; gap: 8px; letter-spacing: 1px;
 }
 .src-tag {
   font-weight: 400; font-size: 11px; color: var(--faint);
@@ -390,10 +405,10 @@ section h3 {
 }
 .ladder td { padding: 6px 8px; border-bottom: 1px dashed var(--line); vertical-align: top; }
 .stage { color: var(--amber); white-space: nowrap; }
-.def-cell { color: var(--teal-deep); font-weight: 600; }
+.def-cell { color: var(--gold); font-weight: 600; }
 .mats { display: flex; flex-wrap: wrap; gap: 4px 8px; }
 .mat {
-  color: var(--teal-deep); text-decoration: none;
+  color: var(--teal); text-decoration: none;
   border-bottom: 1px dotted var(--teal);
 }
 .mat:hover { color: var(--teal); }
@@ -411,9 +426,10 @@ section h3 {
 
 .chain { display: flex; gap: 8px; flex-wrap: wrap; }
 .chain-item {
-  border: 1px solid var(--line2); background: var(--card); border-radius: 999px;
-  padding: 5px 14px; font-size: 13px; color: var(--teal-deep);
+  border: 1px solid var(--line2); background: var(--bg2); border-radius: 999px;
+  padding: 5px 14px; font-size: 13px; color: var(--teal);
   cursor: pointer; text-decoration: none; display: inline-block;
+  transition: border-color 0.15s, background 0.15s;
 }
 .chain-item.link:hover { border-color: var(--teal); background: var(--teal-bg); }
 

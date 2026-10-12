@@ -1,5 +1,9 @@
 <template>
   <main class="container" style="padding-top: 24px;">
+    <h1 class="page-head">
+      <span class="ph-icon">◈</span>料理图鉴
+      <span class="ph-sub">{{ dishes.length }} 道菜谱 · 固定配方与效果加成</span>
+    </h1>
     <div class="search-box" style="max-width: 560px;">
       <input v-model="q" placeholder="搜索菜名或材料…" aria-label="搜索料理" />
     </div>
@@ -23,7 +27,7 @@
       >
         <span class="num">#{{ d.num }}</span>
         <span v-if="!d.recipes.length" class="norc">自由组合</span>
-        <img :src="'icons/' + d.actor + '.png'" loading="lazy" :alt="d.zh" />
+        <img :src="'/icons/' + d.actor + '.png'" loading="lazy" :alt="d.zh" />
         <div class="nm" :title="d.zh">{{ d.zh }}</div>
       </div>
     </div>
@@ -48,7 +52,7 @@
           </div>
 
           <div class="dish-head">
-            <img :src="'icons/' + sel.actor + '.png'" :alt="sel.zh" />
+            <img :src="'/icons/' + sel.actor + '.png'" :alt="sel.zh" />
             <div>
               <div class="sec-title" style="margin: 0;">
                 #{{ sel.num }} {{ sel.zh }}
@@ -206,28 +210,34 @@ function tagZh(t) {
 }
 .dish-cell .norc {
   position: absolute; top: 4px; right: 5px;
-  font-size: 9.5px; color: var(--faint); background: var(--bg);
+  font-size: 9.5px; color: var(--faint); background: var(--bg2);
   border-radius: 4px; padding: 0 4px;
 }
 
 .modal-mask {
   position: fixed; inset: 0; z-index: 50;
-  background: rgba(44, 44, 42, 0.34);
+  background: rgba(8, 6, 3, 0.66);
+  backdrop-filter: blur(3px);
   display: flex; align-items: center; justify-content: center;
   padding: 24px;
 }
 .modal {
   position: relative;
-  background: var(--card); border: 1px solid var(--line); border-radius: var(--radius);
+  background:
+    radial-gradient(400px 200px at 50% 0%, rgba(212, 175, 55, 0.07), transparent 70%),
+    var(--paper-tex), var(--card);
+  background-size: auto, 160px 160px, auto;
+  border: 1px solid var(--line2); border-radius: var(--radius);
   width: 100%; max-width: 560px; max-height: 84vh; overflow-y: auto;
   padding: 18px 20px;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.55);
 }
 .modal .close {
   position: absolute; top: 8px; right: 10px; z-index: 1;
   border: none; background: transparent; color: var(--faint);
   font-size: 22px; line-height: 1; cursor: pointer; padding: 4px 8px;
 }
-.modal .close:hover { color: var(--text); }
+.modal .close:hover { color: var(--gold); }
 .modal-top {
   display: flex; align-items: center; justify-content: center; gap: 14px;
   margin-bottom: 10px;
@@ -237,10 +247,11 @@ function tagZh(t) {
   min-width: 62px; text-align: center;
 }
 .modal-top .arrow {
-  width: 30px; height: 26px; border: 1px solid var(--line); background: var(--bg);
+  width: 30px; height: 26px; border: 1px solid var(--line); background: var(--bg2);
   border-radius: 7px; color: var(--muted); cursor: pointer; font-size: 16px; line-height: 1;
+  transition: border-color 0.15s, color 0.15s;
 }
-.modal-top .arrow:hover:not(:disabled) { border-color: var(--teal); color: var(--teal-deep); }
+.modal-top .arrow:hover:not(:disabled) { border-color: var(--gold); color: var(--gold); }
 .modal-top .arrow:disabled { opacity: 0.4; cursor: default; }
 
 .dish-head { display: flex; gap: 16px; align-items: flex-start; }
@@ -252,18 +263,19 @@ function tagZh(t) {
 .recipe-tag { font-size: 12px; color: var(--teal); font-weight: 600; margin-bottom: 4px; }
 .slot { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; padding: 3px 0; }
 .mat {
-  background: var(--teal-bg); color: var(--teal-deep); border-radius: 6px;
+  background: var(--teal-bg); color: var(--teal); border-radius: 6px;
   padding: 2px 9px; font-size: 13px; text-decoration: none;
 }
-.mat:hover { background: var(--teal); color: #fff; }
+.mat:hover { background: var(--teal); color: #10231b; }
 .mat.tag { background: var(--blue-bg); color: var(--blue); }
-.mat.mini { background: var(--bg); border: 1px solid var(--line); color: var(--text); font-size: 12.5px; }
+.mat.mini { background: var(--bg2); border: 1px solid var(--line); color: var(--text); font-size: 12.5px; }
 .sub { color: var(--faint); font-size: 12px; }
 .norecipe { margin-top: 12px; color: var(--faint); font-size: 13px; }
 .sim-link {
   display: block; margin-top: 14px; border: 1px solid var(--line2); border-radius: 10px;
-  padding: 10px 14px; text-decoration: none; color: var(--teal-deep);
-  background: var(--teal-bg); font-size: 13.5px;
+  padding: 10px 14px; text-decoration: none; color: var(--teal);
+  background: var(--bg2); font-size: 13.5px;
+  transition: border-color 0.15s;
 }
 .sim-link:hover { border-color: var(--teal); }
 
