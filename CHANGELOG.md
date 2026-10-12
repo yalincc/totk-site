@@ -272,6 +272,9 @@
 - 发布规范落进 `开发手册.md` §3.4：远端拓扑表、EdgeOne 项目配置参数（分支 `main` / 构建 `npm run build` /
   输出 `dist` / Node 22 / **加速区域必须选"不含中国大陆"**）、文件数上限 20000、缓存策略与 Redeploy 运维口径
 - 待办：EdgeOne 控制台建项目 + 绑自定义域名（控制台操作，需人工执行）；域名拿到后回填 TOTKmap 的 `TOTK_COMPENDIUM_URL`
+- **决策（2026-10-13 老大拍板）**：部署路径走**控制台 Git 关联**（复刻 botwmap/totkmap，push 即自动部署）；
+  自定义域名定 **`wiki.yalin.site`**（与 `totk.yalin.site` / `botw.yalin.site` 同 zone，语义=资料库）
+  —— 首次开通清单已落 `开发手册.md` §3.4.1（含加速区域必选"不含中国大陆"、CNAME 二次确认等坑）
 
 ### 2026-10-12 · 项目文件治理与规范建立
 - 上层工作区 `BOTWroms` 建立 git 仓库并配套严格 `.gitignore`，根目录 17 个文件按五分类收敛到 6 个

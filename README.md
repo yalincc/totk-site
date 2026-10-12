@@ -15,7 +15,7 @@
 | 镜像 | GitHub https://github.com/yalincc/totk-site （`origin/main` 仍在 `a585f64` **v0.8.2**，暂未同步） |
 | 本地 | `main` = `dce72b0`，工作树干净；commit 总数 21 |
 | tag | 无 |
-| **线上部署** | **EdgeOne Pages 项目尚未创建**（部署参数见 `开发手册.md` §3.4）→ 暂无正式域名 |
+| **线上部署** | **EdgeOne Pages 项目待创建**（走控制台 Git 关联，`main` → 自动部署；清单见 `开发手册.md` §3.4.1）<br>目标域名 **`wiki.yalin.site`**（2026-10-13 定） |
 | 临时分支 | `backup-before-squash`（v0.13.1 历史整理前的旧链备份，确认无误可删） |
 
 > 时间线：GitHub 共 push 9 次（v0.3 → v0.8.2，最后一次 2026-10-12 19:27）；
@@ -103,8 +103,8 @@ romfs (G:\YUZU\Switch Games\TOTKroms)
 
 ## 待办
 
-- [ ] **P5 部署（进行中）**：Gitee 仓库已建并推送 ✅ → 待 EdgeOne Pages 建项目（`main` / 构建 `npm run build` / 输出 `dist` / **加速区域选"不含中国大陆"**，参数见 `开发手册.md` §3.4）→ 拿到正式域名
-- [ ] **域名回填**：TOTKmap 仓库 `index.html` 的 `window.TOTK_COMPENDIUM_URL` 改为本站域名（地图卡片「查看图鉴」才指向线上）
+- [ ] **P5 部署（进行中）**：Gitee 仓库已建并推送 ✅ → 待 EdgeOne 控制台建项目（清单 `开发手册.md` §3.4.1，**加速区域必选"不含中国大陆"**）→ 绑域名 **`wiki.yalin.site`**
+- [ ] **域名回填**：TOTKmap 仓库 `index.html` 的 `window.TOTK_COMPENDIUM_URL` 改为 `https://wiki.yalin.site`（地图卡片「查看图鉴」才指向线上）
 - [ ] **GitHub 镜像同步**：`origin/main` 仍停在 v0.8.2，需要时 `git push origin main` 补齐
 - [ ] PWA（manifest + service worker，离线缓存 data/icons）
 
