@@ -11,15 +11,16 @@
 
 | 项 | 值 |
 |---|---|
-| **部署源** | Gitee https://gitee.com/yalincc/totk-site （`gitee/main` = `dce72b0` v0.13.1，**已推**）→ EdgeOne Pages 自动部署 |
-| 镜像 | GitHub https://github.com/yalincc/totk-site （`origin/main` 仍在 `a585f64` **v0.8.2**，暂未同步） |
-| 本地 | `main` = `dce72b0`，工作树干净；commit 总数 21 |
+| **部署源** | Gitee https://gitee.com/yalincc/totk-site （`gitee/main` = `7579ee3` v0.13.3，**已推**）→ EdgeOne Pages 自动部署 |
+| 镜像 | GitHub https://github.com/yalincc/totk-site （`origin/main` = `7579ee3` v0.13.3，**2026-10-13 已补齐同步**） |
+| 本地 | `main` = `7579ee3`，工作树干净；commit 总数 26 |
 | tag | 无 |
-| **线上部署** | **EdgeOne Pages 项目待创建**（走控制台 Git 关联，`main` → 自动部署；清单见 `开发手册.md` §3.4.1）<br>目标域名 **`wiki.yalin.site`**（2026-10-13 定） |
+| **线上部署** | ✅ **已上线 `https://wiki.yalin.site`**（2026-10-13，EdgeOne Pages 项目 `totk-site`，加速区域「不含中国大陆」，HTTPS 免费证书已部署；首次构建失败经 v0.13.3 锁文件修复后成功） |
 | 临时分支 | `backup-before-squash`（v0.13.1 历史整理前的旧链备份，确认无误可删） |
 
 > 时间线：GitHub 共 push 9 次（v0.3 → v0.8.2，最后一次 2026-10-12 19:27）；
-> 2026-10-13 新建 Gitee 仓库并一次性推送 v0.2 → v0.13.1 全量（**Gitee 成为部署源，GitHub 转为镜像**）。
+> 2026-10-13 新建 Gitee 仓库并一次性推送 v0.2 → v0.13.1 全量（**Gitee 成为部署源，GitHub 转为镜像**）；
+> 2026-10-13 `wiki.yalin.site` 上线（EdgeOne 控制台 Git 关联 + 域名绑定 + 免费证书，全程约 40 分钟）。
 
 ## 技术栈
 
@@ -103,10 +104,10 @@ romfs (G:\YUZU\Switch Games\TOTKroms)
 
 ## 待办
 
-- [ ] **P5 部署（进行中）**：Gitee 仓库已建并推送 ✅ → 待 EdgeOne Pages 建项目（清单 `开发手册.md` §3.4.1，**加速区域必选"不含中国大陆"**）→ 绑域名 **`wiki.yalin.site`**
+- [x] **P5 部署（已完成 2026-10-13）**：`https://wiki.yalin.site` 上线（EdgeOne Pages 项目 `totk-site`，加速区域不含中国大陆，HTTPS 免费证书已部署；首次构建失败经 v0.13.3 锁文件修复后成功）
   - 辅助脚本（在 `E:\WorkSpace\BOTWroms\.workbuddy\`）：`deploy_totk_site.sh`（CLI 直传一键部署，需 EdgeOne API Token）、`verify_deploy_totk_site.sh`（线上验收：资源 200 + SPA 深层路由 + assets 对照）
-- [ ] **域名回填**：TOTKmap 仓库 `index.html` 的 `window.TOTK_COMPENDIUM_URL` 改为 `https://wiki.yalin.site`（地图卡片「查看图鉴」才指向线上）
-- [ ] **GitHub 镜像同步**：`origin/main` 仍停在 v0.8.2，需要时 `git push origin main` 补齐
+- [ ] **域名回填**：TOTKmap 仓库 `index.html` 的 `window.TOTK_COMPENDIUM_URL` 改为 `https://wiki.yalin.site`（当前为空值，地图卡片「查看图鉴」尚未生效）
+- [x] **GitHub 镜像同步**（2026-10-13）：`origin/main` 已补齐到 `7579ee3` v0.13.3
 - [ ] PWA（manifest + service worker，离线缓存 data/icons）
 
 ## 已知悬留

@@ -284,6 +284,17 @@
 
 ## 治理记录（非版本）
 
+### 2026-10-13 · 部署上线：wiki.yalin.site（EdgeOne Pages）
+- EdgeOne 控制台创建 Pages 项目 `totk-site`（导入 Gitee 仓库，生产分支 `main`，框架 Vite，构建 `npm run build`，输出 `dist`，Node 22）
+- **加速区域选「全球可用区（不含中国大陆）」**（免备案前提，创建后不可改，选错只能删项目重建）
+- **首次构建失败**：`Cannot find module @rollup/rollup-linux-x64-gnu`（npm 可选依赖 bug，npm/cli#4828）——
+  `package-lock.json` 缺全部 `@rollup/*` 平台包条目（esbuild 齐全、rollup 一个没有）。修复：`npm install rollup@4.63.5`
+  补全 25 个平台包（rollup 版本不变），回滚 package.json 只留锁文件变更，`npm ci` + 构建验证通过后提交 v0.13.3（`7579ee3`）
+- 域名绑定全流程：TXT 归属权验证（DNSPod 一键添加 + 二次确认）→ CNAME `wiki.yalin.site.pages.dnsoe5.com`
+  （一键添加弹二次确认框，必须再点一次「确认」）→ 申请免费证书（自动验证，约 1~3 分钟签发）
+- 验收：按 `verify_deploy_totk_site.sh` 口径全过（首页/数据/图标 200 + 深层路由不 404 + assets 对照）；线上实测 200
+- GitHub 镜像补齐：`origin/main` 从 v0.8.2 同步到 v0.13.3（`7579ee3`，双端哈希一致）
+
 ### 2026-10-13 · 部署链路：接入 Gitee（部署源）+ EdgeOne Pages
 - 新建 Gitee 仓库 https://gitee.com/yalincc/totk-site ，**双 remote** 成型（与 TOTKmap / BOTWmap 同款）：
   `gitee` 为 EdgeOne Pages 部署源（push `main` 自动部署），`origin`（GitHub）转为镜像备份
