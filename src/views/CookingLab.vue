@@ -4,6 +4,7 @@
       <h1 class="page-head" style="margin-bottom: 6px;">
         <span class="ph-icon">◈</span>模拟料理
       </h1>
+      <div class="head-orn" aria-hidden="true"><i></i><b>✦</b><i></i></div>
       <p class="lab-sub">
         选 1~5 份材料下锅，按游戏内置规则实时演算产物、效果与暴击。
         规则引擎经 446 组组合回归验证，与图鉴 228 道锅煮菜判定 100% 一致。
@@ -22,7 +23,6 @@
         🌕 血月（必定暴击）
       </button>
     </div>
-
     <!-- ============ 自由搭配 ============ -->
     <div v-show="mode === 'mix'" class="lab-grid">
       <!-- 左：材料库 -->
@@ -64,21 +64,29 @@
 
       <!-- 右：工作台 + 结果 -->
       <div class="bench">
-        <section class="card lab-col">
+        <section class="card lab-col ornate">
           <h3>配方工作台 <span class="col-sub">点左侧材料即入锅 · 同名自动叠加</span></h3>
           <div class="slots">
-            <div v-for="i in 5" :key="i" class="slot" :class="{ filled: pot[i - 1] }">
+            <div
+              v-for="i in 5"
+              :key="i"
+              class="slot"
+              :class="{ filled: pot[i - 1] }"
+              :title="pot[i - 1] ? '点击 −1 份，右上角 × 移除整种' : ''"
+            >
               <template v-if="pot[i - 1]">
-                <img v-if="matOf(pot[i - 1].id).icon" :src="'/icons/' + matOf(pot[i - 1].id).icon" :alt="matOf(pot[i - 1].id).zh" />
-                <div v-else class="slot-ph">{{ (matOf(pot[i - 1].id).zh || '?')[0] }}</div>
+                <button class="slot-del" @click.stop="del(pot[i - 1].id)" title="移除这种材料">×</button>
+                <img
+                  v-if="matOf(pot[i - 1].id).icon"
+                  :src="'/icons/' + matOf(pot[i - 1].id).icon"
+                  :alt="matOf(pot[i - 1].id).zh"
+                  @click="dec(pot[i - 1].id)"
+                />
+                <div v-else class="slot-ph" @click="dec(pot[i - 1].id)">{{ (matOf(pot[i - 1].id).zh || '?')[0] }}</div>
                 <div class="sn">{{ matOf(pot[i - 1].id).zh }}</div>
-                <div class="mul">×{{ pot[i - 1].n }}</div>
-                <div class="stepper">
-                  <button @click="dec(pot[i - 1].id)" title="减少一份">−</button>
-                  <button @click="del(pot[i - 1].id)" title="移除这种材料">×</button>
-                </div>
+                <span class="mul">×{{ pot[i - 1].n }}</span>
               </template>
-              <span v-else class="slot-empty"><b>＋</b>空位</span>
+              <span v-else class="slot-empty"><i></i>空位</span>
             </div>
           </div>
 
@@ -113,7 +121,7 @@
         </section>
 
         <!-- 结果卡 -->
-        <section class="card lab-col result-col">
+        <section class="card lab-col result-col ornate">
           <h3>料理结果 <span class="col-sub">实时演算</span></h3>
 
           <div v-if="result.path === 'empty'" class="result-empty">
@@ -123,17 +131,26 @@
 
           <template v-else>
             <div class="result-head">
-              <img v-if="shown.icon" :src="'/icons/' + shown.icon" :alt="shown.zh" class="result-icon" />
-              <div v-else class="result-icon ph">{{ (shown.zh || '?')[0] }}</div>
+              <!-- 产物大图：光环 + 环形符文 -->
+              <div class="res-art" :class="{ crit: rolled && rolled.crit }">
+                <span class="art-halo" aria-hidden="true"></span>
+                <img v-if="shown.icon" :src="'/icons/' + shown.icon" :alt="shown.zh" class="result-icon" />
+                <div v-else class="result-icon ph">{{ (shown.zh || '?')[0] }}</div>
+              </div>
               <div class="rh-text">
                 <div class="rname">
                   {{ shown.zh || '…' }}
-                  <span v-if="rolled && rolled.crit" class="critbadge">★ 大成功</span>
+                  <span v-if="rolled && rolled.crit" class="critbadge"><i>✦</i>大成功</span>
                 </div>
                 <span class="pbadge" :class="result.path">{{ pathLabel(result) }}</span>
+                <div v-if="rolled" class="roll-line">
+                  <span class="roll-dot" :class="{ hit: rolled.crit }"></span>
+                  {{ rolled.crit ? '触发暴击' : '未触发暴击' }}（{{ rolled.rate }}%）<template v-if="rolled.crit && rolled.label"> · {{ rolled.label }}</template>
+                </div>
               </div>
             </div>
 
+            <!-- 四项关键数据横排 -->
             <div class="metrics">
               <div class="metric">
                 <div class="mv" :class="{ zero: !shown.hp, up: critHeart }">
@@ -155,20 +172,17 @@
                 </div>
                 <div class="mk">持续时间<template v-if="critTime"> ▲</template></div>
               </div>
+              <div class="metric">
+                <div class="mv rupee" :class="{ zero: result.price == null }">
+                  <template v-if="result.price != null">{{ result.price }}<em>◆</em></template>
+                  <template v-else>—</template>
+                </div>
+                <div class="mk">卖出价</div>
+              </div>
             </div>
 
             <div v-if="shown.conflict" class="warnbox">
               加入的效果材料种类不同，加成会互相抵消，只保留回血。
-            </div>
-
-            <div class="subrow">
-              <span class="rk">卖出价格</span>
-              <span class="rv">{{ result.price != null ? result.price + ' 卢比' : '—' }}</span>
-            </div>
-
-            <div v-if="rolled" class="roll-note">
-              本次判定：<b :class="{ hit: rolled.crit }">{{ rolled.crit ? '触发暴击' : '未触发暴击' }}</b>
-              （暴击率 {{ rolled.rate }}%）<template v-if="rolled.crit && rolled.label"> · {{ rolled.label }}</template>
             </div>
 
             <div v-if="result.recipeZh" class="note">命中固定配方「{{ result.recipeZh }}」。</div>
@@ -498,6 +512,21 @@ watch(pot, (v) => {
 .lab-sub { color: var(--muted); font-size: 13px; line-height: 1.6; margin: 0 0 14px; }
 .col-sub { font-size: 11.5px; color: var(--faint); font-weight: 400; letter-spacing: 0; }
 
+/* 页头符文装饰线 */
+.head-orn { display: flex; align-items: center; gap: 9px; max-width: 360px; margin: 2px 0 10px; }
+.head-orn i { flex: 1; height: 1px; background: linear-gradient(90deg, transparent, var(--gold), transparent); opacity: .55; }
+.head-orn b { color: var(--gold); font-size: 10px; font-weight: 400; opacity: .75; }
+
+/* 四角符文装饰（游戏面板感，替代纯直角） */
+.ornate { position: relative; overflow: hidden; }
+.ornate::before,
+.ornate::after {
+  content: ""; position: absolute; width: 17px; height: 17px;
+  border: 1.5px solid var(--gold); opacity: .38; pointer-events: none;
+}
+.ornate::before { top: 7px; left: 7px; border-right: 0; border-bottom: 0; border-top-left-radius: 9px; }
+.ornate::after { bottom: 7px; right: 7px; border-left: 0; border-top: 0; border-bottom-right-radius: 9px; }
+
 .mode-row { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; flex-wrap: wrap; }
 .modes { display: flex; gap: 6px; }
 .modes button {
@@ -529,12 +558,16 @@ watch(pot, (v) => {
 
 .mat-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(86px, 1fr)); gap: 8px; max-height: 560px; overflow-y: auto; padding: 4px 2px 2px 0; }
 .mat-cell {
-  position: relative; border: 1px solid var(--line); border-radius: 10px; background: var(--card);
+  position: relative; border: 1px solid var(--line); border-radius: 13px; background: var(--card);
   padding: 8px 4px 6px; text-align: center; cursor: pointer;
   transition: border-color .15s, transform .15s, box-shadow .15s, background .15s;
 }
-.mat-cell:hover { border-color: var(--teal); transform: translateY(-2px); box-shadow: 0 6px 14px rgba(46,50,54,.1); }
-.mat-cell.inpot { border-color: var(--gold); background: var(--gold-bg); }
+.mat-cell:hover { border-color: var(--teal); transform: translateY(-2px); box-shadow: 0 7px 16px rgba(46, 50, 54, .12); }
+.mat-cell.inpot {
+  border-color: var(--gold);
+  background: linear-gradient(180deg, var(--gold-bg), rgba(154, 123, 28, .03));
+  box-shadow: inset 0 0 0 1px rgba(154, 123, 28, .3);
+}
 .mat-cell.dim { opacity: .35; cursor: not-allowed; }
 .mat-cell.dim:hover { transform: none; border-color: var(--line); box-shadow: none; }
 .mat-cell img { width: 40px; height: 40px; object-fit: contain; display: block; margin: 0 auto; }
@@ -549,31 +582,61 @@ watch(pot, (v) => {
   background: var(--gold); color: #fff; font-size: 11.5px; font-weight: 700; line-height: 20px; padding: 0 5px;
 }
 .mat-cell .crit-flag {
-  position: absolute; top: -6px; left: -6px; font-size: 9.5px; background: var(--red); color: #fff;
-  border-radius: 999px; padding: 1px 6px;
+  position: absolute; top: -5px; left: -5px; font-size: 8.5px; letter-spacing: .3px;
+  color: var(--red); background: var(--red-bg); border: 1px solid rgba(180, 73, 58, .3);
+  border-radius: 999px; padding: 0 5px; line-height: 15px;
 }
 
-/* 工作台 */
+/* 工作台：圆形材料槽（回归"锅"的意象，破直角） */
 .bench { display: flex; flex-direction: column; gap: 14px; }
-.slots { display: grid; grid-template-columns: repeat(5, 1fr); gap: 9px; }
+.slots {
+  display: flex; justify-content: space-between; gap: 10px;
+  padding: 14px 18px 16px; border-radius: 999px;
+  border: 1px dashed rgba(154, 123, 28, .22);
+  background:
+    radial-gradient(120% 160% at 50% 120%, rgba(154, 123, 28, .09), transparent 68%),
+    linear-gradient(180deg, rgba(154, 123, 28, .04), transparent 60%);
+}
 .slot {
-  border: 1.5px dashed var(--line2); border-radius: 12px; min-height: 108px; background: var(--card2);
-  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; padding: 8px 4px;
-  transition: border-color .15s, background .15s;
+  position: relative; width: 92px; height: 92px; border-radius: 50%;
+  border: 1.5px dashed var(--line2); background: var(--card2);
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1px;
+  transition: border-color .2s, background .2s, box-shadow .2s, transform .2s;
 }
-.slot.filled { border: 1px solid var(--line2); background: var(--card); box-shadow: 0 2px 8px rgba(46,50,54,.06); }
-.slot img { width: 40px; height: 40px; object-fit: contain; }
-.slot .slot-ph { width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; background: var(--bg2); border-radius: 8px; color: var(--faint); }
-.slot .sn { font-size: 11.5px; font-weight: 600; max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.slot .mul { font-size: 12px; font-weight: 700; color: var(--gold); }
-.slot .stepper { display: flex; gap: 5px; margin-top: 3px; }
-.slot .stepper button {
-  width: 20px; height: 20px; border-radius: 6px; border: 1px solid var(--line2); background: var(--card2);
-  color: var(--muted); font-size: 13px; line-height: 1; cursor: pointer; padding: 0;
+.slot::after {
+  /* 空槽中央菱形符文 */
+  content: ""; position: absolute; width: 10px; height: 10px;
+  border: 1.5px solid var(--line2); transform: rotate(45deg); opacity: .5;
 }
-.slot .stepper button:hover { border-color: var(--gold); color: var(--gold); }
-.slot .slot-empty { font-size: 11.5px; color: var(--faint); text-align: center; }
-.slot .slot-empty b { display: block; font-size: 19px; opacity: .5; font-weight: 400; }
+.slot.filled {
+  border: 1.5px solid var(--gold); background: var(--card);
+  box-shadow: inset 0 0 0 4px rgba(154, 123, 28, .07), 0 6px 16px rgba(46, 50, 54, .12);
+}
+.slot.filled::after { display: none; }
+.slot.filled:hover { transform: translateY(-2px); box-shadow: inset 0 0 0 4px rgba(154, 123, 28, .12), 0 10px 22px rgba(46, 50, 54, .16); }
+.slot img { width: 40px; height: 40px; object-fit: contain; cursor: pointer; border-radius: 999px; }
+.slot .slot-ph {
+  width: 40px; height: 40px; display: flex; align-items: center; justify-content: center;
+  background: var(--bg2); border-radius: 999px; color: var(--faint); cursor: pointer;
+}
+.slot .sn {
+  font-size: 10.5px; font-weight: 600; max-width: 80px; text-align: center;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.slot .mul {
+  position: absolute; right: -3px; bottom: -3px; min-width: 24px; height: 24px; border-radius: 999px;
+  background: var(--gold); color: #fff; font-size: 11.5px; font-weight: 700; line-height: 24px;
+  text-align: center; padding: 0 5px; box-shadow: 0 2px 7px rgba(154, 123, 28, .4);
+}
+.slot .slot-del {
+  position: absolute; top: -4px; right: -4px; width: 21px; height: 21px; border-radius: 999px;
+  border: 1px solid var(--line2); background: var(--card); color: var(--faint);
+  font-size: 13px; line-height: 1; cursor: pointer; padding: 0;
+  transition: all .15s; opacity: 0;
+}
+.slot.filled:hover .slot-del { opacity: 1; }
+.slot .slot-del:hover { border-color: var(--red); background: var(--red-bg); color: var(--red); }
+.slot .slot-empty { font-size: 10.5px; color: var(--faint); position: absolute; bottom: 14px; }
 
 .ops { display: flex; align-items: center; gap: 10px; margin-top: 12px; flex-wrap: wrap; }
 .btn {
@@ -612,37 +675,71 @@ watch(pot, (v) => {
 .result-empty { text-align: center; padding: 24px 0 16px; }
 .result-empty .re-icon { font-size: 30px; opacity: .5; }
 .result-empty p { color: var(--faint); font-size: 13px; margin: 8px 0 0; }
-.result-head { display: flex; gap: 16px; align-items: center; margin-bottom: 14px; }
-.result-icon { width: 76px; height: 76px; object-fit: contain; flex: none; border-radius: 14px; background: var(--card2); border: 1px solid var(--line); }
-.result-icon.ph { display: flex; align-items: center; justify-content: center; color: var(--faint); font-size: 26px; }
-.rh-text { min-width: 0; }
-.rname { font-size: 20px; font-weight: 800; display: flex; align-items: center; gap: 9px; flex-wrap: wrap; }
-.critbadge {
-  font-size: 11.5px; font-weight: 700; color: #fff;
-  background: linear-gradient(135deg, #e0a13a, #c07c1c); border-radius: 999px; padding: 2px 11px;
-  box-shadow: 0 2px 8px rgba(192,124,28,.35); animation: pop .45s cubic-bezier(.2,1.6,.5,1);
+.result-head { display: flex; gap: 20px; align-items: center; margin-bottom: 16px; }
+
+/* 产物大图：光环 + 环形符文 */
+.res-art { position: relative; width: 152px; height: 152px; flex: none; display: flex; align-items: center; justify-content: center; }
+.art-halo {
+  position: absolute; inset: 0; border-radius: 50%;
+  background: radial-gradient(circle, rgba(154, 123, 28, .18) 0%, rgba(14, 138, 125, .1) 55%, transparent 72%);
 }
+.art-halo::after {
+  content: ""; position: absolute; inset: 12px; border-radius: 50%;
+  border: 1px dashed rgba(154, 123, 28, .4);
+}
+.res-art.crit .art-halo {
+  background: radial-gradient(circle, rgba(224, 161, 58, .3) 0%, rgba(192, 124, 28, .16) 55%, transparent 74%);
+  animation: halo-pulse 1.8s ease-in-out infinite;
+}
+@keyframes halo-pulse { 0%, 100% { opacity: 1; } 50% { opacity: .65; } }
+.result-icon { position: relative; z-index: 1; width: 106px; height: 106px; object-fit: contain; }
+.result-icon.ph {
+  display: flex; align-items: center; justify-content: center; color: var(--faint); font-size: 34px;
+  background: var(--card2); border-radius: 50%; border: 1px solid var(--line);
+}
+.rh-text { min-width: 0; }
+.rname { font-size: 21px; font-weight: 800; display: flex; align-items: center; gap: 9px; flex-wrap: wrap; }
+.critbadge {
+  display: inline-flex; align-items: center; gap: 4px;
+  font-size: 12px; font-weight: 700; color: #fff; letter-spacing: 1px;
+  background: linear-gradient(135deg, #edb84a, #c07c1c 60%, #a8621a);
+  border-radius: 999px; padding: 3px 13px 3px 10px;
+  box-shadow: 0 3px 12px rgba(192, 124, 28, .45), inset 0 1px 0 rgba(255, 255, 255, .35);
+  animation: pop .45s cubic-bezier(.2, 1.6, .5, 1);
+}
+.critbadge i { font-style: normal; font-size: 11px; }
 @keyframes pop { from { transform: scale(.5); opacity: 0; } to { transform: scale(1); opacity: 1; } }
-.pbadge { display: inline-block; font-size: 11px; border-radius: 999px; padding: 2px 10px; background: var(--bg2); color: var(--muted); margin-top: 6px; }
+.pbadge { display: inline-block; font-size: 11px; border-radius: 999px; padding: 2px 10px; background: var(--bg2); color: var(--muted); margin-top: 7px; }
 .pbadge.fixed { background: var(--teal-bg); color: var(--teal); }
 .pbadge.elixir { background: var(--blue-bg); color: var(--blue); }
 .pbadge.fail { background: var(--red-bg); color: var(--red); }
+.roll-line { font-size: 12px; color: var(--muted); margin-top: 9px; display: flex; align-items: center; gap: 6px; }
+.roll-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--faint); flex: none; }
+.roll-dot.hit { background: var(--red); box-shadow: 0 0 8px rgba(180, 73, 58, .6); }
 
-.metrics { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; border: 1px solid var(--line); border-radius: 12px; padding: 13px 6px; background: var(--card2); }
-.metric { text-align: center; }
-.metric + .metric { border-left: 1px dashed var(--line); }
-.mv { font-size: 19px; font-weight: 800; color: var(--gold); font-variant-numeric: tabular-nums; line-height: 1.2; }
+/* 四项关键数据：横排一格一数据 */
+.metrics {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px;
+  border: 1px solid var(--line); border-radius: 14px; padding: 14px 8px;
+  background:
+    radial-gradient(120% 100% at 50% 0%, rgba(154, 123, 28, .05), transparent 70%),
+    var(--card2);
+}
+.metric { text-align: center; position: relative; }
+.metric + .metric::before {
+  content: ""; position: absolute; left: -4px; top: 12%; bottom: 12%; width: 1px;
+  background: linear-gradient(180deg, transparent, var(--line2), transparent);
+}
+.mv { font-size: 20px; font-weight: 800; color: var(--gold); font-variant-numeric: tabular-nums; line-height: 1.2; }
+.mv em { font-style: normal; font-size: 11px; margin-left: 2px; opacity: .75; }
 .mv.up { color: var(--red); }
 .mv.zero { color: var(--faint); font-weight: 500; }
 .mv.bad { color: var(--red); font-size: 13px; }
-.mk { font-size: 11.5px; color: var(--muted); margin-top: 3px; }
+.mv.rupee { color: var(--teal); }
+.mv.rupee em { color: var(--teal); }
+.mk { font-size: 11.5px; color: var(--muted); margin-top: 4px; }
 
-.subrow { display: flex; justify-content: space-between; align-items: center; margin-top: 12px; font-size: 13px; }
-.rk { color: var(--muted); }
-.rv { font-weight: 600; }
 .warnbox { background: var(--red-bg); color: var(--red); border-radius: 10px; padding: 8px 13px; font-size: 12.5px; margin-top: 12px; }
-.roll-note { font-size: 12px; color: var(--muted); margin-top: 8px; }
-.roll-note b.hit { color: var(--red); }
 .note { border-top: 1px dashed var(--line); padding-top: 10px; margin-top: 12px; font-size: 12px; color: var(--muted); line-height: 1.65; }
 .result-links { display: flex; gap: 14px; margin-top: 10px; }
 .mini-link { font-size: 12.5px; color: var(--teal); }
@@ -671,8 +768,20 @@ watch(pot, (v) => {
 @media (max-width: 900px) {
   .lab-grid { grid-template-columns: 1fr; }
   .mat-grid { max-height: 320px; }
-  .slots { grid-template-columns: repeat(3, 1fr); }
-  .rname { font-size: 17px; }
+  .slots { flex-wrap: wrap; justify-content: center; gap: 12px; }
+  .rname { font-size: 18px; }
   .bloodmoon { margin-left: 0; width: 100%; justify-content: center; }
+}
+@media (max-width: 720px) {
+  .slot { width: 76px; height: 76px; }
+  .slot img { width: 34px; height: 34px; }
+  .slot .sn { font-size: 10px; max-width: 64px; }
+  .slot .slot-empty { bottom: 11px; }
+  .metrics { grid-template-columns: repeat(2, 1fr); gap: 12px 8px; }
+  .metric:nth-child(3)::before { display: none; }
+  .res-art { width: 118px; height: 118px; }
+  .result-icon { width: 84px; height: 84px; }
+  .result-head { gap: 14px; }
+  .result-ops .btn { flex: 1; }
 }
 </style>
