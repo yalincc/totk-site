@@ -83,7 +83,6 @@
                   @click="dec(pot[i - 1].id)"
                 />
                 <div v-else class="slot-ph" @click="dec(pot[i - 1].id)">{{ (matOf(pot[i - 1].id).zh || '?')[0] }}</div>
-                <div class="sn">{{ matOf(pot[i - 1].id).zh }}</div>
                 <span class="mul">×{{ pot[i - 1].n }}</span>
               </template>
               <span v-else class="slot-empty"><i></i>空位</span>
@@ -114,9 +113,6 @@
               </template>
               <div v-else>放入材料后显示暴击率构成</div>
             </div>
-            <button class="btn teal rollbtn" :disabled="!pot.length" @click="roll">
-              🎲 模拟这次烹饪的暴击判定
-            </button>
           </div>
         </section>
 
@@ -130,54 +126,45 @@
           </div>
 
           <template v-else>
-            <div class="result-head">
-              <!-- 产物大图：光环 + 环形符文 -->
-              <div class="res-art" :class="{ crit: rolled && rolled.crit }">
-                <span class="art-halo" aria-hidden="true"></span>
-                <img v-if="shown.icon" :src="'/icons/' + shown.icon" :alt="shown.zh" class="result-icon" />
-                <div v-else class="result-icon ph">{{ (shown.zh || '?')[0] }}</div>
-              </div>
-              <div class="rh-text">
-                <div class="rname">
-                  {{ shown.zh || '…' }}
-                  <span v-if="rolled && rolled.crit" class="critbadge"><i>✦</i>大成功</span>
+            <!-- 左右两栏：左「大图 + 名称」，右「四项数据竖排」 -->
+            <div class="result-body">
+              <div class="res-left">
+                <div class="res-art">
+                  <span class="art-halo" aria-hidden="true"></span>
+                  <img v-if="shown.icon" :src="'/icons/' + shown.icon" :alt="shown.zh" class="result-icon" />
+                  <div v-else class="result-icon ph">{{ (shown.zh || '?')[0] }}</div>
                 </div>
-                <span class="pbadge" :class="result.path">{{ pathLabel(result) }}</span>
-                <div v-if="rolled" class="roll-line">
-                  <span class="roll-dot" :class="{ hit: rolled.crit }"></span>
-                  {{ rolled.crit ? '触发暴击' : '未触发暴击' }}（{{ rolled.rate }}%）<template v-if="rolled.crit && rolled.label"> · {{ rolled.label }}</template>
+                <div class="rname">{{ shown.zh || '…' }}</div>
+                <div class="rbadges">
+                  <span class="pbadge" :class="result.path">{{ pathLabel(result) }}</span>
+                  <span v-if="guaranteedCrit" class="pbadge gold">★ 必定大成功</span>
                 </div>
               </div>
-            </div>
 
-            <!-- 四项关键数据横排 -->
-            <div class="metrics">
-              <div class="metric">
-                <div class="mv" :class="{ zero: !shown.hp, up: critHeart }">
-                  {{ shown.hp ? (shown.hp / 2) + ' ♥' : '—' }}
+              <div class="res-stats">
+                <div class="stat-row">
+                  <span class="sk">生命恢复</span>
+                  <span class="sv" :class="{ zero: !shown.hp }">{{ shown.hp ? (shown.hp / 2) + ' ♥' : '—' }}</span>
                 </div>
-                <div class="mk">生命恢复<template v-if="critHeart"> ▲</template></div>
-              </div>
-              <div class="metric">
-                <div class="mv" :class="{ bad: shown.conflict, up: critLevel, zero: !shown.eff && !shown.conflict }">
-                  <template v-if="shown.conflict">✕ 抵消</template>
-                  <template v-else-if="shown.eff">{{ shown.eff }}<template v-if="shown.effLv"> Lv{{ shown.effLv }}</template></template>
-                  <template v-else>无</template>
+                <div class="stat-row">
+                  <span class="sk">效果强度</span>
+                  <span class="sv" :class="{ bad: shown.conflict, zero: !shown.eff && !shown.conflict }">
+                    <template v-if="shown.conflict">✕ 抵消</template>
+                    <template v-else-if="shown.eff">{{ shown.eff }}<template v-if="shown.effLv"> Lv{{ shown.effLv }}</template></template>
+                    <template v-else>—</template>
+                  </span>
                 </div>
-                <div class="mk">效果强度</div>
-              </div>
-              <div class="metric">
-                <div class="mv" :class="{ zero: !shown.effMin, up: critTime }">
-                  {{ shown.effMin ? fmtMin(shown.effMin) : '—' }}
+                <div class="stat-row">
+                  <span class="sk">持续时间</span>
+                  <span class="sv" :class="{ zero: !shown.effMin }">{{ shown.effMin ? fmtMin(shown.effMin) : '—' }}</span>
                 </div>
-                <div class="mk">持续时间<template v-if="critTime"> ▲</template></div>
-              </div>
-              <div class="metric">
-                <div class="mv rupee" :class="{ zero: result.price == null }">
-                  <template v-if="result.price != null">{{ result.price }}<em>◆</em></template>
-                  <template v-else>—</template>
+                <div class="stat-row">
+                  <span class="sk">卖出价</span>
+                  <span class="sv rupee" :class="{ zero: result.price == null }">
+                    <template v-if="result.price != null">{{ result.price }}<em>◆</em></template>
+                    <template v-else>—</template>
+                  </span>
                 </div>
-                <div class="mk">卖出价</div>
               </div>
             </div>
 
@@ -255,7 +242,7 @@
 import { ref, computed, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { cook } from '../lib/cookingEngine.js'
-import { critRate, rollCrit, rollCritEffect, applyCrit } from '../lib/critRate.js'
+import { critRate } from '../lib/critRate.js'
 import { loadCookingLab } from '../data.js'
 
 const route = useRoute()
@@ -279,7 +266,6 @@ const showCritDetail = ref(false)
 const showSaveBar = ref(false)
 const saveName = ref('')
 const undoStack = ref([])
-const rolled = ref(null)   // { crit, rate, type, label }
 
 // 我的配方（localStorage；旧版收藏键 cooklab-favs 自动迁移为「未命名配方」）
 const RECIPE_KEY = 'cooklab-recipes'
@@ -374,7 +360,6 @@ function add(id) {
   if (h) h.n++
   else pot.value.push({ id, n: 1 })
   recents.value = [id, ...recents.value.filter((x) => x !== id)].slice(0, 12)
-  rolled.value = null
 }
 function dec(id) {
   const h = pot.value.find((x) => x.id === id)
@@ -382,22 +367,18 @@ function dec(id) {
   snapshot()
   h.n--
   if (h.n <= 0) pot.value = pot.value.filter((x) => x.id !== id)
-  rolled.value = null
 }
 function del(id) {
   snapshot()
   pot.value = pot.value.filter((x) => x.id !== id)
-  rolled.value = null
 }
 function undo() {
   if (!undoStack.value.length) return
   pot.value = JSON.parse(undoStack.value.pop())
-  rolled.value = null
 }
 function clearPot() {
   snapshot()
   pot.value = []
-  rolled.value = null
 }
 
 /* ---------- 判定 ---------- */
@@ -417,29 +398,12 @@ const crit = computed(() =>
   lab.value ? critRate(potIds.value, lab.value, bloodMoon.value) : { rate: 0, parts: [] }
 )
 
-// 展示用结果（叠加暴击效果）
-const shown = computed(() => {
-  if (result.value.path === 'empty') return {}
-  if (rolled.value && rolled.value.crit && rolled.value.effect) {
-    return applyCrit(result.value, rolled.value.effect)
-  }
-  return result.value
-})
-const critLevel = computed(() => !!(rolled.value && rolled.value.crit && rolled.value.type === 'level'))
-const critTime = computed(() => !!(rolled.value && rolled.value.crit && rolled.value.type === 'time'))
-const critHeart = computed(() => !!(rolled.value && rolled.value.crit && rolled.value.type === 'heart'))
-
-function roll() {
-  const c = crit.value
-  const hit = rollCrit(c.rate)
-  const effect = hit ? rollCritEffect(result.value) : null
-  rolled.value = {
-    crit: hit, rate: c.rate,
-    type: effect ? effect.type : null,
-    label: effect ? effect.label : '',
-    effect,
-  }
-}
+// 展示用结果（引擎判定；暴击只展示「概率」与「必定」信息，不做随机模拟）
+const shown = computed(() => (result.value.path === 'empty' ? {} : result.value))
+// 必定大成功：配方含龙素材 / 星星碎片 / 金苹果 / 吉波得的肝脏（引擎 crit 字段或暴击率 100%）
+const guaranteedCrit = computed(
+  () => result.value.crit === 'guaranteed' || crit.value.rate >= 100
+)
 
 const PATH_LABEL = { fixed: '固定配方', elixir: '药剂', generic: '组合推导', fail: '失败料理', empty: '' }
 function pathLabel(r) { return PATH_LABEL[r.path] || r.path }
@@ -477,7 +441,6 @@ function delRecipe(i) {
 function loadRecipe(r) {
   snapshot()
   pot.value = JSON.parse(JSON.stringify(r.pot))
-  rolled.value = null
   mode.value = 'mix'
 }
 function recipeResult(r) {
@@ -614,10 +577,10 @@ watch(pot, (v) => {
 }
 .slot.filled::after { display: none; }
 .slot.filled:hover { transform: translateY(-2px); box-shadow: inset 0 0 0 4px rgba(154, 123, 28, .12), 0 10px 22px rgba(46, 50, 54, .16); }
-.slot img { width: 40px; height: 40px; object-fit: contain; cursor: pointer; border-radius: 999px; }
+.slot img { width: 58px; height: 58px; object-fit: contain; cursor: pointer; }
 .slot .slot-ph {
-  width: 40px; height: 40px; display: flex; align-items: center; justify-content: center;
-  background: var(--bg2); border-radius: 999px; color: var(--faint); cursor: pointer;
+  width: 58px; height: 58px; display: flex; align-items: center; justify-content: center;
+  background: var(--bg2); border-radius: 999px; color: var(--faint); font-size: 20px; cursor: pointer;
 }
 .slot .sn {
   font-size: 10.5px; font-weight: 600; max-width: 80px; text-align: center;
@@ -668,76 +631,60 @@ watch(pot, (v) => {
 .critbar i.hi { background: linear-gradient(90deg, #c0503f, #e0664f); }
 .critdetail { font-size: 11.5px; color: var(--muted); margin-top: 8px; line-height: 1.7; }
 .critdetail code { background: var(--bg2); border-radius: 4px; padding: 1px 5px; font-size: 11px; }
-.rollbtn { margin-top: 10px; }
 
-/* 结果卡 */
+/* 结果卡：左「大图 + 名称」/ 右「数据竖排」 */
 .result-col h3 { margin-bottom: 12px; }
 .result-empty { text-align: center; padding: 24px 0 16px; }
 .result-empty .re-icon { font-size: 30px; opacity: .5; }
 .result-empty p { color: var(--faint); font-size: 13px; margin: 8px 0 0; }
-.result-head { display: flex; gap: 20px; align-items: center; margin-bottom: 16px; }
 
-/* 产物大图：光环 + 环形符文 */
-.res-art { position: relative; width: 152px; height: 152px; flex: none; display: flex; align-items: center; justify-content: center; }
+.result-body { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 18px; align-items: center; }
+.res-left { text-align: center; display: flex; flex-direction: column; align-items: center; gap: 8px; }
+
+/* 产物大图：更大 + 光环 + 环形符文 */
+.res-art { position: relative; width: 178px; height: 178px; flex: none; display: flex; align-items: center; justify-content: center; }
 .art-halo {
   position: absolute; inset: 0; border-radius: 50%;
   background: radial-gradient(circle, rgba(154, 123, 28, .18) 0%, rgba(14, 138, 125, .1) 55%, transparent 72%);
 }
 .art-halo::after {
-  content: ""; position: absolute; inset: 12px; border-radius: 50%;
+  content: ""; position: absolute; inset: 13px; border-radius: 50%;
   border: 1px dashed rgba(154, 123, 28, .4);
 }
-.res-art.crit .art-halo {
-  background: radial-gradient(circle, rgba(224, 161, 58, .3) 0%, rgba(192, 124, 28, .16) 55%, transparent 74%);
-  animation: halo-pulse 1.8s ease-in-out infinite;
-}
-@keyframes halo-pulse { 0%, 100% { opacity: 1; } 50% { opacity: .65; } }
-.result-icon { position: relative; z-index: 1; width: 106px; height: 106px; object-fit: contain; }
+.result-icon { position: relative; z-index: 1; width: 130px; height: 130px; object-fit: contain; }
 .result-icon.ph {
-  display: flex; align-items: center; justify-content: center; color: var(--faint); font-size: 34px;
+  display: flex; align-items: center; justify-content: center; color: var(--faint); font-size: 40px;
   background: var(--card2); border-radius: 50%; border: 1px solid var(--line);
 }
-.rh-text { min-width: 0; }
-.rname { font-size: 21px; font-weight: 800; display: flex; align-items: center; gap: 9px; flex-wrap: wrap; }
-.critbadge {
-  display: inline-flex; align-items: center; gap: 4px;
-  font-size: 12px; font-weight: 700; color: #fff; letter-spacing: 1px;
-  background: linear-gradient(135deg, #edb84a, #c07c1c 60%, #a8621a);
-  border-radius: 999px; padding: 3px 13px 3px 10px;
-  box-shadow: 0 3px 12px rgba(192, 124, 28, .45), inset 0 1px 0 rgba(255, 255, 255, .35);
-  animation: pop .45s cubic-bezier(.2, 1.6, .5, 1);
+.rname {
+  font-size: 19px; font-weight: 800; line-height: 1.3;
+  display: flex; align-items: center; justify-content: center; gap: 8px; flex-wrap: wrap;
 }
-.critbadge i { font-style: normal; font-size: 11px; }
-@keyframes pop { from { transform: scale(.5); opacity: 0; } to { transform: scale(1); opacity: 1; } }
-.pbadge { display: inline-block; font-size: 11px; border-radius: 999px; padding: 2px 10px; background: var(--bg2); color: var(--muted); margin-top: 7px; }
+.rbadges { display: flex; gap: 6px; flex-wrap: wrap; justify-content: center; }
+.pbadge { display: inline-block; font-size: 11px; border-radius: 999px; padding: 2px 10px; background: var(--bg2); color: var(--muted); }
 .pbadge.fixed { background: var(--teal-bg); color: var(--teal); }
 .pbadge.elixir { background: var(--blue-bg); color: var(--blue); }
 .pbadge.fail { background: var(--red-bg); color: var(--red); }
-.roll-line { font-size: 12px; color: var(--muted); margin-top: 9px; display: flex; align-items: center; gap: 6px; }
-.roll-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--faint); flex: none; }
-.roll-dot.hit { background: var(--red); box-shadow: 0 0 8px rgba(180, 73, 58, .6); }
+.pbadge.gold {
+  background: linear-gradient(135deg, #edb84a, #c07c1c); color: #fff;
+  box-shadow: 0 2px 8px rgba(192, 124, 28, .35);
+}
 
-/* 四项关键数据：横排一格一数据 */
-.metrics {
-  display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px;
-  border: 1px solid var(--line); border-radius: 14px; padding: 14px 8px;
-  background:
-    radial-gradient(120% 100% at 50% 0%, rgba(154, 123, 28, .05), transparent 70%),
-    var(--card2);
+/* 右侧：四项数据竖排 */
+.res-stats { display: flex; flex-direction: column; gap: 8px; }
+.stat-row {
+  display: flex; align-items: baseline; justify-content: space-between; gap: 10px;
+  padding: 9px 13px; border-radius: 11px;
+  border: 1px solid var(--line);
+  background: linear-gradient(90deg, rgba(154, 123, 28, .045), rgba(154, 123, 28, .01));
 }
-.metric { text-align: center; position: relative; }
-.metric + .metric::before {
-  content: ""; position: absolute; left: -4px; top: 12%; bottom: 12%; width: 1px;
-  background: linear-gradient(180deg, transparent, var(--line2), transparent);
-}
-.mv { font-size: 20px; font-weight: 800; color: var(--gold); font-variant-numeric: tabular-nums; line-height: 1.2; }
-.mv em { font-style: normal; font-size: 11px; margin-left: 2px; opacity: .75; }
-.mv.up { color: var(--red); }
-.mv.zero { color: var(--faint); font-weight: 500; }
-.mv.bad { color: var(--red); font-size: 13px; }
-.mv.rupee { color: var(--teal); }
-.mv.rupee em { color: var(--teal); }
-.mk { font-size: 11.5px; color: var(--muted); margin-top: 4px; }
+.sk { font-size: 12.5px; color: var(--muted); flex: none; }
+.sv { font-size: 18px; font-weight: 800; color: var(--gold); font-variant-numeric: tabular-nums; text-align: right; }
+.sv em { font-style: normal; font-size: 11px; margin-left: 2px; opacity: .75; }
+.sv.zero { color: var(--faint); font-weight: 500; }
+.sv.bad { color: var(--red); font-size: 14px; }
+.sv.rupee { color: var(--teal); }
+.sv.rupee em { color: var(--teal); }
 
 .warnbox { background: var(--red-bg); color: var(--red); border-radius: 10px; padding: 8px 13px; font-size: 12.5px; margin-top: 12px; }
 .note { border-top: 1px dashed var(--line); padding-top: 10px; margin-top: 12px; font-size: 12px; color: var(--muted); line-height: 1.65; }
@@ -773,15 +720,17 @@ watch(pot, (v) => {
   .bloodmoon { margin-left: 0; width: 100%; justify-content: center; }
 }
 @media (max-width: 720px) {
-  .slot { width: 76px; height: 76px; }
-  .slot img { width: 34px; height: 34px; }
-  .slot .sn { font-size: 10px; max-width: 64px; }
-  .slot .slot-empty { bottom: 11px; }
-  .metrics { grid-template-columns: repeat(2, 1fr); gap: 12px 8px; }
-  .metric:nth-child(3)::before { display: none; }
-  .res-art { width: 118px; height: 118px; }
-  .result-icon { width: 84px; height: 84px; }
-  .result-head { gap: 14px; }
+  .slot { width: 72px; height: 72px; }
+  .slot img { width: 46px; height: 46px; }
+  .slot .slot-ph { width: 46px; height: 46px; font-size: 17px; }
+  .slot .mul { min-width: 21px; height: 21px; line-height: 21px; font-size: 10.5px; }
+  .slots { padding: 12px 12px 14px; }
+  /* 结果卡：小屏改上下堆叠，数据仍竖排 */
+  .result-body { grid-template-columns: 1fr; gap: 14px; }
+  .res-art { width: 148px; height: 148px; }
+  .result-icon { width: 108px; height: 108px; }
+  .rname { font-size: 17px; }
+  .sv { font-size: 16px; }
   .result-ops .btn { flex: 1; }
 }
 </style>
