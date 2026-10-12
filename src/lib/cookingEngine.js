@@ -190,8 +190,15 @@ export function cook(materialIds, data) {
     const m = materials[id] || { zh: id, icon: null, tags: ['Cook'] };
     return { id, ...m };
   });
-  const matIds = mats.map((m) => m.id);
-  const dragonTouched = mats.some((m) => special.dragonParts.includes(m.id));
+  const dragonSet = new Set(special.dragonParts);
+  /**
+   * ★ 龙素材是「添加剂」：游戏里只贡献「效果时长 + 必定大成功」，
+   *   不参与产物判定（龙鳞 + 香蕉 仍是力量料理，不会变怪物料理）。
+   *   因此产物匹配只拿「真实食材」走 chain，效果/时长/售价仍按全量材料算。
+   */
+  const baseMats = mats.filter((m) => !dragonSet.has(m.id));
+  const baseIds = baseMats.map((m) => m.id);
+  const dragonTouched = mats.some((m) => dragonSet.has(m.id));
   const agg = aggregateEffect(mats, dragonTouched);
   const crit = dragonTouched || mats.some((m) => special.critGuaranteed.includes(m.id))
     ? 'guaranteed' : null;
@@ -202,11 +209,19 @@ export function cook(materialIds, data) {
     mats: mats.map((m) => ({ id: m.id, zh: m.zh, icon: m.icon })),
   };
 
+  // 只有龙素材（没有真实食材）→ 煮不出菜
+  if (!baseIds.length) {
+    return {
+      ...base, path: 'fail', actor: special.failResult || null,
+      zh: '怪物料理', icon: null, recipeZh: null,
+    };
+  }
+
   // ---- 0) 单料特判：材料只有 1 个时，先查 generic 的单 actor 槽规则
   // （炒暖暖草果=Item_Fruit_I / 原烧=精力草 / 炖番茄=海拉鲁番茄）。
   // 这些特化菜必须精确匹配材料 id，且优先于 fixed 的 tag 大类（炖水果等）。
-  if (ids.length === 1) {
-    const only = mats[0];
+  if (baseIds.length === 1) {
+    const only = baseMats[0];
     for (const rule of data.genericRules || []) {
       if (!rule.slots || rule.slots.length !== 1) continue;
       const s = rule.slots[0];
@@ -222,7 +237,7 @@ export function cook(materialIds, data) {
   // ---- 1) 固定配方（按表序，第一条命中的胜出）----
   for (const r of fixedRecipes) {
     if (!r.result) continue; // 空产物条目跳过
-    if (matchFixedRecipe(matIds, r, tagMembers)) {
+    if (matchFixedRecipe(baseIds, r, tagMembers)) {
       // 万能药剂条目（Item_Cook_C_17 基础形态，result_zh=null）：
       // 游戏在命中后按材料效果细分秘药，这里同样细分
       if (r.result === 'Item_Cook_C_17' && agg.eff && elixirByEff[agg.eff]) {
@@ -243,9 +258,9 @@ export function cook(materialIds, data) {
 
   // ---- 2) 药剂：虫 ≥1 且 怪物材料 ≥1，且无食材类材料 ----
   const FOOD_TAGS = new Set(['CookMeat', 'CookFish', 'CookFruit', 'CookMushroom', 'CookPlant', 'CookOre']);
-  const hasInsect = mats.some((m) => (m.tags || []).includes('CookInsect'));
-  const hasEnemy = mats.some((m) => (m.tags || []).includes('CookEnemy'));
-  const hasFood = mats.some((m) => (m.tags || []).some((t) => FOOD_TAGS.has(t)));
+  const hasInsect = baseMats.some((m) => (m.tags || []).includes('CookInsect'));
+  const hasEnemy = baseMats.some((m) => (m.tags || []).includes('CookEnemy'));
+  const hasFood = baseMats.some((m) => (m.tags || []).some((t) => FOOD_TAGS.has(t)));
   if (hasInsect && hasEnemy && !hasFood) {
     if (agg.eff && elixirByEff[agg.eff]) {
       const e = elixirByEff[agg.eff];
@@ -260,7 +275,7 @@ export function cook(materialIds, data) {
   }
 
   // ---- 3) 通用（tag 组合推产物）：取主料 tag 查通用产物表 ----
-  const generic = genericDish(mats, data);
+  const generic = genericDish(baseMats, data);
   if (generic) {
     return { ...base, path: 'generic', actor: generic.actor, zh: generic.zh, icon: generic.icon, recipeZh: generic.zh };
   }

@@ -463,14 +463,31 @@ function syncShelfHeight() {
   const grid = gridRef.value
   if (!bench || !grid) return
   // 窄屏单列布局不限制高度
-  if (window.innerWidth <= 900) { grid.style.maxHeight = ''; return }
+  if (window.innerWidth <= 900) { grid.style.height = ''; return }
   const card = grid.closest('.shelf-col')
   if (!card) return
-  // 材料网格之外的部分（标题/搜索/分类）高度 = 卡片高 − 网格高
-  const chrome =
-    card.getBoundingClientRect().height - grid.getBoundingClientRect().height
-  const target = bench.getBoundingClientRect().height - chrome
-  grid.style.maxHeight = Math.max(240, Math.round(target)) + 'px'
+
+  // 右栏「内容底」——取最后一块的实际底边，不取 bench 盒高
+  // （盒子可能被 grid 的 align-items 拉伸成虚高，导致测量反馈循环）
+  const kids = [...bench.children].filter((k) => k.getBoundingClientRect().height > 0)
+  if (!kids.length) return
+  const benchTop = bench.getBoundingClientRect().top
+  const contentH =
+    Math.max(...kids.map((k) => k.getBoundingClientRect().bottom)) - benchTop
+  if (contentH <= 0) return
+
+  // 材料网格之外的固定高度（标题/搜索/分类 + 上下内边距）
+  // 用「网格顶 − 卡片顶」+ 卡片下内边距 —— 与网格自身当前高度无关，不会自我干扰
+  const cardRect = card.getBoundingClientRect()
+  const gridTop = grid.getBoundingClientRect().top
+  const cs = getComputedStyle(card)
+  const padB = parseFloat(cs.paddingBottom) || 0
+  const borB = parseFloat(cs.borderBottomWidth) || 0
+  const chrome = (gridTop - cardRect.top) + padB + borB
+
+  // 用固定 height 而不是 max-height：材料被筛选得少时也能把卡片撑到与右栏齐平
+  // （max-height 只会限制上限，内容少时卡片会缩回去）
+  grid.style.height = Math.max(240, Math.round(contentH - chrome)) + 'px'
 }
 
 onMounted(async () => {
@@ -523,7 +540,7 @@ onUnmounted(() => {
 }
 .bloodmoon.on { border-color: var(--red); background: var(--red-bg); color: var(--red); }
 
-.lab-grid { display: grid; grid-template-columns: 380px minmax(0, 1fr); gap: 14px; align-items: stretch; }
+.lab-grid { display: grid; grid-template-columns: 380px minmax(0, 1fr); gap: 14px; align-items: start; }
 .lab-col { padding: 14px 16px; }
 .lab-col h3 { font-size: 13.5px; font-weight: 600; margin: 0 0 10px; color: var(--gold); letter-spacing: 1px; display: flex; align-items: center; gap: 8px; }
 
@@ -542,7 +559,7 @@ onUnmounted(() => {
 }
 .cat-tabs button.on { border-color: var(--gold); color: var(--gold); background: var(--gold-bg); font-weight: 600; }
 
-.mat-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(86px, 1fr)); gap: 8px; overflow-y: auto; padding: 4px 2px 2px 0; min-height: 0; }
+.mat-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(86px, 1fr)); gap: 8px; overflow-y: auto; overflow-x: hidden; padding: 4px 2px 2px 0; min-height: 0; }
 .mat-cell {
   position: relative; border: 1px solid var(--line); border-radius: 13px; background: var(--card);
   padding: 8px 4px 6px; text-align: center; cursor: pointer;
