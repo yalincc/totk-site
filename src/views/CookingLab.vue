@@ -39,7 +39,7 @@
             @click="cat = cat === c.key ? 'Cook' : c.key"
           >{{ c.label }}</button>
         </div>
-        <div class="mat-grid">
+        <div ref="gridRef" class="mat-grid">
           <div
             v-for="m in shelf"
             :key="m.id"
@@ -63,7 +63,7 @@
       </section>
 
       <!-- 右：工作台 + 结果 -->
-      <div class="bench">
+      <div ref="benchRef" class="bench">
         <section class="card lab-col ornate">
           <h3>配方工作台 <span class="col-sub">点左侧材料即入锅 · 同名自动叠加</span></h3>
           <div class="slots">
@@ -72,7 +72,7 @@
               :key="i"
               class="slot"
               :class="{ filled: pot[i - 1] }"
-              :title="pot[i - 1] ? '点击 −1 份，右上角 × 移除整种' : ''"
+              :title="pot[i - 1] ? `${matOf(pot[i - 1].id).zh} ×${pot[i - 1].n}　（点击 −1 份，右上角 × 移除整种）` : ''"
             >
               <template v-if="pot[i - 1]">
                 <button class="slot-del" @click.stop="del(pot[i - 1].id)" title="移除这种材料">×</button>
@@ -195,6 +195,23 @@
               <button class="btn" @click="showSaveBar = false">取消</button>
             </div>
           </template>
+
+          <!-- 基本搭配：给新手的入门套路 -->
+          <div class="basics">
+            <h4>基本搭配</h4>
+            <div class="basic-row">
+              <span class="b-tag elixir">药剂</span>
+              <span class="b-txt">昆虫 + 怪物素材 → 药剂（效果取自昆虫，怪物部位决定时长）</span>
+            </div>
+            <div class="basic-row">
+              <span class="b-tag max">满级</span>
+              <span class="b-txt">5 份相同效果材料 → 该效果最高等级（如 5 根大剑香蕉 → 攻击力 Lv3）</span>
+            </div>
+            <div class="basic-row">
+              <span class="b-tag long">长效</span>
+              <span class="b-txt">4 份效果材料 + 1 个龙素材 → 效果拉满，时长锁 30 分钟</span>
+            </div>
+          </div>
         </section>
       </div>
     </div>
@@ -238,7 +255,7 @@
 </template>
 
 <script setup>
-import { ref, computed, watch } from 'vue'
+import { ref, computed, watch, onMounted, onUnmounted, nextTick } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { cook } from '../lib/cookingEngine.js'
 import { critRate } from '../lib/critRate.js'
@@ -468,6 +485,40 @@ watch(pot, (v) => {
   v.forEach((x) => { for (let i = 0; i < x.n; i++) ids.push(x.id) })
   router.replace({ query: { ...route.query, m: ids.length ? ids.join(',') : undefined } })
 }, { deep: true })
+
+/* ---------- 左右两栏等高（材料库卡片与右侧工作台+结果卡上下沿对齐） ---------- */
+const benchRef = ref(null)
+const gridRef = ref(null)
+let ro = null
+
+function syncShelfHeight() {
+  const bench = benchRef.value
+  const grid = gridRef.value
+  if (!bench || !grid) return
+  // 窄屏单列布局不限制高度
+  if (window.innerWidth <= 900) { grid.style.maxHeight = ''; return }
+  const card = grid.closest('.shelf-col')
+  if (!card) return
+  // 材料网格之外的部分（标题/搜索/分类）高度 = 卡片高 − 网格高
+  const chrome =
+    card.getBoundingClientRect().height - grid.getBoundingClientRect().height
+  const target = bench.getBoundingClientRect().height - chrome
+  grid.style.maxHeight = Math.max(240, Math.round(target)) + 'px'
+}
+
+onMounted(async () => {
+  await nextTick()
+  syncShelfHeight()
+  if (typeof ResizeObserver !== 'undefined') {
+    ro = new ResizeObserver(() => syncShelfHeight())
+    if (benchRef.value) ro.observe(benchRef.value)
+  }
+  window.addEventListener('resize', syncShelfHeight)
+})
+onUnmounted(() => {
+  if (ro) ro.disconnect()
+  window.removeEventListener('resize', syncShelfHeight)
+})
 </script>
 
 <style scoped>
@@ -505,9 +556,28 @@ watch(pot, (v) => {
 }
 .bloodmoon.on { border-color: var(--red); background: var(--red-bg); color: var(--red); }
 
-.lab-grid { display: grid; grid-template-columns: 380px minmax(0, 1fr); gap: 14px; align-items: start; }
+.lab-grid { display: grid; grid-template-columns: 380px minmax(0, 1fr); gap: 14px; align-items: stretch; }
 .lab-col { padding: 14px 16px; }
 .lab-col h3 { font-size: 13.5px; font-weight: 600; margin: 0 0 10px; color: var(--gold); letter-spacing: 1px; display: flex; align-items: center; gap: 8px; }
+
+/* 材料库列：与右栏等高（高度由脚本按右栏实测注入，两栏上下沿对齐） */
+.shelf-col { display: flex; flex-direction: column; min-height: 0; }
+.shelf-col .mat-grid { flex: 1 1 auto; min-height: 0; }
+
+/* 基本搭配：新手入门套路 */
+.basics { margin-top: 14px; border-top: 1px dashed var(--line); padding-top: 12px; }
+.basics h4 {
+  font-size: 12.5px; font-weight: 600; color: var(--gold); margin: 0 0 9px; letter-spacing: 1px;
+}
+.basic-row { display: flex; gap: 9px; align-items: baseline; padding: 4px 0; font-size: 12.5px; line-height: 1.6; }
+.b-tag {
+  flex: none; font-size: 11px; border-radius: 6px; padding: 1px 8px;
+  background: var(--bg2); color: var(--muted);
+}
+.b-tag.elixir { background: var(--blue-bg); color: var(--blue); }
+.b-tag.max { background: var(--red-bg); color: var(--red); }
+.b-tag.long { background: var(--teal-bg); color: var(--teal); }
+.b-txt { color: var(--muted); }
 
 /* 材料库 */
 .cat-tabs { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 10px; }
@@ -518,7 +588,7 @@ watch(pot, (v) => {
 }
 .cat-tabs button.on { border-color: var(--gold); color: var(--gold); background: var(--gold-bg); font-weight: 600; }
 
-.mat-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(86px, 1fr)); gap: 8px; max-height: 560px; overflow-y: auto; padding: 4px 2px 2px 0; }
+.mat-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(86px, 1fr)); gap: 8px; overflow-y: auto; padding: 4px 2px 2px 0; min-height: 0; }
 .mat-cell {
   position: relative; border: 1px solid var(--line); border-radius: 13px; background: var(--card);
   padding: 8px 4px 6px; text-align: center; cursor: pointer;
@@ -717,7 +787,7 @@ watch(pot, (v) => {
 .empty-tip { color: var(--faint); font-size: 12.5px; text-align: center; margin: 12px 0; }
 
 @media (max-width: 900px) {
-  .lab-grid { grid-template-columns: 1fr; }
+  .lab-grid { grid-template-columns: 1fr; align-items: start; }
   .mat-grid { max-height: 320px; }
   .slots { flex-wrap: wrap; justify-content: center; gap: 12px; }
   .rname { font-size: 18px; }

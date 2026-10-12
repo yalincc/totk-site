@@ -69,19 +69,26 @@ function matchFixedRecipe(matIds, recipe, tagMembers) {
  *   - 回血 = Σ 材料 hp × 2（含 HP 上限类材料时满血，简化为加总）
  *   - 效果：材料 eff 只允许一种，两种以上 → 抵消，仅回血
  *   - 等级：Σ effLv 分档（0→无，1~→Lv1，…）
- *   - 时长：Σ effMin（龙素材触发 30 分钟封顶由调用方叠加）
+ *   - 时长：每种效果材料「第 1 个加全长，同名后续每个只加 30 秒」
+ *           （游戏机制：Every additional of the same material only adds 30 s）
+ *           龙素材触发 30 分钟封顶由调用方叠加
  */
 function aggregateEffect(mats, dragonTouched) {
   let hp = 0;
   const effSet = new Set();
   let lvSum = 0;
   let minSum = 0;
+  const seenForMin = new Map(); // 材料 id → 已计入时长的个数（同名从第 2 个起只加 30 秒）
   for (const m of mats) {
     if (m.hp != null) hp += m.hp;
     if (m.eff) {
       effSet.add(m.eff);
       lvSum += m.effLv || 0;
-      minSum += m.effMin || 0;
+      if (m.effMin) {
+        const n = seenForMin.get(m.id) || 0;
+        minSum += n === 0 ? m.effMin : Math.min(30, m.effMin);
+        seenForMin.set(m.id, n + 1);
+      }
     }
   }
   hp = hp * 2;
