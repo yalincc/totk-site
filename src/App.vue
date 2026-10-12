@@ -8,6 +8,7 @@
         <RouterLink to="/items">图鉴</RouterLink>
         <a :href="mapUrl" target="_blank" rel="noopener">地图 ↗</a>
         <RouterLink to="/cooking">料理</RouterLink>
+        <RouterLink to="/cooking-lab">模拟</RouterLink>
         <RouterLink to="/quests">任务</RouterLink>
         <RouterLink to="/armors">装备</RouterLink>
       </nav>

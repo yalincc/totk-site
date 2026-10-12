@@ -5,6 +5,7 @@ import ItemDetail from './views/ItemDetail.vue'
 import Cooking from './views/Cooking.vue'
 import Quests from './views/Quests.vue'
 import Armors from './views/Armors.vue'
+import CookingLab from './views/CookingLab.vue'
 import ComingSoon from './views/ComingSoon.vue'
 
 const router = createRouter({
@@ -14,6 +15,7 @@ const router = createRouter({
     { path: '/items', component: Compendium },
     { path: '/items/:id', component: ItemDetail },
     { path: '/cooking', component: Cooking },
+    { path: '/cooking-lab', component: CookingLab },
     { path: '/quests', component: Quests },
     { path: '/armors', component: Armors },
     { path: '/map', component: ComingSoon, props: { title: '互动地图', note: '请通过顶部导航"地图 ↗"进入互动地图（TOTKmap）' } },

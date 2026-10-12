@@ -31,6 +31,10 @@
     </div>
 
     <div class="feat-row">
+      <RouterLink to="/cooking-lab" class="card feat-card">
+        <div class="feat-t">模拟料理</div>
+        <div class="feat-d">自由组合材料下锅，按游戏内置配方规则实时演算产物与效果</div>
+      </RouterLink>
       <RouterLink to="/armors" class="card feat-card">
         <div class="feat-t">防具图鉴</div>
         <div class="feat-d">{{ armorCount }} 件防具 · 67 套装 · 四星强化阶梯 · 材料直达图鉴</div>
@@ -84,6 +88,14 @@ function go() {
   display: grid; grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); gap: 12px;
   max-width: 760px; margin: 0 auto;
 }
+.feat-row {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 12px; max-width: 760px; margin: 22px auto 0;
+}
+.feat-card { padding: 16px 18px; color: var(--text); text-decoration: none; }
+.feat-card:hover { border-color: var(--teal); text-decoration: none; }
+.feat-t { font-size: 14px; font-weight: 600; color: var(--teal-deep); margin-bottom: 4px; }
+.feat-d { font-size: 12.5px; color: var(--muted); line-height: 1.55; }
 .cat-card {
   padding: 16px 8px; text-align: center; color: var(--text);
 }
