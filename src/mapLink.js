@@ -10,3 +10,16 @@ export function mapSearchUrl(actorId) {
 export function mapHomeUrl() {
   return MAP_URL
 }
+
+// 任务 → 地图深链：TOTKmap 目前只支持 ?actor=（材料）与 ?q=（探索搜索），
+// 没有 marker/坐标参数，所以任务只能走关键词搜索。优先用任务中文名，
+// 搜不到时依次回退到委托人中文名、地点中文名。
+export function mapQuestUrl(quest) {
+  const kw = quest.zh || quest.npcCn || quest.region || quest.id
+  return `${MAP_URL}/index.html?q=${encodeURIComponent(kw)}`
+}
+
+// 单个步骤坐标点 → 地图深链（同样是关键词深链，坐标仅作兜底文案展示）
+export function mapQuestStepUrl(quest) {
+  return mapQuestUrl(quest)
+}

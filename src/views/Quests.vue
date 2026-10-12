@@ -1,21 +1,49 @@
 <template>
   <main class="container" style="padding-top: 24px;">
     <div class="search-box" style="max-width: 560px;">
-      <input v-model="q" placeholder="搜索任务名 / 委托人…" aria-label="搜索任务" />
+      <input
+        v-model="q"
+        placeholder="搜索任务名 / 委托人 / 地区…"
+        aria-label="搜索任务"
+      />
     </div>
 
+    <!-- 类型筛选 -->
     <div class="tabs">
-      <button :class="{ on: !region }" @click="region = null">
-        全部 {{ quests.length }}
-      </button>
+      <button :class="{ on: !cat }" @click="cat = null">全部 {{ quests.length }}</button>
       <button
-        v-for="r in regionList"
-        :key="r"
-        :class="{ on: region === r }"
-        @click="region = region === r ? null : r"
+        v-for="c in catList"
+        :key="c"
+        :class="{ on: cat === c }"
+        @click="cat = cat === c ? null : c"
       >
-        {{ r }} {{ counts[r] }}
+        {{ c }} {{ catCounts[c] }}
       </button>
+    </div>
+
+    <!-- 大区筛选（图层） -->
+    <div class="tabs sub">
+      <button :class="{ on: !layer }" @click="layer = null">全部图层</button>
+      <button
+        v-for="l in layerList"
+        :key="l"
+        :class="{ on: layer === l }"
+        @click="layer = layer === l ? null : l"
+      >
+        {{ l }} {{ layerCounts[l] }}
+      </button>
+    </div>
+
+    <!-- 地区筛选（下拉，列出全部地区而非 Top N） -->
+    <div class="filter-row">
+      <select v-model="region" aria-label="按地区筛选">
+        <option :value="null">全部地区（{{ regionCounts.__all }}）</option>
+        <option v-for="r in regionList" :key="r" :value="r">
+          {{ r }}（{{ regionCounts[r] }}）
+        </option>
+      </select>
+      <button v-if="hasFilter" class="btn-clear" @click="resetFilter">清空筛选</button>
+      <span class="result-count">已显示 {{ filtered.length }} / 共 {{ quests.length }}</span>
     </div>
 
     <p v-if="!filtered.length" style="color: var(--faint); text-align: center; padding: 48px 0;">
@@ -23,105 +51,448 @@
     </p>
 
     <div class="quest-list">
-      <div v-for="t in filtered" :key="t.id" class="card quest-card">
-        <div class="quest-head" @click="toggle(t.id)">
+      <div
+        v-for="t in filtered"
+        :key="t.id"
+        class="card quest-card"
+        @click="openById(t.id)"
+      >
+        <div class="quest-head">
           <div class="quest-title">
             <span class="quest-name">{{ t.zh || t.id }}</span>
             <span v-if="!t.zh" class="nozh">暂无中文译名</span>
           </div>
           <div class="quest-meta">
+            <span class="chip-cat">{{ t.cat }}</span>
             <span v-if="t.region" class="chip-region">{{ t.region }}</span>
-            <span v-if="t.npc" class="chip-npc">{{ t.npc }}</span>
-            <span class="arrow" :class="{ open: open.has(t.id) }">▾</span>
-          </div>
-        </div>
-        <div v-if="open.has(t.id)" class="quest-body">
-          <div v-for="(s, i) in t.steps" :key="i" class="step">
-            <span class="step-no">{{ i + 1 }}</span>
-            <p>{{ s.text }}</p>
-          </div>
-          <div v-if="t.complete" class="complete">
-            <span class="step-no done">✓</span>
-            <p>{{ t.complete }}</p>
+            <span v-if="t.npcCn" class="chip-npc">{{ t.npcCn }}</span>
+            <span v-if="t.layer" class="chip-layer">{{ t.layer }}</span>
+            <span v-if="t.nStep" class="chip-step">{{ t.nStep }} 步</span>
           </div>
         </div>
       </div>
     </div>
+
+    <!-- 详情弹层 -->
+    <Teleport to="body">
+      <div v-if="sel" class="modal-mask" @click.self="close">
+        <div class="modal quest-detail" role="dialog" aria-modal="true">
+          <button class="close" @click="close" aria-label="关闭">×</button>
+
+          <div class="modal-top">
+            <button class="arrow" :disabled="selIdx <= 0" @click="prev">‹</button>
+            <span class="pos">{{ selIdx + 1 }} / {{ filtered.length }}</span>
+            <button class="arrow" :disabled="selIdx >= filtered.length - 1" @click="next">›</button>
+          </div>
+
+          <h2 class="q-title">{{ sel.zh || sel.id }}</h2>
+          <div class="badges">
+            <span class="chip-cat">{{ sel.cat }}</span>
+            <span v-if="sel.region" class="chip-region">{{ sel.region }}</span>
+            <span v-if="sel.layer" class="chip-layer">{{ sel.layer }}</span>
+            <span v-if="sel.npcCn" class="chip-npc">委托人：{{ sel.npcCn }}</span>
+          </div>
+
+          <a :href="mapUrl" target="_blank" rel="noopener" class="map-btn">
+            在地图上查看
+            <span class="map-sub">
+              {{ sel.pos ? `坐标 ${sel.pos.x} / ${sel.pos.y}` : 'TOTKmap 关键词定位' }}
+            </span>
+          </a>
+
+          <!-- 任务流程（站点自有口径） -->
+          <section v-if="sel.flow && sel.flow.length">
+            <h3>任务流程</h3>
+            <div v-for="(s, i) in sel.flow" :key="'f' + i" class="step">
+              <span class="step-no">{{ i + 1 }}</span>
+              <p>{{ s.text }}</p>
+            </div>
+          </section>
+
+          <!-- 攻略步骤（TOTKmap 口径，带坐标） -->
+          <section v-if="sel.steps && sel.steps.length">
+            <h3>
+              攻略步骤
+              <span class="src-tag">来源 TOTKmap</span>
+            </h3>
+            <div v-for="(s, i) in sel.steps" :key="'s' + i" class="step">
+              <span class="step-no">{{ i + 1 }}</span>
+              <div class="step-body">
+                <p v-if="s.text">{{ s.text }}</p>
+                <p v-else class="step-pt">前往目标地点</p>
+                <div v-if="s.pts && s.pts.length" class="pts">
+                  <span v-for="(p, j) in s.pts" :key="j" class="pt">
+                    📍 {{ p.x }} / {{ p.y }}
+                  </span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- 完成文本 -->
+          <section v-if="sel.complete">
+            <h3>完成文本</h3>
+            <div class="step">
+              <span class="step-no done">✓</span>
+              <p>{{ sel.complete }}</p>
+            </div>
+          </section>
+
+          <!-- 攻略：开启方式 / 注意事项 / 奖励 -->
+          <section v-if="guideRows.length">
+            <h3>攻略要点<span class="src-tag">来源 TOTKmap</span></h3>
+            <div v-for="(r, i) in guideRows" :key="'g' + i" class="guide-row">
+              <span class="guide-k">{{ r.k }}</span>
+              <span class="guide-v">{{ r.v }}</span>
+            </div>
+          </section>
+
+          <!-- 任务链 -->
+          <section v-if="sel.reqs && sel.reqs.length">
+            <h3>前置任务</h3>
+            <div class="chain">
+              <button
+                v-for="(r, i) in sel.reqs"
+                :key="'r' + i"
+                class="chain-item"
+                :class="{ link: r.link, dim: !r.link }"
+                :disabled="!r.link"
+                @click="r.link && openById(r.key)"
+              >
+                {{ r.name || r.key }}
+                <span v-if="!r.link" class="chain-flag">前置条件</span>
+              </button>
+            </div>
+          </section>
+
+          <section v-if="sel.unlocks && sel.unlocks.length">
+            <h3>后续任务</h3>
+            <div class="chain">
+              <button
+                v-for="(u, i) in sel.unlocks"
+                :key="'u' + i"
+                class="chain-item"
+                :class="{ link: u.link, dim: !u.link }"
+                :disabled="!u.link"
+                @click="u.link && openById(u.key)"
+              >
+                {{ u.name || u.key }}
+              </button>
+            </div>
+          </section>
+
+          <p v-if="!hasBody" class="no-detail">该任务暂无详细步骤数据</p>
+        </div>
+      </div>
+    </Teleport>
   </main>
 </template>
 
 <script setup>
-import { ref, computed } from 'vue'
+import { ref, computed, watch, onMounted, onUnmounted, nextTick } from 'vue'
+import { useRoute, useRouter } from 'vue-router'
 import { loadQuests } from '../data'
+import { mapQuestUrl } from '../mapLink'
+
+const route = useRoute()
+const router = useRouter()
 
 const quests = ref([])
-const q = ref('')
-const region = ref(null)
-const open = ref(new Set())
+const q = ref(route.query.q || '')
+const cat = ref(route.query.cat || null)
+const layer = ref(route.query.layer || null)
+const region = ref(route.query.region || null)
+const selIdx = ref(-1)
 
 loadQuests().then((d) => (quests.value = d))
 
-const counts = computed(() => {
+// 分类展示顺序（主剧情优先，与游戏内难度递进一致）
+const CAT_ORDER = [
+  '主剧情挑战', '情节挑战', '神庙挑战', '迷你挑战', '迷你游戏', '重要支线', '其他',
+]
+
+function countBy(fn) {
   const c = {}
-  for (const t of quests.value) if (t.region) c[t.region] = (c[t.region] || 0) + 1
+  for (const t of quests.value) {
+    const k = fn(t)
+    if (k) c[k] = (c[k] || 0) + 1
+  }
   return c
+}
+
+const catCounts = computed(() => countBy((t) => t.cat))
+const catList = computed(() => {
+  const keys = Object.keys(catCounts.value)
+  return keys.sort((a, b) => {
+    const ia = CAT_ORDER.indexOf(a), ib = CAT_ORDER.indexOf(b)
+    if (ia >= 0 && ib >= 0) return ia - ib
+    if (ia >= 0) return -1
+    if (ib >= 0) return 1
+    return catCounts.value[b] - catCounts.value[a]
+  })
 })
 
+const layerCounts = computed(() => countBy((t) => t.layer))
+const layerList = computed(() => {
+  const order = ['天空', '地表', '地底']
+  return Object.keys(layerCounts.value).sort((a, b) => {
+    const ia = order.indexOf(a), ib = order.indexOf(b)
+    if (ia >= 0 && ib >= 0) return ia - ib
+    if (ia >= 0) return -1
+    if (ib >= 0) return 1
+    return layerCounts.value[b] - layerCounts.value[a]
+  })
+})
+
+const regionCounts = computed(() => {
+  const c = { __all: quests.value.length }
+  for (const t of quests.value) {
+    if (t.region) c[t.region] = (c[t.region] || 0) + 1
+  }
+  return c
+})
 const regionList = computed(() =>
-  Object.keys(counts.value)
-    .sort((a, b) => counts.value[b] - counts.value[a])
-    .slice(0, 14)
+  Object.keys(regionCounts.value)
+    .filter((k) => k !== '__all')
+    .sort((a, b) => regionCounts.value[b] - regionCounts.value[a])
 )
 
 const filtered = computed(() => {
   const kw = q.value.trim().toLowerCase()
   return quests.value.filter((t) => {
+    if (cat.value && t.cat !== cat.value) return false
+    if (layer.value && t.layer !== layer.value) return false
     if (region.value && t.region !== region.value) return false
     if (!kw) return true
     return (
       (t.zh && t.zh.toLowerCase().includes(kw)) ||
       t.id.toLowerCase().includes(kw) ||
+      (t.region && t.region.toLowerCase().includes(kw)) ||
+      (t.npcCn && t.npcCn.toLowerCase().includes(kw)) ||
       (t.npc && t.npc.toLowerCase().includes(kw))
     )
   })
 })
 
-function toggle(id) {
-  const s = new Set(open.value)
-  s.has(id) ? s.delete(id) : s.add(id)
-  open.value = s
+const sel = computed(() =>
+  selIdx.value >= 0 ? filtered.value[selIdx.value] || null : null
+)
+
+const mapUrl = computed(() => (sel.value ? mapQuestUrl(sel.value) : '#'))
+
+const guideRows = computed(() => {
+  const g = sel.value && sel.value.guide
+  if (!g) return []
+  const rows = []
+  if (g.start) rows.push({ k: '开启方式', v: g.start })
+  if (g.note) rows.push({ k: '注意事项', v: g.note })
+  if (g.reward && g.reward.length) rows.push({ k: '奖励', v: g.reward.join('、') })
+  return rows
+})
+
+const hasBody = computed(() => {
+  const s = sel.value
+  if (!s) return false
+  return (
+    (s.flow && s.flow.length) ||
+    (s.steps && s.steps.length) ||
+    !!s.complete ||
+    guideRows.value.length
+  )
+})
+
+const hasFilter = computed(
+  () => !!(q.value || cat.value || layer.value || region.value)
+)
+
+function resetFilter() {
+  q.value = ''
+  cat.value = null
+  layer.value = null
+  region.value = null
 }
+
+function openIdx(i) {
+  selIdx.value = i >= 0 && i < filtered.value.length ? i : -1
+}
+function prev() { if (selIdx.value > 0) selIdx.value-- }
+function next() { if (selIdx.value < filtered.value.length - 1) selIdx.value++ }
+function close() { selIdx.value = -1 }
+
+// 从任务链跳转：目标不在当前筛选结果里时，先清空筛选再打开
+async function openById(id) {
+  let i = filtered.value.findIndex((t) => t.id === id)
+  if (i < 0) {
+    resetFilter()
+    await nextTick()
+    i = filtered.value.findIndex((t) => t.id === id)
+  }
+  if (i >= 0) openIdx(i)
+}
+
+// 筛选变化后，当前打开的任务若已不在结果中则关闭，避免 idx 错位
+watch(filtered, () => {
+  if (selIdx.value >= filtered.value.length) selIdx.value = -1
+})
+
+// 筛选状态写回 URL，刷新不丢
+watch([q, cat, layer, region], () => {
+  router.replace({
+    query: {
+      ...route.query,
+      q: q.value || undefined,
+      cat: cat.value || undefined,
+      layer: layer.value || undefined,
+      region: region.value || undefined,
+    },
+  })
+})
+
+function onKey(e) {
+  if (e.key === 'Escape') close()
+  else if (e.key === 'ArrowLeft') prev()
+  else if (e.key === 'ArrowRight') next()
+}
+
+// 打开时锁 body 滚动；组件卸载务必恢复，否则整页滚不动
+watch(sel, (v) => {
+  document.body.style.overflow = v ? 'hidden' : ''
+})
+onMounted(() => window.addEventListener('keydown', onKey))
+onUnmounted(() => {
+  window.removeEventListener('keydown', onKey)
+  document.body.style.overflow = ''
+})
 </script>
 
 <style scoped>
+.tabs.sub { margin-top: 8px; }
+.filter-row {
+  display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin: 12px 0 6px;
+}
+.filter-row select {
+  border: 1px solid var(--line2); border-radius: 10px; padding: 8px 12px;
+  background: var(--card); font-size: 13px; max-width: 320px;
+}
+.btn-clear {
+  border: 1px solid var(--line2); background: var(--card); border-radius: 999px;
+  padding: 6px 14px; font-size: 12.5px; color: var(--muted); cursor: pointer;
+}
+.btn-clear:hover { border-color: var(--teal); color: var(--teal-deep); }
+.result-count { font-size: 12.5px; color: var(--faint); margin-left: auto; }
+
 .quest-list { display: flex; flex-direction: column; gap: 10px; margin-top: 6px; }
+.quest-card { cursor: pointer; transition: border-color 0.15s; }
+.quest-card:hover { border-color: var(--teal); }
 .quest-head {
-  display: flex; justify-content: space-between; align-items: center; gap: 12px;
-  cursor: pointer; flex-wrap: wrap;
+  display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap;
 }
 .quest-title { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
 .quest-name { font-weight: 600; font-size: 14.5px; }
 .nozh { color: var(--faint); font-size: 12px; }
 .quest-meta { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; }
+
+.chip-cat {
+  background: var(--teal-bg); color: var(--teal-deep);
+  border-radius: 999px; padding: 2px 10px; font-size: 12px;
+}
 .chip-region {
-  background: var(--teal-bg); color: var(--teal-deep); border-radius: 999px;
-  padding: 2px 10px; font-size: 12px;
+  background: #eef2ff; color: #4338ca;
+  border-radius: 999px; padding: 2px 10px; font-size: 12px;
 }
 .chip-npc {
-  background: var(--amber-bg); color: var(--amber); border-radius: 999px;
-  padding: 2px 10px; font-size: 12px;
+  background: var(--amber-bg); color: var(--amber);
+  border-radius: 999px; padding: 2px 10px; font-size: 12px;
 }
-.arrow { color: var(--faint); transition: transform 0.15s; }
-.arrow.open { transform: rotate(180deg); }
-.quest-body { margin-top: 10px; padding-top: 10px; border-top: 1px dashed var(--line); }
+.chip-layer {
+  background: var(--bg); color: var(--muted);
+  border-radius: 999px; padding: 2px 10px; font-size: 12px;
+}
+.chip-step { color: var(--faint); font-size: 12px; }
+
+/* 弹层 */
+.modal-mask {
+  position: fixed; inset: 0; background: rgba(15, 23, 42, 0.45);
+  display: flex; align-items: center; justify-content: center;
+  z-index: 60; padding: 24px;
+}
+.modal {
+  background: var(--card); border-radius: 16px; padding: 24px 26px;
+  max-width: 640px; width: 100%; max-height: 86vh; overflow-y: auto;
+  position: relative; box-shadow: 0 20px 60px rgba(15, 23, 42, 0.25);
+}
+.modal .close {
+  position: absolute; top: 12px; right: 14px; border: none; background: none;
+  font-size: 24px; line-height: 1; color: var(--faint); cursor: pointer;
+}
+.modal .close:hover { color: var(--text); }
+.modal-top {
+  display: flex; align-items: center; justify-content: center; gap: 14px;
+  margin-bottom: 10px; padding-right: 32px;
+}
+.modal-top .pos { font-size: 12.5px; color: var(--muted); min-width: 60px; text-align: center; }
+.modal-top .arrow {
+  border: 1px solid var(--line2); background: var(--card); border-radius: 8px;
+  width: 30px; height: 30px; cursor: pointer; color: var(--muted); font-size: 16px;
+}
+.modal-top .arrow:hover:not(:disabled) { border-color: var(--teal); color: var(--teal-deep); }
+.modal-top .arrow:disabled { opacity: 0.35; cursor: default; }
+
+.q-title { font-size: 18px; font-weight: 600; margin: 0 0 10px; }
+.badges { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 14px; }
+
+.map-btn {
+  display: block; border: 1px solid var(--line2); border-radius: 10px;
+  padding: 10px 14px; text-decoration: none; color: var(--blue);
+  font-size: 13.5px; margin-bottom: 16px;
+}
+.map-btn:hover { border-color: var(--blue); text-decoration: none; }
+.map-btn .map-sub { display: block; margin-top: 3px; font-size: 11.5px; color: var(--muted); }
+
+section { margin-bottom: 18px; }
+section h3 {
+  font-size: 13px; font-weight: 600; color: var(--muted);
+  margin: 0 0 8px; display: flex; align-items: center; gap: 8px;
+}
+.src-tag {
+  font-weight: 400; font-size: 11px; color: var(--faint);
+  border: 1px solid var(--line); border-radius: 999px; padding: 1px 8px;
+}
 .step { display: flex; gap: 10px; padding: 4px 0; }
-.step p { margin: 0; color: var(--muted); font-size: 13.5px; line-height: 1.65; }
+.step p { margin: 0; color: var(--muted); font-size: 13.5px; line-height: 1.65; white-space: pre-line; }
+.step-pt { color: var(--faint) !important; font-style: italic; }
+.step-body { flex: 1; min-width: 0; }
 .step-no {
   flex: none; width: 20px; height: 20px; border-radius: 50%;
   background: var(--teal-bg); color: var(--teal-deep);
-  font-size: 11.5px; display: flex; align-items: center; justify-content: center;
-  margin-top: 2px;
+  font-size: 11.5px; display: flex; align-items: center; justify-content: center; margin-top: 3px;
 }
 .step-no.done { background: #e3f3ea; color: var(--teal); }
-.complete .step p { color: var(--text); }
+.pts { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 4px; }
+.pt { font-size: 11.5px; color: var(--faint); }
+
+.guide-row { display: flex; gap: 10px; padding: 4px 0; font-size: 13.5px; }
+.guide-k { flex: none; width: 62px; color: var(--muted); }
+.guide-v { color: var(--text); line-height: 1.6; }
+
+.chain { display: flex; gap: 8px; flex-wrap: wrap; }
+.chain-item {
+  border: 1px solid var(--line2); background: var(--card); border-radius: 999px;
+  padding: 5px 14px; font-size: 13px; color: var(--teal-deep); cursor: pointer;
+}
+.chain-item.link:hover { border-color: var(--teal); background: var(--teal-bg); }
+.chain-item.dim { color: var(--faint); cursor: default; }
+.chain-flag { font-size: 11px; color: var(--faint); margin-left: 4px; }
+.no-detail { color: var(--faint); font-size: 13px; text-align: center; padding: 8px 0; }
+
+@media (max-width: 720px) {
+  .filter-row { gap: 8px; }
+  .filter-row select { max-width: 100%; flex: 1; }
+  .result-count { margin-left: 0; width: 100%; }
+  .modal-mask { padding: 0; align-items: flex-end; }
+  .modal {
+    max-width: 100%; border-radius: 16px 16px 0 0; max-height: 88vh; padding: 20px 18px;
+  }
+  .q-title { font-size: 16px; }
+}
 </style>
