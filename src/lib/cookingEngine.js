@@ -64,31 +64,87 @@ function matchFixedRecipe(matIds, recipe, tagMembers) {
 // ---------- 效果计算 ----------
 
 /**
+ * 效果等级阈值（点数制）—— Zelda Wiki「Cooking」效果点数表
+ *   攻击/防御/速度 1/5/7 · 防热·防寒 1/6 · 耐火 1/7 · 防雷 1/4/6 · 潜行 1/6/9
+ * 材料点数 = 数据里的 effLv（如大剑鲤鱼 ★★=2、大剑鲷鱼 ★★★=3）
+ */
+const EFF_THRESHOLDS = {
+  力量: [1, 5, 7],   // Mighty 攻击
+  坚硬: [1, 5, 7],   // Tough 防御
+  速速: [1, 5, 7],   // Hasty 速度
+  辛辣: [1, 6],      // Spicy 防热
+  冰冷: [1, 6],      // Chilly 防寒
+  电麻: [1, 4, 6],   // Electro 防雷
+  防火: [1, 7],      // Fireproof 耐火
+  潜行: [1, 6, 9],   // Sneaky 潜行
+  光亮: [1, 5, 7],   // TotK：光亮（阈值按攻击类近似）
+  除魔: [1, 5, 7],   // TotK：除魔
+  刺麻: [1, 4, 6],   // 同防雷
+  炙热: [1, 6],      // 同防热
+  冷凉: [1, 6],      // 同防寒
+  防滑: [1, 5, 7],
+  水润: [1, 5, 7],
+};
+
+function levelFromPoints(eff, points) {
+  const th = EFF_THRESHOLDS[eff];
+  if (!th) return points > 0 ? 1 : 0;
+  let lv = 0;
+  for (let i = 0; i < th.length; i++) if (points >= th[i]) lv = i + 1;
+  return lv;
+}
+
+/**
+ * 龙素材时长（Zelda Wiki / 攻略实测）：
+ *   龙鳞 +90s · 龙爪 +3:30 · 龙牙 +10:30 · 龙岩石 +80s · 龙角 → 锁 30 分钟（标记 -1）
+ * 重复的同一龙素材只 +30 秒（不同龙的同名部位算不同材料）
+ */
+function dragonPartTime(zh) {
+  if (!zh) return 0;
+  if (zh.includes('鳞片')) return 90;
+  if (zh.includes('爪子')) return 210;
+  if (zh.includes('牙齿')) return 630;
+  if (zh.includes('龙岩石')) return 80;
+  if (zh.includes('犄角')) return -1;   // 龙角：时长锁定 30 分钟
+  return 0;
+}
+
+/**
  * 效果聚合。返回 {hp, eff, effLv, effMin, conflict}。
- * 规则（社区验证的机制）：
- *   - 回血 = Σ 材料 hp × 2（含 HP 上限类材料时满血，简化为加总）
+ * 规则（Zelda Wiki / 社区验证）：
+ *   - 回血 = Σ 材料 hp × 2（生命类见 UI 说明）
  *   - 效果：材料 eff 只允许一种，两种以上 → 抵消，仅回血
- *   - 等级：Σ effLv 分档（0→无，1~→Lv1，…）
- *   - 时长：每种效果材料「第 1 个加全长，同名后续每个只加 30 秒」
- *           （游戏机制：Every additional of the same material only adds 30 s）
- *           龙素材触发 30 分钟封顶由调用方叠加
+ *   - 等级：**点数制** —— Σ 材料点数（effLv）对照各效果的阈值表
+ *   - 时长：效果材料「每个都加全长」（重复不衰减）；
+ *           **中性材料**才是「第 1 个全长、同名后续降为 30 秒」（游戏里仅中性材料如此）
+ *   - 龙素材：按部位加时（鳞 90 / 爪 210 / 牙 630 / 龙岩石 80），同名重复只 +30；
+ *            **龙角**把总时长锁在 30 分钟
  */
 function aggregateEffect(mats, dragonTouched) {
   let hp = 0;
   const effSet = new Set();
-  let lvSum = 0;
+  let points = 0;
   let minSum = 0;
-  const seenForMin = new Map(); // 材料 id → 已计入时长的个数（同名从第 2 个起只加 30 秒）
+  const neutralSeen = new Map(); // 中性/龙素材 id → 出现次数（第 2 个起降为 30 秒）
+  let dragonHorn = false;
   for (const m of mats) {
     if (m.hp != null) hp += m.hp;
     if (m.eff) {
       effSet.add(m.eff);
-      lvSum += m.effLv || 0;
-      if (m.effMin) {
-        const n = seenForMin.get(m.id) || 0;
-        minSum += n === 0 ? m.effMin : Math.min(30, m.effMin);
-        seenForMin.set(m.id, n + 1);
-      }
+      points += m.effLv || 0;          // effLv = 该材料的点数（★）
+      minSum += m.effMin || 0;          // 效果材料重复不衰减
+      continue;
+    }
+    // 无效果材料：龙素材优先按部位加时，其余走中性材料规则
+    const dz = dragonPartTime(m.zh);
+    if (dz === -1) { dragonHorn = true; continue; }
+    const n = neutralSeen.get(m.id) || 0;
+    if (dz > 0) {
+      minSum += n === 0 ? dz : 30;
+      neutralSeen.set(m.id, n + 1);
+    } else if (m.effMin) {
+      minSum += n === 0 ? m.effMin : 30;
+      neutralSeen.set(m.id, n + 1);
     }
   }
   hp = hp * 2;
@@ -98,9 +154,11 @@ function aggregateEffect(mats, dragonTouched) {
   let effMin = 0;
   if (effSet.size === 1) {
     eff = [...effSet][0];
-    effLv = Math.min(3, Math.floor(lvSum > 0 ? (lvSum - 1) / 2 + 1 : 0));
+    effLv = levelFromPoints(eff, points);
     effMin = minSum;
-    if (dragonTouched && effMin > 0) effMin = 30 * 60; // 龙素材：30 分钟封顶
+    // 龙角：时长锁定 30 分钟（上限）；其余龙素材已在上面按部位加时
+    if (dragonHorn && effMin > 0) effMin = 30 * 60;
+    else if (dragonTouched && effMin > 30 * 60) effMin = 30 * 60; // 通用上限 30 分钟
   }
   return { hp, eff: conflict ? null : eff, effLv, effMin, conflict };
 }

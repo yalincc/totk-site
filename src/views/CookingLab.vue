@@ -139,11 +139,6 @@
                   <span class="pbadge" :class="result.path">{{ pathLabel(result) }}</span>
                   <span v-if="guaranteedCrit" class="pbadge gold">★ 必定大成功</span>
                 </div>
-                <!-- 深链：名称下方，方括号标记（非流程箭头） -->
-                <div v-if="shown.actor || shown.zh" class="res-links">
-                  <RouterLink v-if="shown.actor" :to="'/items/' + shown.actor" class="res-link">【图鉴详情】</RouterLink>
-                  <RouterLink v-if="shown.zh" :to="{ path: '/cooking', query: { q: shown.zh } }" class="res-link">【料理页配方】</RouterLink>
-                </div>
               </div>
 
               <div class="res-stats">
@@ -182,10 +177,11 @@
             <div v-else-if="result.path === 'fail'" class="note">这些材料煮不出任何可食用的料理。</div>
 
             <div class="result-ops">
+              <RouterLink v-if="shown.actor" :to="'/items/' + shown.actor" class="btn">图鉴详情</RouterLink>
+              <RouterLink v-if="shown.zh" :to="{ path: '/cooking', query: { q: shown.zh } }" class="btn">料理页配方</RouterLink>
               <button class="btn primary" :disabled="!pot.length" @click="showSaveBar = !showSaveBar">
-                ★ 保存这个配方
+                ★ 保存配方
               </button>
-              <button class="btn" :disabled="!pot.length" @click="share">生成分享链接</button>
             </div>
 
             <div v-if="showSaveBar" class="savebar">
@@ -195,23 +191,6 @@
               <button class="btn" @click="showSaveBar = false">取消</button>
             </div>
           </template>
-
-          <!-- 基本搭配：给新手的入门套路 -->
-          <div class="basics">
-            <h4>基本搭配</h4>
-            <div class="basic-row">
-              <span class="b-tag elixir">药剂</span>
-              <span class="b-txt">昆虫 + 怪物素材 → 药剂（效果取自昆虫，怪物部位决定时长）</span>
-            </div>
-            <div class="basic-row">
-              <span class="b-tag max">满级</span>
-              <span class="b-txt">5 份相同效果材料 → 该效果最高等级（如 5 根大剑香蕉 → 攻击力 Lv3）</span>
-            </div>
-            <div class="basic-row">
-              <span class="b-tag long">长效</span>
-              <span class="b-txt">4 份效果材料 + 1 个龙素材 → 效果拉满，时长锁 30 分钟</span>
-            </div>
-          </div>
         </section>
       </div>
     </div>
@@ -467,18 +446,6 @@ function recipeResult(r) {
   return cook(ids, lab.value)
 }
 
-function share() {
-  const url = location.origin + '/cooking-lab?m=' + potIds.value.join(',')
-  if (navigator.clipboard) {
-    navigator.clipboard.writeText(url).then(
-      () => alert('分享链接已复制：\n' + url),
-      () => alert('分享链接：\n' + url)
-    )
-  } else {
-    alert('分享链接：\n' + url)
-  }
-}
-
 // 锅内材料写入 URL（刷新 / 分享不丢）
 watch(pot, (v) => {
   const ids = []
@@ -564,20 +531,7 @@ onUnmounted(() => {
 .shelf-col { display: flex; flex-direction: column; min-height: 0; }
 .shelf-col .mat-grid { flex: 1 1 auto; min-height: 0; }
 
-/* 基本搭配：新手入门套路 */
-.basics { margin-top: 14px; border-top: 1px dashed var(--line); padding-top: 12px; }
-.basics h4 {
-  font-size: 12.5px; font-weight: 600; color: var(--gold); margin: 0 0 9px; letter-spacing: 1px;
-}
-.basic-row { display: flex; gap: 9px; align-items: baseline; padding: 4px 0; font-size: 12.5px; line-height: 1.6; }
-.b-tag {
-  flex: none; font-size: 11px; border-radius: 6px; padding: 1px 8px;
-  background: var(--bg2); color: var(--muted);
-}
-.b-tag.elixir { background: var(--blue-bg); color: var(--blue); }
-.b-tag.max { background: var(--red-bg); color: var(--red); }
-.b-tag.long { background: var(--teal-bg); color: var(--teal); }
-.b-txt { color: var(--muted); }
+/* 基本搭配样式已移除（2026-10-12 老大：太影响排版） */
 
 /* 材料库 */
 .cat-tabs { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 10px; }
@@ -757,14 +711,12 @@ onUnmounted(() => {
 
 .warnbox { background: var(--red-bg); color: var(--red); border-radius: 10px; padding: 8px 13px; font-size: 12.5px; margin-top: 12px; }
 .note { border-top: 1px dashed var(--line); padding-top: 10px; margin-top: 12px; font-size: 12px; color: var(--muted); line-height: 1.65; }
-/* 深链：名称下方的方括号标签 */
-.res-links { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; }
-.res-link {
-  font-size: 12px; color: var(--teal); letter-spacing: .3px;
-  background: var(--teal-bg); border-radius: 7px; padding: 2px 8px;
-  transition: background .15s, color .15s;
+/* 深链与保存同款按钮（RouterLink 渲染为 a，需补齐按钮观感） */
+a.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  text-decoration: none; line-height: 1.4;
 }
-.res-link:hover { background: var(--teal); color: #fff; text-decoration: none; }
+a.btn:hover { text-decoration: none; }
 .result-ops { display: flex; gap: 10px; margin-top: 12px; flex-wrap: wrap; }
 .savebar { display: flex; gap: 8px; margin-top: 10px; }
 .savebar input { flex: 1; border: 1px solid var(--line2); border-radius: 10px; padding: 8px 12px; background: var(--bg2); color: var(--text); outline: none; font: inherit; min-width: 0; }
