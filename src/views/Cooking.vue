@@ -87,6 +87,13 @@
           <p v-else class="norecipe">
             图鉴收录条目，romfs 中无固定配方（多为烤制 / 单材料合成类，游戏内自由组合）
           </p>
+
+          <RouterLink
+            v-if="simUrl"
+            :to="simUrl"
+            class="sim-link"
+            @click="close"
+          >⚖ 在模拟料理中试煮这组材料 →</RouterLink>
         </div>
       </div>
     </Teleport>
@@ -95,14 +102,23 @@
 
 <script setup>
 import { ref, computed, watch, onMounted, onUnmounted } from 'vue'
-import { loadDishes, fmtTime } from '../data'
+import { loadDishes, loadCookingLab, fmtTime } from '../data'
 
 const dishes = ref([])
 const q = ref('')
 const onlyRecipes = ref(false)
 const sel = ref(null)
+const dishDefaults = ref(null)
 
 loadDishes().then((d) => (dishes.value = d))
+loadCookingLab().then((d) => (dishDefaults.value = d.dishDefaults || {}))
+
+// 有预生成组合的菜（139 道，经引擎回煮校验）才显示「试煮」按钮
+const simUrl = computed(() => {
+  if (!sel.value || !dishDefaults.value) return null
+  const ids = dishDefaults.value[sel.value.actor]
+  return ids && ids.length ? { path: '/cooking-lab', query: { m: ids.join(',') } } : null
+})
 
 const withRecipes = computed(() => dishes.value.filter((d) => d.recipes.length).length)
 
@@ -244,6 +260,12 @@ function tagZh(t) {
 .mat.mini { background: var(--bg); border: 1px solid var(--line); color: var(--text); font-size: 12.5px; }
 .sub { color: var(--faint); font-size: 12px; }
 .norecipe { margin-top: 12px; color: var(--faint); font-size: 13px; }
+.sim-link {
+  display: block; margin-top: 14px; border: 1px solid var(--line2); border-radius: 10px;
+  padding: 10px 14px; text-decoration: none; color: var(--teal-deep);
+  background: var(--teal-bg); font-size: 13.5px;
+}
+.sim-link:hover { border-color: var(--teal); }
 
 @media (max-width: 720px) {
   .item-grid { grid-template-columns: repeat(auto-fill, minmax(84px, 1fr)); gap: 8px; }
