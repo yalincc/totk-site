@@ -3,6 +3,19 @@
 > 只追加，不改写历史条目。格式参考 Keep a Changelog，版本号遵循 SemVer `v0.X.Y`。
 > 发布规则与版本同步要求见 `开发手册.md` §3.3。
 
+## [v0.13.3] — 2026-10-13
+
+**修复部署构建失败：package-lock.json 补全 rollup 原生平台包**
+
+- **EdgeOne Pages 首次构建失败**：`Cannot find module @rollup/rollup-linux-x64-gnu`
+  （npm 可选依赖 bug，npm/cli#4828）
+- 根因：`package-lock.json` 缺 `@rollup/*` 全部平台包条目（esbuild 平台包齐全、rollup 一个都没有），
+  npm 按锁文件安装时不会自动补装可选依赖 → rollup 原生二进制缺失，任何平台构建都会失败
+  （README 里沙箱"rollup 原生包单独补装"就是同一问题的本地表现）
+- 修法：`npm install rollup@4.63.5` 重解析，补全 25 个 `@rollup/rollup-*` 平台条目
+  （rollup 版本不变，仍 4.63.5），回滚 package.json 只保留锁文件变更
+- 验证：`npm ci` 全量按锁文件重装 + `npm run build` 通过（CSS 47.02KB / JS 161.40KB，与历史一致）
+
 ## [v0.13.2] — 2026-10-13
 
 **favicon 换亮色版（对齐「晨曦海拉鲁」基调）**
