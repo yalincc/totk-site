@@ -103,7 +103,8 @@ romfs (G:\YUZU\Switch Games\TOTKroms)
 
 ## 待办
 
-- [ ] **P5 部署（进行中）**：Gitee 仓库已建并推送 ✅ → 待 EdgeOne 控制台建项目（清单 `开发手册.md` §3.4.1，**加速区域必选"不含中国大陆"**）→ 绑域名 **`wiki.yalin.site`**
+- [ ] **P5 部署（进行中）**：Gitee 仓库已建并推送 ✅ → 待 EdgeOne Pages 建项目（清单 `开发手册.md` §3.4.1，**加速区域必选"不含中国大陆"**）→ 绑域名 **`wiki.yalin.site`**
+  - 辅助脚本（在 `E:\WorkSpace\BOTWroms\.workbuddy\`）：`deploy_totk_site.sh`（CLI 直传一键部署，需 EdgeOne API Token）、`verify_deploy_totk_site.sh`（线上验收：资源 200 + SPA 深层路由 + assets 对照）
 - [ ] **域名回填**：TOTKmap 仓库 `index.html` 的 `window.TOTK_COMPENDIUM_URL` 改为 `https://wiki.yalin.site`（地图卡片「查看图鉴」才指向线上）
 - [ ] **GitHub 镜像同步**：`origin/main` 仍停在 v0.8.2，需要时 `git push origin main` 补齐
 - [ ] PWA（manifest + service worker，离线缓存 data/icons）
