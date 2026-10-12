@@ -23,3 +23,9 @@ export function mapQuestUrl(quest) {
 export function mapQuestStepUrl(quest) {
   return mapQuestUrl(quest)
 }
+
+// 通用关键词深链（装备等无 ?actor= 深链的板块用）：优先中文名，回退 id
+export function mapKeywordUrl(entity) {
+  const kw = entity.zh || entity.id
+  return `${MAP_URL}/index.html?q=${encodeURIComponent(kw)}`
+}

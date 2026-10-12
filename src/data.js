@@ -37,6 +37,12 @@ export function loadQuests() {
   return _quests
 }
 
+let _armors = null
+export function loadArmors() {
+  if (!_armors) _armors = fetch('/data/armors.json').then((r) => r.json())
+  return _armors
+}
+
 export function iconUrl(item) {
   return item.icon ? '/icons/' + item.icon : null
 }

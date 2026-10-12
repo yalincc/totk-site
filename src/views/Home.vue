@@ -30,8 +30,15 @@
       </RouterLink>
     </div>
 
+    <div class="feat-row">
+      <RouterLink to="/armors" class="card feat-card">
+        <div class="feat-t">防具图鉴</div>
+        <div class="feat-d">{{ armorCount }} 件防具 · 67 套装 · 四星强化阶梯 · 材料直达图鉴</div>
+      </RouterLink>
+    </div>
+
     <div style="margin-top: 44px; text-align: center; color: var(--faint); font-size: 12.5px;">
-      图鉴 {{ total }} 条 · 料理配方 {{ recipes }} 道 · 任务 285 个 ·
+      图鉴 {{ total }} 条 · 料理配方 {{ recipeCount }} 道 · 任务 285 个 · 防具 {{ armorCount }} 件 ·
       <a :href="mapUrl" target="_blank" rel="noopener" style="color: var(--teal);">互动地图 ↗</a>
     </div>
   </main>
@@ -40,7 +47,7 @@
 <script setup>
 import { ref, computed } from 'vue'
 import { useRouter } from 'vue-router'
-import { loadItemsVisible, loadRecipes, GROUP_ORDER } from '../data'
+import { loadItemsVisible, loadRecipes, loadArmors, GROUP_ORDER } from '../data'
 import { MAP_URL } from '../mapLink'
 
 const router = useRouter()
@@ -48,9 +55,11 @@ const mapUrl = MAP_URL
 const q = ref('')
 const items = ref([])
 const recipeCount = ref(0)
+const armorCount = ref(0)
 
 loadItemsVisible().then((d) => (items.value = d))
 loadRecipes().then((d) => (recipeCount.value = d.length))
+loadArmors().then((d) => (armorCount.value = d.length))
 
 const total = computed(() => items.value.length)
 
