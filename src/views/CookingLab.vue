@@ -139,6 +139,11 @@
                   <span class="pbadge" :class="result.path">{{ pathLabel(result) }}</span>
                   <span v-if="guaranteedCrit" class="pbadge gold">★ 必定大成功</span>
                 </div>
+                <!-- 深链：名称下方，方括号标记（非流程箭头） -->
+                <div v-if="shown.actor || shown.zh" class="res-links">
+                  <RouterLink v-if="shown.actor" :to="'/items/' + shown.actor" class="res-link">【图鉴详情】</RouterLink>
+                  <RouterLink v-if="shown.zh" :to="{ path: '/cooking', query: { q: shown.zh } }" class="res-link">【料理页配方】</RouterLink>
+                </div>
               </div>
 
               <div class="res-stats">
@@ -172,15 +177,9 @@
               加入的效果材料种类不同，加成会互相抵消，只保留回血。
             </div>
 
-            <div v-if="result.recipeZh" class="note">命中固定配方「{{ result.recipeZh }}」。</div>
-            <div v-else-if="result.path === 'elixir'" class="note">昆虫 + 怪物素材 → 药剂，效果取自昆虫，怪物素材延长持续时间。</div>
+            <div v-if="result.path === 'elixir'" class="note">昆虫 + 怪物素材 → 药剂，效果取自昆虫，怪物素材延长持续时间。</div>
             <div v-else-if="result.path === 'generic'" class="note">未命中固定配方，按材料组合推导出常见做法。</div>
             <div v-else-if="result.path === 'fail'" class="note">这些材料煮不出任何可食用的料理。</div>
-
-            <div class="result-links">
-              <RouterLink v-if="shown.actor" :to="'/items/' + shown.actor" class="mini-link">图鉴详情 →</RouterLink>
-              <RouterLink v-if="shown.zh" :to="{ path: '/cooking', query: { q: shown.zh } }" class="mini-link">料理页配方 →</RouterLink>
-            </div>
 
             <div class="result-ops">
               <button class="btn primary" :disabled="!pot.length" @click="showSaveBar = !showSaveBar">
@@ -688,9 +687,14 @@ watch(pot, (v) => {
 
 .warnbox { background: var(--red-bg); color: var(--red); border-radius: 10px; padding: 8px 13px; font-size: 12.5px; margin-top: 12px; }
 .note { border-top: 1px dashed var(--line); padding-top: 10px; margin-top: 12px; font-size: 12px; color: var(--muted); line-height: 1.65; }
-.result-links { display: flex; gap: 14px; margin-top: 10px; }
-.mini-link { font-size: 12.5px; color: var(--teal); }
-.mini-link:hover { color: var(--gold); text-decoration: none; }
+/* 深链：名称下方的方括号标签 */
+.res-links { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; }
+.res-link {
+  font-size: 12px; color: var(--teal); letter-spacing: .3px;
+  background: var(--teal-bg); border-radius: 7px; padding: 2px 8px;
+  transition: background .15s, color .15s;
+}
+.res-link:hover { background: var(--teal); color: #fff; text-decoration: none; }
 .result-ops { display: flex; gap: 10px; margin-top: 12px; flex-wrap: wrap; }
 .savebar { display: flex; gap: 8px; margin-top: 10px; }
 .savebar input { flex: 1; border: 1px solid var(--line2); border-radius: 10px; padding: 8px 12px; background: var(--bg2); color: var(--text); outline: none; font: inherit; min-width: 0; }
