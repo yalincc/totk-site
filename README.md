@@ -7,19 +7,19 @@
 > 视觉系统为「晨曦海拉鲁」（亮色：象牙米白 + Sheikah 青 + 淡金线饰），**色板与阴影全在 `src/style.css` 的 `:root` 令牌里**，
 > 换皮只动令牌、不动结构。别引入组件库，别加后端，别手改 `public/data/*.json`（数据由上层脚本单向派生）。
 
-## 发布状态（截至 2026-10-13 00:10）
+## 发布状态（截至 2026-10-13）
 
 | 项 | 值 |
 |---|---|
-| 远端 | https://github.com/yalincc/totk-site （公开，分支 `main`） |
-| 远端最新 | `a585f64` **v0.8.2** ｜ 最后一次 push：**2026-10-12 19:27** |
-| 本地 | `main` **领先远端 10 条未 push**（`9cbf834` v0.9 → `adf8f87` v0.13.1 + `cb64684` CHANGELOG 修正） |
-| 本地 commit 总数 | 20（v0.2 → v0.13.1） |
+| **部署源** | Gitee https://gitee.com/yalincc/totk-site （`gitee/main` = `dce72b0` v0.13.1，**已推**）→ EdgeOne Pages 自动部署 |
+| 镜像 | GitHub https://github.com/yalincc/totk-site （`origin/main` 仍在 `a585f64` **v0.8.2**，暂未同步） |
+| 本地 | `main` = `dce72b0`，工作树干净；commit 总数 21 |
 | tag | 无 |
-| 线上部署 | **未部署** —— `edgeone.json` 配置就绪，但 EdgeOne Pages 项目尚未创建，**暂无正式域名** |
+| **线上部署** | **EdgeOne Pages 项目尚未创建**（部署参数见 `开发手册.md` §3.4）→ 暂无正式域名 |
 | 临时分支 | `backup-before-squash`（v0.13.1 历史整理前的旧链备份，确认无误可删） |
 
-> push 历史：共 9 次（v0.3 → v0.8.2）。**v0.9 之后的「视觉焕新 + 模拟料理」整轮工作全部只在本地**。
+> 时间线：GitHub 共 push 9 次（v0.3 → v0.8.2，最后一次 2026-10-12 19:27）；
+> 2026-10-13 新建 Gitee 仓库并一次性推送 v0.2 → v0.13.1 全量（**Gitee 成为部署源，GitHub 转为镜像**）。
 
 ## 技术栈
 
@@ -103,9 +103,9 @@ romfs (G:\YUZU\Switch Games\TOTKroms)
 
 ## 待办
 
-- [ ] **P5 部署**：EdgeOne Pages 建项目（构建命令 `npm run build`，输出 `dist`）→ 拿到正式域名
-- [ ] **域名回填**：TOTKmap 仓库 `index.html` 的 `window.TOTK_COMPENDIUM_URL` 改为图鉴站域名（地图卡片「查看图鉴」才指向线上）
-- [ ] **push 积压**：本地 v0.9～v0.13.1 共 10 条待推（推之前建议先在本地预览确认效果）
+- [ ] **P5 部署（进行中）**：Gitee 仓库已建并推送 ✅ → 待 EdgeOne Pages 建项目（`main` / 构建 `npm run build` / 输出 `dist` / **加速区域选"不含中国大陆"**，参数见 `开发手册.md` §3.4）→ 拿到正式域名
+- [ ] **域名回填**：TOTKmap 仓库 `index.html` 的 `window.TOTK_COMPENDIUM_URL` 改为本站域名（地图卡片「查看图鉴」才指向线上）
+- [ ] **GitHub 镜像同步**：`origin/main` 仍停在 v0.8.2，需要时 `git push origin main` 补齐
 - [ ] PWA（manifest + service worker，离线缓存 data/icons）
 
 ## 已知悬留

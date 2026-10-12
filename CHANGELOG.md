@@ -263,6 +263,16 @@
 
 ## 治理记录（非版本）
 
+### 2026-10-13 · 部署链路：接入 Gitee（部署源）+ EdgeOne Pages
+- 新建 Gitee 仓库 https://gitee.com/yalincc/totk-site ，**双 remote** 成型（与 TOTKmap / BOTWmap 同款）：
+  `gitee` 为 EdgeOne Pages 部署源（push `main` 自动部署），`origin`（GitHub）转为镜像备份
+- v0.2 → v0.13.1 全量推送到 Gitee（`gitee/main` = `dce72b0`）；GitHub 镜像暂停在 v0.8.2
+- **干净克隆构建验证**：从 Gitee 全新 clone → `npm install` → `npm run build` 成功，产物 1776 文件 / 85MB，
+  与本地产物一致 —— 确认仓库自足、EdgeOne 侧可直接构建（`dist`、`node_modules` 未入库）
+- 发布规范落进 `开发手册.md` §3.4：远端拓扑表、EdgeOne 项目配置参数（分支 `main` / 构建 `npm run build` /
+  输出 `dist` / Node 22 / **加速区域必须选"不含中国大陆"**）、文件数上限 20000、缓存策略与 Redeploy 运维口径
+- 待办：EdgeOne 控制台建项目 + 绑自定义域名（控制台操作，需人工执行）；域名拿到后回填 TOTKmap 的 `TOTK_COMPENDIUM_URL`
+
 ### 2026-10-12 · 项目文件治理与规范建立
 - 上层工作区 `BOTWroms` 建立 git 仓库并配套严格 `.gitignore`，根目录 17 个文件按五分类收敛到 6 个
 - 本项目新增 `AGENTS.md` + `开发手册.md` + 本文件，确立数据单向派生铁律与五分类搬家规则

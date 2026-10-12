@@ -24,10 +24,12 @@
 ## 项目结构速查
 
 ```
-src/views/     Home 首页 · Compendium 图鉴 · Cooking 料理 · Quests 任务 · ItemDetail 物品详情
-src/data.js    数据加载层（loadItems / loadItemsVisible 等）
-public/data/   items · dishes · quests · recipes · enhancement —— 派生产物，禁手改
-public/icons/  物品图标
+src/views/     Home 首页 · Compendium 图鉴 · Cooking 料理 · CookingLab 模拟料理
+               Quests 任务 · Armors 装备 · ItemDetail 物品详情
+src/lib/       cookingEngine 料理规则引擎 · critRate 暴击率与效果池
+src/data.js    数据加载层（loadItems / loadCookingLab 等）
+public/data/   items · dishes · quests · recipes · enhancement · armors · cooking_lab —— 派生产物，禁手改
+public/icons/  romfs 官方图标 1766 张（15 个分类子目录）
 ```
 
 ## 项目红线
