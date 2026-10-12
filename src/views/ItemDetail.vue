@@ -184,14 +184,14 @@ function iconOf(id) {
   position: relative; overflow: hidden;
   display: flex; gap: 18px; padding: 22px; align-items: center;
   background:
-    radial-gradient(320px 160px at 18% 50%, rgba(212, 175, 55, 0.1), transparent 70%),
+    radial-gradient(320px 160px at 18% 50%, rgba(154, 123, 28, 0.07), transparent 70%),
     var(--paper-tex), var(--card);
   background-size: auto, 160px 160px, auto;
 }
 .head-glow {
   position: absolute; left: 10px; top: 50%; width: 120px; height: 120px;
   transform: translateY(-50%); border-radius: 50%;
-  background: radial-gradient(circle, rgba(79, 209, 165, 0.16), transparent 70%);
+  background: radial-gradient(circle, rgba(14, 138, 125, 0.1), transparent 70%);
   pointer-events: none;
 }
 .big-icon {
@@ -247,14 +247,14 @@ function iconOf(id) {
   display: block; width: 100%; box-sizing: border-box; padding: 13px;
   border-radius: 10px;
   border: 1px solid var(--gold);
-  background: linear-gradient(180deg, rgba(212, 175, 55, 0.16), rgba(212, 175, 55, 0.07));
+  background: linear-gradient(180deg, rgba(154, 123, 28, 0.09), rgba(154, 123, 28, 0.03));
   color: var(--gold);
   font-size: 14px; font-weight: 600; letter-spacing: 0.5px;
   transition: box-shadow 0.15s, transform 0.15s;
 }
 .map-btn:hover {
   color: var(--gold);
-  box-shadow: 0 0 20px rgba(212, 175, 55, 0.25);
+  box-shadow: 0 2px 14px rgba(154, 123, 28, 0.18);
   transform: translateY(-1px);
 }
 .map-btn .map-sub { display: block; margin-top: 3px; font-size: 11.5px; color: var(--muted); font-weight: 400; }

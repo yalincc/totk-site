@@ -1,49 +1,49 @@
 /* ============================================================
-   totk-site 视觉系统 v2 ——「夜原羊皮 Parchment of the Wild」
-   暗夜底 × 海拉鲁金 × Sheikah 荧绿 × 羊皮纸做旧质感
-   设计令牌集中在 :root；组件样式按「全局骨架 → 通用元件 → 首页 hero」分层
+   totk-site 视觉系统 v3 ——「晨曦海拉鲁 Dawn of Hyrule」
+   清淡王国之泪风：象牙米白底 × Sheikah 青 × 淡金线饰 × 轻纸纹
+   （结构与组件契约沿用 v2，仅换肤；设计令牌集中在 :root）
    ============================================================ */
 
 :root {
-  /* —— 夜色羊皮纸色板 —— */
-  --bg: #17140e;            /* 夜原：暖黑底（非纯黑，带羊皮纸的暖） */
-  --bg2: #1e1a12;           /* 次底：页面凹陷区 */
-  --card: #262117;          /* 羊皮纸卡面：暖深棕 */
-  --card2: #2f291d;         /* 卡面提亮：hover / 选中 */
-  --line: #3d3524;          /* 做旧描边 */
-  --line2: #524835;         /* 强描边 */
-  --text: #ece1c8;          /* 纸色文字 */
-  --muted: #b3a687;         /* 次级文字 */
-  --faint: #7d7358;         /* 弱化文字 */
+  /* —— 日间羊皮纸色板 —— */
+  --bg: #f7f6f1;            /* 象牙米白底 */
+  --bg2: #efede5;           /* 次底：凹陷区 / 输入框 */
+  --card: #ffffff;          /* 卡面纯白 */
+  --card2: #fbfaf6;         /* 卡面微暖：hover / 选中 */
+  --line: #e5e2d8;          /* 细描边 */
+  --line2: #d3cfc1;         /* 强描边 */
+  --text: #2e3236;          /* 墨色正文 */
+  --muted: #6b6e6a;         /* 次级文字 */
+  --faint: #9d9c94;         /* 弱化文字 */
 
-  --gold: #d4af37;          /* 海拉鲁金：主强调 */
-  --gold-deep: #b8941f;
-  --gold-bg: rgba(212, 175, 55, 0.13);
-  --teal: #4fd1a5;          /* Sheikah 荧绿：链接/成功 */
-  --teal-deep: #38b98c;
-  --teal-bg: rgba(79, 209, 165, 0.14);
-  --blue: #7cc0f5;          /* 希卡蓝：信息 */
-  --blue-bg: rgba(124, 192, 245, 0.13);
-  --amber: #e8b563;         /* 火焰橙：警示/料理 */
-  --amber-bg: rgba(232, 181, 99, 0.14);
-  --red: #e07856;           /* 攻击/失败 */
-  --red-bg: rgba(224, 120, 86, 0.14);
-  --green: #93c96a;
+  --gold: #9a7b1c;          /* 海拉鲁金（亮底可读的深金） */
+  --gold-deep: #7d6112;
+  --gold-bg: #f6f1df;
+  --teal: #0e8a7d;          /* Sheikah 青绿：主色 */
+  --teal-deep: #0a6b61;
+  --teal-bg: #e2f3f0;
+  --blue: #2a6fbd;          /* 天空青蓝：信息 */
+  --blue-bg: #e7f0fa;
+  --amber: #a86a12;         /* 火焰橙：料理 / 警示 */
+  --amber-bg: #faf0dc;
+  --red: #b4493a;           /* 攻击 / 失败 */
+  --red-bg: #fbeae6;
+  --green: #4e7f2a;
 
   --radius: 12px;
 
-  /* 羊皮纸噪声纹理（内联 SVG，零请求；暗底上 5% 强度做旧） */
-  --paper-tex: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='p'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23p)' opacity='0.05'/%3E%3C/svg%3E");
+  /* 纸纹（内联 SVG，零请求；亮底上 3.5% 淡纸感） */
+  --paper-tex: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='p'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23p)' opacity='0.035'/%3E%3C/svg%3E");
 }
 
 * { box-sizing: border-box; }
 
 body {
   margin: 0;
-  /* 夜空渐变：顶部微亮（天际线）→ 底部沉下去 */
+  /* 晨曦：顶部一层淡青天光，其余是象牙米白 */
   background:
     var(--paper-tex),
-    radial-gradient(1200px 480px at 50% -80px, #2a2317 0%, transparent 70%),
+    radial-gradient(1280px 480px at 50% -120px, #e4f2f0 0%, transparent 70%),
     var(--bg);
   background-attachment: fixed;
   color: var(--text);
@@ -61,7 +61,7 @@ input, button, select { font: inherit; }
 /* ============ header ============ */
 .site-header {
   position: sticky; top: 0; z-index: 30;
-  background: rgba(23, 20, 14, 0.86);
+  background: rgba(255, 255, 255, 0.88);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--line);
 }
@@ -92,13 +92,13 @@ input, button, select { font: inherit; }
 
 /* ============ 通用元件 ============ */
 
-/* 卡片：羊皮纸卡面 + 做旧边 + 纸纹 + 暗底投影 */
+/* 卡片：白卡面 + 细描边 + 淡纸纹 + 轻投影 */
 .card {
   background: var(--paper-tex), var(--card);
   background-size: 160px 160px, auto;
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  box-shadow: inset 0 1px 0 rgba(236, 225, 200, 0.04), 0 2px 10px rgba(0, 0, 0, 0.28);
+  box-shadow: 0 1px 2px rgba(46, 50, 54, 0.04), 0 6px 18px rgba(46, 50, 54, 0.05);
 }
 
 /* chips */
@@ -144,7 +144,7 @@ input, button, select { font: inherit; }
 }
 .item-cell:hover {
   border-color: var(--gold); transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 8px 20px rgba(46, 50, 54, 0.1);
 }
 .item-cell img { width: 56px; height: 56px; object-fit: contain; }
 .item-cell .ph {
@@ -163,36 +163,30 @@ input, button, select { font: inherit; }
 .kv-row b { color: var(--gold); font-weight: 600; }
 .kv-row .k { color: var(--faint); }
 
-/* ============ 首页 hero ============ */
+/* ============ 首页 hero（晨曦版） ============ */
 .hero {
   position: relative; overflow: hidden;
-  border-radius: 20px; border: 1px solid var(--line2);
-  /* 夜空：深夜蓝黑 + 顶部天际光 + 底部金绿余晖 */
+  border-radius: 20px; border: 1px solid var(--line);
+  /* 晨曦天空：顶部淡青 → 底部象牙白 + 地平线暖光 */
   background:
-    radial-gradient(640px 300px at 50% -10%, rgba(79, 209, 165, 0.1), transparent 70%),
-    radial-gradient(900px 420px at 50% 115%, rgba(212, 175, 55, 0.09), transparent 70%),
-    linear-gradient(180deg, #1c1810 0%, #14110b 100%);
+    radial-gradient(700px 320px at 50% -18%, rgba(14, 138, 125, 0.1), transparent 70%),
+    radial-gradient(920px 400px at 50% 118%, rgba(154, 123, 28, 0.1), transparent 70%),
+    linear-gradient(180deg, #edf7f5 0%, #fbfaf6 100%);
   padding: 84px 24px 64px; text-align: center;
-  box-shadow: inset 0 1px 0 rgba(236, 225, 200, 0.05), 0 12px 40px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 10px 34px rgba(46, 50, 54, 0.07);
 }
-/* 星点层 */
+/* 云隙柔光层（替代夜景星点） */
 .hero::before {
   content: ""; position: absolute; inset: 0; pointer-events: none;
   background-image:
-    radial-gradient(1.5px 1.5px at 12% 22%, rgba(236, 225, 200, 0.7), transparent 60%),
-    radial-gradient(1px 1px at 28% 12%, rgba(236, 225, 200, 0.5), transparent 60%),
-    radial-gradient(1.5px 1.5px at 45% 28%, rgba(236, 225, 200, 0.6), transparent 60%),
-    radial-gradient(1px 1px at 62% 8%, rgba(236, 225, 200, 0.45), transparent 60%),
-    radial-gradient(1.5px 1.5px at 78% 20%, rgba(236, 225, 200, 0.65), transparent 60%),
-    radial-gradient(1px 1px at 88% 30%, rgba(236, 225, 200, 0.4), transparent 60%),
-    radial-gradient(1px 1px at 8% 38%, rgba(236, 225, 200, 0.35), transparent 60%),
-    radial-gradient(1.5px 1.5px at 36% 42%, rgba(236, 225, 200, 0.5), transparent 60%),
-    radial-gradient(1px 1px at 70% 40%, rgba(236, 225, 200, 0.4), transparent 60%);
+    radial-gradient(240px 150px at 16% 20%, rgba(255, 255, 255, 0.75), transparent 70%),
+    radial-gradient(200px 130px at 82% 26%, rgba(255, 255, 255, 0.6), transparent 70%),
+    radial-gradient(260px 150px at 68% 74%, rgba(232, 247, 244, 0.7), transparent 70%);
 }
 /* 中央希卡符文环 */
 .hero-ring {
   position: absolute; left: 50%; top: 50%; width: 340px; height: 340px;
-  transform: translate(-50%, -50%); pointer-events: none; opacity: 0.5;
+  transform: translate(-50%, -50%); pointer-events: none; opacity: 0.55;
 }
 .hero-inner { position: relative; z-index: 2; }
 .hero-kicker {
@@ -201,25 +195,24 @@ input, button, select { font: inherit; }
 }
 .hero-title {
   font-size: 40px; font-weight: 700; margin: 0 0 12px; letter-spacing: 2px;
-  background: linear-gradient(180deg, #f4e6bf 20%, var(--gold) 80%);
+  background: linear-gradient(180deg, #c9a227 5%, #8a6d15 95%);
   -webkit-background-clip: text; background-clip: text; color: transparent;
-  text-shadow: 0 2px 24px rgba(212, 175, 55, 0.25);
 }
 .hero-sub { color: var(--muted); margin: 0 0 8px; font-size: 15px; }
 .hero-tags { color: var(--faint); font-size: 12.5px; margin: 0 0 28px; }
-.hero-tags b { color: var(--teal); font-weight: 500; }
+.hero-tags b { color: var(--teal); font-weight: 600; }
 .hero-search { max-width: 560px; margin: 0 auto; }
 
 /* hero 图标拼贴：官方 romfs 美术漂浮层 */
 .hero-art { position: absolute; inset: 0; pointer-events: none; }
 .hero-art .ficon {
-  position: absolute; filter: drop-shadow(0 4px 14px rgba(0, 0, 0, 0.5));
-  opacity: 0.9; animation: floaty 7s ease-in-out infinite;
+  position: absolute; filter: drop-shadow(0 3px 8px rgba(46, 50, 54, 0.18));
+  opacity: 0.95; animation: floaty 7s ease-in-out infinite;
 }
 .hero-art .ficon.core {
   width: 108px; height: 108px; left: 50%; top: 50%;
-  transform: translate(-50%, -50%); opacity: 0.16;
-  filter: blur(1px) drop-shadow(0 0 42px rgba(79, 209, 165, 0.5));
+  transform: translate(-50%, -50%); opacity: 0.1;
+  filter: blur(1px) drop-shadow(0 0 42px rgba(14, 138, 125, 0.35));
   animation: pulse 6s ease-in-out infinite;
 }
 @keyframes floaty {
@@ -227,8 +220,8 @@ input, button, select { font: inherit; }
   50% { translate: 0 -10px; }
 }
 @keyframes pulse {
-  0%, 100% { opacity: 0.13; }
-  50% { opacity: 0.22; }
+  0%, 100% { opacity: 0.08; }
+  50% { opacity: 0.15; }
 }
 @media (prefers-reduced-motion: reduce) {
   .hero-art .ficon { animation: none; }

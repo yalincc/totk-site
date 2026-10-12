@@ -312,7 +312,7 @@ onUnmounted(() => {
 }
 .armor-card:hover {
   border-color: var(--gold); transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 8px 20px rgba(46, 50, 54, 0.1);
 }
 .armor-card img { width: 64px; height: 64px; object-fit: contain; }
 .armor-card .ph {
@@ -335,19 +335,19 @@ onUnmounted(() => {
 
 /* 弹层：暗底 + 羊皮纸卡 */
 .modal-mask {
-  position: fixed; inset: 0; background: rgba(8, 6, 3, 0.66);
+  position: fixed; inset: 0; background: rgba(46, 50, 54, 0.42);
   backdrop-filter: blur(3px);
   display: flex; align-items: center; justify-content: center;
   z-index: 60; padding: 24px;
 }
 .modal {
   background:
-    radial-gradient(400px 200px at 50% 0%, rgba(212, 175, 55, 0.07), transparent 70%),
+    radial-gradient(400px 200px at 50% 0%, rgba(154, 123, 28, 0.05), transparent 70%),
     var(--paper-tex), var(--card);
   background-size: auto, 160px 160px, auto;
   border: 1px solid var(--line2); border-radius: 16px; padding: 24px 26px;
   max-width: 640px; width: 100%; max-height: 86vh; overflow-y: auto;
-  position: relative; box-shadow: 0 24px 70px rgba(0, 0, 0, 0.55);
+  position: relative; box-shadow: 0 24px 60px rgba(46, 50, 54, 0.2);
 }
 .modal .close:hover { color: var(--gold); }
 .modal .close {
@@ -380,10 +380,10 @@ onUnmounted(() => {
   display: block; border: 1px solid var(--gold); border-radius: 10px;
   padding: 11px 14px; text-decoration: none; color: var(--gold);
   font-size: 13.5px; font-weight: 600; margin-bottom: 16px;
-  background: linear-gradient(180deg, rgba(212, 175, 55, 0.14), rgba(212, 175, 55, 0.05));
+  background: linear-gradient(180deg, rgba(154, 123, 28, 0.09), rgba(154, 123, 28, 0.03));
   transition: box-shadow 0.15s;
 }
-.map-btn:hover { color: var(--gold); box-shadow: 0 0 18px rgba(212, 175, 55, 0.22); }
+.map-btn:hover { color: var(--gold); box-shadow: 0 2px 12px rgba(154, 123, 28, 0.16); }
 .map-btn .map-sub { display: block; margin-top: 3px; font-size: 11.5px; color: var(--muted); font-weight: 400; }
 
 section { margin-bottom: 18px; }

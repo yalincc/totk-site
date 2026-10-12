@@ -12,8 +12,8 @@
 
     <div class="lab-grid">
       <!-- 左：食材库 -->
-      <section class="card lab-col">
-        <h3>食材库</h3>
+      <section class="card lab-col shelf-col">
+        <h3>食材库 <span class="col-sub">{{ shelf.length }} 种</span></h3>
         <div class="search-box" style="margin-bottom: 8px;">
           <input v-model="q" placeholder="搜索材料…" aria-label="搜索材料" />
         </div>
@@ -37,7 +37,7 @@
             <div class="mat-info">
               <div class="mat-zh">{{ m.zh || m.id }}</div>
               <div class="mat-eff">
-                <span v-if="m.eff">{{ m.eff }}<template v-if="m.effMin"> {{ fmtMin(m.effMin) }}</template></span>
+                <span v-if="m.eff">{{ m.eff }}<template v-if="m.effMin"> · {{ fmtMin(m.effMin) }}</template></span>
                 <span v-else-if="m.hp">回复 {{ m.hp / 2 }} 心</span>
                 <span v-else>—</span>
               </div>
@@ -53,100 +53,124 @@
         </div>
       </section>
 
-      <!-- 中：锅 -->
-      <section class="card lab-col pot-col">
-        <h3>锅</h3>
-        <div class="pot-slots">
-          <div
-            v-for="i in 5"
-            :key="i"
-            class="pot-slot"
-            :class="{ filled: potIds[i - 1] }"
-            @click="potIds[i - 1] && remove(i - 1)"
-          >
-            <template v-if="potIds[i - 1]">
-              <img v-if="matOf(potIds[i - 1]).icon" :src="'/icons/' + matOf(potIds[i - 1]).icon" :alt="matOf(potIds[i - 1]).zh" />
-              <span v-else class="slot-ph">{{ (matOf(potIds[i - 1]).zh || '?')[0] }}</span>
-              <span class="slot-zh">{{ matOf(potIds[i - 1]).zh }}</span>
-            </template>
-            <span v-else class="slot-empty">＋</span>
-          </div>
-        </div>
-        <div class="pot-fire" aria-hidden="true">
-          <div class="fire"></div>
-        </div>
-        <button class="clear-btn" :disabled="!potIds.length" @click="potIds = []">清空材料</button>
-        <p class="pot-tip">点击锅里的材料可移除；同名材料可重复加入</p>
-      </section>
-
-      <!-- 右：结果 -->
-      <section class="card lab-col result-col">
-        <h3>料理结果</h3>
-
-        <template v-if="result.path === 'empty'">
-          <p class="empty-tip" style="padding: 32px 0;">从左侧加入材料开始模拟</p>
-        </template>
-
-        <template v-else>
-          <div class="result-head">
-            <img v-if="result.icon" :src="'/icons/' + result.icon" :alt="result.zh" class="result-icon" />
-            <div v-else class="result-icon result-ph">{{ (result.zh || '?')[0] }}</div>
-            <div>
-              <div class="result-zh">{{ result.zh || '…' }}</div>
-              <span class="path-badge" :class="result.path">{{ pathLabel(result) }}</span>
+      <!-- 右：工作台（锅 + 结果） -->
+      <div class="bench">
+        <!-- 锅：圆形主视觉 -->
+        <section class="card pot-card">
+          <div class="pot-stage">
+            <div class="pot-ring" :class="{ boiling: potIds.length }">
+              <div class="pot-inner">
+                <div
+                  v-for="i in 5"
+                  :key="i"
+                  class="slot"
+                  :class="{ filled: potIds[i - 1] }"
+                  @click="potIds[i - 1] && remove(i - 1)"
+                >
+                  <template v-if="potIds[i - 1]">
+                    <img
+                      v-if="matOf(potIds[i - 1]).icon"
+                      :src="'/icons/' + matOf(potIds[i - 1]).icon"
+                      :alt="matOf(potIds[i - 1]).zh"
+                    />
+                    <span v-else class="slot-ph">{{ (matOf(potIds[i - 1]).zh || '?')[0] }}</span>
+                    <span class="slot-zh">{{ matOf(potIds[i - 1]).zh }}</span>
+                  </template>
+                  <span v-else class="slot-plus">＋</span>
+                </div>
+              </div>
+            </div>
+            <!-- 灶火 -->
+            <div class="fire-wrap" aria-hidden="true">
+              <div class="fire" :class="{ lit: potIds.length }"></div>
             </div>
           </div>
+          <div class="pot-ops">
+            <span class="pot-count">{{ potIds.length }} / 5</span>
+            <button class="clear-btn" :disabled="!potIds.length" @click="potIds = []">清空</button>
+          </div>
+          <p class="pot-tip">点击锅里的材料可移除 · 同名材料可重复加入</p>
+        </section>
 
-          <div class="result-rows">
-            <div class="rrow">
-              <span class="rk">生命恢复</span>
-              <span class="rv">{{ result.hp ? (result.hp / 2) + ' 颗心' : '无' }}</span>
+        <!-- 结果：紧贴锅下方，实时更新 -->
+        <section class="card result-col">
+          <h3>料理结果</h3>
+
+          <div v-if="result.path === 'empty'" class="result-empty">
+            <span class="re-icon">🍲</span>
+            <p>从左侧选择材料下锅，这里会实时给出料理结果</p>
+          </div>
+
+          <template v-else>
+            <div class="result-head">
+              <img v-if="result.icon" :src="'/icons/' + result.icon" :alt="result.zh" class="result-icon" />
+              <div v-else class="result-icon result-ph">{{ (result.zh || '?')[0] }}</div>
+              <div class="rh-text">
+                <div class="result-zh">
+                  {{ result.zh || '…' }}
+                  <span v-if="result.crit" class="crit-star">★ 大成功</span>
+                </div>
+                <span class="path-badge" :class="result.path">{{ pathLabel(result) }}</span>
+              </div>
             </div>
-            <div class="rrow">
-              <span class="rk">效果强度</span>
-              <span class="rv">
-                <template v-if="result.conflict">✕ 两种效果相互抵消</template>
-                <template v-else-if="result.eff">{{ result.eff }}<template v-if="result.effLv"> Lv{{ result.effLv }}</template></template>
-                <template v-else>无</template>
-              </span>
+
+            <!-- 三项关键指标 -->
+            <div class="metrics">
+              <div class="metric">
+                <div class="mv" :class="{ zero: !result.hp }">
+                  {{ result.hp ? (result.hp / 2) + ' ♥' : '—' }}
+                </div>
+                <div class="mk">生命恢复</div>
+              </div>
+              <div class="metric">
+                <div class="mv" :class="{ bad: result.conflict }">
+                  <template v-if="result.conflict">✕ 抵消</template>
+                  <template v-else-if="result.eff">{{ result.eff }}<template v-if="result.effLv"> Lv{{ result.effLv }}</template></template>
+                  <template v-else>无</template>
+                </div>
+                <div class="mk">效果强度</div>
+              </div>
+              <div class="metric">
+                <div class="mv" :class="{ zero: !result.effMin }">
+                  {{ result.effMin ? fmtMin(result.effMin) : '—' }}
+                </div>
+                <div class="mk">持续时间</div>
+              </div>
             </div>
-            <div class="rrow">
-              <span class="rk">持续时间</span>
-              <span class="rv">{{ result.effMin ? fmtMin(result.effMin) : '—' }}</span>
+
+            <div v-if="result.conflict" class="warn-box">
+              加入的效果材料种类不同，加成会被抵消，只保留回血。
             </div>
-            <div class="rrow">
+
+            <div class="sub-rows">
               <span class="rk">卖出价格</span>
               <span class="rv">{{ result.price }} 卢比</span>
             </div>
-          </div>
 
-          <div v-if="result.crit" class="crit-box">★ 必定大成功（稀有材料入锅）</div>
-          <div v-if="result.conflict" class="warn-box">加入的效果材料种类不同，加成会被抵消，只保留回血。</div>
+            <div class="note-box">{{ pathNote(result) }}</div>
 
-          <div class="note-box">
-            <b>{{ pathLabel(result) }}</b> —— {{ pathNote(result) }}
-          </div>
+            <div class="result-links" v-if="result.actor">
+              <RouterLink :to="'/items/' + result.actor" class="mini-link">图鉴详情 →</RouterLink>
+              <RouterLink :to="{ path: '/cooking', query: { q: result.zh } }" class="mini-link">料理页配方 →</RouterLink>
+            </div>
 
-          <div class="result-links" v-if="result.actor">
-            <RouterLink :to="'/items/' + result.actor" class="mini-link">图鉴详情 →</RouterLink>
-            <RouterLink :to="{ path: '/cooking', query: { q: result.zh } }" class="mini-link">料理页配方 →</RouterLink>
-          </div>
-
-          <button class="fav-btn" @click="toggleFav" :disabled="!result.actor">
-            {{ isFav ? '★ 已收藏' : '☆ 收藏当前配方' }}
-          </button>
-        </template>
-
-        <div v-if="favs.length" class="fav-list">
-          <h4>收藏的配方</h4>
-          <div v-for="(f, i) in favs" :key="i" class="fav-row">
-            <button class="fav-apply" @click="applyFav(f)">
-              {{ f.zh }}<span class="fav-n">×{{ f.ids.length }}</span>
+            <button class="fav-btn" @click="toggleFav" :disabled="!result.actor">
+              {{ isFav ? '★ 已收藏' : '☆ 收藏当前配方' }}
             </button>
-            <button class="fav-del" @click="removeFav(i)" aria-label="删除">×</button>
+          </template>
+
+          <!-- 收藏的配方 -->
+          <div v-if="favs.length" class="fav-list">
+            <h4>收藏的配方</h4>
+            <div v-for="(f, i) in favs" :key="i" class="fav-row">
+              <button class="fav-apply" @click="applyFav(f)">
+                {{ f.zh }}<span class="fav-n">×{{ f.ids.length }}</span>
+              </button>
+              <button class="fav-del" @click="removeFav(i)" aria-label="删除">×</button>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
     </div>
   </main>
 </template>
@@ -266,11 +290,11 @@ watch(potIds, (v) => {
 </script>
 
 <style scoped>
-.lab-head h2 { font-size: 18px; font-weight: 600; margin: 0 0 6px; }
 .lab-sub { color: var(--muted); font-size: 13px; line-height: 1.6; margin: 0 0 16px; }
+.col-sub { font-size: 11.5px; color: var(--faint); font-weight: 400; }
 
 .lab-grid {
-  display: grid; grid-template-columns: 250px 1fr 300px;
+  display: grid; grid-template-columns: 340px minmax(0, 1fr);
   gap: 14px; align-items: start;
 }
 .lab-col { padding: 14px; }
@@ -280,19 +304,22 @@ watch(potIds, (v) => {
 .cat-tabs button {
   border: 1px solid var(--line2); background: var(--card); border-radius: 999px;
   padding: 3px 10px; font-size: 11.5px; color: var(--muted); cursor: pointer;
-  transition: border-color 0.15s, color 0.15s;
+  transition: border-color 0.15s, color 0.15s, background 0.15s;
 }
 .cat-tabs button.on { border-color: var(--gold); color: var(--gold); background: var(--gold-bg); }
 
-.mat-list { max-height: 480px; overflow-y: auto; display: flex; flex-direction: column; gap: 6px; }
+.mat-list { max-height: 560px; overflow-y: auto; display: flex; flex-direction: column; gap: 6px; }
 .mat-row {
   display: flex; align-items: center; gap: 8px;
   border: 1px solid var(--line); border-radius: 10px; padding: 5px 8px;
-  transition: border-color 0.15s;
+  transition: border-color 0.15s, background 0.15s;
 }
-.mat-row:hover { border-color: var(--gold); }
+.mat-row:hover { border-color: var(--gold); background: var(--card2); }
 .mat-row img, .mat-ph {
-  width: 30px; height: 30px; object-fit: contain; flex: none;
+  width: 36px; height: 36px; object-fit: contain; flex: none;
+}
+.mat-row img {
+  background: var(--bg2); border-radius: 9px; padding: 2px;
 }
 .mat-ph {
   display: flex; align-items: center; justify-content: center;
@@ -307,93 +334,183 @@ watch(potIds, (v) => {
   font-size: 15px; line-height: 1; cursor: pointer;
   transition: background 0.15s, color 0.15s;
 }
-.add-btn:hover:not(:disabled) { background: var(--teal); color: #10231b; }
+.add-btn:hover:not(:disabled) { background: var(--teal); color: #fff; }
 .add-btn:disabled { opacity: 0.35; cursor: default; }
 .empty-tip { color: var(--faint); font-size: 12.5px; text-align: center; margin: 12px 0; }
 
-.pot-col { text-align: center; }
-.pot-slots { display: flex; flex-direction: column; gap: 8px; margin-bottom: 14px; }
-.pot-slot {
-  height: 52px; border: 1.5px dashed var(--line2); border-radius: 12px;
-  display: flex; align-items: center; justify-content: center; gap: 8px;
-  color: var(--faint); font-size: 12px; cursor: pointer;
+/* ============ 工作台：锅 ============ */
+.bench { display: flex; flex-direction: column; gap: 14px; }
+
+.pot-card { padding: 18px 18px 12px; }
+.pot-stage { position: relative; padding-bottom: 10px; }
+
+/* 圆形锅体：奶油锅面 + 灰褐锅沿 */
+.pot-ring {
+  width: 264px; height: 264px; margin: 0 auto; border-radius: 50%;
+  background: radial-gradient(circle at 50% 42%, #ffffff 0%, #f6f2e8 46%, #e9e2d1 100%);
+  border: 7px solid #d8cfb9;
+  box-shadow:
+    inset 0 10px 26px rgba(46, 50, 54, 0.09),
+    inset 0 -6px 18px rgba(255, 255, 255, 0.7),
+    0 10px 24px rgba(46, 50, 54, 0.09);
+  transition: background 0.35s, border-color 0.35s;
+  position: relative; z-index: 1;
 }
-.pot-slot.filled { border: 1px solid var(--teal); background: var(--teal-bg); color: var(--text); }
-.pot-slot img { width: 34px; height: 34px; object-fit: contain; }
-.slot-zh { font-size: 12.5px; font-weight: 600; }
+/* 下锅后：汤色变暖 */
+.pot-ring.boiling {
+  background: radial-gradient(circle at 50% 44%, #fffdf6 0%, #fdf2d8 48%, #f4e2b4 100%);
+  border-color: #d4c49c;
+}
+.pot-inner {
+  position: absolute; inset: 16px;
+  display: flex; flex-wrap: wrap; align-content: center; justify-content: center;
+  gap: 8px;
+}
+.slot {
+  width: 66px; height: 66px; border-radius: 12px;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  border: 1.5px dashed rgba(46, 50, 54, 0.16); color: var(--faint);
+  transition: border-color 0.15s, background 0.15s, transform 0.15s;
+  cursor: default; overflow: hidden;
+}
+.slot:not(.filled):last-child { border-color: rgba(46, 50, 54, 0.1); }
+.slot.filled {
+  border: 1px solid var(--line2); background: rgba(255, 255, 255, 0.86);
+  cursor: pointer; box-shadow: 0 2px 8px rgba(46, 50, 54, 0.08);
+}
+.slot.filled:hover { border-color: var(--red); transform: translateY(-1px); }
+.slot img { width: 34px; height: 34px; object-fit: contain; }
 .slot-ph {
   width: 30px; height: 30px; display: flex; align-items: center; justify-content: center;
-  background: var(--card); border-radius: 8px; font-size: 14px;
+  background: var(--bg2); border-radius: 8px; font-size: 14px;
 }
-.pot-fire { margin: 4px 0 12px; }
-.fire {
-  width: 46px; height: 46px; margin: 0 auto; border-radius: 50% 50% 45% 45%;
-  background: var(--amber-bg); border: 1.5px solid var(--amber);
-  position: relative;
+.slot-zh {
+  font-size: 9.5px; margin-top: 1px; max-width: 60px;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: var(--muted);
+}
+.slot-plus { font-size: 17px; opacity: 0.5; }
+
+/* 灶火：三层火苗 + 点燃态 */
+.fire-wrap { position: relative; height: 46px; margin-top: -14px; text-align: center; z-index: 0; }
+.fire { position: relative; width: 46px; height: 52px; margin: 0 auto; opacity: 0.45; transition: opacity 0.3s; }
+.fire.lit { opacity: 1; }
+.fire::before {
+  content: ""; position: absolute; inset: 0;
+  border-radius: 50% 50% 46% 46% / 62% 62% 38% 38%;
+  background: linear-gradient(180deg, #ffd982 0%, #f2952f 58%, #d9661f 100%);
+  filter: blur(1.5px);
+  animation: flicker 1.7s ease-in-out infinite;
 }
 .fire::after {
-  content: ''; position: absolute; inset: 12px; border-radius: 50%;
-  background: var(--amber);
+  content: ""; position: absolute; left: 50%; bottom: 5px; width: 18px; height: 26px;
+  transform: translateX(-50%);
+  border-radius: 50% 50% 44% 44% / 60% 60% 40% 40%;
+  background: linear-gradient(180deg, #fff6cf, #ffc247);
+  animation: flicker 1.15s ease-in-out infinite reverse;
+}
+.fire:not(.lit)::before, .fire:not(.lit)::after { animation-play-state: paused; }
+@keyframes flicker {
+  0%, 100% { transform: scaleY(1) scaleX(1); }
+  50% { transform: scaleY(1.14) scaleX(0.96); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .fire::before, .fire::after { animation: none; }
+}
+
+.pot-ops {
+  display: flex; align-items: center; justify-content: center; gap: 12px; margin-top: 4px;
+}
+.pot-count {
+  font-size: 12px; color: var(--muted); font-variant-numeric: tabular-nums;
 }
 .clear-btn {
   border: 1px solid var(--line2); background: var(--card); border-radius: 999px;
-  padding: 7px 22px; font-size: 12.5px; color: var(--muted); cursor: pointer;
+  padding: 5px 18px; font-size: 12.5px; color: var(--muted); cursor: pointer;
+  transition: border-color 0.15s, color 0.15s;
 }
 .clear-btn:hover:not(:disabled) { border-color: var(--red); color: var(--red); }
 .clear-btn:disabled { opacity: 0.4; cursor: default; }
-.pot-tip { color: var(--faint); font-size: 11.5px; margin: 10px 0 0; }
+.pot-tip { color: var(--faint); font-size: 11.5px; margin: 8px 0 0; text-align: center; }
 
-.result-head { display: flex; gap: 12px; align-items: center; margin-bottom: 12px; }
-.result-icon { width: 60px; height: 60px; object-fit: contain; flex: none; }
+/* ============ 结果卡 ============ */
+.result-col { padding: 16px 18px; }
+.result-col h3 { font-size: 14px; font-weight: 600; margin: 0 0 12px; color: var(--gold); letter-spacing: 1px; }
+.result-empty { text-align: center; padding: 22px 0 14px; }
+.result-empty .re-icon { font-size: 30px; opacity: 0.5; }
+.result-empty p { color: var(--faint); font-size: 13px; margin: 8px 0 0; }
+
+.result-head { display: flex; gap: 14px; align-items: center; margin-bottom: 14px; }
+.result-icon { width: 64px; height: 64px; object-fit: contain; flex: none; }
 .result-ph {
   display: flex; align-items: center; justify-content: center;
   background: var(--bg2); border: 1px solid var(--line); border-radius: 12px; color: var(--faint); font-size: 24px;
 }
-.result-zh { font-size: 16px; font-weight: 600; margin-bottom: 5px; }
+.rh-text { min-width: 0; }
+.result-zh { font-size: 17px; font-weight: 700; color: var(--text); display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.crit-star {
+  font-size: 11px; font-weight: 600; color: var(--amber);
+  background: var(--amber-bg); border-radius: 999px; padding: 1px 8px;
+}
 .path-badge {
-  font-size: 11px; border-radius: 999px; padding: 2px 10px;
-  background: var(--bg2); color: var(--muted);
+  display: inline-block; font-size: 11px; border-radius: 999px; padding: 2px 10px;
+  background: var(--bg2); color: var(--muted); margin-top: 5px;
 }
 .path-badge.fixed { background: var(--teal-bg); color: var(--teal); }
 .path-badge.elixir { background: var(--blue-bg); color: var(--blue); }
 .path-badge.fail { background: var(--red-bg); color: var(--red); }
 
-.result-rows { display: flex; flex-direction: column; gap: 6px; margin-bottom: 12px; }
-.rrow { display: flex; justify-content: space-between; font-size: 13px; }
-.rk { color: var(--muted); }
-.rv { font-weight: 600; color: var(--gold); }
-
-.crit-box {
-  background: var(--amber-bg); color: var(--amber); border-radius: 10px;
-  padding: 8px 12px; font-size: 12.5px; margin-bottom: 8px;
+.metrics {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;
+  border: 1px solid var(--line); border-radius: 12px; padding: 12px 6px;
+  background: var(--card2);
 }
+.metric { text-align: center; }
+.metric + .metric { border-left: 1px dashed var(--line); }
+.mv {
+  font-size: 17px; font-weight: 700; color: var(--gold);
+  font-variant-numeric: tabular-nums; line-height: 1.25;
+}
+.mv.zero { color: var(--faint); font-weight: 400; }
+.mv.bad { color: var(--red); font-size: 13px; }
+.mk { font-size: 11.5px; color: var(--muted); margin-top: 3px; }
+
+.sub-rows {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-top: 12px; font-size: 13px;
+}
+.rk { color: var(--muted); }
+.rv { color: var(--text); font-weight: 600; }
+
 .warn-box {
   background: var(--red-bg); color: var(--red); border-radius: 10px;
-  padding: 8px 12px; font-size: 12.5px; margin-bottom: 8px;
+  padding: 8px 12px; font-size: 12.5px; margin-top: 12px;
 }
 .note-box {
-  border-top: 1px dashed var(--line); padding-top: 10px;
-  font-size: 12px; color: var(--muted); line-height: 1.6; margin-bottom: 10px;
+  border-top: 1px dashed var(--line); padding-top: 10px; margin-top: 12px;
+  font-size: 12px; color: var(--muted); line-height: 1.65;
 }
-.result-links { display: flex; gap: 12px; margin-bottom: 10px; }
-.mini-link { font-size: 12.5px; color: var(--blue); text-decoration: none; }
-.mini-link:hover { text-decoration: underline; }
+.result-links { display: flex; gap: 14px; margin-top: 10px; }
+.mini-link { font-size: 12.5px; color: var(--teal); }
+.mini-link:hover { color: var(--gold); text-decoration: none; }
+
 .fav-btn {
-  width: 100%; border: 1px solid var(--amber); background: var(--amber-bg);
-  color: var(--amber); border-radius: 10px; padding: 9px 0; font-size: 13px;
-  cursor: pointer;
+  width: 100%; margin-top: 12px;
+  border: 1px solid var(--gold); background: var(--gold-bg); color: var(--gold);
+  border-radius: 10px; padding: 9px 0; font-size: 13px; font-weight: 600; cursor: pointer;
+  transition: background 0.15s, color 0.15s;
 }
-.fav-btn:hover:not(:disabled) { background: var(--amber); color: #241a08; }
+.fav-btn:hover:not(:disabled) { background: var(--gold); color: #fff; }
 .fav-btn:disabled { opacity: 0.4; cursor: default; }
 
 .fav-list { margin-top: 16px; border-top: 1px dashed var(--line); padding-top: 12px; }
-.fav-list h4 { font-size: 12.5px; color: var(--muted); margin: 0 0 8px; }
+.fav-list h4 { font-size: 12.5px; color: var(--gold); margin: 0 0 8px; letter-spacing: 1px; }
 .fav-row { display: flex; gap: 6px; margin-bottom: 6px; }
 .fav-apply {
   flex: 1; text-align: left; border: 1px solid var(--line2); background: var(--card);
   border-radius: 8px; padding: 6px 10px; font-size: 12.5px; color: var(--text); cursor: pointer;
+  transition: border-color 0.15s;
 }
-.fav-apply:hover { border-color: var(--teal); }
+.fav-apply:hover { border-color: var(--gold); }
 .fav-n { color: var(--faint); font-size: 11px; margin-left: 6px; }
 .fav-del {
   flex: none; width: 28px; border: 1px solid var(--line2); background: var(--card);
@@ -404,5 +521,8 @@ watch(potIds, (v) => {
 @media (max-width: 900px) {
   .lab-grid { grid-template-columns: 1fr; }
   .mat-list { max-height: 300px; }
+  .pot-ring { width: 232px; height: 232px; }
+  .slot { width: 58px; height: 58px; }
+  .slot img { width: 30px; height: 30px; }
 }
 </style>

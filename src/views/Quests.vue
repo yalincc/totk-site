@@ -401,7 +401,7 @@ onUnmounted(() => {
 }
 .page-head .ph-icon {
   color: var(--gold); font-size: 15px;
-  text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+  text-shadow: 0 0 8px rgba(154, 123, 28, 0.3);
 }
 .page-head .ph-sub { font-size: 12.5px; color: var(--faint); font-weight: 400; }
 
@@ -431,16 +431,16 @@ onUnmounted(() => {
 }
 .quest-card:hover {
   border-color: var(--gold); transform: translateX(3px);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 8px 20px rgba(46, 50, 54, 0.1);
 }
 /* 左侧图层色条：天空荧绿 / 地表金 / 地底橙红 */
 .q-side {
   flex: none; width: 4px; align-self: stretch; border-radius: 999px;
   background: var(--line2);
 }
-.q-side.lv-sky { background: var(--teal); box-shadow: 0 0 8px rgba(79, 209, 165, 0.5); }
-.q-side.lv-surface { background: var(--gold); box-shadow: 0 0 8px rgba(212, 175, 55, 0.5); }
-.q-side.lv-depth { background: var(--red); box-shadow: 0 0 8px rgba(224, 120, 86, 0.5); }
+.q-side.lv-sky { background: var(--teal); }
+.q-side.lv-surface { background: var(--gold); }
+.q-side.lv-depth { background: var(--red); }
 
 .q-main { flex: 1; min-width: 0; }
 .quest-title { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
@@ -479,19 +479,19 @@ onUnmounted(() => {
 
 /* 弹层：暗底 + 羊皮纸卡 */
 .modal-mask {
-  position: fixed; inset: 0; background: rgba(8, 6, 3, 0.66);
+  position: fixed; inset: 0; background: rgba(46, 50, 54, 0.42);
   backdrop-filter: blur(3px);
   display: flex; align-items: center; justify-content: center;
   z-index: 60; padding: 24px;
 }
 .modal {
   background:
-    radial-gradient(400px 200px at 50% 0%, rgba(212, 175, 55, 0.07), transparent 70%),
+    radial-gradient(400px 200px at 50% 0%, rgba(154, 123, 28, 0.05), transparent 70%),
     var(--paper-tex), var(--card);
   background-size: auto, 160px 160px, auto;
   border: 1px solid var(--line2); border-radius: 16px; padding: 24px 26px;
   max-width: 640px; width: 100%; max-height: 86vh; overflow-y: auto;
-  position: relative; box-shadow: 0 24px 70px rgba(0, 0, 0, 0.55);
+  position: relative; box-shadow: 0 24px 60px rgba(46, 50, 54, 0.2);
 }
 .modal .close {
   position: absolute; top: 12px; right: 14px; border: none; background: none;
@@ -518,10 +518,10 @@ onUnmounted(() => {
   display: block; border: 1px solid var(--gold); border-radius: 10px;
   padding: 11px 14px; text-decoration: none; color: var(--gold);
   font-size: 13.5px; font-weight: 600; margin-bottom: 16px;
-  background: linear-gradient(180deg, rgba(212, 175, 55, 0.14), rgba(212, 175, 55, 0.05));
+  background: linear-gradient(180deg, rgba(154, 123, 28, 0.09), rgba(154, 123, 28, 0.03));
   transition: box-shadow 0.15s;
 }
-.map-btn:hover { color: var(--gold); box-shadow: 0 0 18px rgba(212, 175, 55, 0.22); }
+.map-btn:hover { color: var(--gold); box-shadow: 0 2px 12px rgba(154, 123, 28, 0.16); }
 .map-btn .map-sub { display: block; margin-top: 3px; font-size: 11.5px; color: var(--muted); font-weight: 400; }
 
 section { margin-bottom: 18px; }

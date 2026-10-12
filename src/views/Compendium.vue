@@ -166,7 +166,7 @@ function goDetail(id) {
 }
 .page-head .ph-icon {
   color: var(--gold); font-size: 15px;
-  text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+  text-shadow: 0 0 8px rgba(154, 123, 28, 0.3);
 }
 .page-head .ph-sub { font-size: 12.5px; color: var(--faint); font-weight: 400; }
 

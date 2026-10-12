@@ -216,7 +216,7 @@ function tagZh(t) {
 
 .modal-mask {
   position: fixed; inset: 0; z-index: 50;
-  background: rgba(8, 6, 3, 0.66);
+  background: rgba(46, 50, 54, 0.42);
   backdrop-filter: blur(3px);
   display: flex; align-items: center; justify-content: center;
   padding: 24px;
@@ -224,13 +224,13 @@ function tagZh(t) {
 .modal {
   position: relative;
   background:
-    radial-gradient(400px 200px at 50% 0%, rgba(212, 175, 55, 0.07), transparent 70%),
+    radial-gradient(400px 200px at 50% 0%, rgba(154, 123, 28, 0.05), transparent 70%),
     var(--paper-tex), var(--card);
   background-size: auto, 160px 160px, auto;
   border: 1px solid var(--line2); border-radius: var(--radius);
   width: 100%; max-width: 560px; max-height: 84vh; overflow-y: auto;
   padding: 18px 20px;
-  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.55);
+  box-shadow: 0 24px 60px rgba(46, 50, 54, 0.2);
 }
 .modal .close {
   position: absolute; top: 8px; right: 10px; z-index: 1;
@@ -266,7 +266,7 @@ function tagZh(t) {
   background: var(--teal-bg); color: var(--teal); border-radius: 6px;
   padding: 2px 9px; font-size: 13px; text-decoration: none;
 }
-.mat:hover { background: var(--teal); color: #10231b; }
+.mat:hover { background: var(--teal); color: #fff; }
 .mat.tag { background: var(--blue-bg); color: var(--blue); }
 .mat.mini { background: var(--bg2); border: 1px solid var(--line); color: var(--text); font-size: 12.5px; }
 .sub { color: var(--faint); font-size: 12px; }

@@ -4,19 +4,19 @@
     <section class="hero">
       <!-- 中央希卡符文环（纯 SVG，金绿双色） -->
       <svg class="hero-ring" viewBox="0 0 340 340" fill="none" aria-hidden="true">
-        <circle cx="170" cy="170" r="160" stroke="#d4af37" stroke-width="1.5" opacity="0.55" />
-        <circle cx="170" cy="170" r="140" stroke="#4fd1a5" stroke-width="1" opacity="0.4"
+        <circle cx="170" cy="170" r="160" stroke="#c9a227" stroke-width="1.5" opacity="0.55" />
+        <circle cx="170" cy="170" r="140" stroke="#0e8a7d" stroke-width="1" opacity="0.4"
           stroke-dasharray="4 10" />
-        <circle cx="170" cy="170" r="118" stroke="#d4af37" stroke-width="1" opacity="0.3" />
+        <circle cx="170" cy="170" r="118" stroke="#c9a227" stroke-width="1" opacity="0.3" />
         <!-- 12 刻度（数据在 script 算好，模板零表达式） -->
-        <g stroke="#d4af37" stroke-width="1.5" opacity="0.6">
+        <g stroke="#c9a227" stroke-width="1.5" opacity="0.6">
           <line v-for="(t, i) in ringTicks" :key="i" v-bind="t" />
         </g>
         <!-- 中心希卡之眼 -->
         <g opacity="0.85">
-          <path d="M170 132 L196 170 L170 208 L144 170 Z" stroke="#4fd1a5" stroke-width="2" fill="none" />
-          <circle cx="170" cy="170" r="14" stroke="#d4af37" stroke-width="2" fill="none" />
-          <circle cx="170" cy="170" r="4" fill="#d4af37" />
+          <path d="M170 132 L196 170 L170 208 L144 170 Z" stroke="#0e8a7d" stroke-width="2" fill="none" />
+          <circle cx="170" cy="170" r="14" stroke="#c9a227" stroke-width="2" fill="none" />
+          <circle cx="170" cy="170" r="4" fill="#c9a227" />
         </g>
       </svg>
 
@@ -188,7 +188,7 @@ function go() {
 .sec-head::before {
   content: ""; width: 8px; height: 8px; flex: none;
   background: var(--gold); transform: rotate(45deg);
-  box-shadow: 0 0 8px rgba(212, 175, 55, 0.6);
+  box-shadow: 0 0 7px rgba(154, 123, 28, 0.35);
 }
 .sec-head::after {
   content: ""; flex: 1; height: 1px;
@@ -204,7 +204,7 @@ function go() {
 }
 .cat-card:hover {
   border-color: var(--gold); transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35); color: var(--text);
+  box-shadow: 0 8px 20px rgba(46, 50, 54, 0.1); color: var(--text);
 }
 .cat-card .cnt {
   font-size: 24px; font-weight: 700; color: var(--gold);
