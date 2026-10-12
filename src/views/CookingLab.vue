@@ -30,7 +30,7 @@
             class="mat-row"
             :title="m.id"
           >
-            <img v-if="m.icon" :src="'/icons/' + m.icon" loading="lazy" :alt="m.zh" />
+            <img v-if="m.icon" :src="'icons/' + m.icon" loading="lazy" :alt="m.zh" />
             <div v-else class="mat-ph">{{ (m.zh || m.id)[0] }}</div>
             <div class="mat-info">
               <div class="mat-zh">{{ m.zh || m.id }}</div>
@@ -63,7 +63,7 @@
             @click="potIds[i - 1] && remove(i - 1)"
           >
             <template v-if="potIds[i - 1]">
-              <img v-if="matOf(potIds[i - 1]).icon" :src="'/icons/' + matOf(potIds[i - 1]).icon" :alt="matOf(potIds[i - 1]).zh" />
+              <img v-if="matOf(potIds[i - 1]).icon" :src="'icons/' + matOf(potIds[i - 1]).icon" :alt="matOf(potIds[i - 1]).zh" />
               <span v-else class="slot-ph">{{ (matOf(potIds[i - 1]).zh || '?')[0] }}</span>
               <span class="slot-zh">{{ matOf(potIds[i - 1]).zh }}</span>
             </template>
@@ -87,7 +87,7 @@
 
         <template v-else>
           <div class="result-head">
-            <img v-if="result.icon" :src="'/icons/' + result.icon" :alt="result.zh" class="result-icon" />
+            <img v-if="result.icon" :src="'icons/' + result.icon" :alt="result.zh" class="result-icon" />
             <div v-else class="result-icon result-ph">{{ (result.zh || '?')[0] }}</div>
             <div>
               <div class="result-zh">{{ result.zh || '…' }}</div>
@@ -153,6 +153,7 @@
 import { ref, computed, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { cook } from '../lib/cookingEngine.js'
+import { loadCookingLab } from '../data.js'
 
 const route = useRoute()
 const router = useRouter()
@@ -163,7 +164,7 @@ const q = ref('')
 const cat = ref('Cook')
 const favs = ref(JSON.parse(localStorage.getItem('cooklab-favs') || '[]'))
 
-fetch('/data/cooking_lab.json').then((r) => r.json()).then((d) => (lab.value = d))
+loadCookingLab().then((d) => (lab.value = d))
 
 // 分类（CookResult/CookFailure 是产物不进食材架）
 const CATS = [

@@ -23,7 +23,7 @@
       >
         <span class="num">#{{ d.num }}</span>
         <span v-if="!d.recipes.length" class="norc">自由组合</span>
-        <img :src="'/icons/' + d.actor + '.png'" loading="lazy" :alt="d.zh" />
+        <img :src="'icons/' + d.actor + '.png'" loading="lazy" :alt="d.zh" />
         <div class="nm" :title="d.zh">{{ d.zh }}</div>
       </div>
     </div>
@@ -48,7 +48,7 @@
           </div>
 
           <div class="dish-head">
-            <img :src="'/icons/' + sel.actor + '.png'" :alt="sel.zh" />
+            <img :src="'icons/' + sel.actor + '.png'" :alt="sel.zh" />
             <div>
               <div class="sec-title" style="margin: 0;">
                 #{{ sel.num }} {{ sel.zh }}

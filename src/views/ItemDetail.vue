@@ -2,7 +2,7 @@
   <main v-if="item" class="container" style="padding-top: 24px; max-width: 760px;">
     <!-- header -->
     <div class="card head">
-      <img v-if="item.icon" :src="'/icons/' + item.icon" class="big-icon" :alt="item.zh" />
+      <img v-if="item.icon" :src="'icons/' + item.icon" class="big-icon" :alt="item.zh" />
       <div v-else class="big-icon ph">{{ (item.zh || item.id)[0] }}</div>
       <div style="flex: 1; min-width: 0;">
         <div style="display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap;">

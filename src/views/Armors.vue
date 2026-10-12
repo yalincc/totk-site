@@ -31,7 +31,7 @@
         class="card armor-card"
         @click="openById(a.id)"
       >
-        <img v-if="a.icon" :src="'/icons/' + a.icon" loading="lazy" :alt="a.zh" />
+        <img v-if="a.icon" :src="'icons/' + a.icon" loading="lazy" :alt="a.zh" />
         <div v-else class="ph">{{ (a.zh || a.id)[0] }}</div>
         <div class="nm" :title="a.zh">{{ a.zh || a.id }}</div>
         <div class="sub">
@@ -52,7 +52,7 @@
           <button class="close" @click="close" aria-label="关闭">×</button>
 
           <div class="detail-head">
-            <img v-if="sel.icon" :src="'/icons/' + sel.icon" :alt="sel.zh" class="big-icon" />
+            <img v-if="sel.icon" :src="'icons/' + sel.icon" :alt="sel.zh" class="big-icon" />
             <div v-else class="ph big-icon">{{ (sel.zh || sel.id)[0] }}</div>
             <div class="head-info">
               <h2 class="a-title">{{ sel.zh || sel.id }}</h2>
@@ -132,7 +132,7 @@
                 :class="{ cur: m.id === sel.id }"
                 @click="openById(m.id)"
               >
-                <img v-if="m.icon" :src="'/icons/' + m.icon" loading="lazy" :alt="m.zh" />
+                <img v-if="m.icon" :src="'icons/' + m.icon" loading="lazy" :alt="m.zh" />
                 <span>{{ m.zh || m.id }}</span>
               </button>
             </div>

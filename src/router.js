@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHistory, createWebHashHistory } from 'vue-router'
 import Home from './views/Home.vue'
 import Compendium from './views/Compendium.vue'
 import ItemDetail from './views/ItemDetail.vue'
@@ -8,8 +8,11 @@ import Armors from './views/Armors.vue'
 import CookingLab from './views/CookingLab.vue'
 import ComingSoon from './views/ComingSoon.vue'
 
+// file://（离线版双击 index.html）下 history 路由无法工作，自动切换 hash 模式
+const isFile = typeof location !== 'undefined' && location.protocol === 'file:'
+
 const router = createRouter({
-  history: createWebHistory(),
+  history: isFile ? createWebHashHistory() : createWebHistory(),
   routes: [
     { path: '/', component: Home },
     { path: '/items', component: Compendium },

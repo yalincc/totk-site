@@ -1,8 +1,19 @@
+// 数据加载：离线版（file:// 双击 index.html）读注入的 window.__OFFLINE_DATA__；
+// 线上/开发走相对路径 fetch（离线注入脚本见 .workbuddy/build_offline.py）
+const OFFLINE = typeof window !== 'undefined' && window.__OFFLINE_DATA__
+
+function loadData(key) {
+  if (OFFLINE && window.__OFFLINE_DATA__[key]) {
+    return Promise.resolve(window.__OFFLINE_DATA__[key])
+  }
+  return fetch('data/' + key + '.json').then((r) => r.json())
+}
+
 let _items = null
 let _recipes = null
 
 export function loadItems() {
-  if (!_items) _items = fetch('/data/items.json').then((r) => r.json())
+  if (!_items) _items = loadData('items')
   return _items
 }
 
@@ -15,36 +26,41 @@ export function loadItemsVisible() {
 }
 
 export function loadRecipes() {
-  if (!_recipes) _recipes = fetch('/data/recipes.json').then((r) => r.json())
+  if (!_recipes) _recipes = loadData('recipes')
   return _recipes
 }
 
 export function loadEnhancement() {
-  if (!loadEnhancement._p)
-    loadEnhancement._p = fetch('/data/enhancement.json').then((r) => r.json())
+  if (!loadEnhancement._p) loadEnhancement._p = loadData('enhancement')
   return loadEnhancement._p
 }
 
 let _dishes = null
 export function loadDishes() {
-  if (!_dishes) _dishes = fetch('/data/dishes.json').then((r) => r.json())
+  if (!_dishes) _dishes = loadData('dishes')
   return _dishes
 }
 
 let _quests = null
 export function loadQuests() {
-  if (!_quests) _quests = fetch('/data/quests.json').then((r) => r.json())
+  if (!_quests) _quests = loadData('quests')
   return _quests
 }
 
 let _armors = null
 export function loadArmors() {
-  if (!_armors) _armors = fetch('/data/armors.json').then((r) => r.json())
+  if (!_armors) _armors = loadData('armors')
   return _armors
 }
 
+let _cookingLab = null
+export function loadCookingLab() {
+  if (!_cookingLab) _cookingLab = loadData('cooking_lab')
+  return _cookingLab
+}
+
 export function iconUrl(item) {
-  return item.icon ? '/icons/' + item.icon : null
+  return item.icon ? 'icons/' + item.icon : null
 }
 
 export const GROUP_ORDER = [

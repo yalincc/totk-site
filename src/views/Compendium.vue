@@ -27,7 +27,7 @@
         class="item-cell"
         @click="goDetail(it.id)"
       >
-        <img v-if="it.icon" :src="'/icons/' + it.icon" loading="lazy" :alt="it.zh" />
+        <img v-if="it.icon" :src="'icons/' + it.icon" loading="lazy" :alt="it.zh" />
         <div v-else class="ph">{{ (it.zh || it.id)[0] }}</div>
         <div class="nm" :title="it.zh">{{ it.zh || it.id }}</div>
       </div>
