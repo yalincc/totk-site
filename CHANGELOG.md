@@ -3,6 +3,15 @@
 > 只追加，不改写历史条目。格式参考 Keep a Changelog，版本号遵循 SemVer `v0.X.Y`。
 > 发布规则与版本同步要求见 `开发手册.md` §3.3。
 
+## [未发布]
+
+**数据管线四层重构（无站点行为变化）**
+- 建立四层数据纪律：L0 源层（romfs/TOTKmap/csv，只读）→ L1 抓取层（`totk_data\`，原始形态）→ L2 加工脚本 → L3 发布层（`public\data\`，只写不读）
+- 修复三处"源=产物"污染：`postprocess_items.py` 不再读发布层（改读 L1 `items_prelim/recipes_prelim/dishes_zh`）；`build_quests.py` 站点侧输入改为 L1 `quests_legacy.json`（从 v1 原始版提取）；`build_site_data.py` 输出改 L1 prelim，不再直写发布层
+- TOTKmap 快照从 tmp 移正至 `totk_data\totkmap\`，新增 mtime 过期机制（上游更新后自动重 dump，不再静默用旧数据）
+- 新增一次性迁移脚本 `migrate_l1.py`（幂等，可重复执行）
+- 验证：全链路重跑后 quests/items/enhancement 与重构前**语义完全一致**（285/1511/441 条零差异）
+
 ## [v0.6] — 2026-10-12
 
 **P1 任务数据补强（TOTKmap 单向派生）**
